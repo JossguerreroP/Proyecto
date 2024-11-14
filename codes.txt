@@ -28,3 +28,5 @@ ng g component cart/cart-view
 Remove-Item .git -Recurse -Force
 
 ng cache clean
+
+ng generate component dashboard/aux

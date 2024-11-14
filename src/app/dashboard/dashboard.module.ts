@@ -23,7 +23,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CartModule } from '../cart/cart.module';
 import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav';
 import { CasoComponent } from './components/caso/caso.component';
-
+import { AgGridModule } from 'ag-grid-angular';
 
 
 
@@ -60,6 +60,7 @@ import { CasoComponent } from './components/caso/caso.component';
     MatFormFieldModule,
     MatSidenavContainer,
     MatSidenav,
+    AgGridModule
   ]
 })
 export class DashboardModule { }

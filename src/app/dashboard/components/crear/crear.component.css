@@ -1,3 +1,5 @@
+
+
 .bs{
 margin-left: auto;
 margin-right: auto;
@@ -5,3 +7,11 @@ display: table;
 
 }
 
+.column {
+    float: left;
+    width: 70%;
+    }
+    
+    .ag-header-cell-label .ag-header-cell-text {
+        white-space: normal !important;
+      }

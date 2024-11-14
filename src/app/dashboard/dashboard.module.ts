@@ -22,15 +22,21 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CartModule } from '../cart/cart.module';
 import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav';
+import { CasoComponent } from './components/caso/caso.component';
+
+
 
 
 @NgModule({
   declarations: [
+  
     InicioComponent,
     CrearComponent,
     CorridosComponent,
     ReportesComponent,
-    WrapperComponent
+    WrapperComponent,
+    CasoComponent,
+    
   ],
   imports: [
     CommonModule,

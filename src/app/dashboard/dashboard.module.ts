@@ -53,8 +53,7 @@ import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav';
     MatSelectModule,
     MatFormFieldModule,
     MatSidenavContainer,
-    MatSidenav
-
+    MatSidenav,
   ]
 })
 export class DashboardModule { }

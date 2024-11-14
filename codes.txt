@@ -24,3 +24,7 @@ ng g module cart
 ng g service cart/cart
 
 ng g component cart/cart-view
+
+Remove-Item .git -Recurse -Force
+
+ng cache clean

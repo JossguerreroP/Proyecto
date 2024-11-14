@@ -5,6 +5,7 @@
 
 <mat-sidenav-container autozise="true">
   <mat-sidenav class="sidenav" mode="side" opened="true" [style.width]="expanded ? '280px' : '55px'" autozise="false">
+    <div>
     <mat-nav-list>
      <mat-list-item>
       <mat-icon mat-list-icon class="chevron-button sidenav-button" 
@@ -12,11 +13,11 @@
      </mat-list-item>
 
      
-   <mat-divider style="background-color:rgb(185, 211, 160);opacity:0.9;"></mat-divider>
+   <mat-divider style="background-color:rgb(100, 207, 0);opacity:1.2;"></mat-divider>
 
      <mat-list-item [routerLink]="'Inicio'">
       <mat-icon mat-list-icon class="" title="Inicio">blur_on</mat-icon>
-      <span  *ngIf="expanded">Inicio</span>
+      <span  *ngIf="expanded"> Inicio</span>
      </mat-list-item>
 
      <mat-divider style="background-color:rgb(165, 202, 202);opacity:1.2;"></mat-divider>
@@ -31,7 +32,7 @@
 
      <mat-list-item [routerLink]="'Corridos'">
       <mat-icon mat-list-icon class="" title="Flujo">offline_bolt</mat-icon>
-      <span  *ngIf="expanded">Casos corridos</span>
+      <span  *ngIf="expanded"> Casos corridos</span>
      </mat-list-item>
 
      <mat-divider style="background-color:rgb(228, 228, 228);opacity:1.2;"></mat-divider>
@@ -39,10 +40,11 @@
 
      <mat-list-item [routerLink]="'Reportes'">
       <mat-icon mat-list-icon class="" title="Reportes">bar_chart</mat-icon>
-      <span *ngIf="expanded">Reportes</span>
+      <span *ngIf="expanded"> Reportes</span>
      </mat-list-item>
      <mat-divider></mat-divider>
    </mat-nav-list>
+  </div>
   </mat-sidenav>
 <mat-sidenav-content [ngClass]="{'true':expanded}">
   
@@ -65,9 +67,13 @@
   </mat-toolbar>
 
   <div class ="bg" >
-
       <router-outlet></router-outlet>
     </div>
+    
+    <div class="Foot">
+      
+      
+  </div>
     
 </mat-sidenav-content>
   </mat-sidenav-container>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ResourceLoader } from '@angular/compiler';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({

@@ -1,0 +1,24 @@
+@import "@angular/material/prebuilt-themes/azure-blue.css";
+.product-card{
+    max-width:150px;
+}
+
+.product-flex{
+    display: flex;        /* Enables flexbox */
+    flex-wrap: wrap;      /* Allows items to wrap onto multiple lines */
+    gap: 60px;            /* Sets the gap between items */
+    justify-content: flex-start; 
+}
+
+mat-card:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+mat-card {
+    transition: transform .2s;
+}
+
+.sort-dropdown{
+    margin-left: 20px;
+}

@@ -1,0 +1,26 @@
+C:\Users\hp\Documents\Angular\NewProject\Animal-Paintings
+
+ng new Animal-Paintings --no-standalone
+
+
+ng generate module product
+
+ng generate service product/product
+
+ng generate component product/product-list
+
+ng g class models/product
+
+ng g environments
+
+ng serve --configuration=development
+
+ng add @angular/material
+
+npm install @angular/cdk
+
+ng g module cart
+
+ng g service cart/cart
+
+ng g component cart/cart-view

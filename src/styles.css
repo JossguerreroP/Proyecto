@@ -1,0 +1,24 @@
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-color: rgb(244,244,244); }
+
+.container{
+    padding: 60px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container-sm{
+    padding: 60px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.right{
+    text-align: right;
+}
+
+.ag-cell {
+    display: flex;
+    align-items: center; /* Centers content vertically */
+  }

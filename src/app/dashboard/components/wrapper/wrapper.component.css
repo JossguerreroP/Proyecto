@@ -25,7 +25,7 @@ mat-sidenav-container {
   background-position: top center;
   background-repeat: no-repeat;
   filter: brightness(0.8) blur(0.9px); /* Apply filter only to the image */
-  opacity: 0.8;
+  opacity: 11;
   z-index: -1; /* Place the image behind the content */
 }
 

@@ -8,46 +8,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './corridos.component.css'
 })
 export class CorridosComponent implements OnInit{
-
-  sd:boolean = false;
-  st:boolean = true;
-  constructor(private route:ActivatedRoute) 
-  { }
-
-  ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-
-    if(params['sd']){
-      this.sd =true;
-      this.st =false;
-    }
-
-    if(params['st']){
-      this.st=true;
-      this.sd =false;
-    }
-     
-    })
-     
-   }
-
-   Objects:Object[]=[]
-  generadores :any;
-  lineas :any;
-
-  autoSizeStrategy :SizeColumnsToFitGridStrategy = {
-    type: 'fitGridWidth',
-    defaultMinWidth: 100,
-    columnLimits: [
-        {
-            colId: 'country',
-            minWidth: 900
-        }
-    ]
-};
-
   rowData : Object[]=[]
   rowData1 : Object[]=[]
+  rowData2: Object[]=[]
+  Objects:Object[]=[]
+  generadores :any;
+  lineas :any;
+  nodos:any;
+  sd:boolean = false;
+  st:boolean = true;
 
   colDefs: ColDef[] = [
     { 
@@ -96,8 +65,46 @@ export class CorridosComponent implements OnInit{
     { field: 'flujo_P_J_a_I_MW', headerName: 'Flujo P (J a I) [MW]' },
     { field: 'flujo_Q_J_a_I_MW', headerName: 'Flujo Q (J a I) [MW]' }
   ];
-  
 
+  colDefsNodos : ColDef[]= [
+    { field: 'nodo', headerName: 'Nodo' },
+    { field: 'tipo_de_nodo', headerName: 'Tipo de Nodo' },
+    { field: 'P_MW', headerName: 'P [MW]' },
+    { field: 'Q_MVAR', headerName: 'Q [MVAR]' },
+    { field: 'V_max', headerName: 'V_max' },
+    { field: 'V_min', headerName: 'V_min' }
+  ];
+
+
+
+  constructor(private route:ActivatedRoute) 
+  { }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+
+    if(params['sd']){
+      this.sd =true;
+      this.st =false;
+    }
+
+    if(params['st']){
+      this.st=true;
+      this.sd =false;
+    }
+    })
+   }
+
+  autoSizeStrategy :SizeColumnsToFitGridStrategy = {
+    type: 'fitGridWidth',
+    defaultMinWidth: 100,
+    columnLimits: [
+        {
+            colId: 'country',
+            minWidth: 900
+        }
+    ]
+};
 
  one(event:any) {
   this.generadores=event.generadores
@@ -139,9 +146,28 @@ for (let i = 0; i < this.lineas.lines.length; i++) {
 this.rowData1 = newRows;
 }
 
+three (event:any){
+  this.nodos = event.nodos;  // Suponiendo que los nodos están en "event.nodos"
+  console.log(this.nodos.nodes);
+  const newRows: object[] = [];  
+  for (let i = 0; i < this.nodos.nodes.length; i++) {
+    let nodo: Object = {
+      nodo: this.nodos.nodes[i].nodo,
+      tipo_de_nodo: this.nodos.nodes[i].tipo_de_nodo,
+      P_MW: this.nodos.nodes[i].P_MW,
+      Q_MVAR: this.nodos.nodes[i].Q_MVAR,
+      V_max: this.nodos.nodes[i].V_max,
+      V_min: this.nodos.nodes[i].V_min
+    };
+    newRows.push(nodo);
+  }
+  this.rowData2= newRows;
+}
+
 getEntradasIniciales(event: any) {
   console.log(event)
   this.one(event);
-  this.two(event)
+  this.two(event);
+  this.three(event);
 }
 }

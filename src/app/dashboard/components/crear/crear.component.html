@@ -1,27 +1,52 @@
+<div *ngIf="sd"> 
+    <div class="container" style="display: flex; flex-direction: row; height: 100vh; width: 100%;">
 
-<!--<div class="container">
-  <div class="row">
-    <div class="column left" style=" width: 30%;" >
-      <mat-tab-group #tabs style="margin-left:2%;width:100%;margin-top:3%;"mat-stretch-tabs="false" mat-align-tabs="start">
-        <mat-tab label="Crear caso">
-        </mat-tab>
-      </mat-tab-group>
-      <app-caso (datos)="getEntradasIniciales($event)"></app-caso>
-    </div>
-    <div class="column middle" style=" width: 100%;">
-      <div>
-        <h4>Tabla 1. Características de las líneas</h4>
-        <p>Data..</p>
-        <ag-grid-angular style="width: auto; height: 700px;" class="ag-theme-quartz" [rowData]="rowData"
-  [columnDefs]="colDefs">
-</ag-grid-angular>
+      <div class="column left" style="flex: 0 0 30%; padding-top: 3%;">
+        <mat-tab-group #tabs style="width: 100%;" mat-stretch-tabs="false" mat-align-tabs="start">
+       
+        </mat-tab-group>
+       
       </div>
+    
+      <div class="column middle" style="flex: 2; padding: 0; display: flex; flex-direction: column;">
+        <div style="flex: 1; overflow: hidden;">
+            <a> </a>
+            <app-caso></app-caso>
+            <div style="padding-bottom:2%;">
+               <input  style="background-color: rgb(229, 235, 236); border-radius: 5px; padding: 10px;padding-top: 5%;" placeholder="Población inicial"/>
+            </div>
+           
+            <div style="padding-bottom:2%;">
+            <input  style="background-color: rgb(229, 235, 236); border-radius: 5px; padding: 10px;padding-top: 5%;" placeholder="Numero de iteraciones"/>
+          </div>
+          <div style="padding-bottom:2%;">
+            <input  style="background-color: rgb(229, 235, 236); border-radius: 5px; padding: 10px;padding-top: 5%;" placeholder="Costo de ataque"/>
+          </div>
+          <div style="padding-bottom:2%;">
+            <input  style="background-color: rgb(229, 235, 236); border-radius: 5px; padding: 10px;padding-top: 5%;" placeholder="Recursos atacante"/>
+          </div>
+          <div style="padding-bottom:2%;">
+            <input  style="background-color: rgb(229, 235, 236); border-radius: 5px; padding: 10px;padding-top: 5%;" placeholder="Costo-ataque-linea"/>
+          </div>
+          <div style="padding-bottom:2%;">
+            <input  style="background-color: rgb(229, 235, 236); border-radius: 5px; padding: 10px;padding-top: 5%;" placeholder="Costo-ataque-generador"/>
+          </div>
+          </div>
+      </div>
+
+      <div class="column " style="flex: 2; padding: 0; display: flex; flex-direction: column;">
+        <div style="flex: 1; overflow: hidden;">
+            <a> </a>
+            <button type="button" class="btn btn-success">EJECUTAR</button>
+        </div>
+      </div>
+    
     </div>
-</div>
-  </div>-->
+
+</div>>
+<!--
   <div class="container" style="display: flex; flex-direction: row; height: 100vh; width: 100%;">
 
-    <!-- Left column with fixed width -->
     <div class="column left" style="flex: 0 0 30%; padding-top: 3%;">
       <mat-tab-group #tabs style="width: 100%;" mat-stretch-tabs="false" mat-align-tabs="start">
         <mat-tab label="Crear caso"></mat-tab>
@@ -29,12 +54,11 @@
       <app-caso (datos)="getEntradasIniciales($event)"></app-caso>
     </div>
   
-    <!-- Middle column with dynamic width -->
-    <div class="column middle" style="flex: 1; padding: 0; display: flex; flex-direction: column;">
+    <div class="column middle" style="flex: 2; padding: 0; display: flex; flex-direction: column;">
       <div style="flex: 1; overflow: hidden;">
-        <h4>Tabla 1. Características de las líneas</h4>
+        <h4>Tabla 1. Características de los generadores</h4>
         <p>Data..</p>
-        <!-- AG Grid -->
+        
         <ag-grid-angular 
           class="ag-theme-quartz"
           style="width: 100%; height: 100%;"
@@ -48,3 +72,4 @@
     </div>
   
   </div>
+-->

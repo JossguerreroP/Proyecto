@@ -4,7 +4,7 @@
 </mat-toolbar-row>
 
 <mat-sidenav-container autozise="true">
-  <mat-sidenav class="sidenav" mode="side" opened="true" [style.width]="expanded ? '280px' : '55px'" autozise="false">
+  <mat-sidenav class="sidenav" mode="side" opened="true" [style.width]="expanded ? '240px' : '50px'">
     <div>
     <mat-nav-list>
      <mat-list-item>
@@ -20,11 +20,20 @@
       <span  *ngIf="expanded"> Inicio</span>
      </mat-list-item>
 
+    
      <mat-divider style="background-color:rgb(165, 202, 202);opacity:1.2;"></mat-divider>
 
-     <mat-list-item [routerLink]="'Crear'">
+     <mat-list-item>
       <mat-icon mat-list-icon class="" title="Analisis">code</mat-icon>
       <span  *ngIf="expanded"> Crear caso</span>
+     </mat-list-item>
+
+     <mat-list-item [routerLink]="'Crear'" style="padding-left: 20%;"  [queryParams]="{sd:true}" >
+      <span  *ngIf="expanded"> Sistema distribución </span>
+     </mat-list-item>
+
+     <mat-list-item [routerLink]="'Crear'" style="padding-left: 20%;"  [queryParams]="{st:true}">
+      <span  *ngIf="expanded"> Sistema transmición </span>
      </mat-list-item>
 
      <mat-divider style="background-color:rgb(238, 180, 146);opacity:1.2;"></mat-divider>
@@ -34,6 +43,8 @@
       <mat-icon mat-list-icon class="" title="Flujo">offline_bolt</mat-icon>
       <span  *ngIf="expanded"> Casos corridos</span>
      </mat-list-item>
+
+     
 
      <mat-divider style="background-color:rgb(228, 228, 228);opacity:1.2;"></mat-divider>
      

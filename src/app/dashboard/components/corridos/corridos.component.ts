@@ -11,10 +11,17 @@ export class CorridosComponent implements OnInit{
   rowData : Object[]=[]
   rowData1 : Object[]=[]
   rowData2: Object[]=[]
+  rowDataEscenarios: Object[]=[]
+  rowDataEscenario1: Object[]=[]
   Objects:Object[]=[]
+
   generadores :any;
   lineas :any;
   nodos:any;
+  escenarios:any;
+  escenariosConNodos:Array<Object>=[];
+  escenariosConN:any;
+
   sd:boolean = false;
   st:boolean = true;
 
@@ -75,6 +82,27 @@ export class CorridosComponent implements OnInit{
     { field: 'V_min', headerName: 'V_min' }
   ];
 
+  colDefsEscenarios : ColDef[] = [
+    { field: 'escenario', headerName: 'Escenario' },
+    { field: 'potencia_deslastrada_MW', headerName: 'Potencia Deslastrada (MW)' },
+    { field: 'potencia_atendida_MW', headerName: 'Potencia Atendida (MW)' },
+    { field: 'potencia_generada_adicional_MW', headerName: 'Potencia Generada Adicional (MW)' },
+    { field: 'costo_operacion_dolar_per_MWH', headerName: 'Costo Operación ($/MWH)' },
+    { field: 'costo_deslastre_dolar_per_MWH', headerName: 'Costo Deslastre ($/MWH)' },
+    { field: 'U1', headerName: 'U1' },
+    { field: 'U2', headerName: 'U2' },
+    { field: 'U', headerName: 'U' },
+    { field: 'resiliencia', headerName: 'Resiliencia' }
+  ];
+
+  colDefsEscenariosNodos: ColDef[]  = [
+    { field: 'nodo', headerName: 'Nodo' },
+    { field: 'carga_MW', headerName: 'Carga (MW)' },
+    { field: 'potencia_deslastrada_MW', headerName: 'Potencia Deslastrada (MW)' },
+    { field: 'costo_dolar_por_MW', headerName: 'Costo ($/MW)' },
+    { field: 'potencia_atendida_MW', headerName: 'Potencia Atendida (MW)' },
+    { field: '_atendido', headerName: '% Atendido' }
+  ];
 
 
   constructor(private route:ActivatedRoute) 
@@ -164,10 +192,48 @@ three (event:any){
   this.rowData2= newRows;
 }
 
+getResuldatos(event:any){
+  this.escenarios = event.escenarios;
+  const newRows: object[] = []; 
+  for (let i = 0; i < this.escenarios.length; i++) {
+    let escenario: Object = {
+      escenario: this.escenarios[i].escenario,
+      potencia_deslastrada_MW: this.escenarios[i].potencia_deslastrada_MW,
+      potencia_atendida_MW: this.escenarios[i].potencia_atendida_MW,
+      potencia_generada_adicional_MW: this.escenarios[i].potencia_generada_adicional_MW,
+      costo_operacion_dolar_per_MWH: this.escenarios[i].costo_operacion_dolar_per_MWH,
+      costo_deslastre_dolar_per_MWH: this.escenarios[i].costo_deslastre_dolar_per_MWH,
+      U1: this.escenarios[i].U1,
+      U2: this.escenarios[i].U2,
+      U: this.escenarios[i].U,
+      resiliencia: this.escenarios[i].resiliencia
+    };
+    newRows.push(escenario);
+  }
+  this.rowDataEscenarios = newRows;
+}
+
+getResultadosEscenarios(event:any){
+  this.escenariosConN = event.elements.escenario1ConSinRdNiGd;
+  this.escenariosConNodos = event.elements.escenario1ConSinRdNiGd;
+  const newRow: object[] = [];  
+  for(let i=0; i<this.escenariosConNodos.length;i++){
+    newRow.push(this.escenariosConNodos[i]);
+  }
+
+this.rowDataEscenario1= newRow;
+}
+
+Test(event:any){
+  console.log(event)
+}
+
 getEntradasIniciales(event: any) {
   console.log(event)
   this.one(event);
   this.two(event);
   this.three(event);
+  this.getResuldatos(event);
+  this.getResultadosEscenarios(event);
 }
 }

@@ -168,11 +168,173 @@ export class CasoComponent {
         }
       ]
     }
-    this.datos.emit({generadores,lineas,nodos})
+
+    let escenarios = [
+      {
+        "escenario": "ESCENARIO 1 CON SIN RD NI GD",
+        "potencia_deslastrada_MW": 999.9999986,
+        "potencia_atendida_MW": 1.38608E-06,
+        "potencia_generada_adicional_MW": 0,
+        "costo_operacion_dolar_per_MWH": 219999.9994,
+        "costo_deslastre_dolar_per_MWH": 219999.9994,
+        "U1": 1.38608E-09,
+        "U2": 2.22045E-16,
+        "U": 6.93038E-10,
+        "resiliencia": "DEFICIENTE"
+      },
+      {
+        "escenario": "ESCENARIO 2 CON RD SIN GD",
+        "potencia_deslastrada_MW": 750.5522735,
+        "potencia_atendida_MW": 249.4477265,
+        "potencia_generada_adicional_MW": 249.4477251,
+        "costo_operacion_dolar_per_MWH": 132720.9095,
+        "costo_deslastre_dolar_per_MWH": 120220.9096,
+        "U1": 0.249447727,
+        "U2": 0.094182597,
+        "U": 0.171815162,
+        "resiliencia": "DEFICIENTE"
+      },
+      {
+        "escenario": "ESCENARIO 3 CON GD SIN RD",
+        "potencia_deslastrada_MW": 955.0055239,
+        "potencia_atendida_MW": 44.99447609,
+        "potencia_generada_adicional_MW": 44.99447471,
+        "costo_operacion_dolar_per_MWH": 205377.2097,
+        "costo_deslastre_dolar_per_MWH": 202002.2098,
+        "U1": 0.044994476,
+        "U2": 0.016433176,
+        "U": 0.030713826,
+        "resiliencia": "DEFICIENTE"
+      },
+      {
+        "escenario": "ESCENARIO 4 CON GD Y RD",
+        "potencia_deslastrada_MW": 705.6682519,
+        "potencia_atendida_MW": 294.3317481,
+        "potencia_generada_adicional_MW": 294.3317467,
+        "costo_operacion_dolar_per_MWH": 118142.3009,
+        "costo_deslastre_dolar_per_MWH": 102267.301,
+        "U1": 0.294331748,
+        "U2": 0.134371853,
+        "U": 0.214351801,
+        "resiliencia": "DEFICIENTE"
+      }
+    ];
+
+     let escenario1ConSinRdNiGd = [
+      {
+        "nodo": 2,
+        "carga_MW": 300,
+        "potencia_deslastrada_MW": 300,
+        "costo_dolar_por_MW": 30000,
+        "potencia_atendida_MW": 4.3417E-10,
+        "_atendido": 1.44723E-10
+      },
+      {
+        "nodo": 3,
+        "carga_MW": 300,
+        "potencia_deslastrada_MW": 300,
+        "costo_dolar_por_MW": 30000,
+        "potencia_atendida_MW": 4.21892E-10,
+        "_atendido": 1.40631E-10
+      },
+      {
+        "nodo": 4,
+        "carga_MW": 400,
+        "potencia_deslastrada_MW": 399.9999986,
+        "costo_dolar_por_MW": 159999.9994,
+        "potencia_atendida_MW": 1.38522E-06,
+        "_atendido": 3.46305E-07
+      }
+    ];
+
+   let  escenario2ConRdSinGd = [
+      {
+        "nodo": 2,
+        "carga_MW": 300,
+        "potencia_deslastrada_MW": 299.9999997,
+        "costo_dolar_por_MW": 29999.99997,
+        "potencia_atendida_MW": 2.79418E-07,
+        "_atendido": 9.31393E-08
+      },
+      {
+        "nodo": 3,
+        "carga_MW": 300,
+        "potencia_deslastrada_MW": 299.9999997,
+        "costo_dolar_por_MW": 29999.99997,
+        "potencia_atendida_MW": 2.7942E-07,
+        "_atendido": 9.314E-08
+      },
+      {
+        "nodo": 4,
+        "carga_MW": 400,
+        "potencia_deslastrada_MW": 150.552274,
+        "costo_dolar_por_MW": 60220.90961,
+        "potencia_atendida_MW": 249.447726,
+        "_atendido": 62.36193149
+      }
+    ];
+  
+   let  escenario3ConGdSinRd = [
+      {
+        "nodo": 2,
+        "carga_MW": 300,
+        "potencia_deslastrada_MW": 299.9999996,
+        "costo_dolar_por_MW": 29999.99996,
+        "potencia_atendida_MW": 4.32616E-07,
+        "_atendido": 1.44205E-07
+      },
+      {
+        "nodo": 3,
+        "carga_MW": 300,
+        "potencia_deslastrada_MW": 299.9999996,
+        "costo_dolar_por_MW": 29999.99996,
+        "potencia_atendida_MW": 4.32616E-07,
+        "_atendido": 1.44205E-07
+      },
+      {
+        "nodo": 4,
+        "carga_MW": 400,
+        "potencia_deslastrada_MW": 355.0055248,
+        "costo_dolar_por_MW": 142002.2099,
+        "potencia_atendida_MW": 44.99447523,
+        "_atendido": 11.24861881
+      }
+    ];
+  
+   let escenario4ConGdYRd = [
+      {
+        "nodo": 2,
+        "carga_MW": 300,
+        "potencia_deslastrada_MW": 299.9999996,
+        "costo_dolar_por_MW": 29999.99996,
+        "potencia_atendida_MW": 3.58864E-07,
+        "_atendido": 1.19621E-07
+      },
+      {
+        "nodo": 3,
+        "carga_MW": 300,
+        "potencia_deslastrada_MW": 299.9999996,
+        "costo_dolar_por_MW": 29999.99996,
+        "potencia_atendida_MW": 3.58867E-07,
+        "_atendido": 1.19622E-07
+      },
+      {
+        "nodo": 4,
+        "carga_MW": 400,
+        "potencia_deslastrada_MW": 105.6682526,
+        "costo_dolar_por_MW": 42267.30104,
+        "potencia_atendida_MW": 294.3317474,
+        "_atendido": 73.58293685
+      }
+    ];
+
+    let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
+
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements})
    }
   }
 
-
+  
 
   @Output() datos = new EventEmitter<any>();
 

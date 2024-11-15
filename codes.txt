@@ -31,4 +31,4 @@ ng cache clean
 
 ng generate component dashboard/aux
 
-ng generate component dashboard/components/caso/caso --flat --module=dashboard
+ng generate component dashboard/components/caso1/caso1 --flat --module=dashboard

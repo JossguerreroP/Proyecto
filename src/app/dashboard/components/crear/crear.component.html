@@ -44,6 +44,56 @@
     </div>
 
 </div>>
+
+
+<div *ngIf="st"> 
+  <div class="container" style="display: flex; flex-direction: row; height: 100vh; width: 100%;">
+
+    <div class="column left" style="flex: 0 0 30%; padding-top: 3%;">
+      <mat-tab-group #tabs style="width: 100%;" mat-stretch-tabs="false" mat-align-tabs="start">
+     
+      </mat-tab-group>
+     
+    </div>
+  
+    <div class="column middle" style="flex: 2; padding: 0; display: flex; flex-direction: column;">
+      <div style="flex: 1; overflow: hidden;">
+          <a> </a>
+          <app-caso1></app-caso1>
+          <div style="padding-bottom:2%;">
+             <input  style="background-color: rgb(229, 235, 236); border-radius: 5px; padding: 10px;padding-top: 5%;" placeholder="Población inicial"/>
+          </div>
+         
+          <div style="padding-bottom:2%;">
+          <input  style="background-color: rgb(229, 235, 236); border-radius: 5px; padding: 10px;padding-top: 5%;" placeholder="Numero de iteraciones"/>
+        </div>
+        <div style="padding-bottom:2%;">
+          <input  style="background-color: rgb(229, 235, 236); border-radius: 5px; padding: 10px;padding-top: 5%;" placeholder="Costo de ataque"/>
+        </div>
+        <div style="padding-bottom:2%;">
+          <input  style="background-color: rgb(229, 235, 236); border-radius: 5px; padding: 10px;padding-top: 5%;" placeholder="Recursos atacante"/>
+        </div>
+        <div style="padding-bottom:2%;">
+          <input  style="background-color: rgb(229, 235, 236); border-radius: 5px; padding: 10px;padding-top: 5%;" placeholder="Costo-ataque-linea"/>
+        </div>
+        <div style="padding-bottom:2%;">
+          <input  style="background-color: rgb(229, 235, 236); border-radius: 5px; padding: 10px;padding-top: 5%;" placeholder="Costo-ataque-generador"/>
+        </div>
+        </div>
+    </div>
+
+    <div class="column " style="flex: 2; padding: 0; display: flex; flex-direction: column;">
+      <div style="flex: 1; overflow: hidden;">
+          <a> </a>
+          <button type="button" class="btn btn-success">EJECUTAR</button>
+      </div>
+    </div>
+  
+  </div>
+
+</div>>
+
+
 <!--
   <div class="container" style="display: flex; flex-direction: row; height: 100vh; width: 100%;">
 

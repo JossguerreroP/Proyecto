@@ -41,6 +41,7 @@ mat-sidenav{
   min-width: 55px !important;
   margin-left:auto !important;
   align-items:center;
+  border-radius: 0;
   }
   
   .chevron-button {

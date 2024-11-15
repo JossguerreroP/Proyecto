@@ -140,6 +140,7 @@ this.rowData1 = newRows;
 }
 
 getEntradasIniciales(event: any) {
+  console.log(event)
   this.one(event);
   this.two(event)
 }

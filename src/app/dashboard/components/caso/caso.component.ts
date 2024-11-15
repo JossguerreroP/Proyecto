@@ -10,7 +10,11 @@ export class CasoComponent {
 
   selectCase(caso:string):void{
 
-    if(this.location.path()=='/Crear'){
+    if(this.location.path()!='/Crear'){
+      console.log(this.location.path())
+  }
+
+    if(this.location.path()=='/Corridos?st=true'){
       this.getEntradasIniciales(caso);
   }
 

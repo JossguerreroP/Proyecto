@@ -55,16 +55,16 @@
      <mat-divider style="background-color:rgb(228, 228, 228);opacity:1.2;"></mat-divider>
      
 
-     <mat-list-item [routerLink]="'Reportes'">
+     <mat-list-item >
       <mat-icon mat-list-icon class="" title="Reportes">bar_chart</mat-icon>
       <span *ngIf="expanded"> Reportes</span>
      </mat-list-item>
 
-     <mat-list-item [routerLink]="'Corridos'" style="padding-left: 20%;"  [queryParams]="{sd:true}" >
+     <mat-list-item [routerLink]="'Reportes'" style="padding-left: 20%;"  [queryParams]="{Visualizar:true}" >
       <span  *ngIf="expanded"> Visualizar </span>
      </mat-list-item>
 
-     <mat-list-item [routerLink]="'Corridos'" style="padding-left: 20%;"  [queryParams]="{st:true}">
+     <mat-list-item [routerLink]="'Reportes'" style="padding-left: 20%;"  [queryParams]="{Descargar:true}">
       <span  *ngIf="expanded"> Descargar </span>
      </mat-list-item>
 

@@ -14,7 +14,7 @@ export class CasoComponent {
       console.log(this.location.path())
   }
 
-    if(this.location.path()=='/Corridos?st=true'){
+    if(this.location.path()=='/Corridos?st=true' || this.location.path()=='/Reportes?Visualizar=true'){
       this.getEntradasIniciales(caso);
   }
 

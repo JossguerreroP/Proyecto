@@ -13,6 +13,9 @@ export class CorridosComponent implements OnInit{
   rowData2: Object[]=[]
   rowDataEscenarios: Object[]=[]
   rowDataEscenario1: Object[]=[]
+  rowDataEscenario2: Object[]=[]
+  rowDataEscenario3: Object[]=[]
+  rowDataEscenario4: Object[]=[]
   Objects:Object[]=[]
 
   generadores :any;
@@ -20,7 +23,7 @@ export class CorridosComponent implements OnInit{
   nodos:any;
   escenarios:any;
   escenariosConNodos:Array<Object>=[];
-  escenariosConN:any;
+
 
   sd:boolean = false;
   st:boolean = true;
@@ -214,15 +217,41 @@ getResuldatos(event:any){
 }
 
 getResultadosEscenarios(event:any){
-  this.escenariosConN = event.elements.escenario1ConSinRdNiGd;
-  this.escenariosConNodos = event.elements.escenario1ConSinRdNiGd;
-  const newRow: object[] = [];  
-  for(let i=0; i<this.escenariosConNodos.length;i++){
-    newRow.push(this.escenariosConNodos[i]);
-  }
 
-this.rowDataEscenario1= newRow;
+  this.escenariosConNodos = event.elements.escenario1ConSinRdNiGd;
+  const escenario1: object[] = [];  
+  for(let i=0; i<this.escenariosConNodos.length;i++){
+    escenario1.push(this.escenariosConNodos[i]);
+  }
+  this.rowDataEscenario1= escenario1;
+
+
+  this.escenariosConNodos = event.elements.escenario2ConRdSinGd;
+  const escenario2: object[] = [];  
+  for(let i=0; i<this.escenariosConNodos.length;i++){
+    escenario2.push(this.escenariosConNodos[i]);
+  }
+  this.rowDataEscenario2= escenario2;
+
+  
+  this.escenariosConNodos = event.elements.escenario3ConGdSinRd;
+  const escenario3: object[] = [];  
+  for(let i=0; i<this.escenariosConNodos.length;i++){
+    escenario3.push(this.escenariosConNodos[i]);
+  }
+  this.rowDataEscenario3= escenario3;
+
+  this.escenariosConNodos = event.elements.escenario4ConGdYRd;
+  const escenario4: object[] = [];  
+  for(let i=0; i<this.escenariosConNodos.length;i++){
+    escenario4.push(this.escenariosConNodos[i]);
+  }
+  this.rowDataEscenario4= escenario4;
+
+
+
 }
+
 
 Test(event:any){
   console.log(event)

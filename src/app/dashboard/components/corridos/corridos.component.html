@@ -10,7 +10,7 @@
     <div class="column middle">
       <div style="width: 100%;overflow-x: auto;padding-bottom: 5%;padding-right:5%;">	
       <!-- Table 1: Generators -->
-      <div style="flex-grow: 1; flex-shrink: 1; overflow: auto; padding: 10px;">
+      <div style="flex-grow: 1; flex-shrink: 0; overflow: auto; padding: 10px;">
         <span><h4>Características iniciales :</h4></span>
         <span><h6>Tabla 1. Características de los generadores</h6></span>
         <ag-grid-angular
@@ -79,7 +79,7 @@
         <ag-grid-angular
           class="ag-theme-quartz"
           style="width: 100%; height: 100%;"
-          [rowData]="rowDataEscenario1"
+          [rowData]="rowDataEscenario2"
           [columnDefs]="colDefsEscenariosNodos"
           [domLayout]="'autoHeight'"
           [autoSizeStrategy]="autoSizeStrategy">
@@ -91,7 +91,7 @@
         <ag-grid-angular
           class="ag-theme-quartz"
           style="width: 100%; height: 100%;"
-          [rowData]="rowDataEscenario1"
+          [rowData]="rowDataEscenario3"
           [columnDefs]="colDefsEscenariosNodos"
           [domLayout]="'autoHeight'"
           [autoSizeStrategy]="autoSizeStrategy">
@@ -103,13 +103,12 @@
         <ag-grid-angular
           class="ag-theme-quartz"
           style="width: 100%; height: 100%;"
-          [rowData]="rowDataEscenario1"
+          [rowData]="rowDataEscenario4"
           [columnDefs]="colDefsEscenariosNodos"
           [domLayout]="'autoHeight'"
           [autoSizeStrategy]="autoSizeStrategy">
         </ag-grid-angular>
       </div>
-
     </div>
   </div>
 </div>

@@ -12,6 +12,7 @@ export class ReportesComponent implements OnInit{
   descripcionEscenario2: string[]=[];
   descripcionEscenario3: string[]=[];
   descripcionEscenario4: string[]=[];
+  descripcionResultados: string[]=[];
 
   rowData : Object[]=[]
   rowData1 : Object[]=[]
@@ -224,28 +225,18 @@ this.rowDataEscenarios = newRows;
 }
 
 
-TestText(rowDataEscenario1:Object[] ,descripcion: string[]) :string[]{
-
-  let ter=rowDataEscenario1
-
+getDescripcion(rowDataEscenario1:Object[] ,descripcion: string[]) :string[]{
   const nodoConMayorCosto = rowDataEscenario1.reduce((prev:any, curr:any) => (curr.costo_dolar_por_MW > prev.costo_dolar_por_MW ? curr : prev));
   const nodoConMenorCosto = rowDataEscenario1.reduce((prev:any, curr:any) => (curr.costo_dolar_por_MW < prev.costo_dolar_por_MW ? curr : prev));
-
-  console.log(nodoConMenorCosto)
-  descripcion.push(this.generarTextoNodo(nodoConMenorCosto,nodoConMayorCosto))
-
-  //console.log(descripcion);
+  descripcion.push(this.generarTextoEscenarios(nodoConMenorCosto,nodoConMayorCosto))
   return descripcion;
 }
 
-
- generarTextoNodo(mejor: any , peor:any) :string{
+ generarTextoEscenarios(mejor: any , peor:any) :string{
   const string= `El Nodo ${mejor.nodo} mostró el mejor desempeño, con una demanda de ${mejor.carga_MW} MW, atendió el ${Number(mejor._atendido)*100} % de su carga (${mejor.potencia_atendida_MW} MW), deslastrando ${mejor.potencia_deslastrada_MW} MW con un costo de ${mejor.costo_dolar_por_MW} $/MW por la potencia no suministrada.` 
   + `\n\n En contrate el nodo ${peor.nodo} solo atendió el ${Number(peor._atendido)*100} de su carga (${peor.carga_MW} MW) dejando ${peor.potencia_deslastrada_MW} sin suministro. Esta potencia deslastrada generó un costo elevado de ${peor.costo_dolar_por_MW} $/MW reflejando una importante limitación para cubrir la demanda en este nodo. La comparación entre los nodos sugiere la necesidad de mejorar la capacidad de suministro en el Nodo 4 para reducir los costos de deslastre y optimizar la eficiencia general del sistema.` ;
-  console.log(string)
   return string;
 }
-
 
 getResultadosEscenario1(event:any){
   this.escenariosConNodos = event.elements.escenario1ConSinRdNiGd;
@@ -283,6 +274,24 @@ for(let i=0; i<this.escenariosConNodos.length;i++){
 this.rowDataEscenario4= escenario4;
 }
 
+getDescripcionResultados(rowDataEscenarios: Object[]):string[] {
+  let String:string[]=[];
+  let datos:any = rowDataEscenarios;
+  const string= `El análisis de los cuatro escenarios muestra variaciones
+  en la eficiencia y el costo de operación del sistema eléctrico. En el Escenario 1 (sin RD ni GD),se observa la mayor potencia deslastrada ( ${datos[0].potencia_deslastrada_MW} MW) 
+  y altos costos de operación y deslastre ($${datos[0].costo_operacion_dolar_per_MWH} y $${datos[0].costo_deslastre_dolar_per_MWH} ,repectivamente) ,
+  junto con factores de utilización relativamente bajos (U1 = ${datos[0].U1} y U2= ${datos[0].U2}). 
+  En el Escenario 2 (con RD, sin GD), la potencia deslastrada disminuye a (${datos[1].potencia_deslastrada_MW} MW), los costos de operación y deslastre son menores 
+  ($${datos[1].costo_operacion_dolar_per_MWH} y $${datos[1].costo_deslastre_dolar_per_MWH}) y los factores de utilización son más altos (U1 = ${datos[1].U1} y U2 =${datos[1].U2}), lo cual refleja una mejora en la eficiencia del sistema.`;
+  
+ const string2 =`El Escenario 3 (con GD, sin RD) presenta una potencia deslastrada de ( ${datos[2].potencia_deslastrada_MW} MW) y costos intermedios ($${datos[2].costo_operacion_dolar_per_MWH} y ${datos[2].costo_deslastre_dolar_per_MWH})
+ con factores de utilización (U1 = ${datos[2].U1} y U2= ${datos[2].U2}) superiores a los del primer escenario, pero inferiores a los del segundo
+ . El Escenario 4 (con GD y RD) es el más eficiente, logrando la menor potencia deslastrada ( ${datos[3].potencia_deslastrada_MW} MW) ,el menor costo de operación ($${datos[3].costo_operacion_dolar_per_MWH}) y los factores de utilización más altos
+  (U1 = ${datos[3].U1} y U2= ${datos[3].U2}) ), lo que sugiere una combinación óptima de recursos. Esto indica que el uso conjunto de GD y RD permite reducir significativamente la potencia deslastrada y los costos, optimizando el rendimiento del sistema.`;
+  String =[string,string2];
+  console.log(String)
+  return String;
+}
 
 
 
@@ -294,9 +303,6 @@ getResultadosEscenarios(event:any){
 }
 
 
-Test(event:any){
-console.log(event)
-}
 
 getEntradasIniciales(event: any) {
 
@@ -305,8 +311,6 @@ this.two(event);
 this.three(event);
 this.getResuldatos(event);
 this.getResultadosEscenarios(event);
-
-
 
 const DesEscenario1: string[] = [
   `No existe acuerdo para la desconexión voluntaria de carga y bajo esta condición es ejecutado
@@ -346,12 +350,13 @@ const Descripciones ={
   DesEscenario3,
   DesEscenario4
 }
-this.descripcionEscenario1=this.TestText(this.rowDataEscenario1,Descripciones.DesEscenario1);
-this.descripcionEscenario2=this.TestText(this.rowDataEscenario2,Descripciones.DesEscenario2);
-this.descripcionEscenario3=this.TestText(this.rowDataEscenario3,Descripciones.DesEscenario3);
-this.descripcionEscenario4=this.TestText(this.rowDataEscenario4,Descripciones.DesEscenario4);
-
+this.descripcionEscenario1=this.getDescripcion(this.rowDataEscenario1,Descripciones.DesEscenario1);
+this.descripcionEscenario2=this.getDescripcion(this.rowDataEscenario2,Descripciones.DesEscenario2);
+this.descripcionEscenario3=this.getDescripcion(this.rowDataEscenario3,Descripciones.DesEscenario3);
+this.descripcionEscenario4=this.getDescripcion(this.rowDataEscenario4,Descripciones.DesEscenario4);
+this.descripcionResultados =this.getDescripcionResultados(this.rowDataEscenarios);
 }
+ 
 
 
 }

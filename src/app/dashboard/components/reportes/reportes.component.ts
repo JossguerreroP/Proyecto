@@ -7,6 +7,11 @@ import { AutoScrollService, ColDef, SizeColumnsToFitGridStrategy } from 'ag-grid
   styleUrl: './reportes.component.css'
 })
 export class ReportesComponent implements OnInit{
+
+  descripcionEscenario1: string[]=[];
+  descripcionEscenario2: string[]=[];
+  descripcionEscenario3: string[]=[];
+
   rowData : Object[]=[]
   rowData1 : Object[]=[]
   rowData2: Object[]=[]
@@ -218,37 +223,42 @@ this.rowDataEscenarios = newRows;
 }
 
 
-TestText(rowDataEscenario1:Object[]){
-  const descripcion: string[] = [
-    'No existe acuerdo para la desconexión voluntaria de carga y bajo esta condición es ejecutado el plan de ataque más severo del análisis de vulnerabilidad, pero no se toman acciones de mitigación por el operador de red.\n',
-    'La tabla muestra la distribución de carga, potencia deslastrada, costo por MW, potencia atendida y porcentaje de carga atendida en tres nodos de un sistema eléctrico.\n\n'
-  ];
+TestText(rowDataEscenario1:Object[] ,descripcion: string[]) :string[]{
 
-  rowDataEscenario1.forEach(fila => {
-    this.generarTextoNodo(fila)
-    //descripcion.push(this.generarTextoNodo(fila));
-  });
+  let ter=rowDataEscenario1
+
+  const nodoConMayorCosto = rowDataEscenario1.reduce((prev:any, curr:any) => (curr.costo_dolar_por_MW > prev.costo_dolar_por_MW ? curr : prev));
+  const nodoConMenorCosto = rowDataEscenario1.reduce((prev:any, curr:any) => (curr.costo_dolar_por_MW < prev.costo_dolar_por_MW ? curr : prev));
+
+  console.log(nodoConMenorCosto)
+  descripcion.push(this.generarTextoNodo(nodoConMenorCosto,nodoConMayorCosto))
+
+  //console.log(descripcion);
+  return descripcion;
 }
 
-generarTextoNodo(fila: any) {
- // const { NODO, CARGA_MW, POTENCIA_DESLASTRADA_MW, COSTO_MW, POTENCIA_ATENDIDA_MW, PORCENTAJE_ATENDIDO } = fila;
 
-
-  const string= `El Nodo ${fila.nodo}, con una demanda de ${fila.carga_MW} MW, atendió el ${fila._atendido}% de su carga (${fila.potencia_atendida_MW} MW), deslastrando ${fila.potencia_deslastrada_MW} MW con un costo de ${fila.costo_dolar_por_MW} $/MW por la potencia no suministrada.`;
+ generarTextoNodo(mejor: any , peor:any) :string{
+  const string= `El Nodo ${mejor.nodo} mostró el mejor desempeño, con una demanda de ${mejor.carga_MW} MW, atendió el ${Number(mejor._atendido)*100} % de su carga (${mejor.potencia_atendida_MW} MW), deslastrando ${mejor.potencia_deslastrada_MW} MW con un costo de ${mejor.costo_dolar_por_MW} $/MW por la potencia no suministrada.` 
+  + `\n\n En contrate el nodo ${peor.nodo} solo atendió el ${Number(peor._atendido)*100} de su carga (${peor.carga_MW} MW) dejando ${peor.potencia_deslastrada_MW} sin suministro. Esta potencia deslastrada generó un costo elevado de ${peor.costo_dolar_por_MW} $/MW reflejando una importante limitación para cubrir la demanda en este nodo. La comparación entre los nodos sugiere la necesidad de mejorar la capacidad de suministro en el Nodo 4 para reducir los costos de deslastre y optimizar la eficiencia general del sistema.` ;
   console.log(string)
-  
+  return string;
 }
 
+
+getResultadosEscenario1(event:any){
+  this.escenariosConNodos = event.elements.escenario1ConSinRdNiGd;
+  const escenario1: object[] = [];  
+  for(let i=0; i<this.escenariosConNodos.length;i++){
+    escenario1.push(this.escenariosConNodos[i]);
+  }
+  this.rowDataEscenario1= escenario1;
+}
 
 getResultadosEscenarios(event:any){
 
-this.escenariosConNodos = event.elements.escenario1ConSinRdNiGd;
-const escenario1: object[] = [];  
-for(let i=0; i<this.escenariosConNodos.length;i++){
-  escenario1.push(this.escenariosConNodos[i]);
-}
-this.rowDataEscenario1= escenario1;
-this.TestText(this.rowDataEscenario1);
+  this.getResultadosEscenario1(event);
+ 
 
 this.escenariosConNodos = event.elements.escenario2ConRdSinGd;
 const escenario2: object[] = [];  
@@ -288,6 +298,51 @@ getEntradasIniciales(event: any) {
 //this.three(event);
 //this.getResuldatos(event);
 this.getResultadosEscenarios(event);
+
+
+
+const DesEscenario1: string[] = [
+  `No existe acuerdo para la desconexión voluntaria de carga y bajo esta condición es ejecutado
+   el plan de ataque más severo del análisis de vulnerabilidad, pero no se toman acciones de mitigación
+    por el operador de red.\n`,
+  `La siguiente tabla muestra la distribución de carga, potencia deslastrada, costo por MW, 
+  potencia atendida y porcentaje de carga atendida por los ${this.rowDataEscenario1.length} nodos de un sistema eléctrico.\n\n`
+];
+
+const DesEscenario2: string[] = [
+  `Existe un acuerdo bilateral entre el operador de red y algunas cargas del sistema para desconectar
+   voluntariamente un porcentaje de la carga total. En la etapa posterior al ataque el operador de red 
+   no realiza acciones para disminuir el deslastre de carga.\n`,
+  `La siguiente tabla muestra muestra el desempeño de ${this.rowDataEscenario2.length} en un sistema eléctrico en cuanto
+  a la carga atendida, potencia deslastrada, costo por MW de potencia no atendida, y el porcentaje de carga cubierta.\n\n`
+];
+
+const DesEscenario3: string[] = [
+  `No existe acuerdo para la desconexión voluntaria de carga En la etapa posterior
+   al ataque el operador de red optimiza la ubicación y dimensionamiento de generadores 
+   distribuidos para disminuir el deslastre de carga.\n`,
+  `La siguiente tabla muestra muestra el desempeño de ${this.rowDataEscenario3.length} en un sistema eléctrico en cuanto
+  a la carga atendida, potencia deslastrada, costo por MW de potencia no atendida, y el porcentaje de carga cubierta.\n\n`
+];
+
+const DesEscenario4: string[] = [
+  `Existe un acuerdo bilateral entre el operador de red y algunas cargas del sistema para desconectar voluntariamente un 
+  porcentaje de la carga total. En la etapa posterior al ataque el operador de red optimiza la ubicación de generadores
+   distribuidos y reasigna la respuesta a la demanda para disminuir el deslastre de carga..\n`,
+  `La siguiente tabla muestra muestra el desempeño de ${this.rowDataEscenario4.length} en un sistema eléctrico en cuanto
+  a la carga atendida, potencia deslastrada, costo por MW de potencia no atendida, y el porcentaje de carga cubierta.\n\n`
+];
+
+const Descripciones ={
+  DesEscenario1,
+  DesEscenario2,
+  DesEscenario3,
+  DesEscenario4
+}
+this.descripcionEscenario1=this.TestText(this.rowDataEscenario1,Descripciones.DesEscenario1);
+this.descripcionEscenario2=this.TestText(this.rowDataEscenario2,Descripciones.DesEscenario2);
+this.descripcionEscenario3=this.TestText(this.rowDataEscenario3,Descripciones.DesEscenario3);
+
 }
 
 

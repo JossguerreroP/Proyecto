@@ -30,4 +30,16 @@
     justify-content: flex-start;
   }
 
+.d{
+  
+  flex-grow: 1; /* This column takes up the remaining space */
+  overflow: visible;
+  padding-bottom: 10px;
+  background-color: #fff; /* Optional: background color for better visibility */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  white-space: normal; 
+  word-wrap: break-word; 
+}
  

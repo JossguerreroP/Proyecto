@@ -1,6 +1,6 @@
 
 <mat-toolbar-row>
-  <span>Prueba </span>
+  <span>Aplicación para la gestión de un sistema de energía electrica ante un evento disruptivo </span>
 </mat-toolbar-row>
 
 <mat-sidenav-container autozise="true">
@@ -25,14 +25,14 @@
 
      <mat-list-item>
       <mat-icon mat-list-icon class="" title="Analisis">code</mat-icon>
-      <span  *ngIf="expanded"> Crear caso</span>
+      <span  *ngIf="expanded" style="font-weight: bold;"> Crear caso</span>
      </mat-list-item>
 
-     <mat-list-item [routerLink]="'Crear'" style="padding-left: 20%;"  [queryParams]="{sd:true}" >
+     <mat-list-item [routerLink]="'Crear'"   [queryParams]="{sd:true}" style="cursor: pointer;padding-left: 20%;" >
       <span  *ngIf="expanded"> Sistema distribución </span>
      </mat-list-item>
 
-     <mat-list-item [routerLink]="'Crear'" style="padding-left: 20%;"  [queryParams]="{st:true}">
+     <mat-list-item [routerLink]="'Crear'" style="padding-left: 20%;"  [queryParams]="{st:true}" style="cursor: pointer;padding-left: 20%;">
       <span  *ngIf="expanded"> Sistema transmición </span>
      </mat-list-item>
 
@@ -41,14 +41,14 @@
 
      <mat-list-item >
       <mat-icon mat-list-icon class="" title="Flujo">offline_bolt</mat-icon>
-      <span  *ngIf="expanded"> Casos corridos</span>
+      <span  *ngIf="expanded" style="font-weight: bold;"> Casos corridos</span>
      </mat-list-item>
 
-     <mat-list-item [routerLink]="'Corridos'" style="padding-left: 20%;"  [queryParams]="{sd:true}" >
+     <mat-list-item [routerLink]="'Corridos'" style="padding-left: 20%;"  [queryParams]="{sd:true}" style="cursor: pointer;padding-left: 20%;">
       <span  *ngIf="expanded"> Sistema distribución </span>
      </mat-list-item>
 
-     <mat-list-item [routerLink]="'Corridos'" style="padding-left: 20%;"  [queryParams]="{st:true}">
+     <mat-list-item [routerLink]="'Corridos'" style="padding-left: 20%;"  [queryParams]="{st:true}" style="cursor: pointer;padding-left: 20%;">
       <span  *ngIf="expanded"> Sistema transmición </span>
      </mat-list-item>
 
@@ -57,14 +57,14 @@
 
      <mat-list-item >
       <mat-icon mat-list-icon class="" title="Reportes">bar_chart</mat-icon>
-      <span *ngIf="expanded"> Reportes</span>
+      <span *ngIf="expanded" style="font-weight: bold;"> Reportes</span>
      </mat-list-item>
 
-     <mat-list-item [routerLink]="'Reportes'" style="padding-left: 20%;"  [queryParams]="{Visualizar:true}" >
+     <mat-list-item [routerLink]="'Reportes'" style="padding-left: 20%;"  [queryParams]="{Visualizar:true}" style="cursor: pointer;padding-left: 20%;">
       <span  *ngIf="expanded"> Visualizar </span>
      </mat-list-item>
 
-     <mat-list-item [routerLink]="'Reportes'" style="padding-left: 20%;"  [queryParams]="{Descargar:true}">
+     <mat-list-item [routerLink]="'Reportes'" style="padding-left: 20%;"  [queryParams]="{Descargar:true}" style="cursor: pointer;padding-left: 20%;">
       <span  *ngIf="expanded"> Descargar </span>
      </mat-list-item>
 

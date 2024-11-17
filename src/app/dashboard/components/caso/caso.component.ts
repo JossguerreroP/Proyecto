@@ -120,7 +120,8 @@ export class CasoComponent {
           "flujo_Q_I_a_J_MW": 13.31037583,
           "flujo_P_J_a_I_MW": 239.9983436,
           "flujo_Q_J_a_I_MW": 0.891161392
-        }
+        },
+        
       ]
     }
 

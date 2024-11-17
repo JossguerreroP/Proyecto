@@ -37,9 +37,9 @@
   padding-bottom: 10px;
   background-color: #fff; /* Optional: background color for better visibility */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   white-space: normal; 
-  word-wrap: break-word; 
+  text-align: justify;
+  
 }
  

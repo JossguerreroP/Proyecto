@@ -11,6 +11,7 @@ export class ReportesComponent implements OnInit{
   descripcionEscenario1: string[]=[];
   descripcionEscenario2: string[]=[];
   descripcionEscenario3: string[]=[];
+  descripcionEscenario4: string[]=[];
 
   rowData : Object[]=[]
   rowData1 : Object[]=[]
@@ -255,35 +256,41 @@ getResultadosEscenario1(event:any){
   this.rowDataEscenario1= escenario1;
 }
 
-getResultadosEscenarios(event:any){
-
-  this.getResultadosEscenario1(event);
- 
-
-this.escenariosConNodos = event.elements.escenario2ConRdSinGd;
+getResultadosEscenario2(event:any){
+  this.escenariosConNodos = event.elements.escenario2ConRdSinGd;
 const escenario2: object[] = [];  
 for(let i=0; i<this.escenariosConNodos.length;i++){
   escenario2.push(this.escenariosConNodos[i]);
 }
 this.rowDataEscenario2= escenario2;
-
-
-this.escenariosConNodos = event.elements.escenario3ConGdSinRd;
-const escenario3: object[] = [];  
-for(let i=0; i<this.escenariosConNodos.length;i++){
-  escenario3.push(this.escenariosConNodos[i]);
 }
-this.rowDataEscenario3= escenario3;
 
-this.escenariosConNodos = event.elements.escenario4ConGdYRd;
+getResultadosEscenario3(event:any){
+  this.escenariosConNodos = event.elements.escenario3ConGdSinRd;
+  const escenario3: object[] = [];  
+  for(let i=0; i<this.escenariosConNodos.length;i++){
+    escenario3.push(this.escenariosConNodos[i]);
+  }
+  this.rowDataEscenario3= escenario3;
+}
+
+getResultadosEscenario4(event:any){
+  this.escenariosConNodos = event.elements.escenario4ConGdYRd;
 const escenario4: object[] = [];  
 for(let i=0; i<this.escenariosConNodos.length;i++){
   escenario4.push(this.escenariosConNodos[i]);
 }
 this.rowDataEscenario4= escenario4;
+}
 
 
 
+
+getResultadosEscenarios(event:any){
+  this.getResultadosEscenario1(event);
+  this.getResultadosEscenario2(event);
+  this.getResultadosEscenario3(event);
+  this.getResultadosEscenario4(event);
 }
 
 
@@ -292,11 +299,11 @@ console.log(event)
 }
 
 getEntradasIniciales(event: any) {
-//console.log(event)
-//this.one(event);
-//this.two(event);
-//this.three(event);
-//this.getResuldatos(event);
+
+this.one(event);
+this.two(event);
+this.three(event);
+this.getResuldatos(event);
 this.getResultadosEscenarios(event);
 
 
@@ -342,6 +349,7 @@ const Descripciones ={
 this.descripcionEscenario1=this.TestText(this.rowDataEscenario1,Descripciones.DesEscenario1);
 this.descripcionEscenario2=this.TestText(this.rowDataEscenario2,Descripciones.DesEscenario2);
 this.descripcionEscenario3=this.TestText(this.rowDataEscenario3,Descripciones.DesEscenario3);
+this.descripcionEscenario4=this.TestText(this.rowDataEscenario4,Descripciones.DesEscenario4);
 
 }
 

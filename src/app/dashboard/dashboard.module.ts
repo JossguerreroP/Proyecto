@@ -25,8 +25,7 @@ import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav';
 import { CasoComponent } from './components/caso/caso.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { Caso1Component } from './components/caso1/caso1.component';
-
-
+import { NgOptimizedImage } from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -62,7 +61,8 @@ import { Caso1Component } from './components/caso1/caso1.component';
     MatFormFieldModule,
     MatSidenavContainer,
     MatSidenav,
-    AgGridModule
+    AgGridModule,
+    NgOptimizedImage
   ]
 })
 export class DashboardModule { }

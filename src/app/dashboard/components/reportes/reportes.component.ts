@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AutoScrollService, ColDef, SizeColumnsToFitGridStrategy } from 'ag-grid-community';
+import {ColDef, SizeColumnsToFitGridStrategy } from 'ag-grid-community';
+
+
 @Component({
   selector: 'app-reportes',
   templateUrl: './reportes.component.html',
@@ -8,6 +10,8 @@ import { AutoScrollService, ColDef, SizeColumnsToFitGridStrategy } from 'ag-grid
 })
 export class ReportesComponent implements OnInit{
 
+  
+  caso:string='';
   descripcionEscenario1: string[]=[];
   descripcionEscenario2: string[]=[];
   descripcionEscenario3: string[]=[];
@@ -305,7 +309,7 @@ getResultadosEscenarios(event:any){
 
 
 getEntradasIniciales(event: any) {
-
+this.caso=event.caso
 this.one(event);
 this.two(event);
 this.three(event);

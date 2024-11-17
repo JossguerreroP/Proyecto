@@ -331,7 +331,7 @@ export class CasoComponent {
 
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
    }
   }
 

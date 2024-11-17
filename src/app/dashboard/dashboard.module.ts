@@ -24,7 +24,6 @@ import { CartModule } from '../cart/cart.module';
 import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav';
 import { CasoComponent } from './components/caso/caso.component';
 import { AgGridModule } from 'ag-grid-angular';
-import { Caso1Component } from './components/caso1/caso1.component';
 import { NgOptimizedImage } from '@angular/common'
 
 @NgModule({
@@ -36,7 +35,6 @@ import { NgOptimizedImage } from '@angular/common'
     ReportesComponent,
     WrapperComponent,
     CasoComponent,
-    Caso1Component,
     
   ],
   imports: [

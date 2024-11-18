@@ -14,7 +14,9 @@ export class CasoComponent {
       console.log(this.location.path())
   }
 
-    if(this.location.path()=='/Corridos?st=true' || this.location.path()=='/Reportes?Visualizar=true'){
+    if(this.location.path()=='/Corridos?st=true' 
+    || this.location.path()=='/Reportes?Visualizar=true' 
+    || this.location.path()=='/Reportes?Descargar=true' ){
       this.getEntradasIniciales(caso);
   }
 

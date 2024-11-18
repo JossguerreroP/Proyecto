@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild,ElementRef} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {ColDef, SizeColumnsToFitGridStrategy } from 'ag-grid-community';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import * as htmlToImage from 'html-to-image';
+import { toPng } from 'html-to-image';
 
 
 @Component({
@@ -10,7 +14,6 @@ import {ColDef, SizeColumnsToFitGridStrategy } from 'ag-grid-community';
 })
 export class ReportesComponent implements OnInit{
 
-  
   caso:string='';
   descripcionEscenario1: string[]=[];
   descripcionEscenario2: string[]=[];
@@ -304,6 +307,278 @@ getResultadosEscenarios(event:any){
   this.getResultadosEscenario2(event);
   this.getResultadosEscenario3(event);
   this.getResultadosEscenario4(event);
+}
+
+downloadPDF(ss:string){
+
+  if(this.caso!=null){
+    const data:any= document.getElementById('pdf-content');
+    html2canvas(data ).then(canvas => {
+      const pdf = new jsPDF();
+      pdf.addImage(canvas.toDataURL('image/png'),'PNG',0,0,211,298);
+      pdf.setProperties({
+        title:'xd',
+        subject:'xd'
+      })
+      pdf.save('File')
+
+  });
+  }
+}
+
+down(){
+  if (this.caso != null) {
+    let tableHTML = `<div id="pdf-content">`;
+    tableHTML += `<h2>Tabla de generadores</h2>`;
+     // TABLA 1
+    tableHTML += `<table border="1" style="border-collapse: collapse; width: 100%;">`;
+    tableHTML += `<thead><tr>`;
+    this.colDefs.forEach(col => {
+      tableHTML += `<th style="padding: 8px; text-align: left; background-color: #f2f2f2;">${col.headerName}</th>`;
+    });
+    tableHTML += `</tr></thead>`;
+    tableHTML += `<tbody>`;
+    this.rowData.forEach((row:any) => {
+      tableHTML += `<tr>`;
+      this.colDefs.forEach((col:any) => {
+        console.log(row)
+        tableHTML += `<td style="padding: 8px; text-align: left;">${row[col.field]}</td>`;
+      });
+      tableHTML += `</tr>`;
+    });
+    tableHTML += `</tbody>`;
+    
+    tableHTML += `</table>`;
+    // tABLA 2
+    tableHTML += `<h2>Tabla de Lineas</h2>`;
+    tableHTML += `<table border="1" style="border-collapse: collapse; width: 100%;">`;
+    tableHTML += `<thead><tr>`;
+    this.colDefsLineas.forEach(col => {
+      tableHTML += `<th style="padding: 8px; text-align: left; background-color: #f2f2f2;">${col.headerName}</th>`;
+    });
+    tableHTML += `</tr></thead>`;
+    tableHTML += `<tbody>`;
+    this.rowData1.forEach((row:any) => {
+      tableHTML += `<tr>`;
+      this.colDefsLineas.forEach((col:any) => {
+        console.log(row)
+        tableHTML += `<td style="padding: 8px; text-align: left;">${row[col.field]}</td>`;
+      });
+      tableHTML += `</tr>`;
+    });
+    tableHTML += `</tbody>`;
+    tableHTML += `</table>`;
+      // tABLA NODOS 3
+      tableHTML += `<h2>Tabla de nodos</h2>`;
+      tableHTML += `<table border="1" style="border-collapse: collapse; width: 100%;">`;
+      tableHTML += `<thead><tr>`;
+      this.colDefsNodos.forEach(col => {
+        tableHTML += `<th style="padding: 8px; text-align: left; background-color: #f2f2f2;">${col.headerName}</th>`;
+      });
+      tableHTML += `</tr></thead>`;
+      tableHTML += `<tbody>`;
+      this.rowData2.forEach((row:any) => {
+        tableHTML += `<tr>`;
+        this.colDefsNodos.forEach((col:any) => {
+          console.log(row)
+          tableHTML += `<td style="padding: 8px; text-align: left;">${row[col.field]}</td>`;
+        });
+        tableHTML += `</tr>`;
+      });
+      tableHTML += `</tbody>`;
+      tableHTML += `</table>`;
+
+      // tABLA resl 
+      tableHTML += `<h2>Tabla de resultados</h2>`;
+      tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionResultados[0]}</span>`
+      tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionResultados[1]}</span>`
+      tableHTML += `<table border="1" style="border-collapse: collapse; width: 100%;">`;
+      tableHTML += `<thead><tr>`;
+      this.colDefsEscenarios.forEach(col => {
+        tableHTML += `<th style="padding: 8px; text-align: left; background-color: #f2f2f2;">${col.headerName}</th>`;
+      });
+      tableHTML += `</tr></thead>`;
+      tableHTML += `<tbody>`;
+      this.rowDataEscenarios.forEach((row:any) => {
+        tableHTML += `<tr>`;
+        this.colDefsEscenarios.forEach((col:any) => {
+          console.log(row)
+          tableHTML += `<td style="padding: 8px; text-align: left;">${row[col.field]}</td>`;
+        });
+        tableHTML += `</tr>`;
+      });
+      tableHTML += `</tbody>`;
+      tableHTML += `</table>`;
+  // tABLA resl 
+      tableHTML += `<h2>Tabla Escenario 1 : Sin RD ni GD</h2>`;
+      tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionEscenario1[0]}</span>`
+      tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionEscenario1[1]}</span>`
+      tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionEscenario1[2]}</span>`
+      tableHTML += `<table border="1" style="border-collapse: collapse; width: 100%;">`;
+      tableHTML += `<thead><tr>`;
+      this.colDefsEscenariosNodos.forEach(col => {
+        tableHTML += `<th style="padding: 8px; text-align: left; background-color: #f2f2f2;">${col.headerName}</th>`;
+      });
+      tableHTML += `</tr></thead>`;
+      tableHTML += `<tbody>`;
+      this.rowDataEscenario1.forEach((row:any) => {
+        tableHTML += `<tr>`;
+        this.colDefsEscenariosNodos.forEach((col:any) => {
+          console.log(row)
+          tableHTML += `<td style="padding: 8px; text-align: left;">${row[col.field]}</td>`;
+        });
+        tableHTML += `</tr>`;
+      });
+      tableHTML += `</tbody>`;
+      tableHTML += `</table>`;
+      //tabla 2 Escenario 2: RD sin GD
+      tableHTML += `<h2>Tabla Escenario 2: RD sin GD</h2>`;
+      tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionEscenario2[0]}</span>`
+      tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionEscenario2[1]}</span>`
+      tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionEscenario2[2]}</span>`
+      tableHTML += `<table border="1" style="border-collapse: collapse; width: 100%;">`;
+      tableHTML += `<thead><tr>`;
+      this.colDefsEscenariosNodos.forEach(col => {
+        tableHTML += `<th style="padding: 8px; text-align: left; background-color: #f2f2f2;">${col.headerName}</th>`;
+      });
+      tableHTML += `</tr></thead>`;
+      tableHTML += `<tbody>`;
+      this.rowDataEscenario2.forEach((row:any) => {
+        tableHTML += `<tr>`;
+        this.colDefsEscenariosNodos.forEach((col:any) => {
+          console.log(row)
+          tableHTML += `<td style="padding: 8px; text-align: left;">${row[col.field]}</td>`;
+        });
+        tableHTML += `</tr>`;
+      });
+      tableHTML += `</tbody>`;
+      tableHTML += `</table>`;
+       //tabla 3 Escenario 3:  GD sin RD
+       tableHTML += `<h2>Tabla Escenario 3:  GD sin RD</h2>`;
+       tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionEscenario3[0]}</span>`
+       tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionEscenario3[1]}</span>`
+       tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionEscenario3[2]}</span>`
+       tableHTML += `<table border="1" style="border-collapse: collapse; width: 100%;">`;
+       tableHTML += `<thead><tr>`;
+       this.colDefsEscenariosNodos.forEach(col => {
+         tableHTML += `<th style="padding: 8px; text-align: left; background-color: #f2f2f2;">${col.headerName}</th>`;
+       });
+       tableHTML += `</tr></thead>`;
+       tableHTML += `<tbody>`;
+       this.rowDataEscenario3.forEach((row:any) => {
+         tableHTML += `<tr>`;
+         this.colDefsEscenariosNodos.forEach((col:any) => {
+           console.log(row)
+           tableHTML += `<td style="padding: 8px; text-align: left;">${row[col.field]}</td>`;
+         });
+         tableHTML += `</tr>`;
+       });
+       tableHTML += `</tbody>`;
+       tableHTML += `</table>`;
+       //tabla 4 Escenario 4:  GD y RD
+       tableHTML += `<h2>Tabla Escenario 3:  GD y RD</h2>`;
+       tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionEscenario4[0]}</span>`
+       tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionEscenario4[1]}</span>`
+       tableHTML += `<span style="flex-grow: 1;overflow: visiblepadding-bottom: 10px;background-color: #fff;display: flex;justify-content: left;white-space: normal;text-align: justify;">${this.descripcionEscenario4[2]}</span>`
+       tableHTML += `<table border="1" style="border-collapse: collapse; width: 100%;">`;
+       tableHTML += `<thead><tr>`;
+       this.colDefsEscenariosNodos.forEach(col => {
+         tableHTML += `<th style="padding: 8px; text-align: left; background-color: #f2f2f2;">${col.headerName}</th>`;
+       });
+       tableHTML += `</tr></thead>`;
+       tableHTML += `<tbody>`;
+       this.rowDataEscenario4.forEach((row:any) => {
+         tableHTML += `<tr>`;
+         this.colDefsEscenariosNodos.forEach((col:any) => {
+           console.log(row)
+           tableHTML += `<td style="padding: 8px; text-align: left;">${row[col.field]}</td>`;
+         });
+         tableHTML += `</tr>`;
+       });
+       tableHTML += `</tbody>`;
+       tableHTML += `</table>`;
+
+
+       tableHTML += `<span><h6> Gráfica Nodo: </h6></span>`
+       tableHTML += `<img src="/assets/images/Ncaso_${this.caso}.jpg"  width="%100" height="100%" alt=" ">`
+       
+       tableHTML += `<span><h6> Gráfica Resumen: </h6></span>`
+       tableHTML += `<img src="/assets/images/caso_${this.caso}.jpg"  width="%100" height="100%" alt=" ">`
+
+    tableHTML += `</div>`;
+
+    // Paso 2: Insertar el HTML generado en un contenedor temporal
+    const container = document.createElement('div');
+    container.innerHTML = tableHTML;
+    document.body.appendChild(container); // Añadir temporalmente al body
+
+    // Paso 3: Usar html2canvas para generar una imagen del contenido
+    const data: any = container.querySelector('#pdf-content');
+    html2canvas(data, { scale: 2 }).then(canvas => {  // Escalar para mejorar la resolución
+      const pdf = new jsPDF();
+      
+      // Obtener el tamaño del canvas generado
+      const canvasWidth = canvas.width;
+      const canvasHeight = canvas.height;
+      
+      // Calcular el tamaño en unidades de PDF (puntos)
+      const pdfWidth = 210;  // Tamaño de una página A4 en mm
+      const pdfHeight = 297; // Tamaño de una página A4 en mm
+
+      // Calcular escala para ajustarse a la página
+      const scaleX = pdfWidth / canvasWidth;
+      const scaleY = pdfHeight / canvasHeight;
+      const scale = Math.min(scaleX, scaleY);  // Escalar proporcionalmente
+
+      // Agregar la imagen al PDF
+      pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, canvasWidth * scale, canvasHeight * scale);
+
+      pdf.setProperties({
+        title: 'Reporte de Nodos',
+        subject: 'Tabla de Nodos'
+      });
+      pdf.save('Reporte.pdf');
+
+      // Limpia el contenedor temporal
+      document.body.removeChild(container);
+    });
+  }
+
+
+}
+
+
+captureScreen() {
+  const pdf = new jsPDF();
+  const node:any = document.getElementById('pdf-content-1');
+  htmlToImage
+  .toPng(node)
+  .then(function (dataUrl) {
+    var img = new Image();
+    img.src = dataUrl;
+    pdf.addImage(img, 'PNG', 10, 10, 100, 100);
+    pdf.save('file');
+  })
+  .catch(function (error) {
+    console.error('oops, something went wrong!', error);
+  });
+}
+
+
+
+crearPdf(node:any){
+  htmlToImage
+  .toPng(node)
+  .then(function (dataUrl) {
+    var img = new Image();
+    const pdf = new jsPDF();
+    img.src = dataUrl;
+    pdf.addImage(img, 'PNG', 10, 10, 100, 100);
+    pdf.save('file');
+  })
+  .catch(function (error) {
+    console.error('oops, something went wrong!', error);
+  });
 }
 
 

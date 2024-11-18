@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
   templateUrl: './caso.component.html',
   styleUrl: './caso.component.css'
 })
-export class CasoComponent {
+export class CasoComponent implements OnInit {
 
   selectCase(caso:string):void{
 
@@ -14,9 +14,7 @@ export class CasoComponent {
       console.log(this.location.path())
   }
 
-    if(this.location.path()=='/Corridos?st=true' 
-    || this.location.path()=='/Reportes?Visualizar=true' 
-    || this.location.path()=='/Reportes?Descargar=true' ){
+    if(this.location.path()=='/Corridos?st=true' || this.location.path()=='/Reportes?Visualizar=true' || this.location.path()=='/Reportes?Descargar=true' ){
       this.getEntradasIniciales(caso);
   }
 
@@ -342,6 +340,24 @@ export class CasoComponent {
   @Output() datos = new EventEmitter<any>();
 
   constructor( private location: Location) { }
+  ngOnInit(): void {
+    console.log(this.location.path())
+
+if(this.location.path()=='/Crear?sd=true' || this.location.path()=='/Corridos?sd=true' ){
+      this.caso=this.casosSD;
+  }
+
+  if(this.location.path()=='/Crear?st=true' || this.location.path()=='/Corridos?st=true'){
+    this.caso=this.casosST;
+}
+
+if(this.location.path()=='/Reportes?Visualizar=true' || this.location.path()=='/Reportes?Descargar=true' ){
+  this.caso=this.caso;
+}
+
+
+
+  }
 
   caso =[
     {val:'5'},
@@ -362,11 +378,30 @@ export class CasoComponent {
     {val:'57'},
     {val:'69'},
     {val:'74'},
-    {val:'118'},
-    {val:'141'},
-    {val:'300'},
-    {val:'1354'},
   ];
   
+  casosSD =[
+    {val:'12'},
+    {val:'15'},
+    {val:'18'},
+    {val:'22'},
+    {val:'33'},
+    {val:'34'},
+    {val:'38'},
+    {val:'51'},
+    {val:'69'},
+    {val:'74'},
+  ];
+
+  casosST =[
+    {val:'5'},
+    {val:'6'},
+    {val:'9'},
+    {val:'14'},
+    {val:'24'},
+    {val:'30'},
+    {val:'39'},
+    {val:'57'},
+  ];
 
 }

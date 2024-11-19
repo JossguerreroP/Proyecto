@@ -21,6 +21,39 @@ export class CasoComponent implements OnInit {
   }
   getEntradasIniciales(caso: string) {
    if(caso=="5"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "4 - 5",
+            "porcentaje": 100
+          },
+          {
+            "linea": "1 - 4",
+            "porcentaje": 90
+          },
+          {
+            "linea": "1 - 2",
+            "porcentaje": 60
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 4",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 3",
+            "porcentaje": 80
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [],
+      "tiempo_ejecucion": 57.3774135
+    }
+    
+
     let generadores:object = {
       "generators": [
         {
@@ -335,6 +368,66 @@ export class CasoComponent implements OnInit {
    }
 
    if(caso=="24"){
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "12 - 23",
+            "porcentaje": 100
+          },
+          {
+            "linea": "20 - 23",
+            "porcentaje": 100
+          },
+          {
+            "linea": "20 - 23_2",
+            "porcentaje": 100
+          },
+          {
+            "linea": "21 - 22",
+            "porcentaje": 100
+          },
+          {
+            "linea": "12 - 13",
+            "porcentaje": 94
+          },
+          {
+            "linea": "17 - 22",
+            "porcentaje": 94
+          },
+          {
+            "linea": "11 - 13",
+            "porcentaje": 92
+          },
+          {
+            "linea": "14 - 16",
+            "porcentaje": 78
+          },
+          {
+            "linea": "3 - 24",
+            "porcentaje": 66
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 18",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 21",
+            "porcentaje": 100
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [
+        {
+          "linea": "7-8",
+          "porcentaje_sobrecarga": 99.9848
+        }
+      ],
+      "tiempo_ejecucion": 199.4452682
+    }
+    
    
     let generadores = {
       "generators": [
@@ -1589,6 +1682,58 @@ export class CasoComponent implements OnInit {
    }
 
    if(caso=="12"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "5 - 6",
+            "porcentaje": 100
+          },
+          {
+            "linea": "9 - 10",
+            "porcentaje": 96.6667
+          },
+          {
+            "linea": "11 - 12",
+            "porcentaje": 93.3333
+          },
+          {
+            "linea": "2 - 3",
+            "porcentaje": 90
+          },
+          {
+            "linea": "3 - 4",
+            "porcentaje": 83.3333
+          },
+          {
+            "linea": "1 - 2",
+            "porcentaje": 70
+          },
+          {
+            "linea": "4 - 5",
+            "porcentaje": 63.3333
+          },
+          {
+            "linea": "6 - 7",
+            "porcentaje": 60
+          },
+          {
+            "linea": "7 - 8",
+            "porcentaje": 60
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 1",
+            "porcentaje": 53.3333
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [],
+      "tiempo_ejecucion": 108.9025465
+    }
+    
    
     let generadores = {
       "generators": [
@@ -2111,6 +2256,46 @@ export class CasoComponent implements OnInit {
    }
 
    if(caso=="6"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "Nodo 2",
+            "porcentaje": 100
+          },
+          {
+            "linea": "Nodo 3",
+            "porcentaje": 91.6667
+          },
+          {
+            "linea": "Nodo 1",
+            "porcentaje": 75
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 2",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 3",
+            "porcentaje": 91.6667
+          },
+          {
+            "generador": "Nodo 1",
+            "porcentaje": 75
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [
+        {
+          "linea": "4-5",
+          "porcentaje_sobrecarga": 128.3223
+        }
+      ],
+      "tiempo_ejecucion": 58.96929
+    }
    
     let generadores = {
       "generators": [
@@ -2432,6 +2617,38 @@ export class CasoComponent implements OnInit {
    }
 
    if(caso=="9"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "6 - 7",
+            "porcentaje": 100
+          },
+          {
+            "linea": "3 - 6",
+            "porcentaje": 80
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 1",
+            "porcentaje": 90
+          },
+          {
+            "generador": "Nodo 2",
+            "porcentaje": 80
+          },
+          {
+            "generador": "Nodo 3",
+            "porcentaje": 70
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [],
+      "tiempo_ejecucion": 65.425929
+    }
+    
    
     let generadores = {
       "generators": [
@@ -2798,6 +3015,50 @@ export class CasoComponent implements OnInit {
    }
    
    if(caso=="14"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "2 - 3",
+            "porcentaje": 100
+          },
+          {
+            "linea": "2 - 4",
+            "porcentaje": 100
+          },
+          {
+            "linea": "4 - 5",
+            "porcentaje": 100
+          },
+          {
+            "linea": "7 - 8",
+            "porcentaje": 100
+          },
+          {
+            "linea": "6 - 13",
+            "porcentaje": 93.3333
+          },
+          {
+            "linea": "6 - 12",
+            "porcentaje": 70
+          },
+          {
+            "linea": "6 - 11",
+            "porcentaje": 63.3333
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 3",
+            "porcentaje": 100
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [],
+      "tiempo_ejecucion": 0
+    }
+    
    
     let generadores = {
       "generators": [
@@ -3566,6 +3827,55 @@ export class CasoComponent implements OnInit {
    }
 
    if(caso=="15"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "3 - 4",
+            "porcentaje": 100
+          },
+          {
+            "linea": "4 - 5",
+            "porcentaje": 100
+          },
+          {
+            "linea": "4 - 14",
+            "porcentaje": 100
+          },
+          {
+            "linea": "9 - 10",
+            "porcentaje": 83.3333
+          },
+          {
+            "linea": "6 - 8",
+            "porcentaje": 83.3333
+          },
+          {
+            "linea": "2 - 6",
+            "porcentaje": 76.6667
+          },
+          {
+            "linea": "1 - 2",
+            "porcentaje": 63.3333
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 1",
+            "porcentaje": 60
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [
+        {
+          "linea": "3-11",
+          "porcentaje_sobrecarga": "Inf"
+        }
+      ],
+      "tiempo_ejecucion": 183.5796306
+    }
+    
    
     let generadores = {
       "generators": [
@@ -4362,6 +4672,53 @@ export class CasoComponent implements OnInit {
    }
 
    if(caso=="18"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "12 - 13",
+            "porcentaje": 97.2222
+          },
+          {
+            "linea": "5 - 16",
+            "porcentaje": 97.2222
+          },
+          {
+            "linea": "6 - 8",
+            "porcentaje": 83.3333
+          },
+          {
+            "linea": "9 - 10",
+            "porcentaje": 72.2222
+          },
+          {
+            "linea": "6 - 7",
+            "porcentaje": 66.6667
+          },
+          {
+            "linea": "2 - 9",
+            "porcentaje": 63.8889
+          },
+          {
+            "linea": "11 - 12",
+            "porcentaje": 61.1111
+          },
+          {
+            "linea": "16 - 17",
+            "porcentaje": 52.7778
+          },
+          {
+            "linea": "17 - 18",
+            "porcentaje": 52.7778
+          }
+        ],
+        "generadores": []
+      },
+      "metrica_lineas_con_sobrecarga": [],
+      "tiempo_ejecucion": 234.9771219
+    }
+    
    
     let generadores = {
       "generators": [
@@ -5278,6 +5635,66 @@ export class CasoComponent implements OnInit {
    }
 
    if(caso=="22"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "5 - 6",
+            "porcentaje": 100
+          },
+          {
+            "linea": "11 - 13",
+            "porcentaje": 100
+          },
+          {
+            "linea": "13 - 14",
+            "porcentaje": 100
+          },
+          {
+            "linea": "14 - 16",
+            "porcentaje": 100
+          },
+          {
+            "linea": "16 - 17",
+            "porcentaje": 100
+          },
+          {
+            "linea": "17 - 19",
+            "porcentaje": 100
+          },
+          {
+            "linea": "9 - 11",
+            "porcentaje": 80
+          },
+          {
+            "linea": "20 - 22",
+            "porcentaje": 77.5
+          },
+          {
+            "linea": "6 - 7",
+            "porcentaje": 75
+          },
+          {
+            "linea": "19 - 20",
+            "porcentaje": 70
+          },
+          {
+            "linea": "1 - 2",
+            "porcentaje": 57.5
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 1",
+            "porcentaje": 62.5
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [],
+      "tiempo_ejecucion": 359.5231133
+    }
+    
    
     let generadores = {
       "generators": [
@@ -6304,6 +6721,54 @@ export class CasoComponent implements OnInit {
    }
 
    if(caso=="30"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "12 - 13",
+            "porcentaje": 100
+          },
+          {
+            "linea": "4 - 6",
+            "porcentaje": 68.3333
+          },
+          {
+            "linea": "6 - 9",
+            "porcentaje": 66.6667
+          },
+          {
+            "linea": "21 - 22",
+            "porcentaje": 51.6667
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 1",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 2",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 27",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 23",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 22",
+            "porcentaje": 95
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [],
+      "tiempo_ejecucion": 246.2458001
+    }
+    
    
     let generadores = {
       "generators": [
@@ -7108,6 +7573,94 @@ export class CasoComponent implements OnInit {
    }
 
    if(caso=="33"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "14 - 15",
+            "porcentaje": 100
+          },
+          {
+            "linea": "9 - 15",
+            "porcentaje": 100
+          },
+          {
+            "linea": "21 - 8",
+            "porcentaje": 98.4848
+          },
+          {
+            "linea": "4 - 5",
+            "porcentaje": 96.9697
+          },
+          {
+            "linea": "16 - 17",
+            "porcentaje": 95.4545
+          },
+          {
+            "linea": "2 - 3",
+            "porcentaje": 93.9394
+          },
+          {
+            "linea": "12 - 13",
+            "porcentaje": 93.9394
+          },
+          {
+            "linea": "12 - 22",
+            "porcentaje": 92.4242
+          },
+          {
+            "linea": "28 - 29",
+            "porcentaje": 90.9091
+          },
+          {
+            "linea": "9 - 10",
+            "porcentaje": 89.3939
+          },
+          {
+            "linea": "26 - 27",
+            "porcentaje": 89.3939
+          },
+          {
+            "linea": "1 - 2",
+            "porcentaje": 87.8788
+          },
+          {
+            "linea": "23 - 24",
+            "porcentaje": 87.8788
+          },
+          {
+            "linea": "7 - 8",
+            "porcentaje": 84.8485
+          },
+          {
+            "linea": "5 - 6",
+            "porcentaje": 63.6364
+          },
+          {
+            "linea": "6 - 26",
+            "porcentaje": 53.0303
+          }
+        ],
+        "generadores": [],
+      },
+      "metrica_lineas_con_sobrecarga": [
+        {
+          "linea": "24-25",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "30-31",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "25-29",
+          "porcentaje_sobrecarga": "Inf"
+        }
+      ],
+      "tiempo_ejecucion": 1106.019104
+    }
+    
    
     let generadores = {
       "generators": [
@@ -7511,6 +8064,82 @@ export class CasoComponent implements OnInit {
    }
 
    if(caso=="34"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "6 - 7",
+            "porcentaje": 100
+          },
+          {
+            "linea": "3 - 13",
+            "porcentaje": 100
+          },
+          {
+            "linea": "15 - 16",
+            "porcentaje": 100
+          },
+          {
+            "linea": "19 - 20",
+            "porcentaje": 100
+          },
+          {
+            "linea": "33 - 34",
+            "porcentaje": 100
+          },
+          {
+            "linea": "26 - 27",
+            "porcentaje": 97.0588
+          },
+          {
+            "linea": "10 - 31",
+            "porcentaje": 97.0588
+          },
+          {
+            "linea": "11 - 12",
+            "porcentaje": 91.1765
+          },
+          {
+            "linea": "21 - 22",
+            "porcentaje": 91.1765
+          },
+          {
+            "linea": "24 - 25",
+            "porcentaje": 80.8824
+          },
+          {
+            "linea": "7 - 28",
+            "porcentaje": 73.5294
+          },
+          {
+            "linea": "7 - 8",
+            "porcentaje": 72.0588
+          },
+          {
+            "linea": "9 - 10",
+            "porcentaje": 54.4118
+          }
+        ],
+        "generadores": [],
+      },
+      "metrica_lineas_con_sobrecarga": [
+        {
+          "linea": "1-2",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "2-3",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "3-4",
+          "porcentaje_sobrecarga": "Inf"
+        }
+      ],
+      "tiempo_ejecucion": 476.8133372
+    }
+    
    
     let generadores = {
       "generators": [
@@ -7809,6 +8438,90 @@ export class CasoComponent implements OnInit {
    }
 
    if(caso=="38"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "5 - 6",
+            "porcentaje": 100
+          },
+          {
+            "linea": "6 - 7",
+            "porcentaje": 100
+          },
+          {
+            "linea": "8 - 9",
+            "porcentaje": 100
+          },
+          {
+            "linea": "10 - 11",
+            "porcentaje": 100
+          },
+          {
+            "linea": "13 - 14",
+            "porcentaje": 100
+          },
+          {
+            "linea": "15 - 16",
+            "porcentaje": 100
+          },
+          {
+            "linea": "17 - 18",
+            "porcentaje": 100
+          },
+          {
+            "linea": "19 - 20",
+            "porcentaje": 100
+          },
+          {
+            "linea": "23 - 24",
+            "porcentaje": 100
+          },
+          {
+            "linea": "28 - 29",
+            "porcentaje": 100
+          },
+          {
+            "linea": "29 - 30",
+            "porcentaje": 100
+          },
+          {
+            "linea": "30 - 31",
+            "porcentaje": 100
+          },
+          {
+            "linea": "31 - 32",
+            "porcentaje": 100
+          },
+          {
+            "linea": "32 - 33",
+            "porcentaje": 100
+          },
+          {
+            "linea": "27 - 28",
+            "porcentaje": 95.7143
+          },
+          {
+            "linea": "1 - 2",
+            "porcentaje": 92.8571
+          }
+        ],
+        "generadores": [],
+      },
+      "metrica_lineas_con_sobrecarga": [
+        {
+          "linea": "3-4",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "4-5",
+          "porcentaje_sobrecarga": "Inf"
+        }
+      ],
+      "tiempo_ejecucion": 766.0206574
+    }
+    
    
     let generadores = {
       "generators": [
@@ -8123,6 +8836,70 @@ let escenario2ConRdSinGd = [
    }
 
    if(caso=="39"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "2 - 30",
+            "porcentaje": 100
+          },
+          {
+            "linea": "10 - 32",
+            "porcentaje": 100
+          },
+          {
+            "linea": "19 - 33",
+            "porcentaje": 100
+          },
+          {
+            "linea": "20 - 34",
+            "porcentaje": 100
+          },
+          {
+            "linea": "23 - 36",
+            "porcentaje": 100
+          },
+          {
+            "linea": "29 - 38",
+            "porcentaje": 100
+          },
+          {
+            "linea": "22 - 35",
+            "porcentaje": 98.6667
+          },
+          {
+            "linea": "25 - 37",
+            "porcentaje": 98.6667
+          },
+          {
+            "linea": "23 - 24",
+            "porcentaje": 66.6667
+          },
+          {
+            "linea": "16 - 21",
+            "porcentaje": 65.3333
+          },
+          {
+            "linea": "9 - 39",
+            "porcentaje": 61.3333
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 31",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 39",
+            "porcentaje": 100
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [],
+      "tiempo_ejecucion": 514.3694511
+    }
+    
    
     let generadores = {
       "generators": [
@@ -8420,6 +9197,135 @@ let escenario2ConRdSinGd = [
    }
 
    if(caso=="51"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "36 - 37",
+            "porcentaje": 97
+          },
+          {
+            "linea": "37 - 38",
+            "porcentaje": 97
+          },
+          {
+            "linea": "1 - 2",
+            "porcentaje": 96
+          },
+          {
+            "linea": "35 - 36",
+            "porcentaje": 94
+          },
+          {
+            "linea": "11 - 44",
+            "porcentaje": 93
+          },
+          {
+            "linea": "22 - 23",
+            "porcentaje": 91
+          },
+          {
+            "linea": "3 - 20",
+            "porcentaje": 90
+          },
+          {
+            "linea": "7 - 30",
+            "porcentaje": 90
+          },
+          {
+            "linea": "5 - 22",
+            "porcentaje": 86
+          },
+          {
+            "linea": "16 - 17",
+            "porcentaje": 84
+          },
+          {
+            "linea": "15 - 50",
+            "porcentaje": 78
+          },
+          {
+            "linea": "25 - 26",
+            "porcentaje": 70
+          },
+          {
+            "linea": "34 - 35",
+            "porcentaje": 66
+          },
+          {
+            "linea": "47 - 48",
+            "porcentaje": 57
+          },
+          {
+            "linea": "4 - 21",
+            "porcentaje": 52
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 36",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 37",
+            "porcentaje": 100
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [
+        {
+          "linea": "5-6",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "6-7",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "7-8",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "8-9",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "9-10",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "10-11",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "11-12",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "24-29",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "8-41",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "9-42",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "10-43",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "12-45",
+          "porcentaje_sobrecarga": "Inf"
+        }
+      ],
+      "tiempo_ejecucion": 520.9183211
+    }
+    
    
     let generadores = {
       "generators": [
@@ -8766,6 +9672,38 @@ let escenario4ConGdYRd = [
    }
 
    if(caso=="57"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "8 - 9",
+            "porcentaje": 51.8182
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 1",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 8",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 12",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 6",
+            "porcentaje": 79.0909
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [],
+      "tiempo_ejecucion": 343.3819259
+    }
+    
    
     let generadores = {
       "generators": [
@@ -9179,6 +10117,131 @@ let escenario4ConGdYRd = [
    }
 
    if(caso=="69"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "12 - 13",
+            "porcentaje": 91.6667
+          },
+          {
+            "linea": "11 - 12",
+            "porcentaje": 90.8333
+          },
+          {
+            "linea": "18 - 19",
+            "porcentaje": 85.8333
+          },
+          {
+            "linea": "1 - 2",
+            "porcentaje": 75
+          },
+          {
+            "linea": "14 - 15",
+            "porcentaje": 75
+          },
+          {
+            "linea": "33 - 34",
+            "porcentaje": 74.1667
+          },
+          {
+            "linea": "25 - 26",
+            "porcentaje": 69.1667
+          },
+          {
+            "linea": "21 - 22",
+            "porcentaje": 65.8333
+          },
+          {
+            "linea": "11 - 66",
+            "porcentaje": 64.1667
+          },
+          {
+            "linea": "13 - 14",
+            "porcentaje": 55
+          },
+          {
+            "linea": "2 - 3",
+            "porcentaje": 54.1667
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 2",
+            "porcentaje": 100
+          },
+          {
+            "generador": "Nodo 3",
+            "porcentaje": 91.6667
+          },
+          {
+            "generador": "Nodo 1",
+            "porcentaje": 75
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [
+        {
+          "linea": "1-2",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "2-3",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "3-4",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "4-5",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "5-6",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "6-7",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "7-8",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "3-36",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "36-37",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "37-38",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "38-39",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "9-53",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "53-54",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "54-55",
+          "porcentaje_sobrecarga": "Inf"
+        }
+      ],
+      "tiempo_ejecucion": 542.035676
+    }
+    
    
     let generadores = {
       "generators": [
@@ -9599,6 +10662,75 @@ let escenario4ConGdYRd = [
    }
 
    if(caso=="74"){
+
+    let obj = {
+      "metrica_lineas_generadores_atacados": {
+        "lineas": [
+          {
+            "linea": "23 - 24",
+            "porcentaje": 94.6154
+          },
+          {
+            "linea": "26 - 27",
+            "porcentaje": 90
+          },
+          {
+            "linea": "32 - 33",
+            "porcentaje": 67.6923
+          },
+          {
+            "linea": "46 - 47",
+            "porcentaje": 67.6923
+          },
+          {
+            "linea": "43 - 44",
+            "porcentaje": 66.9231
+          },
+          {
+            "linea": "55 - 56",
+            "porcentaje": 60
+          },
+          {
+            "linea": "68 - 69",
+            "porcentaje": 53.0769
+          },
+          {
+            "linea": "36 - 37",
+            "porcentaje": 51.5385
+          }
+        ],
+        "generadores": [
+          {
+            "generador": "Nodo 1",
+            "porcentaje": 100
+          }
+        ]
+      },
+      "metrica_lineas_con_sobrecarga": [
+        {
+          "linea": "1-2",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "2-3",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "3-4",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "4-5",
+          "porcentaje_sobrecarga": "Inf"
+        },
+        {
+          "linea": "5-6",
+          "porcentaje_sobrecarga": "Inf"
+        }
+      ],
+      "tiempo_ejecucion": 2929.637515
+    }
+    
    
     let generadores = {
       "generators": [

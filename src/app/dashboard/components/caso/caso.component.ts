@@ -7515,397 +7515,2069 @@ export class CasoComponent implements OnInit {
     let generadores = {
       "generators": [
         {
-          "nodo": 1,
+          "nodo": 0,
           "PG_MW": 0,
-          "QG_MW": 0,
+          "QG_MW": 10,
           "Q_MAX_MVAR": 10,
           "Q_MIN_MVAR": -10,
           "P_MAX_MW": 10,
           "costo_marginal_dolar_per_MW": 20
         }
       ]
-  };
+    };
+    
   
 
-  let lineas = {
-    "lines": [
-      {"I": 1, "J": 2, "flujo_P_I_a_J_MW": 3.917677126, "flujo_Q_I_a_J_MW": 2.435140971, "flujo_P_J_a_I_MW": -3.905436702, "flujo_Q_J_a_I_MW": -2.428901275},
-      {"I": 2, "J": 3, "flujo_P_I_a_J_MW": 3.444299179, "flujo_Q_I_a_J_MW": 2.207822423, "flujo_P_J_a_I_MW": -3.392507944, "flujo_Q_J_a_I_MW": -2.181443561},
-      {"I": 3, "J": 4, "flujo_P_I_a_J_MW": 2.362895188, "flujo_Q_I_a_J_MW": 1.684200515, "flujo_P_J_a_I_MW": -2.342994711, "flujo_Q_J_a_I_MW": -1.674065409},
-      {"I": 4, "J": 5, "flujo_P_I_a_J_MW": 2.222994711, "flujo_Q_I_a_J_MW": 1.594065409, "flujo_P_J_a_I_MW": -2.204295769, "flujo_Q_J_a_I_MW": -1.584541755},
-      {"I": 5, "J": 6, "flujo_P_I_a_J_MW": 2.144295769, "flujo_Q_I_a_J_MW": 1.554541755, "flujo_P_J_a_I_MW": -2.106047145, "flujo_Q_J_a_I_MW": -1.521523712},
-      {"I": 6, "J": 7, "flujo_P_I_a_J_MW": 1.095267378, "flujo_Q_I_a_J_MW": 0.527887739, "flujo_P_J_a_I_MW": -1.093352861, "flujo_Q_J_a_I_MW": -0.521559195},
-      {"I": 7, "J": 8, "flujo_P_I_a_J_MW": 0.893352861, "flujo_Q_I_a_J_MW": 0.421559195, "flujo_P_J_a_I_MW": -0.888514896, "flujo_Q_J_a_I_MW": -0.419960367},
-      {"I": 8, "J": 9, "flujo_P_I_a_J_MW": 0.688514896, "flujo_Q_I_a_J_MW": 0.319960367, "flujo_P_J_a_I_MW": -0.684334359, "flujo_Q_J_a_I_MW": -0.316956875},
-      {"I": 9, "J": 10, "flujo_P_I_a_J_MW": 0.624334359, "flujo_Q_I_a_J_MW": 0.296956875, "flujo_P_J_a_I_MW": -0.620773444, "flujo_Q_J_a_I_MW": -0.294432855},
-      {"I": 10, "J": 11, "flujo_P_I_a_J_MW": 0.560773444, "flujo_Q_I_a_J_MW": 0.274432855, "flujo_P_J_a_I_MW": -0.560219743, "flujo_Q_J_a_I_MW": -0.27424979},
-      {"I": 11, "J": 12, "flujo_P_I_a_J_MW": 0.515219743, "flujo_Q_I_a_J_MW": 0.24424979, "flujo_P_J_a_I_MW": -0.514338608, "flujo_Q_J_a_I_MW": -0.243958432},
-      {"I": 12, "J": 13, "flujo_P_I_a_J_MW": 0.454338608, "flujo_Q_I_a_J_MW": 0.208958432, "flujo_P_J_a_I_MW": -0.451672372, "flujo_Q_J_a_I_MW": -0.206860678},
-      {"I": 13, "J": 14, "flujo_P_I_a_J_MW": 0.391672372, "flujo_Q_I_a_J_MW": 0.171860678, "flujo_P_J_a_I_MW": -0.390943211, "flujo_Q_J_a_I_MW": -0.170900894},
-      {"I": 14, "J": 15, "flujo_P_I_a_J_MW": 0.270943211, "flujo_Q_I_a_J_MW": 0.090900894, "flujo_P_J_a_I_MW": -0.270586237, "flujo_Q_J_a_I_MW": -0.090583181},
-      {"I": 15, "J": 16, "flujo_P_I_a_J_MW": 0.210586237, "flujo_Q_I_a_J_MW": 0.080583181, "flujo_P_J_a_I_MW": -0.21030477, "flujo_Q_J_a_I_MW": -0.080377634},
-      {"I": 16, "J": 17, "flujo_P_I_a_J_MW": 0.15030477, "flujo_Q_I_a_J_MW": 0.060377634, "flujo_P_J_a_I_MW": -0.150053136, "flujo_Q_J_a_I_MW": -0.060041667},
-      {"I": 17, "J": 18, "flujo_P_I_a_J_MW": 0.090053136, "flujo_Q_I_a_J_MW": 0.040041667, "flujo_P_J_a_I_MW": -0.09, "flujo_Q_J_a_I_MW": -0.04},
-      {"I": 2, "J": 19, "flujo_P_I_a_J_MW": 0.361137523, "flujo_Q_I_a_J_MW": 0.161078853, "flujo_P_J_a_I_MW": -0.360976569, "flujo_Q_J_a_I_MW": -0.160925259},
-      {"I": 19, "J": 20, "flujo_P_I_a_J_MW": 0.270976569, "flujo_Q_I_a_J_MW": 0.120925259, "flujo_P_J_a_I_MW": -0.270144393, "flujo_Q_J_a_I_MW": -0.120175404},
-      {"I": 20, "J": 21, "flujo_P_I_a_J_MW": 0.180144393, "flujo_Q_I_a_J_MW": 0.080175404, "flujo_P_J_a_I_MW": -0.180043634, "flujo_Q_J_a_I_MW": -0.080057693},
-      {"I": 21, "J": 22, "flujo_P_I_a_J_MW": 0.090043634, "flujo_Q_I_a_J_MW": 0.040057693, "flujo_P_J_a_I_MW": -0.09, "flujo_Q_J_a_I_MW": -0.04},
-      {"I": 3, "J": 23, "flujo_P_I_a_J_MW": 0.939612757, "flujo_Q_I_a_J_MW": 0.457243045, "flujo_P_J_a_I_MW": -0.936431128, "flujo_Q_J_a_I_MW": -0.455069073},
-      {"I": 23, "J": 24, "flujo_P_I_a_J_MW": 0.846431128, "flujo_Q_I_a_J_MW": 0.405069073, "flujo_P_J_a_I_MW": -0.841287452, "flujo_Q_J_a_I_MW": -0.401007403},
-      {"I": 24, "J": 25, "flujo_P_I_a_J_MW": 0.421287452, "flujo_Q_I_a_J_MW": 0.201007403, "flujo_P_J_a_I_MW": -0.42, "flujo_Q_J_a_I_MW": -0.2},
+    let lineas = {
+      "lines": [
+        {"I": 1, "J": 2, "flujo_P_I_a_J_MW": 3.090510178, "flujo_Q_I_a_J_MW": 4.700253918, "flujo_P_J_a_I_MW": -3.059912609, "flujo_Q_J_a_I_MW": -4.687701069},
+        {"I": 2, "J": 3, "flujo_P_I_a_J_MW": 2.917412609, "flujo_Q_I_a_J_MW": 4.457701069, "flujo_P_J_a_I_MW": -2.892009809, "flujo_Q_J_a_I_MW": -4.447279408},
+        {"I": 3, "J": 4, "flujo_P_I_a_J_MW": 2.749343593, "flujo_Q_I_a_J_MW": 4.217750859, "flujo_P_J_a_I_MW": -2.714259356, "flujo_Q_J_a_I_MW": -4.208011757},
+        {"I": 4, "J": 5, "flujo_P_I_a_J_MW": 2.571759356, "flujo_Q_I_a_J_MW": 3.978011757, "flujo_P_J_a_I_MW": -2.543217634, "flujo_Q_J_a_I_MW": -3.970088804},
+        {"I": 5, "J": 6, "flujo_P_I_a_J_MW": 2.400717634, "flujo_Q_I_a_J_MW": 3.740088804, "flujo_P_J_a_I_MW": -2.375357357, "flujo_Q_J_a_I_MW": -3.733048995},
+        {"I": 6, "J": 7, "flujo_P_I_a_J_MW": 0.806653926, "flujo_Q_I_a_J_MW": 1.282259262, "flujo_P_J_a_I_MW": -0.800402381, "flujo_Q_J_a_I_MW": -1.281185523},
+        {"I": 7, "J": 8, "flujo_P_I_a_J_MW": 0.656250209, "flujo_Q_I_a_J_MW": 1.056159387, "flujo_P_J_a_I_MW": -0.653426544, "flujo_Q_J_a_I_MW": -1.055674406},
+        {"I": 8, "J": 9, "flujo_P_I_a_J_MW": 0.510926544, "flujo_Q_I_a_J_MW": 0.825674406, "flujo_P_J_a_I_MW": -0.508335963, "flujo_Q_J_a_I_MW": -0.825229459},
+        {"I": 9, "J": 10, "flujo_P_I_a_J_MW": 0.365835963, "flujo_Q_I_a_J_MW": 0.595229459, "flujo_P_J_a_I_MW": -0.364938554, "flujo_Q_J_a_I_MW": -0.595075324},
+        {"I": 10, "J": 11, "flujo_P_I_a_J_MW": 0.226738037, "flujo_Q_I_a_J_MW": 0.367040884, "flujo_P_J_a_I_MW": -0.2265238, "flujo_Q_J_a_I_MW": -0.367004088},
+        {"I": 11, "J": 12, "flujo_P_I_a_J_MW": 0.0840238, "flujo_Q_I_a_J_MW": 0.137004088, "flujo_P_J_a_I_MW": -0.084, "flujo_Q_J_a_I_MW": -0.137},
+        {"I": 3, "J": 13, "flujo_P_I_a_J_MW": 0.142666217, "flujo_Q_I_a_J_MW": 0.229528549, "flujo_P_J_a_I_MW": -0.142569584, "flujo_Q_J_a_I_MW": -0.229511951},
+        {"I": 13, "J": 14, "flujo_P_I_a_J_MW": 0.097569584, "flujo_Q_I_a_J_MW": 0.157511951, "flujo_P_J_a_I_MW": -0.097508994, "flujo_Q_J_a_I_MW": -0.157501545},
+        {"I": 14, "J": 15, "flujo_P_I_a_J_MW": 0.052508994, "flujo_Q_I_a_J_MW": 0.085501545, "flujo_P_J_a_I_MW": -0.052500105, "flujo_Q_J_a_I_MW": -0.085500018},
+        {"I": 15, "J": 16, "flujo_P_I_a_J_MW": 0.007500105, "flujo_Q_I_a_J_MW": 0.013500018, "flujo_P_J_a_I_MW": -0.0075, "flujo_Q_J_a_I_MW": -0.0135},
+        {"I": 6, "J": 17, "flujo_P_I_a_J_MW": 1.568703431, "flujo_Q_I_a_J_MW": 2.450789732, "flujo_P_J_a_I_MW": -1.555541874, "flujo_Q_J_a_I_MW": -2.44713619},
+        {"I": 17, "J": 18, "flujo_P_I_a_J_MW": 1.413041874, "flujo_Q_I_a_J_MW": 2.21713619, "flujo_P_J_a_I_MW": -1.403123419, "flujo_Q_J_a_I_MW": -2.214382906},
+        {"I": 18, "J": 19, "flujo_P_I_a_J_MW": 1.260623419, "flujo_Q_I_a_J_MW": 1.984382906, "flujo_P_J_a_I_MW": -1.250538994, "flujo_Q_J_a_I_MW": -1.982088566},
+        {"I": 19, "J": 20, "flujo_P_I_a_J_MW": 1.108038994, "flujo_Q_I_a_J_MW": 1.752088566, "flujo_P_J_a_I_MW": -1.100865858, "flujo_Q_J_a_I_MW": -1.750456583},
+        {"I": 20, "J": 21, "flujo_P_I_a_J_MW": 0.958365858, "flujo_Q_I_a_J_MW": 1.520456583, "flujo_P_J_a_I_MW": -0.952947004, "flujo_Q_J_a_I_MW": -1.519223722},
+        {"I": 21, "J": 22, "flujo_P_I_a_J_MW": 0.810447004, "flujo_Q_I_a_J_MW": 1.289223722, "flujo_P_J_a_I_MW": -0.805030774, "flujo_Q_J_a_I_MW": -1.288293454},
+        {"I": 22, "J": 23, "flujo_P_I_a_J_MW": 0.662530774, "flujo_Q_I_a_J_MW": 1.058293454, "flujo_P_J_a_I_MW": -0.65887204, "flujo_Q_J_a_I_MW": -1.057665045},
+        {"I": 23, "J": 24, "flujo_P_I_a_J_MW": 0.51637204, "flujo_Q_I_a_J_MW": 0.827665045, "flujo_P_J_a_I_MW": -0.513681176, "flujo_Q_J_a_I_MW": -0.827202874},
+        {"I": 24, "J": 25, "flujo_P_I_a_J_MW": 0.371181176, "flujo_Q_I_a_J_MW": 0.597202874, "flujo_P_J_a_I_MW": -0.370245698, "flujo_Q_J_a_I_MW": -0.5970422},
+        {"I": 25, "J": 26, "flujo_P_I_a_J_MW": 0.227745698, "flujo_Q_I_a_J_MW": 0.3670422, "flujo_P_J_a_I_MW": -0.227524657, "flujo_Q_J_a_I_MW": -0.367017832},
+        {"I": 26, "J": 27, "flujo_P_I_a_J_MW": 0.085024657, "flujo_Q_I_a_J_MW": 0.137004235, "flujo_P_J_a_I_MW": -0.085, "flujo_Q_J_a_I_MW": -0.137},
+        {"I": 7, "J": 28, "flujo_P_I_a_J_MW": 0.144152172, "flujo_Q_I_a_J_MW": 0.225026136, "flujo_P_J_a_I_MW": -0.144054353, "flujo_Q_J_a_I_MW": -0.225009335},
+        {"I": 28, "J": 29, "flujo_P_I_a_J_MW": 0.096054353, "flujo_Q_I_a_J_MW": 0.150009335, "flujo_P_J_a_I_MW": -0.096010871, "flujo_Q_J_a_I_MW": -0.150001867},
+        {"I": 29, "J": 30, "flujo_P_I_a_J_MW": 0.048010871, "flujo_Q_I_a_J_MW": 0.075001867, "flujo_P_J_a_I_MW": -0.048, "flujo_Q_J_a_I_MW": -0.075},
+        {"I": 10, "J": 31, "flujo_P_I_a_J_MW": 0.138200518, "flujo_Q_I_a_J_MW": 0.22803444, "flujo_P_J_a_I_MW": -0.138102315, "flujo_Q_J_a_I_MW": -0.228017573},
+        {"I": 31, "J": 32, "flujo_P_I_a_J_MW": 0.103602315, "flujo_Q_I_a_J_MW": 0.171017573, "flujo_P_J_a_I_MW": -0.10352865, "flujo_Q_J_a_I_MW": -0.171004921},
+        {"I": 32, "J": 33, "flujo_P_I_a_J_MW": 0.06902865, "flujo_Q_I_a_J_MW": 0.114004921, "flujo_P_J_a_I_MW": -0.069004093, "flujo_Q_J_a_I_MW": -0.114000703},
+        {"I": 33, "J": 34, "flujo_P_I_a_J_MW": 0.034504093, "flujo_Q_I_a_J_MW": 0.057000703, "flujo_P_J_a_I_MW": -0.0345, "flujo_Q_J_a_I_MW": -0.057}
+      ]
+    };
+    
+    
+
+    let nodos = {
+      "nodes": [
+        { "nodo": 1, "tipo_de_nodo": 3, "P_MW": 0, "Q_MVAR": 0, "V_max": 1, "V_min": 1 },
+        { "nodo": 2, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 3, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 4, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 5, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 6, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 7, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 8, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 9, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 10, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 11, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 12, "tipo_de_nodo": 1, "P_MW": 0.084, "Q_MVAR": 0.137, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 13, "tipo_de_nodo": 1, "P_MW": 0.045, "Q_MVAR": 0.072, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 14, "tipo_de_nodo": 1, "P_MW": 0.045, "Q_MVAR": 0.072, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 15, "tipo_de_nodo": 1, "P_MW": 0.045, "Q_MVAR": 0.072, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 16, "tipo_de_nodo": 1, "P_MW": 0.0075, "Q_MVAR": 0.0135, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 17, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 18, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 19, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 20, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 21, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 22, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 23, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 24, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 25, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 26, "tipo_de_nodo": 1, "P_MW": 0.1425, "Q_MVAR": 0.23, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 27, "tipo_de_nodo": 1, "P_MW": 0.085, "Q_MVAR": 0.137, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 28, "tipo_de_nodo": 1, "P_MW": 0.048, "Q_MVAR": 0.075, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 29, "tipo_de_nodo": 1, "P_MW": 0.048, "Q_MVAR": 0.075, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 30, "tipo_de_nodo": 1, "P_MW": 0.048, "Q_MVAR": 0.075, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 31, "tipo_de_nodo": 1, "P_MW": 0.0345, "Q_MVAR": 0.057, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 32, "tipo_de_nodo": 1, "P_MW": 0.0345, "Q_MVAR": 0.057, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 33, "tipo_de_nodo": 1, "P_MW": 0.0345, "Q_MVAR": 0.057, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 34, "tipo_de_nodo": 1, "P_MW": 0.0345, "Q_MVAR": 0.057, "V_max": 1.1, "V_min": 0.9 }
+      ]
+    };
+    
+  
+    
+    
+  
+    let escenarios = [
       {
-        "I": 6,
-        "J": 26,
-        "flujo_P_I_a_J_MW": 0.950779767,
-        "flujo_Q_I_a_J_MW": 0.973635973,
-        "flujo_P_J_a_I_MW": -0.948178871,
-        "flujo_Q_J_a_I_MW": -0.972311182
+        "escenario": "ESCENARIO 1 CON SIN RD NI GD",
+        "potencia_deslastrada_MW": 2.554093237,
+        "potencia_atendida_MW": 0.319406763,
+        "potencia_generada_adicional_MW": 2.554093237 - 0.319406763, // Calculado como potencia atendida - potencia deslastrada
+        "costo_operacion_dolar_per_MWH": 708.767874,
+        "costo_deslastre_dolar_per_MWH": 588.0997891,
+        "U1": 0.111155999,
+        "U2": 0.1702505,
+        "U": 0.140703249,
+        "resiliencia": "MALA"
       },
       {
-        "I": 26,
-        "J": 27,
-        "flujo_P_I_a_J_MW": 0.888178871,
-        "flujo_Q_I_a_J_MW": 0.947311182,
-        "flujo_P_J_a_I_MW": -0.884849877,
-        "flujo_Q_J_a_I_MW": -0.945616229
+        "escenario": "ESCENARIO 2 CON RD SIN GD",
+        "potencia_deslastrada_MW": 1.548439998,
+        "potencia_atendida_MW": 1.325060002,
+        "potencia_generada_adicional_MW": 1.548439998 - 1.325060002, // Calculado como potencia atendida - potencia deslastrada
+        "costo_operacion_dolar_per_MWH": 348.7452616,
+        "costo_deslastre_dolar_per_MWH": 308.0807899,
+        "U1": 0.461131025,
+        "U2": 0.11660222,
+        "U": 0.288866623,
+        "resiliencia": "MALA"
       },
       {
-        "I": 27,
-        "J": 28,
-        "flujo_P_I_a_J_MW": 0.824849877,
-        "flujo_Q_I_a_J_MW": 0.920616229,
-        "flujo_P_J_a_I_MW": -0.813549021,
-        "flujo_Q_J_a_I_MW": -0.910652481
+        "escenario": "ESCENARIO 3 CON GD SIN RD",
+        "potencia_deslastrada_MW": 1.841593247,
+        "potencia_atendida_MW": 1.031906753,
+        "potencia_generada_adicional_MW": 1.841593247 - 1.031906753, // Calculado como potencia atendida - potencia deslastrada
+        "costo_operacion_dolar_per_MWH": 605.4722916,
+        "costo_deslastre_dolar_per_MWH": 431.3497898,
+        "U1": 0.35911145,
+        "U2": 0.287581288,
+        "U": 0.323346369,
+        "resiliencia": "MALA"
       },
       {
-        "I": 28,
-        "J": 29,
-        "flujo_P_I_a_J_MW": 0.753549021,
-        "flujo_Q_I_a_J_MW": 0.890652481,
-        "flujo_P_J_a_I_MW": -0.745715671,
-        "flujo_Q_J_a_I_MW": -0.883828252
-      },
-      {
-        "I": 29,
-        "J": 30,
-        "flujo_P_I_a_J_MW": 0.625715671,
-        "flujo_Q_I_a_J_MW": 0.813828252,
-        "flujo_P_J_a_I_MW": -0.621820002,
-        "flujo_Q_J_a_I_MW": -0.811843956
-      },
-      {
-        "I": 30,
-        "J": 31,
-        "flujo_P_I_a_J_MW": 0.421820002,
-        "flujo_Q_I_a_J_MW": 0.211843956,
-        "flujo_P_J_a_I_MW": -0.420226364,
-        "flujo_Q_J_a_I_MW": -0.210268962
-      },
-      {
-        "I": 31,
-        "J": 32,
-        "flujo_P_I_a_J_MW": 0.270226364,
-        "flujo_Q_I_a_J_MW": 0.140268962,
-        "flujo_P_J_a_I_MW": -0.270013169,
-        "flujo_Q_J_a_I_MW": -0.140020475
-      },
-      {
-        "I": 32,
-        "J": 33,
-        "flujo_P_I_a_J_MW": 0.060013169,
-        "flujo_Q_I_a_J_MW": 0.040020475,
-        "flujo_P_J_a_I_MW": -0.06,
-        "flujo_Q_J_a_I_MW": -0.04
-      },
-      {
-        "I": 21,
-        "J": 8,
-        "flujo_P_I_a_J_MW": 0,
-        "flujo_Q_I_a_J_MW": 0,
-        "flujo_P_J_a_I_MW": 0,
-        "flujo_Q_J_a_I_MW": 0
-      },
-      {
-        "I": 9,
-        "J": 15,
-        "flujo_P_I_a_J_MW": 0,
-        "flujo_Q_I_a_J_MW": 0,
-        "flujo_P_J_a_I_MW": 0,
-        "flujo_Q_J_a_I_MW": 0
-      },
-      {
-        "I": 12,
-        "J": 22,
-        "flujo_P_I_a_J_MW": 0,
-        "flujo_Q_I_a_J_MW": 0,
-        "flujo_P_J_a_I_MW": 0,
-        "flujo_Q_J_a_I_MW": 0
-      },
-      {
-        "I": 18,
-        "J": 33,
-        "flujo_P_I_a_J_MW": 0,
-        "flujo_Q_I_a_J_MW": 0,
-        "flujo_P_J_a_I_MW": 0,
-        "flujo_Q_J_a_I_MW": 0
-      },
-      {
-        "I": 25,
-        "J": 29,
-        "flujo_P_I_a_J_MW": 0,
-        "flujo_Q_I_a_J_MW": 0,
-        "flujo_P_J_a_I_MW": 0,
-        "flujo_Q_J_a_I_MW": 0
+        "escenario": "ESCENARIO 4 CON GD Y RD",
+        "potencia_deslastrada_MW": 1.014045169,
+        "potencia_atendida_MW": 1.859454831,
+        "potencia_generada_adicional_MW": 1.014045169 - 1.859454831, // Calculado como potencia atendida - potencia deslastrada
+        "costo_operacion_dolar_per_MWH": 296.2010258,
+        "costo_deslastre_dolar_per_MWH": 215.4518064,
+        "U1": 0.647104517,
+        "U2": 0.272616272,
+        "U": 0.459860395,
+        "resiliencia": "MALA"
       }
-    ]
-  };
+    ];
     
-    
-
-  let nodos = {
-    "nodes": [
-      { "nodo": 1, "tipo_de_nodo": 3, "P_MW": 0, "Q_MVAR": 0, "V_max": 1, "V_min": 1 },
-      { "nodo": 2, "tipo_de_nodo": 1, "P_MW": 0.1, "Q_MVAR": 0.06, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 3, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 4, "tipo_de_nodo": 1, "P_MW": 0.12, "Q_MVAR": 0.08, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 5, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.03, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 6, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 7, "tipo_de_nodo": 1, "P_MW": 0.2, "Q_MVAR": 0.1, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 8, "tipo_de_nodo": 1, "P_MW": 0.2, "Q_MVAR": 0.1, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 9, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 10, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 11, "tipo_de_nodo": 1, "P_MW": 0.045, "Q_MVAR": 0.03, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 12, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.035, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 13, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.035, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 14, "tipo_de_nodo": 1, "P_MW": 0.12, "Q_MVAR": 0.08, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 15, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.01, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 16, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 17, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 18, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 19, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 20, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 21, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 22, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 23, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.05, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 24, "tipo_de_nodo": 1, "P_MW": 0.42, "Q_MVAR": 0.2, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 25, "tipo_de_nodo": 1, "P_MW": 0.42, "Q_MVAR": 0.2, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 26, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.025, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 27, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.025, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 28, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 29, "tipo_de_nodo": 1, "P_MW": 0.12, "Q_MVAR": 0.07, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 30, "tipo_de_nodo": 1, "P_MW": 0.2, "Q_MVAR": 0.6, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 31, "tipo_de_nodo": 1, "P_MW": 0.15, "Q_MVAR": 0.07, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 32, "tipo_de_nodo": 1, "P_MW": 0.21, "Q_MVAR": 0.1, "V_max": 1.1, "V_min": 0.9 },
-      { "nodo": 33, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 }
-    ]
-  };
-  
-    
-    
-  
-  let escenarios = [
-    {
-      "escenario": "ESCENARIO 1 CON SIN RD NI GD",
-      "potencia_deslastrada_MW": 3.714999938,
-      "potencia_atendida_MW": 6.23228e-08,
-      "potencia_generada_adicional_MW": 3.714999938 - 6.23228e-08, // Calculado como potencia atendida - potencia deslastrada
-      "costo_operacion_dolar_per_MWH": 812.0000365,
-      "costo_deslastre_dolar_per_MWH": 812.0000365,
-      "U1": 1.6776e-08,
-      "U2": 0,
-      "U": 8.38799e-09,
-      "resiliencia": "MALA"
-    },
-    {
-      "escenario": "ESCENARIO 2 CON RD SIN GD",
-      "potencia_deslastrada_MW": 2.87137329,
-      "potencia_atendida_MW": 0.84362671,
-      "potencia_generada_adicional_MW": 2.87137329 - 0.84362671, // Calculado como potencia atendida - potencia deslastrada
-      "costo_operacion_dolar_per_MWH": 623.2161152,
-      "costo_deslastre_dolar_per_MWH": 581.0294847,
-      "U1": 0.227086598,
-      "U2": 0.067691816,
-      "U": 0.147389207,
-      "resiliencia": "MALA"
-    },
-    {
-      "escenario": "ESCENARIO 3 CON GD SIN RD",
-      "potencia_deslastrada_MW": 2.195002459,
-      "potencia_atendida_MW": 1.519997541,
-      "potencia_generada_adicional_MW": 2.195002459 - 1.519997541, // Calculado como potencia atendida - potencia deslastrada
-      "costo_operacion_dolar_per_MWH": 604.2072499,
-      "costo_deslastre_dolar_per_MWH": 490.0004264,
-      "U1": 0.409151424,
-      "U2": 0.189019287,
-      "U": 0.299085356,
-      "resiliencia": "MALA"
-    },
-    {
-      "escenario": "ESCENARIO 4 CON GD Y RD",
-      "potencia_deslastrada_MW": 2.26897477,
-      "potencia_atendida_MW": 1.44602523,
-      "potencia_generada_adicional_MW": 2.26897477 - 1.44602523, // Calculado como potencia atendida - potencia deslastrada
-      "costo_operacion_dolar_per_MWH": 830.0809719,
-      "costo_deslastre_dolar_per_MWH": 479.5013433,
-      "U1": 0.389239631,
-      "U2": 0.422343892,
-      "U": 0.405791762,
-      "resiliencia": "MALA"
-    }
-  ];
   
     
     
 
    
     let escenario1ConSinRdNiGd = [
-      { "nodo": 24, "carga_MW": 0.42, "potencia_deslastrada_MW": 0.420000005, "costo_dolar_por_MW": 84.00000097, "potencia_atendida_MW": -4.86218E-09, "_atendido": -1.15766E-06 },
-      { "nodo": 25, "carga_MW": 0.42, "potencia_deslastrada_MW": 0.420000005, "costo_dolar_por_MW": 84.00000098, "potencia_atendida_MW": -4.88029E-09, "_atendido": -1.16197E-06 },
-      { "nodo": 29, "carga_MW": 0.12, "potencia_deslastrada_MW": 0.119999984, "costo_dolar_por_MW": 11.99999843, "potencia_atendida_MW": 1.56727E-08, "_atendido": 1.30606E-05 },
-      { "nodo": 30, "carga_MW": 0.2, "potencia_deslastrada_MW": 0.200000005, "costo_dolar_por_MW": 40.000001, "potencia_atendida_MW": -5.01944E-09, "_atendido": -2.50972E-06 },
-      { "nodo": 31, "carga_MW": 0.15, "potencia_deslastrada_MW": 0.149999992, "costo_dolar_por_MW": 59.99999694, "potencia_atendida_MW": 7.63883E-09, "_atendido": 5.09255E-06 },
-      { "nodo": 32, "carga_MW": 0.21, "potencia_deslastrada_MW": 0.210000005, "costo_dolar_por_MW": 42.00000108, "potencia_atendida_MW": -5.42151E-09, "_atendido": -2.58167E-06 },
-      { "nodo": 19, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.090000005, "costo_dolar_por_MW": 18.00000105, "potencia_atendida_MW": -5.24201E-09, "_atendido": -5.82445E-06 },
-      { "nodo": 20, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.09000001, "costo_dolar_por_MW": 27.00000315, "potencia_atendida_MW": -1.04913E-08, "_atendido": -1.1657E-05 },
-      { "nodo": 21, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.090000011, "costo_dolar_por_MW": 27.00000316, "potencia_atendida_MW": -1.05486E-08, "_atendido": -1.17207E-05 },
-      { "nodo": 22, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.089999966, "costo_dolar_por_MW": 8.999996641, "potencia_atendida_MW": 3.35934E-08, "_atendido": 3.7326E-05 },
-      { "nodo": 3, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.090000038, "costo_dolar_por_MW": 27.00001146, "potencia_atendida_MW": -3.82025E-08, "_atendido": -4.24472E-05 },
-      { "nodo": 4, "carga_MW": 0.12, "potencia_deslastrada_MW": 0.119999983, "costo_dolar_por_MW": 11.99999832, "potencia_atendida_MW": 1.67835E-08, "_atendido": 1.39863E-05 },
-      { "nodo": 23, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.089999975, "costo_dolar_por_MW": 8.999997521, "potencia_atendida_MW": 2.47877E-08, "_atendido": 2.75419E-05 },
-      { "nodo": 10, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.060000017, "costo_dolar_por_MW": 12.00000336, "potencia_atendida_MW": -1.68108E-08, "_atendido": -2.8018E-05 },
-      { "nodo": 11, "carga_MW": 0.045, "potencia_deslastrada_MW": 0.044999999, "costo_dolar_por_MW": 8.999999737, "potencia_atendida_MW": 1.31696E-09, "_atendido": 2.92658E-06 },
-      { "nodo": 12, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999971, "costo_dolar_por_MW": 5.999997054, "potencia_atendida_MW": 2.94646E-08, "_atendido": 4.91077E-05 },
-      { "nodo": 17, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.05999999, "costo_dolar_por_MW": 5.999998975, "potencia_atendida_MW": 1.02454E-08, "_atendido": 1.70757E-05 },
-      { "nodo": 18, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.09000002, "costo_dolar_por_MW": 18.00000398, "potencia_atendida_MW": -1.9876E-08, "_atendido": -2.20844E-05 },
-      { "nodo": 33, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.05999999, "costo_dolar_por_MW": 5.99999897, "potencia_atendida_MW": 1.03023E-08, "_atendido": 1.71705E-05 },
-      { "nodo": 6, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999976, "costo_dolar_por_MW": 11.99999528, "potencia_atendida_MW": 2.3604E-08, "_atendido": 3.934E-05 },
-      { "nodo": 7, "carga_MW": 0.2, "potencia_deslastrada_MW": 0.200000023, "costo_dolar_por_MW": 80.00000925, "potencia_atendida_MW": -2.31154E-08, "_atendido": -1.15577E-05 },
-      { "nodo": 8, "carga_MW": 0.2, "potencia_deslastrada_MW": 0.200000023, "costo_dolar_por_MW": 60.00000695, "potencia_atendida_MW": -2.3153E-08, "_atendido": -1.15765E-05 },
-      { "nodo": 9, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999973, "costo_dolar_por_MW": 5.999997325, "potencia_atendida_MW": 2.6752E-08, "_atendido": 4.45867E-05 },
-      { "nodo": 13, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999978, "costo_dolar_por_MW": 5.999997751, "potencia_atendida_MW": 2.24949E-08, "_atendido": 3.74915E-05 },
-      { "nodo": 14, "carga_MW": 0.12, "potencia_deslastrada_MW": 0.120000021, "costo_dolar_por_MW": 36.00000624, "potencia_atendida_MW": -2.07842E-08, "_atendido": -1.73201E-05 },
-      { "nodo": 15, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.060000025, "costo_dolar_por_MW": 24.00000988, "potencia_atendida_MW": -2.46929E-08, "_atendido": -4.11548E-05 },
-      { "nodo": 16, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999967, "costo_dolar_por_MW": 5.99999665, "potencia_atendida_MW": 3.34984E-08, "_atendido": 5.58307E-05 },
-      { "nodo": 27, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.060000021, "costo_dolar_por_MW": 24.0000084, "potencia_atendida_MW": -2.10051E-08, "_atendido": -3.50084E-05 },
-      { "nodo": 28, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.05999996, "costo_dolar_por_MW": 5.999995973, "potencia_atendida_MW": 4.0273E-08, "_atendido": 6.71217E-05 },
-      { "nodo": 2, "carga_MW": 0.1, "potencia_deslastrada_MW": 0.1, "costo_dolar_por_MW": 20, "potencia_atendida_MW": 0, "_atendido": 0 },
-      { "nodo": 5, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.06, "costo_dolar_por_MW": 6, "potencia_atendida_MW": 0, "_atendido": 0 },
-      { "nodo": 26, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.06, "costo_dolar_por_MW": 18, "potencia_atendida_MW": 0, "_atendido": 0 }
+      { "nodo": 2, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.112603337, "costo_dolar_por_MW": 45.04133465, "potencia_atendida_MW": 0.029896663, "_atendido": 20.98011465 },
+      { "nodo": 4, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.103921097, "costo_dolar_por_MW": 20.78421938, "potencia_atendida_MW": 0.038578903, "_atendido": 27.07291447 },
+      { "nodo": 5, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.093324891, "costo_dolar_por_MW": 9.332489074, "potencia_atendida_MW": 0.049175109, "_atendido": 34.5088486 },
+      { "nodo": 17, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.075509768, "costo_dolar_por_MW": 15.10195362, "potencia_atendida_MW": 0.066990232, "_atendido": 47.01068904 },
+      { "nodo": 18, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.078679558, "costo_dolar_por_MW": 7.867955789, "potencia_atendida_MW": 0.063820442, "_atendido": 44.78627517 },
+      { "nodo": 19, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.071554588, "costo_dolar_por_MW": 28.62183524, "potencia_atendida_MW": 0.070945412, "_atendido": 49.78625396 },
+      { "nodo": 8, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.142499999, "costo_dolar_por_MW": 14.24999994, "potencia_atendida_MW": 6.36271E-10, "_atendido": 4.46506E-07 },
+      { "nodo": 9, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.1425, "costo_dolar_por_MW": 28.49999995, "potencia_atendida_MW": 2.52181E-10, "_atendido": 1.76969E-07 },
+      { "nodo": 11, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.142500001, "costo_dolar_por_MW": 42.75000022, "potencia_atendida_MW": -7.21862E-10, "_atendido": -5.0657E-07 },
+      { "nodo": 21, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.1425, "costo_dolar_por_MW": 28.49999995, "potencia_atendida_MW": 2.26979E-10, "_atendido": 1.59283E-07 },
+      { "nodo": 22, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.142499999, "costo_dolar_por_MW": 14.24999991, "potencia_atendida_MW": 9.27424E-10, "_atendido": 6.50824E-07 },
+      { "nodo": 23, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.142500002, "costo_dolar_por_MW": 57.00000064, "potencia_atendida_MW": -1.59239E-09, "_atendido": -1.11746E-06 },
+      { "nodo": 24, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.142499999, "costo_dolar_por_MW": 14.24999991, "potencia_atendida_MW": 9.27478E-10, "_atendido": 6.50862E-07 },
+      { "nodo": 28, "carga_MW": 0.048, "potencia_deslastrada_MW": 0.047999999, "costo_dolar_por_MW": 4.799999934, "potencia_atendida_MW": 6.64834E-10, "_atendido": 1.38507E-06 },
+      { "nodo": 29, "carga_MW": 0.048, "potencia_deslastrada_MW": 0.048000001, "costo_dolar_por_MW": 14.40000019, "potencia_atendida_MW": -6.3356E-10, "_atendido": -1.31992E-06 },
+      { "nodo": 13, "carga_MW": 0.045, "potencia_deslastrada_MW": 0.045000001, "costo_dolar_por_MW": 18.00000059, "potencia_atendida_MW": -1.46263E-09, "_atendido": -3.2503E-06 },
+      { "nodo": 14, "carga_MW": 0.045, "potencia_deslastrada_MW": 0.044999999, "costo_dolar_por_MW": 8.999999858, "potencia_atendida_MW": 7.11781E-10, "_atendido": 1.58174E-06 },
+      { "nodo": 15, "carga_MW": 0.045, "potencia_deslastrada_MW": 0.044999999, "costo_dolar_por_MW": 4.499999915, "potencia_atendida_MW": 8.52534E-10, "_atendido": 1.89452E-06 },
+      { "nodo": 31, "carga_MW": 0.0345, "potencia_deslastrada_MW": 0.034500002, "costo_dolar_por_MW": 13.8000006, "potencia_atendida_MW": -1.50428E-09, "_atendido": -4.36024E-06 },
+      { "nodo": 32, "carga_MW": 0.0345, "potencia_deslastrada_MW": 0.034499999, "costo_dolar_por_MW": 6.899999852, "potencia_atendida_MW": 7.38406E-10, "_atendido": 2.14031E-06 },
+      { "nodo": 33, "carga_MW": 0.0345, "potencia_deslastrada_MW": 0.034499999, "costo_dolar_por_MW": 3.449999915, "potencia_atendida_MW": 8.45719E-10, "_atendido": 2.45136E-06 },
+      { "nodo": 25, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.1425, "costo_dolar_por_MW": 28.49999992, "potencia_atendida_MW": 3.79751E-10, "_atendido": 2.66492E-07 },
+      { "nodo": 26, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.1425, "costo_dolar_por_MW": 42.7500001, "potencia_atendida_MW": -3.29157E-10, "_atendido": -2.30988E-07 },
+      { "nodo": 12, "carga_MW": 0.084, "potencia_deslastrada_MW": 0.084, "costo_dolar_por_MW": 16.8, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 16, "carga_MW": 0.0075, "potencia_deslastrada_MW": 0.0075, "costo_dolar_por_MW": 2.25, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 20, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.1425, "costo_dolar_por_MW": 42.75, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 27, "carga_MW": 0.085, "potencia_deslastrada_MW": 0.085, "costo_dolar_por_MW": 34, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 30, "carga_MW": 0.048, "potencia_deslastrada_MW": 0.048, "costo_dolar_por_MW": 9.6, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 34, "carga_MW": 0.0345, "potencia_deslastrada_MW": 0.0345, "costo_dolar_por_MW": 10.35, "potencia_atendida_MW": 0, "_atendido": 0 }
     ];
     
     
-   
     
-    let escenario2ConRdSinGd = [
-      { "nodo": 24, "carga_MW": 0.42, "potencia_deslastrada_MW": 0.314988828, "costo_dolar_por_MW": 62.99776565, "potencia_atendida_MW": 0.105011172, "_atendido": 25.00265994 },
-      { "nodo": 25, "carga_MW": 0.42, "potencia_deslastrada_MW": 0.302686469, "costo_dolar_por_MW": 60.53729381, "potencia_atendida_MW": 0.117313531, "_atendido": 27.93179308 },
-      { "nodo": 29, "carga_MW": 0.12, "potencia_deslastrada_MW": 0.119999994, "costo_dolar_por_MW": 11.99999941, "potencia_atendida_MW": 5.85687E-09, "_atendido": 4.88073E-06 },
-      { "nodo": 30, "carga_MW": 0.2, "potencia_deslastrada_MW": 0.199889238, "costo_dolar_por_MW": 39.97784757, "potencia_atendida_MW": 0.000110762, "_atendido": 0.055381071 },
-      { "nodo": 31, "carga_MW": 0.15, "potencia_deslastrada_MW": 2.93081E-09, "costo_dolar_por_MW": 1.17232E-06, "potencia_atendida_MW": 0.149999997, "_atendido": 99.99999805 },
-      { "nodo": 32, "carga_MW": 0.21, "potencia_deslastrada_MW": 0.209994064, "costo_dolar_por_MW": 41.99881273, "potencia_atendida_MW": 5.93636E-06, "_atendido": 0.002826839 },
-      { "nodo": 19, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.089997665, "costo_dolar_por_MW": 17.99953308, "potencia_atendida_MW": 2.33458E-06, "_atendido": 0.002593977 },
-      { "nodo": 20, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.059035775, "costo_dolar_por_MW": 17.71073242, "potencia_atendida_MW": 0.030964225, "_atendido": 34.40469474 },
-      { "nodo": 21, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.053483326, "costo_dolar_por_MW": 16.04499771, "potencia_atendida_MW": 0.036516674, "_atendido": 40.57408255 },
-      { "nodo": 22, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.089998836, "costo_dolar_por_MW": 8.999883584, "potencia_atendida_MW": 1.16416E-06, "_atendido": 0.001293509 },
-      { "nodo": 3, "carga_MW": 0.09, "potencia_deslastrada_MW": 9.09156E-07, "costo_dolar_por_MW": 0.000272747, "potencia_atendida_MW": 0.089999091, "_atendido": 99.99898983 },
-      { "nodo": 4, "carga_MW": 0.12, "potencia_deslastrada_MW": 0.108701764, "costo_dolar_por_MW": 10.87017637, "potencia_atendida_MW": 0.011298236, "_atendido": 9.415196943 },
-      { "nodo": 23, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.086315188, "costo_dolar_por_MW": 8.631518817, "potencia_atendida_MW": 0.003684812, "_atendido": 4.094235365 },
-      { "nodo": 10, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.036632658, "costo_dolar_por_MW": 7.326531653, "potencia_atendida_MW": 0.023367342, "_atendido": 38.94556956 },
-      { "nodo": 11, "carga_MW": 0.045, "potencia_deslastrada_MW": 0.027124804, "costo_dolar_por_MW": 5.424960702, "potencia_atendida_MW": 0.017875196, "_atendido": 39.72265886 },
-      { "nodo": 12, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059997725, "costo_dolar_por_MW": 5.999772483, "potencia_atendida_MW": 2.27517E-06, "_atendido": 0.003791956 },
-      { "nodo": 17, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999651, "costo_dolar_por_MW": 5.9999651, "potencia_atendida_MW": 3.48995E-07, "_atendido": 0.000581658 },
-      { "nodo": 18, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.022505171, "costo_dolar_por_MW": 4.501034232, "potencia_atendida_MW": 0.067494829, "_atendido": 74.99425426 },
-      { "nodo": 33, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999651, "costo_dolar_por_MW": 5.999965097, "potencia_atendida_MW": 3.49025E-07, "_atendido": 0.000581708 },
-      { "nodo": 6, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999754, "costo_dolar_por_MW": 11.99995085, "potencia_atendida_MW": 2.45744E-07, "_atendido": 0.000409573 },
-      { "nodo": 7, "carga_MW": 0.2, "potencia_deslastrada_MW": 0.185000648, "costo_dolar_por_MW": 74.00025933, "potencia_atendida_MW": 0.014999352, "_atendido": 7.499675842 },
-      { "nodo": 8, "carga_MW": 0.2, "potencia_deslastrada_MW": 0.170007233, "costo_dolar_por_MW": 51.0021699, "potencia_atendida_MW": 0.029992767, "_atendido": 14.99638351 },
-      { "nodo": 9, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999158, "costo_dolar_por_MW": 5.999915817, "potencia_atendida_MW": 8.4183E-07, "_atendido": 0.001403051 },
-      { "nodo": 13, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999433, "costo_dolar_por_MW": 5.999943312, "potencia_atendida_MW": 5.66879E-07, "_atendido": 0.000944798 },
-      { "nodo": 14, "carga_MW": 0.12, "potencia_deslastrada_MW": 0.090004035, "costo_dolar_por_MW": 27.00121038, "potencia_atendida_MW": 0.029995965, "_atendido": 24.99663784 },
-      { "nodo": 15, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.030005493, "costo_dolar_por_MW": 12.00219722, "potencia_atendida_MW": 0.029994507, "_atendido": 49.99084491 },
-      { "nodo": 16, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999279, "costo_dolar_por_MW": 5.999927939, "potencia_atendida_MW": 7.20606E-07, "_atendido": 0.00120101 },
-      { "nodo": 27, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.030007306, "costo_dolar_por_MW": 12.00292242, "potencia_atendida_MW": 0.029992694, "_atendido": 49.98782323 },
-      { "nodo": 28, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999231, "costo_dolar_por_MW": 5.999923149, "potencia_atendida_MW": 7.6851E-07, "_atendido": 0.00128085 },
-      { "nodo": 2, "carga_MW": 0.1, "potencia_deslastrada_MW": 0.075, "costo_dolar_por_MW": 15, "potencia_atendida_MW": 0.025, "_atendido": 25 },
-      { "nodo": 5, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.03, "costo_dolar_por_MW": 3, "potencia_atendida_MW": 0.03, "_atendido": 50 },
-      { "nodo": 26, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.06, "costo_dolar_por_MW": 18, "potencia_atendida_MW": 0, "_atendido": 0 }
+  
+  let escenario2ConRdSinGd = [
+    { "nodo": 2, "carga_MW": 0.1425, "potencia_deslastrada_MW": 4.68625E-08, "costo_dolar_por_MW": 1.8745E-05, "potencia_atendida_MW": 0.142499953, "_atendido": 99.99996711 },
+    { "nodo": 4, "carga_MW": 0.1425, "potencia_deslastrada_MW": 9.89806E-08, "costo_dolar_por_MW": 1.97961E-05, "potencia_atendida_MW": 0.142499901, "_atendido": 99.99993054 },
+    { "nodo": 5, "carga_MW": 0.1425, "potencia_deslastrada_MW": 2.22956E-07, "costo_dolar_por_MW": 2.22956E-05, "potencia_atendida_MW": 0.142499777, "_atendido": 99.99984354 },
+    { "nodo": 17, "carga_MW": 0.1425, "potencia_deslastrada_MW": 9.90223E-08, "costo_dolar_por_MW": 1.98045E-05, "potencia_atendida_MW": 0.142499901, "_atendido": 99.99993051 },
+    { "nodo": 18, "carga_MW": 0.1425, "potencia_deslastrada_MW": 2.23132E-07, "costo_dolar_por_MW": 2.23132E-05, "potencia_atendida_MW": 0.142499777, "_atendido": 99.99984342 },
+    { "nodo": 19, "carga_MW": 0.1425, "potencia_deslastrada_MW": 4.68831E-08, "costo_dolar_por_MW": 1.87532E-05, "potencia_atendida_MW": 0.142499953, "_atendido": 99.9999671 },
+    { "nodo": 8, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.142499989, "costo_dolar_por_MW": 14.24999888, "potencia_atendida_MW": 1.12292E-08, "_atendido": 7.88015E-06 },
+    { "nodo": 9, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.142499978, "costo_dolar_por_MW": 28.49999551, "potencia_atendida_MW": 2.24643E-08, "_atendido": 1.57644E-05 },
+    { "nodo": 11, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.035662558, "costo_dolar_por_MW": 10.6987673, "potencia_atendida_MW": 0.106837442, "_atendido": 74.97364374 },
+    { "nodo": 21, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.106895031, "costo_dolar_por_MW": 21.3790063, "potencia_atendida_MW": 0.035604969, "_atendido": 24.98594282 },
+    { "nodo": 22, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.142499993, "costo_dolar_por_MW": 14.24999935, "potencia_atendida_MW": 6.53149E-09, "_atendido": 4.5835E-06 },
+    { "nodo": 23, "carga_MW": 0.1425, "potencia_deslastrada_MW": 3.26649E-09, "costo_dolar_por_MW": 1.3066E-06, "potencia_atendida_MW": 0.142499997, "_atendido": 99.99999771 },
+    { "nodo": 24, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.142499993, "costo_dolar_por_MW": 14.24999935, "potencia_atendida_MW": 6.53211E-09, "_atendido": 4.58394E-06 },
+    { "nodo": 28, "carga_MW": 0.048, "potencia_deslastrada_MW": 0.047998456, "costo_dolar_por_MW": 4.799845558, "potencia_atendida_MW": 1.54442E-06, "_atendido": 0.003217549 },
+    { "nodo": 29, "carga_MW": 0.048, "potencia_deslastrada_MW": 0.02400353, "costo_dolar_por_MW": 7.201058945, "potencia_atendida_MW": 0.02399647, "_atendido": 49.99264622 },
+    { "nodo": 13, "carga_MW": 0.045, "potencia_deslastrada_MW": 0.022501495, "costo_dolar_por_MW": 9.000598121, "potencia_atendida_MW": 0.022498505, "_atendido": 49.99667711 },
+    { "nodo": 14, "carga_MW": 0.045, "potencia_deslastrada_MW": 0.044999816, "costo_dolar_por_MW": 8.999963238, "potencia_atendida_MW": 1.83809E-07, "_atendido": 0.000408465 },
+    { "nodo": 15, "carga_MW": 0.045, "potencia_deslastrada_MW": 0.044999877, "costo_dolar_por_MW": 4.499987748, "potencia_atendida_MW": 1.22525E-07, "_atendido": 0.000272277 },
+    { "nodo": 31, "carga_MW": 0.0345, "potencia_deslastrada_MW": 0.008627406, "costo_dolar_por_MW": 3.450962404, "potencia_atendida_MW": 0.025872594, "_atendido": 74.99302606 },
+    { "nodo": 32, "carga_MW": 0.0345, "potencia_deslastrada_MW": 0.03449969, "costo_dolar_por_MW": 6.899938041, "potencia_atendida_MW": 3.09797E-07, "_atendido": 0.000897962 },
+    { "nodo": 33, "carga_MW": 0.0345, "potencia_deslastrada_MW": 0.034499793, "costo_dolar_por_MW": 3.449979336, "potencia_atendida_MW": 2.06643E-07, "_atendido": 0.000598964 },
+    { "nodo": 25, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.142499285, "costo_dolar_por_MW": 28.49985704, "potencia_atendida_MW": 7.14794E-07, "_atendido": 0.00050161 },
+    { "nodo": 26, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.106877366, "costo_dolar_por_MW": 32.06320975, "potencia_atendida_MW": 0.035622634, "_atendido": 24.99833977 },
+    { "nodo": 12, "carga_MW": 0.084, "potencia_deslastrada_MW": 0.042, "costo_dolar_por_MW": 8.4, "potencia_atendida_MW": 0.042, "_atendido": 50 },
+    { "nodo": 16, "carga_MW": 0.0075, "potencia_deslastrada_MW": 0.005625, "costo_dolar_por_MW": 1.6875, "potencia_atendida_MW": 0.001875, "_atendido": 25 },
+    { "nodo": 20, "carga_MW": 0.1425, "potencia_deslastrada_MW": 0.1425, "costo_dolar_por_MW": 42.75, "potencia_atendida_MW": 0, "_atendido": 0 },
+    { "nodo": 27, "carga_MW": 0.085, "potencia_deslastrada_MW": 0.06375, "costo_dolar_por_MW": 25.5, "potencia_atendida_MW": 0.02125, "_atendido": 25 },
+    { "nodo": 30, "carga_MW": 0.048, "potencia_deslastrada_MW": 0.036, "costo_dolar_por_MW": 7.2, "potencia_atendida_MW": 0.012, "_atendido": 25 },
+    { "nodo": 34, "carga_MW": 0.0345, "potencia_deslastrada_MW": 0.0345, "costo_dolar_por_MW": 10.35, "potencia_atendida_MW": 0, "_atendido": 0 }
+];
+
+
+    
+    
+    let escenario3ConGdSinRd = [
+      { nodo: 2, carga_MW: 0.1425, potencia_deslastrada_MW: 0.112603337, costo_dolar_por_MW: 45.04133465, potencia_atendida_MW: 0.029896663, _atendido: 20.98011465 },
+      { nodo: 4, carga_MW: 0.1425, potencia_deslastrada_MW: 0.103921097, costo_dolar_por_MW: 20.78421938, potencia_atendida_MW: 0.038578903, _atendido: 27.07291447 },
+      { nodo: 5, carga_MW: 0.1425, potencia_deslastrada_MW: 0.093324891, costo_dolar_por_MW: 9.332489074, potencia_atendida_MW: 0.049175109, _atendido: 34.5088486 },
+      { nodo: 17, carga_MW: 0.1425, potencia_deslastrada_MW: 0.075509768, costo_dolar_por_MW: 15.10195362, potencia_atendida_MW: 0.066990232, _atendido: 47.01068904 },
+      { nodo: 18, carga_MW: 0.1425, potencia_deslastrada_MW: 0.078679558, costo_dolar_por_MW: 7.867955789, potencia_atendida_MW: 0.063820442, _atendido: 44.78627517 },
+      { nodo: 19, carga_MW: 0.1425, potencia_deslastrada_MW: 0.071554588, costo_dolar_por_MW: 28.62183524, potencia_atendida_MW: 0.070945412, _atendido: 49.78625396 },
+      { nodo: 8, carga_MW: 0.1425, potencia_deslastrada_MW: 0.142499999, costo_dolar_por_MW: 14.24999994, potencia_atendida_MW: 6.36271E-10, _atendido: 4.46506E-07 },
+      { nodo: 9, carga_MW: 0.1425, potencia_deslastrada_MW: 0.1425, costo_dolar_por_MW: 28.49999995, potencia_atendida_MW: 2.52181E-10, _atendido: 1.76969E-07 },
+      { nodo: 11, carga_MW: 0.1425, potencia_deslastrada_MW: 0.142500001, costo_dolar_por_MW: 42.75000022, potencia_atendida_MW: -7.21862E-10, _atendido: -5.0657E-07 },
+      { nodo: 21, carga_MW: 0.1425, potencia_deslastrada_MW: 8.06647E-10, costo_dolar_por_MW: 1.61329E-07, potencia_atendida_MW: 0.142499999, _atendido: 99.99999943 },
+      { nodo: 22, carga_MW: 0.1425, potencia_deslastrada_MW: 4.04204E-09, costo_dolar_por_MW: 4.04204E-07, potencia_atendida_MW: 0.142499996, _atendido: 99.99999716 },
+      { nodo: 23, carga_MW: 0.1425, potencia_deslastrada_MW: 3.0996E-10, costo_dolar_por_MW: 1.23984E-07, potencia_atendida_MW: 0.1425, _atendido: 99.99999978 },
+      { nodo: 24, carga_MW: 0.1425, potencia_deslastrada_MW: 4.03701E-09, costo_dolar_por_MW: 4.03701E-07, potencia_atendida_MW: 0.142499996, _atendido: 99.99999717 },
+      { nodo: 28, carga_MW: 0.048, potencia_deslastrada_MW: 0.047999999, costo_dolar_por_MW: 4.799999934, potencia_atendida_MW: 6.64834E-10, _atendido: 1.38507E-06 },
+      { nodo: 29, carga_MW: 0.048, potencia_deslastrada_MW: 0.048000001, costo_dolar_por_MW: 14.40000019, potencia_atendida_MW: -6.3356E-10, _atendido: -1.31992E-06 },
+      { nodo: 13, carga_MW: 0.045, potencia_deslastrada_MW: 0.045000001, costo_dolar_por_MW: 18.00000059, potencia_atendida_MW: -1.46263E-09, _atendido: -3.2503E-06 },
+      { nodo: 14, carga_MW: 0.045, potencia_deslastrada_MW: 0.044999999, costo_dolar_por_MW: 8.999999858, potencia_atendida_MW: 7.11781E-10, _atendido: 1.58174E-06 },
+      { nodo: 15, carga_MW: 0.045, potencia_deslastrada_MW: 0.044999999, costo_dolar_por_MW: 4.499999915, potencia_atendida_MW: 8.52534E-10, _atendido: 1.89452E-06 },
+      { nodo: 31, carga_MW: 0.0345, potencia_deslastrada_MW: 0.034500002, costo_dolar_por_MW: 13.8000006, potencia_atendida_MW: -1.50428E-09, _atendido: -4.36024E-06 },
+      { nodo: 32, carga_MW: 0.0345, potencia_deslastrada_MW: 0.034499999, costo_dolar_por_MW: 6.899999852, potencia_atendida_MW: 7.38406E-10, _atendido: 2.14031E-06 },
+      { nodo: 33, carga_MW: 0.0345, potencia_deslastrada_MW: 0.034499999, costo_dolar_por_MW: 3.449999915, potencia_atendida_MW: 8.45719E-10, _atendido: 2.45136E-06 },
+      { nodo: 25, carga_MW: 0.1425, potencia_deslastrada_MW: 0.1425, costo_dolar_por_MW: 28.49999992, potencia_atendida_MW: 3.79751E-10, _atendido: 2.66492E-07 },
+      { nodo: 26, carga_MW: 0.1425, potencia_deslastrada_MW: 0.1425, costo_dolar_por_MW: 42.7500001, potencia_atendida_MW: -3.29157E-10, _atendido: -2.30988E-07 },
+      { nodo: 12, carga_MW: 0.084, potencia_deslastrada_MW: 0.084, costo_dolar_por_MW: 16.8, potencia_atendida_MW: 0, _atendido: 0 },
+      { nodo: 16, carga_MW: 0.0075, potencia_deslastrada_MW: 0.0075, costo_dolar_por_MW: 2.25, potencia_atendida_MW: 0, _atendido: 0 },
+      { nodo: 27, carga_MW: 0.085, potencia_deslastrada_MW: 0.085, costo_dolar_por_MW: 34, potencia_atendida_MW: 0, _atendido: 0 },
+      { nodo: 30, carga_MW: 0.048, potencia_deslastrada_MW: 0.048, costo_dolar_por_MW: 9.6, potencia_atendida_MW: 0, _atendido: 0 },
+      { nodo: 34, carga_MW: 0.0345, potencia_deslastrada_MW: 0.0345, costo_dolar_por_MW: 10.35, potencia_atendida_MW: 0, _atendido: 0 }
+  ];
+  
+ 
+   
+    let escenario4ConGdYRd = [
+      {nodo: 2, carga_MW: 0.1425, potencia_deslastrada_MW: 4.68625e-8, costo_dolar_por_MW: 1.8745e-5, potencia_atendida_MW: 0.142499953, _atendido: 99.99996711},
+      {nodo: 4, carga_MW: 0.1425, potencia_deslastrada_MW: 9.89806e-8, costo_dolar_por_MW: 1.97961e-5, potencia_atendida_MW: 0.142499901, _atendido: 99.99993054},
+      {nodo: 5, carga_MW: 0.1425, potencia_deslastrada_MW: 2.22956e-7, costo_dolar_por_MW: 2.22956e-5, potencia_atendida_MW: 0.142499777, _atendido: 99.99984354},
+      {nodo: 17, carga_MW: 0.1425, potencia_deslastrada_MW: 9.90223e-8, costo_dolar_por_MW: 1.98045e-5, potencia_atendida_MW: 0.142499901, _atendido: 99.99993051},
+      {nodo: 18, carga_MW: 0.1425, potencia_deslastrada_MW: 2.23132e-7, costo_dolar_por_MW: 2.23132e-5, potencia_atendida_MW: 0.142499777, _atendido: 99.99984342},
+      {nodo: 19, carga_MW: 0.1425, potencia_deslastrada_MW: 4.68831e-8, costo_dolar_por_MW: 1.87532e-5, potencia_atendida_MW: 0.142499953, _atendido: 99.9999671},
+      {nodo: 8, carga_MW: 0.1425, potencia_deslastrada_MW: 0.142499989, costo_dolar_por_MW: 14.24999888, potencia_atendida_MW: 1.12292e-8, _atendido: 7.88015e-6},
+      {nodo: 9, carga_MW: 0.1425, potencia_deslastrada_MW: 0.142499978, costo_dolar_por_MW: 28.49999551, potencia_atendida_MW: 2.24643e-8, _atendido: 1.57644e-5},
+      {nodo: 11, carga_MW: 0.1425, potencia_deslastrada_MW: 0.035662558, costo_dolar_por_MW: 10.6987673, potencia_atendida_MW: 0.106837442, _atendido: 74.97364374},
+      {nodo: 21, carga_MW: 0.1425, potencia_deslastrada_MW: 1.68737e-8, costo_dolar_por_MW: 3.37474e-6, potencia_atendida_MW: 0.142499983, _atendido: 99.99998816},
+      {nodo: 22, carga_MW: 0.1425, potencia_deslastrada_MW: 8.44685e-8, costo_dolar_por_MW: 8.44685e-6, potencia_atendida_MW: 0.142499916, _atendido: 99.99994072},
+      {nodo: 23, carga_MW: 0.1425, potencia_deslastrada_MW: 6.4864e-9, costo_dolar_por_MW: 2.59456e-6, potencia_atendida_MW: 0.142499994, _atendido: 99.99999545},
+      {nodo: 24, carga_MW: 0.1425, potencia_deslastrada_MW: 8.43958e-8, costo_dolar_por_MW: 8.43958e-6, potencia_atendida_MW: 0.142499916, _atendido: 99.99994077},
+      {nodo: 28, carga_MW: 0.048, potencia_deslastrada_MW: 0.047998456, costo_dolar_por_MW: 4.799845558, potencia_atendida_MW: 1.54442e-6, _atendido: 0.003217549},
+      {nodo: 29, carga_MW: 0.048, potencia_deslastrada_MW: 0.02400353, costo_dolar_por_MW: 7.201058945, potencia_atendida_MW: 0.02399647, _atendido: 49.99264622},
+      {nodo: 13, carga_MW: 0.045, potencia_deslastrada_MW: 0.022501495, costo_dolar_por_MW: 9.000598121, potencia_atendida_MW: 0.022498505, _atendido: 49.99667711},
+      {nodo: 14, carga_MW: 0.045, potencia_deslastrada_MW: 0.044999816, costo_dolar_por_MW: 8.999963238, potencia_atendida_MW: 1.83809e-7, _atendido: 0.000408465},
+      {nodo: 15, carga_MW: 0.045, potencia_deslastrada_MW: 0.044999877, costo_dolar_por_MW: 4.499987748, potencia_atendida_MW: 1.22525e-7, _atendido: 0.000272277},
+      {nodo: 31, carga_MW: 0.0345, potencia_deslastrada_MW: 0.008627406, costo_dolar_por_MW: 3.450962404, potencia_atendida_MW: 0.025872594, _atendido: 74.99302606},
+      {nodo: 32, carga_MW: 0.0345, potencia_deslastrada_MW: 0.03449969, costo_dolar_por_MW: 6.899938041, potencia_atendida_MW: 3.09797e-7, _atendido: 0.000897962},
+      {nodo: 33, carga_MW: 0.0345, potencia_deslastrada_MW: 0.034499793, costo_dolar_por_MW: 3.449979336, potencia_atendida_MW: 2.06643e-7, _atendido: 0.000598964},
+      {nodo: 25, carga_MW: 0.1425, potencia_deslastrada_MW: 0.142499285, costo_dolar_por_MW: 28.49985704, potencia_atendida_MW: 7.14794e-7, _atendido: 0.00050161},
+      {nodo: 26, carga_MW: 0.1425, potencia_deslastrada_MW: 0.106877366, costo_dolar_por_MW: 32.06320975, potencia_atendida_MW: 0.035622634, _atendido: 24.99833977},
+      {nodo: 12, carga_MW: 0.084, potencia_deslastrada_MW: 0.042, costo_dolar_por_MW: 8.4, potencia_atendida_MW: 0.042, _atendido: 50},
+      {nodo: 16, carga_MW: 0.0075, potencia_deslastrada_MW: 0.005625, costo_dolar_por_MW: 1.6875, potencia_atendida_MW: 0.001875, _atendido: 25},
+      {nodo: 27, carga_MW: 0.085, potencia_deslastrada_MW: 0.06375, costo_dolar_por_MW: 25.5, potencia_atendida_MW: 0.02125, _atendido: 25},
+      {nodo: 30, carga_MW: 0.048, potencia_deslastrada_MW: 0.036, costo_dolar_por_MW: 7.2, potencia_atendida_MW: 0.012, _atendido: 25},
+      {nodo: 34, carga_MW: 0.0345, potencia_deslastrada_MW: 0.0345, costo_dolar_por_MW: 10.35, potencia_atendida_MW: 0, _atendido: 0}
+    ];
+    
+    
+ 
+    let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
+
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+   }
+
+   if(caso=="38"){
+   
+    let generadores = {
+      "generators": [
+        {
+          "nodo": 0,
+          "PG_MW": 0,
+          "QG_MW": 10,
+          "Q_MAX_MVAR": 10,
+          "Q_MIN_MVAR": -10,
+          "P_MAX_MW": 10,
+          "costo_marginal_dolar_per_MW": 20
+        }
+      ]
+    };
+    
+    
+  
+    let lineas = {
+      "lines": [
+        {"I": 1, "J": 2, "flujo_P_I_a_J_MW": 3.917677126, "flujo_Q_I_a_J_MW": 2.435140971, "flujo_P_J_a_I_MW": -3.905436702, "flujo_Q_J_a_I_MW": -2.428901275},
+        {"I": 2, "J": 3, "flujo_P_I_a_J_MW": 3.444299179, "flujo_Q_I_a_J_MW": 2.207822423, "flujo_P_J_a_I_MW": -3.392507944, "flujo_Q_J_a_I_MW": -2.181443561},
+        {"I": 3, "J": 4, "flujo_P_I_a_J_MW": 2.362895188, "flujo_Q_I_a_J_MW": 1.684200515, "flujo_P_J_a_I_MW": -2.342994711, "flujo_Q_J_a_I_MW": -1.674065409},
+        {"I": 4, "J": 5, "flujo_P_I_a_J_MW": 2.222994711, "flujo_Q_I_a_J_MW": 1.594065409, "flujo_P_J_a_I_MW": -2.204295769, "flujo_Q_J_a_I_MW": -1.584541755},
+        {"I": 5, "J": 6, "flujo_P_I_a_J_MW": 2.144295769, "flujo_Q_I_a_J_MW": 1.554541755, "flujo_P_J_a_I_MW": -2.106047145, "flujo_Q_J_a_I_MW": -1.521523712},
+        {"I": 6, "J": 7, "flujo_P_I_a_J_MW": 1.095267378, "flujo_Q_I_a_J_MW": 0.527887739, "flujo_P_J_a_I_MW": -1.093352861, "flujo_Q_J_a_I_MW": -0.521559195},
+        {"I": 7, "J": 8, "flujo_P_I_a_J_MW": 0.893352861, "flujo_Q_I_a_J_MW": 0.421559195, "flujo_P_J_a_I_MW": -0.888514896, "flujo_Q_J_a_I_MW": -0.419960367},
+        {"I": 8, "J": 9, "flujo_P_I_a_J_MW": 0.688514896, "flujo_Q_I_a_J_MW": 0.319960367, "flujo_P_J_a_I_MW": -0.684334359, "flujo_Q_J_a_I_MW": -0.316956875},
+        {"I": 9, "J": 10, "flujo_P_I_a_J_MW": 0.624334359, "flujo_Q_I_a_J_MW": 0.296956875, "flujo_P_J_a_I_MW": -0.620773444, "flujo_Q_J_a_I_MW": -0.294432855},
+        {"I": 10, "J": 11, "flujo_P_I_a_J_MW": 0.560773444, "flujo_Q_I_a_J_MW": 0.274432855, "flujo_P_J_a_I_MW": -0.560219743, "flujo_Q_J_a_I_MW": -0.27424979},
+        {"I": 11, "J": 12, "flujo_P_I_a_J_MW": 0.515219743, "flujo_Q_I_a_J_MW": 0.24424979, "flujo_P_J_a_I_MW": -0.514338608, "flujo_Q_J_a_I_MW": -0.243958432},
+        {"I": 12, "J": 13, "flujo_P_I_a_J_MW": 0.454338608, "flujo_Q_I_a_J_MW": 0.208958432, "flujo_P_J_a_I_MW": -0.451672372, "flujo_Q_J_a_I_MW": -0.206860678},
+        {"I": 13, "J": 14, "flujo_P_I_a_J_MW": 0.391672372, "flujo_Q_I_a_J_MW": 0.171860678, "flujo_P_J_a_I_MW": -0.390943211, "flujo_Q_J_a_I_MW": -0.170900894},
+        {"I": 14, "J": 15, "flujo_P_I_a_J_MW": 0.270943211, "flujo_Q_I_a_J_MW": 0.090900894, "flujo_P_J_a_I_MW": -0.270586237, "flujo_Q_J_a_I_MW": -0.090583181},
+        {"I": 15, "J": 16, "flujo_P_I_a_J_MW": 0.210586237, "flujo_Q_I_a_J_MW": 0.080583181, "flujo_P_J_a_I_MW": -0.21030477, "flujo_Q_J_a_I_MW": -0.080377634},
+        {"I": 16, "J": 17, "flujo_P_I_a_J_MW": 0.15030477, "flujo_Q_I_a_J_MW": 0.060377634, "flujo_P_J_a_I_MW": -0.150053136, "flujo_Q_J_a_I_MW": -0.060041667},
+        {"I": 17, "J": 18, "flujo_P_I_a_J_MW": 0.090053136, "flujo_Q_I_a_J_MW": 0.040041667, "flujo_P_J_a_I_MW": -0.09, "flujo_Q_J_a_I_MW": -0.04},
+        {"I": 2, "J": 19, "flujo_P_I_a_J_MW": 0.361137523, "flujo_Q_I_a_J_MW": 0.161078853, "flujo_P_J_a_I_MW": -0.360976569, "flujo_Q_J_a_I_MW": -0.160925259},
+        {"I": 19, "J": 20, "flujo_P_I_a_J_MW": 0.270976569, "flujo_Q_I_a_J_MW": 0.120925259, "flujo_P_J_a_I_MW": -0.270144393, "flujo_Q_J_a_I_MW": -0.120175404},
+        {"I": 20, "J": 21, "flujo_P_I_a_J_MW": 0.180144393, "flujo_Q_I_a_J_MW": 0.080175404, "flujo_P_J_a_I_MW": -0.180043634, "flujo_Q_J_a_I_MW": -0.080057693},
+        {"I": 21, "J": 22, "flujo_P_I_a_J_MW": 0.090043634, "flujo_Q_I_a_J_MW": 0.040057693, "flujo_P_J_a_I_MW": -0.09, "flujo_Q_J_a_I_MW": -0.04},
+        {"I": 3, "J": 23, "flujo_P_I_a_J_MW": 0.939612757, "flujo_Q_I_a_J_MW": 0.457243045, "flujo_P_J_a_I_MW": -0.936431128, "flujo_Q_J_a_I_MW": -0.455069073},
+        {"I": 23, "J": 24, "flujo_P_I_a_J_MW": 0.846431128, "flujo_Q_I_a_J_MW": 0.405069073, "flujo_P_J_a_I_MW": -0.841287452, "flujo_Q_J_a_I_MW": -0.401007403},
+        {"I": 24, "J": 25, "flujo_P_I_a_J_MW": 0.421287452, "flujo_Q_I_a_J_MW": 0.201007403, "flujo_P_J_a_I_MW": -0.42, "flujo_Q_J_a_I_MW": -0.2},
+        {"I": 6, "J": 26, "flujo_P_I_a_J_MW": 0.950779767, "flujo_Q_I_a_J_MW": 0.973635973, "flujo_P_J_a_I_MW": -0.948178871, "flujo_Q_J_a_I_MW": -0.972311182},
+        {"I": 26, "J": 27, "flujo_P_I_a_J_MW": 0.888178871, "flujo_Q_I_a_J_MW": 0.947311182, "flujo_P_J_a_I_MW": -0.884849877, "flujo_Q_J_a_I_MW": -0.945616229},
+        {"I": 27, "J": 28, "flujo_P_I_a_J_MW": 0.824849877, "flujo_Q_I_a_J_MW": 0.920616229, "flujo_P_J_a_I_MW": -0.813549021, "flujo_Q_J_a_I_MW": -0.910652481},
+        {"I": 28, "J": 29, "flujo_P_I_a_J_MW": 0.753549021, "flujo_Q_I_a_J_MW": 0.890652481, "flujo_P_J_a_I_MW": -0.745715671, "flujo_Q_J_a_I_MW": -0.883828252},
+        {"I": 29, "J": 30, "flujo_P_I_a_J_MW": 0.625715671, "flujo_Q_I_a_J_MW": 0.813828252, "flujo_P_J_a_I_MW": -0.621820002, "flujo_Q_J_a_I_MW": -0.811843956},
+        {"I": 30, "J": 31, "flujo_P_I_a_J_MW": 0.421820002, "flujo_Q_I_a_J_MW": 0.211843956, "flujo_P_J_a_I_MW": -0.420226364, "flujo_Q_J_a_I_MW": -0.210268962},
+        {"I": 31, "J": 32, "flujo_P_I_a_J_MW": 0.270226364, "flujo_Q_I_a_J_MW": 0.140268962, "flujo_P_J_a_I_MW": -0.270013169, "flujo_Q_J_a_I_MW": -0.140020475},
+        {"I": 32, "J": 33, "flujo_P_I_a_J_MW": 0.060013169, "flujo_Q_I_a_J_MW": 0.040020475, "flujo_P_J_a_I_MW": -0.06, "flujo_Q_J_a_I_MW": -0.04},
+        {"I": 8, "J": 34, "flujo_P_I_a_J_MW": 0, "flujo_Q_I_a_J_MW": 0, "flujo_P_J_a_I_MW": 0, "flujo_Q_J_a_I_MW": 0},
+        {"I": 9, "J": 35, "flujo_P_I_a_J_MW": 0, "flujo_Q_I_a_J_MW": 0, "flujo_P_J_a_I_MW": 0, "flujo_Q_J_a_I_MW": 0},
+        {"I": 12, "J": 36, "flujo_P_I_a_J_MW": 0, "flujo_Q_I_a_J_MW": 0, "flujo_P_J_a_I_MW": 0, "flujo_Q_J_a_I_MW": 0},
+        {"I": 18, "J": 37, "flujo_P_I_a_J_MW": 0, "flujo_Q_I_a_J_MW": 0, "flujo_P_J_a_I_MW": 0, "flujo_Q_J_a_I_MW": 0},
+        {"I": 25, "J": 38, "flujo_P_I_a_J_MW": 0, "flujo_Q_I_a_J_MW": 0, "flujo_P_J_a_I_MW": 0, "flujo_Q_J_a_I_MW": 0}
+      ]
+    };
+    
+    
+  
+    
+    let nodos = {
+      "nodes": [
+        { "nodo": 1, "tipo_de_nodo": 3, "P_MW": 0, "Q_MVAR": 0, "V_max": 1, "V_min": 1 },
+        { "nodo": 2, "tipo_de_nodo": 1, "P_MW": 0.1, "Q_MVAR": 0.06, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 3, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 4, "tipo_de_nodo": 1, "P_MW": 0.12, "Q_MVAR": 0.08, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 5, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.03, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 6, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 7, "tipo_de_nodo": 1, "P_MW": 0.2, "Q_MVAR": 0.1, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 8, "tipo_de_nodo": 1, "P_MW": 0.2, "Q_MVAR": 0.1, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 9, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 10, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 11, "tipo_de_nodo": 1, "P_MW": 0.045, "Q_MVAR": 0.03, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 12, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.035, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 13, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.035, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 14, "tipo_de_nodo": 1, "P_MW": 0.12, "Q_MVAR": 0.08, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 15, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.01, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 16, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 17, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 18, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 19, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 20, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 21, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 22, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 23, "tipo_de_nodo": 1, "P_MW": 0.09, "Q_MVAR": 0.05, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 24, "tipo_de_nodo": 1, "P_MW": 0.42, "Q_MVAR": 0.2, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 25, "tipo_de_nodo": 1, "P_MW": 0.42, "Q_MVAR": 0.2, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 26, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.025, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 27, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.025, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 28, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 29, "tipo_de_nodo": 1, "P_MW": 0.12, "Q_MVAR": 0.07, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 30, "tipo_de_nodo": 1, "P_MW": 0.2, "Q_MVAR": 0.6, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 31, "tipo_de_nodo": 1, "P_MW": 0.15, "Q_MVAR": 0.07, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 32, "tipo_de_nodo": 1, "P_MW": 0.21, "Q_MVAR": 0.1, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 33, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.04, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 34, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 35, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 36, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 37, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 38, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 }
+      ]
+    };
+    
+    
+  
+    
+    let escenarios = [
+      {
+        "escenario": "ESCENARIO 1 CON SIN RD NI GD",
+        "potencia_deslastrada_MW": 3.714999998,
+        "potencia_atendida_MW": 1.79076E-09,
+        "potencia_generada_adicional_MW": 3.714999998 - 1.79076E-09, // Calculado como potencia atendida - potencia deslastrada
+        "costo_operacion_dolar_per_MWH": 788.5000011,
+        "costo_deslastre_dolar_per_MWH": 788.5000011,
+        "U1": 4.82035E-10,
+        "U2": 0,
+        "U": 2.41018E-10,
+        "resiliencia": "MALA"
+      },
+      {
+        "escenario": "ESCENARIO 2 CON RD SIN GD",
+        "potencia_deslastrada_MW": 2.780183676,
+        "potencia_atendida_MW": 0.934816324,
+        "potencia_generada_adicional_MW": 2.780183676 - 0.934816324, // Calculado como potencia atendida - potencia deslastrada
+        "costo_operacion_dolar_per_MWH": 598.5553542,
+        "costo_deslastre_dolar_per_MWH": 551.8058604,
+        "U1": 0.251632927,
+        "U2": 0.078103877,
+        "U": 0.164868402,
+        "resiliencia": "MALA"
+      },
+      {
+        "escenario": "ESCENARIO 3 CON GD SIN RD",
+        "potencia_deslastrada_MW": 2.665000355,
+        "potencia_atendida_MW": 1.049999645,
+        "potencia_generada_adicional_MW": 2.665000355 - 1.049999645, // Calculado como potencia atendida - potencia deslastrada
+        "costo_operacion_dolar_per_MWH": 615.2500487,
+        "costo_deslastre_dolar_per_MWH": 536.5000851,
+        "U1": 0.282637859,
+        "U2": 0.12799668,
+        "U": 0.205317269,
+        "resiliencia": "POBRE"
+      },
+      {
+        "escenario": "ESCENARIO 4 CON GD Y RD",
+        "potencia_deslastrada_MW": 1.940133236,
+        "potencia_atendida_MW": 1.774866764,
+        "potencia_generada_adicional_MW": 1.940133236 - 1.774866764, // Calculado como potencia atendida - potencia deslastrada
+        "costo_operacion_dolar_per_MWH": 462.0401388,
+        "costo_deslastre_dolar_per_MWH": 352.2906837,
+        "U1": 0.477756868,
+        "U2": 0.237532296,
+        "U": 0.357644582,
+        "resiliencia": "POBRE"
+      }
+    ];
+    
+  
+    
+   
+    let escenario1ConSinRdNiGd = [
+      { "nodo": 2, "carga_MW": 0.1, "potencia_deslastrada_MW": 0.1, "costo_dolar_por_MW": 29.99999992, "potencia_atendida_MW": 2.53212E-10, "_atendido": 2.53212E-07 },
+      { "nodo": 3, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.09, "costo_dolar_por_MW": 18.00000002, "potencia_atendida_MW": -8.50017E-11, "_atendido": -9.44463E-08 },
+      { "nodo": 4, "carga_MW": 0.12, "potencia_deslastrada_MW": 0.12, "costo_dolar_por_MW": 11.99999998, "potencia_atendida_MW": 2.3263E-10, "_atendido": 1.93858E-07 },
+      { "nodo": 5, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.06, "costo_dolar_por_MW": 11.99999996, "potencia_atendida_MW": 2.00889E-10, "_atendido": 3.34815E-07 },
+      { "nodo": 19, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.09, "costo_dolar_por_MW": 18.00000002, "potencia_atendida_MW": -8.48955E-11, "_atendido": -9.43283E-08 },
+      { "nodo": 23, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.09, "costo_dolar_por_MW": 18.00000002, "potencia_atendida_MW": -8.50069E-11, "_atendido": -9.44521E-08 },
+      { "nodo": 11, "carga_MW": 0.045, "potencia_deslastrada_MW": 0.044999999, "costo_dolar_por_MW": 4.499999895, "potencia_atendida_MW": 1.05088E-09, "_atendido": 2.33528E-06 },
+      { "nodo": 12, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999999, "costo_dolar_por_MW": 11.99999987, "potencia_atendida_MW": 6.6745E-10, "_atendido": 1.11242E-06 },
+      { "nodo": 13, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.060000001, "costo_dolar_por_MW": 18.00000037, "potencia_atendida_MW": -1.21992E-09, "_atendido": -2.03321E-06 },
+      { "nodo": 6, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.060000001, "costo_dolar_por_MW": 24.0000004, "potencia_atendida_MW": -9.97089E-10, "_atendido": -1.66182E-06 },
+      { "nodo": 26, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.06, "costo_dolar_por_MW": 17.99999988, "potencia_atendida_MW": 4.15877E-10, "_atendido": 6.93129E-07 },
+      { "nodo": 27, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999999, "costo_dolar_por_MW": 5.999999919, "potencia_atendida_MW": 8.06351E-10, "_atendido": 1.34392E-06 },
+      { "nodo": 9, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.06, "costo_dolar_por_MW": 5.999999962, "potencia_atendida_MW": 3.76127E-10, "_atendido": 6.26879E-07 },
+      { "nodo": 10, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.06, "costo_dolar_por_MW": 12.00000007, "potencia_atendida_MW": -3.53941E-10, "_atendido": -5.89901E-07 },
+      { "nodo": 20, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.089999999, "costo_dolar_por_MW": 8.999999885, "potencia_atendida_MW": 1.14802E-09, "_atendido": 1.27557E-06 },
+      { "nodo": 21, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.089999999, "costo_dolar_por_MW": 8.999999885, "potencia_atendida_MW": 1.14776E-09, "_atendido": 1.27529E-06 },
+      { "nodo": 22, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.090000002, "costo_dolar_por_MW": 36.0000008, "potencia_atendida_MW": -2.0082E-09, "_atendido": -2.23134E-06 },
+      { "nodo": 7, "carga_MW": 0.2, "potencia_deslastrada_MW": 0.200000001, "costo_dolar_por_MW": 60.00000018, "potencia_atendida_MW": -6.03288E-10, "_atendido": -3.01644E-07 },
+      { "nodo": 8, "carga_MW": 0.2, "potencia_deslastrada_MW": 0.199999999, "costo_dolar_por_MW": 19.99999993, "potencia_atendida_MW": 7.37829E-10, "_atendido": 3.68914E-07 },
+      { "nodo": 16, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999999, "costo_dolar_por_MW": 5.999999937, "potencia_atendida_MW": 6.34086E-10, "_atendido": 1.05681E-06 },
+      { "nodo": 17, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.060000001, "costo_dolar_por_MW": 18.00000018, "potencia_atendida_MW": -5.96006E-10, "_atendido": -9.93343E-07 },
+      { "nodo": 18, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.09, "costo_dolar_por_MW": 36, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 24, "carga_MW": 0.42, "potencia_deslastrada_MW": 0.42, "costo_dolar_por_MW": 83.99999991, "potencia_atendida_MW": 4.40111E-10, "_atendido": 1.04788E-07 },
+      { "nodo": 25, "carga_MW": 0.42, "potencia_deslastrada_MW": 0.42, "costo_dolar_por_MW": 126.0000001, "potencia_atendida_MW": -2.87105E-10, "_atendido": -6.83583E-08 },
+      { "nodo": 14, "carga_MW": 0.12, "potencia_deslastrada_MW": 0.12, "costo_dolar_por_MW": 12, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 15, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.06, "costo_dolar_por_MW": 12, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 28, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.06, "costo_dolar_por_MW": 12, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 29, "carga_MW": 0.12, "potencia_deslastrada_MW": 0.12, "costo_dolar_por_MW": 36, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 30, "carga_MW": 0.2, "potencia_deslastrada_MW": 0.2, "costo_dolar_por_MW": 20, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 31, "carga_MW": 0.15, "potencia_deslastrada_MW": 0.15, "costo_dolar_por_MW": 30, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 32, "carga_MW": 0.21, "potencia_deslastrada_MW": 0.21, "costo_dolar_por_MW": 42, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 33, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.06, "costo_dolar_por_MW": 12, "potencia_atendida_MW": 0, "_atendido": 0 }
+    ];
+    
+  
+let escenario2ConRdSinGd = [
+  { "nodo": 2, "carga_MW": 0.1, "potencia_deslastrada_MW": 6.87929E-07, "costo_dolar_por_MW": 0.000206379, "potencia_atendida_MW": 0.099999312, "_atendido": 99.99931207 },
+  { "nodo": 3, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.083988494, "costo_dolar_por_MW": 16.79769873, "potencia_atendida_MW": 0.006011506, "_atendido": 6.67945148 },
+  { "nodo": 4, "carga_MW": 0.12, "potencia_deslastrada_MW": 0.119999312, "costo_dolar_por_MW": 11.9999312, "potencia_atendida_MW": 6.87951E-07, "_atendido": 0.000573292 },
+  { "nodo": 5, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.034542645, "costo_dolar_por_MW": 6.908528987, "potencia_atendida_MW": 0.025457355, "_atendido": 42.42892511 },
+  { "nodo": 19, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.088069137, "costo_dolar_por_MW": 17.61382732, "potencia_atendida_MW": 0.001930863, "_atendido": 2.14540379 },
+  { "nodo": 23, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.080926667, "costo_dolar_por_MW": 16.18533332, "potencia_atendida_MW": 0.009073333, "_atendido": 10.08148154 },
+  { "nodo": 11, "carga_MW": 0.045, "potencia_deslastrada_MW": 0.044999994, "costo_dolar_por_MW": 4.499999426, "potencia_atendida_MW": 5.7394E-09, "_atendido": 1.27542E-05 },
+  { "nodo": 12, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999989, "costo_dolar_por_MW": 11.9999977, "potencia_atendida_MW": 1.14863E-08, "_atendido": 1.91438E-05 },
+  { "nodo": 13, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.022511678, "costo_dolar_por_MW": 6.753503411, "potencia_atendida_MW": 0.037488322, "_atendido": 62.4805366 },
+  { "nodo": 6, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.030004792, "costo_dolar_por_MW": 12.00191686, "potencia_atendida_MW": 0.029995208, "_atendido": 49.9920131 },
+  { "nodo": 26, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059998719, "costo_dolar_por_MW": 17.99961563, "potencia_atendida_MW": 1.28122E-06, "_atendido": 0.002135371 },
+  { "nodo": 27, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999573, "costo_dolar_por_MW": 5.999957329, "potencia_atendida_MW": 4.26712E-07, "_atendido": 0.000711187 },
+  { "nodo": 9, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059994906, "costo_dolar_por_MW": 5.999490639, "potencia_atendida_MW": 5.09361E-06, "_atendido": 0.008489355 },
+  { "nodo": 10, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.015017676, "costo_dolar_por_MW": 3.003535142, "potencia_atendida_MW": 0.044982324, "_atendido": 74.97054048 },
+  { "nodo": 20, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.089999987, "costo_dolar_por_MW": 8.999998666, "potencia_atendida_MW": 1.33389E-08, "_atendido": 1.4821E-05 },
+  { "nodo": 21, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.089999987, "costo_dolar_por_MW": 8.999998666, "potencia_atendida_MW": 1.33361E-08, "_atendido": 1.48179E-05 },
+  { "nodo": 22, "carga_MW": 0.09, "potencia_deslastrada_MW": 3.39776E-05, "costo_dolar_por_MW": 0.013591033, "potencia_atendida_MW": 0.089966022, "_atendido": 99.96224713 },
+  { "nodo": 7, "carga_MW": 0.2, "potencia_deslastrada_MW": 0.100036783, "costo_dolar_por_MW": 30.01103485, "potencia_atendida_MW": 0.099963217, "_atendido": 49.98160858 },
+  { "nodo": 8, "carga_MW": 0.2, "potencia_deslastrada_MW": 0.199999973, "costo_dolar_por_MW": 19.99999728, "potencia_atendida_MW": 2.71812E-08, "_atendido": 1.35906E-05 },
+  { "nodo": 16, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.059999597, "costo_dolar_por_MW": 5.999959721, "potencia_atendida_MW": 4.02787E-07, "_atendido": 0.000671312 },
+  { "nodo": 17, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.01500808, "costo_dolar_por_MW": 4.5024239, "potencia_atendida_MW": 0.04499192, "_atendido": 74.98653389 },
+  { "nodo": 18, "carga_MW": 0.09, "potencia_deslastrada_MW": 0.09, "costo_dolar_por_MW": 36, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 24, "carga_MW": 0.42, "potencia_deslastrada_MW": 0.419999929, "costo_dolar_por_MW": 83.99998588, "potencia_atendida_MW": 7.05926E-08, "_atendido": 1.68078E-05 },
+  { "nodo": 25, "carga_MW": 0.42, "potencia_deslastrada_MW": 0.315051094, "costo_dolar_por_MW": 94.51532829, "potencia_atendida_MW": 0.104948906, "_atendido": 24.98783469 },
+  { "nodo": 14, "carga_MW": 0.12, "potencia_deslastrada_MW": 0.06, "costo_dolar_por_MW": 6, "potencia_atendida_MW": 0.06, "_atendido": 50 },
+  { "nodo": 15, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.045, "costo_dolar_por_MW": 9, "potencia_atendida_MW": 0.015, "_atendido": 25 },
+  { "nodo": 28, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.045, "costo_dolar_por_MW": 9, "potencia_atendida_MW": 0.015, "_atendido": 25 },
+  { "nodo": 29, "carga_MW": 0.12, "potencia_deslastrada_MW": 0.09, "costo_dolar_por_MW": 27, "potencia_atendida_MW": 0.03, "_atendido": 25 },
+  { "nodo": 30, "carga_MW": 0.2, "potencia_deslastrada_MW": 0.1, "costo_dolar_por_MW": 10, "potencia_atendida_MW": 0.1, "_atendido": 50 },
+  { "nodo": 31, "carga_MW": 0.15, "potencia_deslastrada_MW": 0.15, "costo_dolar_por_MW": 30, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 32, "carga_MW": 0.21, "potencia_deslastrada_MW": 0.105, "costo_dolar_por_MW": 21, "potencia_atendida_MW": 0.105, "_atendido": 50 },
+  { "nodo": 33, "carga_MW": 0.06, "potencia_deslastrada_MW": 0.045, "costo_dolar_por_MW": 9, "potencia_atendida_MW": 0.015, "_atendido": 25 }
+];
+
+    
+    
+
+  let escenario3ConGdSinRd = [
+    { nodo: 2, carga_MW: 0.1, potencia_deslastrada_MW: 0.1, costo_dolar_por_MW: 29.99999992, potencia_atendida_MW: 2.53212E-10, _atendido: 2.53212E-07 },
+    { nodo: 3, carga_MW: 0.09, potencia_deslastrada_MW: 0.09, costo_dolar_por_MW: 18.00000002, potencia_atendida_MW: -8.50017E-11, _atendido: -9.44463E-08 },
+    { nodo: 4, carga_MW: 0.12, potencia_deslastrada_MW: 0.12, costo_dolar_por_MW: 11.99999998, potencia_atendida_MW: 2.3263E-10, _atendido: 1.93858E-07 },
+    { nodo: 5, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 11.99999996, potencia_atendida_MW: 2.00889E-10, _atendido: 3.34815E-07 },
+    { nodo: 19, carga_MW: 0.09, potencia_deslastrada_MW: 0.09, costo_dolar_por_MW: 18.00000002, potencia_atendida_MW: -8.48955E-11, _atendido: -9.43283E-08 },
+    { nodo: 23, carga_MW: 0.09, potencia_deslastrada_MW: 0.09, costo_dolar_por_MW: 18.00000002, potencia_atendida_MW: -8.50069E-11, _atendido: -9.44521E-08 },
+    { nodo: 11, carga_MW: 0.045, potencia_deslastrada_MW: 0.044999999, costo_dolar_por_MW: 4.499999895, potencia_atendida_MW: 1.05088E-09, _atendido: 2.33528E-06 },
+    { nodo: 12, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999999, costo_dolar_por_MW: 11.99999987, potencia_atendida_MW: 6.6745E-10, _atendido: 1.11242E-06 },
+    { nodo: 13, carga_MW: 0.06, potencia_deslastrada_MW: 0.060000001, costo_dolar_por_MW: 18.00000037, potencia_atendida_MW: -1.21992E-09, _atendido: -2.03321E-06 },
+    { nodo: 6, carga_MW: 0.06, potencia_deslastrada_MW: 0.060000001, costo_dolar_por_MW: 24.0000004, potencia_atendida_MW: -9.97089E-10, _atendido: -1.66182E-06 },
+    { nodo: 26, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 17.99999988, potencia_atendida_MW: 4.15877E-10, _atendido: 6.93129E-07 },
+    { nodo: 27, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999999, costo_dolar_por_MW: 5.999999919, potencia_atendida_MW: 8.06351E-10, _atendido: 1.34392E-06 },
+    { nodo: 9, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 5.999999962, potencia_atendida_MW: 3.76127E-10, _atendido: 6.26879E-07 },
+    { nodo: 10, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 12.00000007, potencia_atendida_MW: -3.53941E-10, _atendido: -5.89901E-07 },
+    { nodo: 20, carga_MW: 0.09, potencia_deslastrada_MW: 0.089999999, costo_dolar_por_MW: 8.999999885, potencia_atendida_MW: 1.14802E-09, _atendido: 1.27557E-06 },
+    { nodo: 21, carga_MW: 0.09, potencia_deslastrada_MW: 0.089999999, costo_dolar_por_MW: 8.999999885, potencia_atendida_MW: 1.14776E-09, _atendido: 1.27529E-06 },
+    { nodo: 22, carga_MW: 0.09, potencia_deslastrada_MW: 0.090000002, costo_dolar_por_MW: 36.0000008, potencia_atendida_MW: -2.0082E-09, _atendido: -2.23134E-06 },
+    { nodo: 7, carga_MW: 0.2, potencia_deslastrada_MW: 0.200000001, costo_dolar_por_MW: 60.00000018, potencia_atendida_MW: -6.03288E-10, _atendido: -3.01644E-07 },
+    { nodo: 8, carga_MW: 0.2, potencia_deslastrada_MW: 0.199999999, costo_dolar_por_MW: 19.99999993, potencia_atendida_MW: 7.37829E-10, _atendido: 3.68914E-07 },
+    { nodo: 16, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999999, costo_dolar_por_MW: 5.999999937, potencia_atendida_MW: 6.34086E-10, _atendido: 1.05681E-06 },
+    { nodo: 17, carga_MW: 0.06, potencia_deslastrada_MW: 0.060000001, costo_dolar_por_MW: 18.00000018, potencia_atendida_MW: -5.96006E-10, _atendido: -9.93343E-07 },
+    { nodo: 18, carga_MW: 0.09, potencia_deslastrada_MW: 0.09, costo_dolar_por_MW: 36, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 24, carga_MW: 0.42, potencia_deslastrada_MW: 2.29303E-07, costo_dolar_por_MW: 4.58605E-05, potencia_atendida_MW: 0.419999771, _atendido: 99.9999454 },
+    { nodo: 25, carga_MW: 0.42, potencia_deslastrada_MW: 1.274E-07, costo_dolar_por_MW: 3.82201E-05, potencia_atendida_MW: 0.419999873, _atendido: 99.99996967 },
+    { nodo: 14, carga_MW: 0.12, potencia_deslastrada_MW: 0.12, costo_dolar_por_MW: 12, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 15, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 12, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 28, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 12, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 29, carga_MW: 0.12, potencia_deslastrada_MW: 0.12, costo_dolar_por_MW: 36, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 30, carga_MW: 0.2, potencia_deslastrada_MW: 0.2, costo_dolar_por_MW: 20, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 31, carga_MW: 0.15, potencia_deslastrada_MW: 0.15, costo_dolar_por_MW: 30, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 33, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 12, potencia_atendida_MW: 0, _atendido: 0 }
+];
+
+  
+   
+    let escenario4ConGdYRd = [
+      { nodo: 2, carga_MW: 0.1, potencia_deslastrada_MW: 6.87929E-7, costo_dolar_por_MW: 2.06379E-4, potencia_atendida_MW: 0.099999312, _atendido: 99.99931207 },
+      { nodo: 3, carga_MW: 0.09, potencia_deslastrada_MW: 8.39885E-2, costo_dolar_por_MW: 1.67977E+1, potencia_atendida_MW: 6.01151E-3, _atendido: 6.67945148 },
+      { nodo: 4, carga_MW: 0.12, potencia_deslastrada_MW: 1.19999E-1, costo_dolar_por_MW: 1.19999E+1, potencia_atendida_MW: 6.87951E-7, _atendido: 5.73292E-4 },
+      { nodo: 5, carga_MW: 0.06, potencia_deslastrada_MW: 3.45426E-2, costo_dolar_por_MW: 6.90853E+0, potencia_atendida_MW: 2.54573E-2, _atendido: 42.42892511 },
+      { nodo: 19, carga_MW: 0.09, potencia_deslastrada_MW: 8.80691E-2, costo_dolar_por_MW: 1.76138E+1, potencia_atendida_MW: 1.93086E-3, _atendido: 2.145403789 },
+      { nodo: 23, carga_MW: 0.09, potencia_deslastrada_MW: 8.09267E-2, costo_dolar_por_MW: 1.61853E+1, potencia_atendida_MW: 9.07333E-3, _atendido: 10.08148154 },
+      { nodo: 11, carga_MW: 0.045, potencia_deslastrada_MW: 4.49999E-2, costo_dolar_por_MW: 4.50000E+0, potencia_atendida_MW: 5.7394E-9, _atendido: 1.27542E-5 },
+      { nodo: 12, carga_MW: 0.06, potencia_deslastrada_MW: 5.99999E-2, costo_dolar_por_MW: 1.19999E+1, potencia_atendida_MW: 1.14863E-8, _atendido: 1.91438E-5 },
+      { nodo: 13, carga_MW: 0.06, potencia_deslastrada_MW: 2.25117E-2, costo_dolar_por_MW: 6.75350E+0, potencia_atendida_MW: 3.74883E-2, _atendido: 62.4805366 },
+      { nodo: 6, carga_MW: 0.06, potencia_deslastrada_MW: 3.00048E-2, costo_dolar_por_MW: 1.20019E+1, potencia_atendida_MW: 2.99995E-2, _atendido: 49.9920131 },
+      { nodo: 26, carga_MW: 0.06, potencia_deslastrada_MW: 5.99999E-2, costo_dolar_por_MW: 1.79996E+1, potencia_atendida_MW: 1.28122E-6, _atendido: 0.002135371 },
+      { nodo: 27, carga_MW: 0.06, potencia_deslastrada_MW: 5.99996E-2, costo_dolar_por_MW: 5.99996E+0, potencia_atendida_MW: 4.26712E-7, _atendido: 0.000711187 },
+      { nodo: 9, carga_MW: 0.06, potencia_deslastrada_MW: 5.99995E-2, costo_dolar_por_MW: 5.99949E+0, potencia_atendida_MW: 5.09361E-6, _atendido: 0.008489355 },
+      { nodo: 10, carga_MW: 0.06, potencia_deslastrada_MW: 1.50177E-2, costo_dolar_por_MW: 3.00354E+0, potencia_atendida_MW: 4.49823E-2, _atendido: 74.97054048 },
+      { nodo: 20, carga_MW: 0.09, potencia_deslastrada_MW: 8.99999E-2, costo_dolar_por_MW: 9.00000E+0, potencia_atendida_MW: 1.33389E-8, _atendido: 1.4821E-5 },
+      { nodo: 21, carga_MW: 0.09, potencia_deslastrada_MW: 8.99999E-2, costo_dolar_por_MW: 9.00000E+0, potencia_atendida_MW: 1.33361E-8, _atendido: 1.48179E-5 },
+      { nodo: 22, carga_MW: 0.09, potencia_deslastrada_MW: 3.39776E-5, costo_dolar_por_MW: 1.35910E-2, potencia_atendida_MW: 8.99660E-2, _atendido: 99.96224713 },
+      { nodo: 7, carga_MW: 0.2, potencia_deslastrada_MW: 1.00037E-1, costo_dolar_por_MW: 3.00110E+1, potencia_atendida_MW: 9.99632E-2, _atendido: 49.98160858 },
+      { nodo: 8, carga_MW: 0.2, potencia_deslastrada_MW: 2.00000E-1, costo_dolar_por_MW: 2.00000E+1, potencia_atendida_MW: 2.71812E-8, _atendido: 1.35906E-5 },
+      { nodo: 16, carga_MW: 0.06, potencia_deslastrada_MW: 5.99996E-2, costo_dolar_por_MW: 5.99996E+0, potencia_atendida_MW: 4.02787E-7, _atendido: 0.000671312 },
+      { nodo: 17, carga_MW: 0.06, potencia_deslastrada_MW: 1.50081E-2, costo_dolar_por_MW: 4.50242E+0, potencia_atendida_MW: 4.49919E-2, _atendido: 74.98653389 },
+      { nodo: 18, carga_MW: 0.09, potencia_deslastrada_MW: 9.00000E-2, costo_dolar_por_MW: 3.60000E+1, potencia_atendida_MW: 0, _atendido: 0 },
+      { nodo: 24, carga_MW: 0.42, potencia_deslastrada_MW: 3.74998E-7, costo_dolar_por_MW: 7.49996E-5, potencia_atendida_MW: 0.419999625, _atendido: 99.99991071 },
+      { nodo: 25, carga_MW: 0.42, potencia_deslastrada_MW: 2.08203E-7, costo_dolar_por_MW: 6.24609E-5, potencia_atendida_MW: 0.419999792, _atendido: 99.99995043 },
+      { nodo: 14, carga_MW: 0.12, potencia_deslastrada_MW: 6.00000E-2, costo_dolar_por_MW: 6.00000E+0, potencia_atendida_MW: 6.00000E-2, _atendido: 50 },
+      { nodo: 15, carga_MW: 0.06, potencia_deslastrada_MW: 4.50000E-2, costo_dolar_por_MW: 9.00000E+0, potencia_atendida_MW: 1.50000E-2, _atendido: 25 },
+      { nodo: 28, carga_MW: 0.06, potencia_deslastrada_MW: 4.50000E-2, costo_dolar_por_MW: 9.00000E+0, potencia_atendida_MW: 1.50000E-2, _atendido: 25 },
+      { nodo: 29, carga_MW: 0.12, potencia_deslastrada_MW: 9.00000E-2, costo_dolar_por_MW: 2.70000E+1, potencia_atendida_MW: 3.00000E-2, _atendido: 25 },
+      { nodo: 30, carga_MW: 0.2, potencia_deslastrada_MW: 1.00000E-1, costo_dolar_por_MW: 1.00000E+1, potencia_atendida_MW: 1.00000E-1, _atendido: 50 },
+      { nodo: 31, carga_MW: 0.15, potencia_deslastrada_MW: 1.50000E-1, costo_dolar_por_MW: 3.00000E+1, potencia_atendida_MW: 0, _atendido: 0 },
+      { nodo: 33, carga_MW: 0.06, potencia_deslastrada_MW: 4.50000E-2, costo_dolar_por_MW: 9.00000E+0, potencia_atendida_MW: 1.50000E-2, _atendido: 25 }
   ];
   
     
+ 
+    let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+   }
+
+   if(caso=="39"){
+   
+    let generadores = {
+      "generators": [
+        { "nodo": 30, "PG_MW": 250, "QG_MW": 161.762, "Q_MAX_MVAR": 400, "Q_MIN_MVAR": 140, "P_MAX_MW": 1040, "costo_marginal_dolar_per_MW": 0.51 },
+        { "nodo": 31, "PG_MW": 677.871, "QG_MW": 221.574, "Q_MAX_MVAR": 300, "Q_MIN_MVAR": -100, "P_MAX_MW": 646, "costo_marginal_dolar_per_MW": 0.51 },
+        { "nodo": 32, "PG_MW": 650, "QG_MW": 206.965, "Q_MAX_MVAR": 300, "Q_MIN_MVAR": 150, "P_MAX_MW": 725, "costo_marginal_dolar_per_MW": 0.51 },
+        { "nodo": 33, "PG_MW": 632, "QG_MW": 108.293, "Q_MAX_MVAR": 250, "Q_MIN_MVAR": 0, "P_MAX_MW": 652, "costo_marginal_dolar_per_MW": 0.51 },
+        { "nodo": 34, "PG_MW": 508, "QG_MW": 166.688, "Q_MAX_MVAR": 167, "Q_MIN_MVAR": 0, "P_MAX_MW": 508, "costo_marginal_dolar_per_MW": 0.51 },
+        { "nodo": 35, "PG_MW": 650, "QG_MW": 210.661, "Q_MAX_MVAR": 300, "Q_MIN_MVAR": -100, "P_MAX_MW": 687, "costo_marginal_dolar_per_MW": 0.51 },
+        { "nodo": 36, "PG_MW": 560, "QG_MW": 100.165, "Q_MAX_MVAR": 240, "Q_MIN_MVAR": 0, "P_MAX_MW": 580, "costo_marginal_dolar_per_MW": 0.51 },
+        { "nodo": 37, "PG_MW": 540, "QG_MW": -1.36945, "Q_MAX_MVAR": 250, "Q_MIN_MVAR": 0, "P_MAX_MW": 564, "costo_marginal_dolar_per_MW": 0.51 },
+        { "nodo": 38, "PG_MW": 830, "QG_MW": 21.7327, "Q_MAX_MVAR": 300, "Q_MIN_MVAR": -150, "P_MAX_MW": 865, "costo_marginal_dolar_per_MW": 0.51 },
+        { "nodo": 39, "PG_MW": 1000, "QG_MW": 78.4674, "Q_MAX_MVAR": 300, "Q_MIN_MVAR": -100, "P_MAX_MW": 1100, "costo_marginal_dolar_per_MW": 0.51 }
+      ]
+    };
     
-    let escenario3ConGdSinRd = [
-      {nodo: 24, carga_MW: 0.42, potencia_deslastrada_MW: 2.66233e-7, costo_dolar_por_MW: 5.32467e-5, potencia_atendida_MW: 0.419999734, _atendido: 99.99993661},
-      {nodo: 25, carga_MW: 0.42, potencia_deslastrada_MW: 2.66255e-7, costo_dolar_por_MW: 5.3251e-5, potencia_atendida_MW: 0.419999734, _atendido: 99.99993661},
-      {nodo: 29, carga_MW: 0.12, potencia_deslastrada_MW: 1.34725e-6, costo_dolar_por_MW: 0.000134725, potencia_atendida_MW: 0.119998653, _atendido: 99.99887729},
-      {nodo: 30, carga_MW: 0.2, potencia_deslastrada_MW: 2.67328e-7, costo_dolar_por_MW: 5.34656e-5, potencia_atendida_MW: 0.199999733, _atendido: 99.99986634},
-      {nodo: 31, carga_MW: 0.15, potencia_deslastrada_MW: 1.02644e-7, costo_dolar_por_MW: 4.10576e-5, potencia_atendida_MW: 0.149999897, _atendido: 99.99993157},
-      {nodo: 32, carga_MW: 0.21, potencia_deslastrada_MW: 2.68037e-7, costo_dolar_por_MW: 5.36074e-5, potencia_atendida_MW: 0.209999732, _atendido: 99.99987236},
-      {nodo: 19, carga_MW: 0.09, potencia_deslastrada_MW: 0.090000005, costo_dolar_por_MW: 18.00000105, potencia_atendida_MW: -5.24201e-9, _atendido: -5.82445e-6},
-      {nodo: 20, carga_MW: 0.09, potencia_deslastrada_MW: 0.09000001, costo_dolar_por_MW: 27.00000315, potencia_atendida_MW: -1.04913e-8, _atendido: -1.1657e-5},
-      {nodo: 21, carga_MW: 0.09, potencia_deslastrada_MW: 0.090000011, costo_dolar_por_MW: 27.00000316, potencia_atendida_MW: -1.05486e-8, _atendido: -1.17207e-5},
-      {nodo: 22, carga_MW: 0.09, potencia_deslastrada_MW: 0.089999966, costo_dolar_por_MW: 8.999996641, potencia_atendida_MW: 3.35934e-8, _atendido: 3.7326e-5},
-      {nodo: 3, carga_MW: 0.09, potencia_deslastrada_MW: 0.090000038, costo_dolar_por_MW: 27.00001146, potencia_atendida_MW: -3.82025e-8, _atendido: -4.24472e-5},
-      {nodo: 4, carga_MW: 0.12, potencia_deslastrada_MW: 0.119999983, costo_dolar_por_MW: 11.99999832, potencia_atendida_MW: 1.67835e-8, _atendido: 1.39863e-5},
-      {nodo: 23, carga_MW: 0.09, potencia_deslastrada_MW: 0.089999975, costo_dolar_por_MW: 8.999997521, potencia_atendida_MW: 2.47877e-8, _atendido: 2.75419e-5},
-      {nodo: 10, carga_MW: 0.06, potencia_deslastrada_MW: 0.060000017, costo_dolar_por_MW: 12.00000336, potencia_atendida_MW: -1.68108e-8, _atendido: -2.8018e-5},
-      {nodo: 11, carga_MW: 0.045, potencia_deslastrada_MW: 0.044999999, costo_dolar_por_MW: 8.999999737, potencia_atendida_MW: 1.31696e-9, _atendido: 2.92658e-6},
-      {nodo: 12, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999971, costo_dolar_por_MW: 5.999997054, potencia_atendida_MW: 2.94646e-8, _atendido: 4.91077e-5},
-      {nodo: 17, carga_MW: 0.06, potencia_deslastrada_MW: 0.05999999, costo_dolar_por_MW: 5.999998975, potencia_atendida_MW: 1.02454e-8, _atendido: 1.70757e-5},
-      {nodo: 18, carga_MW: 0.09, potencia_deslastrada_MW: 0.09000002, costo_dolar_por_MW: 18.00000398, potencia_atendida_MW: -1.9876e-8, _atendido: -2.20844e-5},
-      {nodo: 33, carga_MW: 0.06, potencia_deslastrada_MW: 0.05999999, costo_dolar_por_MW: 5.99999897, potencia_atendida_MW: 1.03023e-8, _atendido: 1.71705e-5},
-      {nodo: 6, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999976, costo_dolar_por_MW: 11.99999528, potencia_atendida_MW: 2.3604e-8, _atendido: 3.934e-5},
-      {nodo: 7, carga_MW: 0.2, potencia_deslastrada_MW: 0.200000023, costo_dolar_por_MW: 80.00000925, potencia_atendida_MW: -2.31154e-8, _atendido: -1.15577e-5},
-      {nodo: 8, carga_MW: 0.2, potencia_deslastrada_MW: 0.200000023, costo_dolar_por_MW: 60.00000695, potencia_atendida_MW: -2.3153e-8, _atendido: -1.15765e-5},
-      {nodo: 9, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999973, costo_dolar_por_MW: 5.999997325, potencia_atendida_MW: 2.6752e-8, _atendido: 4.45867e-5},
-      {nodo: 13, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999978, costo_dolar_por_MW: 5.999997751, potencia_atendida_MW: 2.24949e-8, _atendido: 3.74915e-5},
-      {nodo: 14, carga_MW: 0.12, potencia_deslastrada_MW: 0.120000021, costo_dolar_por_MW: 36.00000624, potencia_atendida_MW: -2.07842e-8, _atendido: -1.73201e-5},
-      {nodo: 15, carga_MW: 0.06, potencia_deslastrada_MW: 0.060000025, costo_dolar_por_MW: 24.00000988, potencia_atendida_MW: -2.46929e-8, _atendido: -4.11548e-5},
-      {nodo: 16, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999967, costo_dolar_por_MW: 5.99999665, potencia_atendida_MW: 3.34984e-8, _atendido: 5.58307e-5},
-      {nodo: 27, carga_MW: 0.06, potencia_deslastrada_MW: 0.060000021, costo_dolar_por_MW: 24.0000084, potencia_atendida_MW: -2.10051e-8, _atendido: -3.50084e-5},
-      {nodo: 28, carga_MW: 0.06, potencia_deslastrada_MW: 0.05999996, costo_dolar_por_MW: 5.999995973, potencia_atendida_MW: 4.0273e-8, _atendido: 6.71217e-5},
-      {nodo: 2, carga_MW: 0.1, potencia_deslastrada_MW: 0.1, costo_dolar_por_MW: 20, potencia_atendida_MW: 0, _atendido: 0},
-      {nodo: 5, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 6, potencia_atendida_MW: 0, _atendido: 0},
-      {nodo: 26, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 18, potencia_atendida_MW: 0, _atendido: 0}
+    
+    
+  
+    let lineas = {
+      "lines": [
+        {"I": 1, "J": 2, "flujo_P_I_a_J_MW": -367.1074057, "flujo_Q_I_a_J_MW": -14.52704929, "flujo_P_J_a_I_MW": 371.4762284, "flujo_Q_J_a_I_MW": -10.88121119},
+        {"I": 1, "J": 39, "flujo_P_I_a_J_MW": 269.507375, "flujo_Q_I_a_J_MW": -29.67294779, "flujo_P_J_a_I_MW": -268.836226, "flujo_Q_J_a_I_MW": -34.60036581},
+        {"I": 2, "J": 3, "flujo_P_I_a_J_MW": 454.3903683, "flujo_Q_I_a_J_MW": 22.58336444, "flujo_P_J_a_I_MW": -451.960211, "flujo_Q_J_a_I_MW": -22.71118992},
+        {"I": 2, "J": 25, "flujo_P_I_a_J_MW": -154.2780569, "flujo_Q_I_a_J_MW": 50.49050117, "flujo_P_J_a_I_MW": 155.9929203, "flujo_Q_J_a_I_MW": -64.70194272},
+        {"I": 2, "J": 30, "flujo_P_I_a_J_MW": -671.5885501, "flujo_Q_I_a_J_MW": -62.19265021, "flujo_P_J_a_I_MW": 671.5885501, "flujo_Q_J_a_I_MW": 140.0003383},
+        {"I": 3, "J": 4, "flujo_P_I_a_J_MW": 128.2282455, "flujo_Q_I_a_J_MW": 31.58253585, "flujo_P_J_a_I_MW": -128.0100087, "flujo_Q_J_a_I_MW": -51.97407939},
+        {"I": 3, "J": 18, "flujo_P_I_a_J_MW": 1.731967102, "flujo_Q_I_a_J_MW": -11.27134582, "flujo_P_J_a_I_MW": -1.73193519, "flujo_Q_J_a_I_MW": -12.09762778},
+        {"I": 4, "J": 5, "flujo_P_I_a_J_MW": -107.0406169, "flujo_Q_I_a_J_MW": -69.10491215, "flujo_P_J_a_I_MW": 107.1547335, "flujo_Q_J_a_I_MW": 56.42588326},
+        {"I": 4, "J": 14, "flujo_P_I_a_J_MW": -264.9493605, "flujo_Q_I_a_J_MW": -62.92100724, "flujo_P_J_a_I_MW": 265.4962548, "flujo_Q_J_a_I_MW": 56.78927017},
+        {"I": 5, "J": 6, "flujo_P_I_a_J_MW": -513.9160557, "flujo_Q_I_a_J_MW": -122.0589507, "flujo_P_J_a_I_MW": 514.4270701, "flujo_Q_J_a_I_MW": 123.9543224},
+        {"I": 5, "J": 8, "flujo_P_I_a_J_MW": 406.7613206, "flujo_Q_I_a_J_MW": 65.63306733, "flujo_P_J_a_I_MW": -405.5068355, "flujo_Q_J_a_I_MW": -63.9996035},
+        {"I": 6, "J": 7, "flujo_P_I_a_J_MW": 504.9592316, "flujo_Q_I_a_J_MW": 111.0158915, "flujo_P_J_a_I_MW": -503.4910504, "flujo_Q_J_a_I_MW": -100.7690182},
+        {"I": 6, "J": 11, "flujo_P_I_a_J_MW": -382.5863698, "flujo_Q_I_a_J_MW": -53.81384732, "flujo_P_J_a_I_MW": 383.5329597, "flujo_Q_J_a_I_MW": 49.5523991},
+        {"I": 6, "J": 31, "flujo_P_I_a_J_MW": -636.7999377, "flujo_Q_I_a_J_MW": -181.156365, "flujo_P_J_a_I_MW": 636.7999377, "flujo_Q_J_a_I_MW": 295.399909},
+        {"I": 7, "J": 8, "flujo_P_I_a_J_MW": 269.6910609, "flujo_Q_I_a_J_MW": 16.76901967, "flujo_P_J_a_I_MW": -269.4181943, "flujo_Q_J_a_I_MW": -21.98232224},
+        {"I": 8, "J": 9, "flujo_P_I_a_J_MW": 152.9250517, "flujo_Q_I_a_J_MW": -90.61807168, "flujo_P_J_a_I_MW": -152.3154174, "flujo_Q_J_a_I_MW": 58.68261171},
+        {"I": 9, "J": 39, "flujo_P_I_a_J_MW": 145.8154021, "flujo_Q_I_a_J_MW": 7.917384736, "flujo_P_J_a_I_MW": -145.5746709, "flujo_Q_J_a_I_MW": -133.51295},
+        {"I": 10, "J": 11, "flujo_P_I_a_J_MW": 383.6938938, "flujo_Q_I_a_J_MW": 92.711864, "flujo_P_J_a_I_MW": -383.1362163, "flujo_Q_J_a_I_MW": -94.86419048},
+        {"I": 10, "J": 13, "flujo_P_I_a_J_MW": 287.4660348, "flujo_Q_I_a_J_MW": 107.2932843, "flujo_P_J_a_I_MW": -287.1275521, "flujo_Q_J_a_I_MW": -111.7998175},
+        {"I": 10, "J": 32, "flujo_P_I_a_J_MW": -671.1599306, "flujo_Q_I_a_J_MW": -200.0051464, "flujo_P_J_a_I_MW": 671.1599306, "flujo_Q_J_a_I_MW": 299.994016},
+        {"I": 12, "J": 11, "flujo_P_I_a_J_MW": 0.426288788, "flujo_Q_I_a_J_MW": -44.50858995, "flujo_P_J_a_I_MW": -0.396745745, "flujo_Q_J_a_I_MW": 45.31179145},
+        {"I": 12, "J": 13, "flujo_P_I_a_J_MW": -8.956288554, "flujo_Q_I_a_J_MW": -43.49140894, "flujo_P_J_a_I_MW": 8.985690257, "flujo_Q_J_a_I_MW": 44.29076772},
+        {"I": 13, "J": 14, "flujo_P_I_a_J_MW": 278.1418636, "flujo_Q_I_a_J_MW": 67.50904972, "flujo_P_J_a_I_MW": -277.4673022, "flujo_Q_J_a_I_MW": -78.91868538},
+        {"I": 14, "J": 15, "flujo_P_I_a_J_MW": 11.97104973, "flujo_Q_I_a_J_MW": 22.12941508, "flujo_P_J_a_I_MW": -11.93945268, "flujo_Q_J_a_I_MW": -61.36199124},
+        {"I": 15, "J": 16, "flujo_P_I_a_J_MW": -308.0605437, "flujo_Q_I_a_J_MW": -91.63800848, "flujo_P_J_a_I_MW": 308.9135657, "flujo_Q_J_a_I_MW": 82.01143419},
+        {"I": 16, "J": 17, "flujo_P_I_a_J_MW": 236.5010092, "flujo_Q_I_a_J_MW": -35.70001965, "flujo_P_J_a_I_MW": -236.1382822, "flujo_Q_J_a_I_MW": 25.60361014},
+        {"I": 16, "J": 19, "flujo_P_I_a_J_MW": -471.0802382, "flujo_Q_I_a_J_MW": -31.61771216, "flujo_P_J_a_I_MW": 474.3263737, "flujo_Q_J_a_I_MW": 37.45851277},
+        {"I": 16, "J": 21, "flujo_P_I_a_J_MW": -347.7461779, "flujo_Q_I_a_J_MW": 32.20484959, "flujo_P_J_a_I_MW": 348.6452959, "flujo_Q_J_a_I_MW": -44.86906411},
+        {"I": 16, "J": 24, "flujo_P_I_a_J_MW": -55.58815745, "flujo_Q_I_a_J_MW": -79.1985519, "flujo_P_J_a_I_MW": 55.61223225, "flujo_Q_J_a_I_MW": 72.19506767},
+        {"I": 17, "J": 18, "flujo_P_I_a_J_MW": 156.4251929, "flujo_Q_I_a_J_MW": 5.299714334, "flujo_P_J_a_I_MW": -156.2680633, "flujo_Q_J_a_I_MW": -17.90237217},
+        {"I": 17, "J": 27, "flujo_P_I_a_J_MW": 79.71309005, "flujo_Q_I_a_J_MW": -30.90332444, "flujo_P_J_a_I_MW": -79.63571018, "flujo_Q_J_a_I_MW": -3.391952295},
+        {"I": 19, "J": 20, "flujo_P_I_a_J_MW": 174.6486059, "flujo_Q_I_a_J_MW": 16.30288553, "flujo_P_J_a_I_MW": -174.4332304, "flujo_Q_J_a_I_MW": -12.05691173},
+        {"I": 19, "J": 33, "flujo_P_I_a_J_MW": -648.974978, "flujo_Q_I_a_J_MW": -53.76139817, "flujo_P_J_a_I_MW": 651.9996623, "flujo_Q_J_a_I_MW": 115.1192788},
+        {"I": 20, "J": 34, "flujo_P_I_a_J_MW": -505.5667695, "flujo_Q_I_a_J_MW": -90.94308827, "flujo_P_J_a_I_MW": 507.9999933, "flujo_Q_J_a_I_MW": 139.607563},
+        {"I": 21, "J": 22, "flujo_P_I_a_J_MW": -622.6452961, "flujo_Q_I_a_J_MW": -70.13093581, "flujo_P_J_a_I_MW": 625.5136465, "flujo_Q_J_a_I_MW": 91.94678766},
+        {"I": 22, "J": 23, "flujo_P_I_a_J_MW": 35.94085715, "flujo_Q_I_a_J_MW": 68.97800789, "flujo_P_J_a_I_MW": -35.90031519, "flujo_Q_J_a_I_MW": -88.9124204},
+        {"I": 22, "J": 35, "flujo_P_I_a_J_MW": -661.4545042, "flujo_Q_I_a_J_MW": -160.9247955, "flujo_P_J_a_I_MW": 661.4545042, "flujo_Q_J_a_I_MW": 222.9332279},
+        {"I": 23, "J": 24, "flujo_P_I_a_J_MW": 366.8869611, "flujo_Q_I_a_J_MW": -17.36810027, "flujo_P_J_a_I_MW": -364.2122319, "flujo_Q_J_a_I_MW": 20.00493227},
+        {"I": 23, "J": 36, "flujo_P_I_a_J_MW": -578.4866462, "flujo_Q_I_a_J_MW": 21.68052069, "flujo_P_J_a_I_MW": 579.999987, "flujo_Q_J_a_I_MW": 60.64521865},
+        {"I": 25, "J": 26, "flujo_P_I_a_J_MW": 182.2132364, "flujo_Q_I_a_J_MW": -43.03931455, "flujo_P_J_a_I_MW": -181.2626886, "flujo_Q_J_a_I_MW": -7.029248039},
+        {"I": 25, "J": 37, "flujo_P_I_a_J_MW": -562.2061332, "flujo_Q_I_a_J_MW": 60.5412518, "flujo_P_J_a_I_MW": 563.999981, "flujo_Q_J_a_I_MW": 8.820863277},
+        {"I": 26, "J": 27, "flujo_P_I_a_J_MW": 201.9246727, "flujo_Q_I_a_J_MW": 51.35619508, "flujo_P_J_a_I_MW": -201.3642888, "flujo_Q_J_a_I_MW": -72.10804766},
+        {"I": 26, "J": 28, "flujo_P_I_a_J_MW": -54.9207262, "flujo_Q_I_a_J_MW": -27.83935601, "flujo_P_J_a_I_MW": 55.04594664, "flujo_Q_J_a_I_MW": -58.06213909},
+        {"I": 26, "J": 29, "flujo_P_I_a_J_MW": -104.7412575, "flujo_Q_I_a_J_MW": -33.48759091, "flujo_P_J_a_I_MW": 105.3278092, "flujo_Q_J_a_I_MW": -74.95803857},
+        {"I": 28, "J": 29, "flujo_P_I_a_J_MW": -261.0459462, "flujo_Q_I_a_J_MW": 30.46213907, "flujo_P_J_a_I_MW": 261.9271829, "flujo_Q_J_a_I_MW": -48.63389063},
+        {"I": 29, "J": 38, "flujo_P_I_a_J_MW": -650.7549903, "flujo_Q_I_a_J_MW": 96.69192911, "flujo_P_J_a_I_MW": 654.0348097, "flujo_Q_J_a_I_MW": -32.73545077}
+      ]
+    };
+    
+    
+  
+    
+    let nodos = {
+      "nodes": [
+        { "nodo": 1, "tipo_de_nodo": 1, "P_MW": 97.6, "Q_MVAR": 44.2, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 2, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 3, "tipo_de_nodo": 1, "P_MW": 322, "Q_MVAR": 2.4, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 4, "tipo_de_nodo": 1, "P_MW": 500, "Q_MVAR": 184, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 5, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 6, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 7, "tipo_de_nodo": 1, "P_MW": 233.8, "Q_MVAR": 84, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 8, "tipo_de_nodo": 1, "P_MW": 522, "Q_MVAR": 176.6, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 9, "tipo_de_nodo": 1, "P_MW": 6.5, "Q_MVAR": -66.6, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 10, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 11, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 12, "tipo_de_nodo": 1, "P_MW": 8.53, "Q_MVAR": 88, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 13, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 14, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 15, "tipo_de_nodo": 1, "P_MW": 320, "Q_MVAR": 153, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 16, "tipo_de_nodo": 1, "P_MW": 329, "Q_MVAR": 32.3, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 17, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 18, "tipo_de_nodo": 1, "P_MW": 158, "Q_MVAR": 30, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 19, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 20, "tipo_de_nodo": 1, "P_MW": 680, "Q_MVAR": 103, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 21, "tipo_de_nodo": 1, "P_MW": 274, "Q_MVAR": 115, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 22, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 23, "tipo_de_nodo": 1, "P_MW": 247.5, "Q_MVAR": 84.6, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 24, "tipo_de_nodo": 1, "P_MW": 308.6, "Q_MVAR": -92.2, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 25, "tipo_de_nodo": 1, "P_MW": 224, "Q_MVAR": 47.2, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 26, "tipo_de_nodo": 1, "P_MW": 139, "Q_MVAR": 17, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 27, "tipo_de_nodo": 1, "P_MW": 281, "Q_MVAR": 75.5, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 28, "tipo_de_nodo": 1, "P_MW": 206, "Q_MVAR": 27.6, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 29, "tipo_de_nodo": 1, "P_MW": 283.5, "Q_MVAR": 26.9, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 30, "tipo_de_nodo": 2, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 31, "tipo_de_nodo": 3, "P_MW": 9.2, "Q_MVAR": 4.6, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 32, "tipo_de_nodo": 2, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 33, "tipo_de_nodo": 2, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 34, "tipo_de_nodo": 2, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 35, "tipo_de_nodo": 2, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 36, "tipo_de_nodo": 2, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 37, "tipo_de_nodo": 2, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 38, "tipo_de_nodo": 2, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 39, "tipo_de_nodo": 2, "P_MW": 1104, "Q_MVAR": 250, "V_max": 1.06, "V_min": 0.94 }
+      ]
+    };
+    
+    
+    
+  
+    
+    let escenarios = [
+      {
+        "escenario": "ESCENARIO 1 CON SIN RD NI GD",
+        "potencia_deslastrada_MW": 6254.238143,
+        "potencia_atendida_MW": -0.008142685,
+        "potencia_generada_adicional_MW": 6254.238143 - (-0.008142685),
+        "costo_operacion_dolar_per_MWH": 1386962.852,
+        "costo_deslastre_dolar_per_MWH": 1386961.252,
+        "U1": -1.30195E-06,
+        "U2": 1.1536E-06,
+        "U": -7.41744E-08,
+        "resiliencia": "MALA"
+      },
+      {
+        "escenario": "ESCENARIO 2 CON RD SIN GD",
+        "potencia_deslastrada_MW": 4632.190361,
+        "potencia_atendida_MW": 1622.039639,
+        "potencia_generada_adicional_MW": 4632.190361 - 1622.039639,
+        "costo_operacion_dolar_per_MWH": 936920.9362,
+        "costo_deslastre_dolar_per_MWH": 854414.3364,
+        "U1": 0.259350814,
+        "U2": 0.088061433,
+        "U": 0.173706123,
+        "resiliencia": "MALA"
+      },
+      {
+        "escenario": "ESCENARIO 3 CON GD SIN RD",
+        "potencia_deslastrada_MW": 6164.349032,
+        "potencia_atendida_MW": 89.88096775,
+        "potencia_generada_adicional_MW": 6164.349032 - 89.88096775,
+        "costo_operacion_dolar_per_MWH": 1357758.213,
+        "costo_deslastre_dolar_per_MWH": 1351006.613,
+        "U1": 0.014371228,
+        "U2": 0.004972608,
+        "U": 0.009671918,
+        "resiliencia": "MALA"
+      },
+      {
+        "escenario": "ESCENARIO 4 CON GD Y RD",
+        "potencia_deslastrada_MW": 4542.343976,
+        "potencia_atendida_MW": 1711.886024,
+        "potencia_generada_adicional_MW": 4542.343976 - 1711.886024,
+        "costo_operacion_dolar_per_MWH": 912217.0798,
+        "costo_deslastre_dolar_per_MWH": 822960.48,
+        "U1": 0.273716513,
+        "U2": 0.097845789,
+        "U": 0.185781151,
+        "resiliencia": "POBRE"
+      }
     ];
+    
+    
+  
+ 
+    let escenario1ConSinRdNiGd = [
+      { "nodo": 1, "carga_MW": 97.6, "potencia_deslastrada_MW": 97.60106742, "costo_dolar_por_MW": 9760.106742, "potencia_atendida_MW": -0.001067419, "_atendido": -0.001093667 },
+      { "nodo": 3, "carga_MW": 322, "potencia_deslastrada_MW": 322, "costo_dolar_por_MW": 96599.99999, "potencia_atendida_MW": 1.96323E-08, "_atendido": 6.09699E-09 },
+      { "nodo": 4, "carga_MW": 500, "potencia_deslastrada_MW": 500, "costo_dolar_por_MW": 100000, "potencia_atendida_MW": 1.54761E-08, "_atendido": 3.09523E-09 },
+      { "nodo": 7, "carga_MW": 233.8, "potencia_deslastrada_MW": 233.8, "costo_dolar_por_MW": 70139.99999, "potencia_atendida_MW": 1.96316E-08, "_atendido": 8.39673E-09 },
+      { "nodo": 8, "carga_MW": 522, "potencia_deslastrada_MW": 522, "costo_dolar_por_MW": 52200, "potencia_atendida_MW": 5.05406E-09, "_atendido": 9.68211E-10 },
+      { "nodo": 9, "carga_MW": 6.5, "potencia_deslastrada_MW": 6.502017029, "costo_dolar_por_MW": 2600.806812, "potencia_atendida_MW": -0.002017029, "_atendido": -0.031031218 },
+      { "nodo": 12, "carga_MW": 8.53, "potencia_deslastrada_MW": 8.531995874, "costo_dolar_por_MW": 2559.598762, "potencia_atendida_MW": -0.001995874, "_atendido": -0.023398289 },
+      { "nodo": 15, "carga_MW": 320, "potencia_deslastrada_MW": 320, "costo_dolar_por_MW": 32000, "potencia_atendida_MW": 5.0116E-09, "_atendido": 1.56613E-09 },
+      { "nodo": 16, "carga_MW": 329, "potencia_deslastrada_MW": 329, "costo_dolar_por_MW": 32900, "potencia_atendida_MW": 5.02791E-09, "_atendido": 1.52824E-09 },
+      { "nodo": 18, "carga_MW": 158, "potencia_deslastrada_MW": 158.0004378, "costo_dolar_por_MW": 31600.08756, "potencia_atendida_MW": -0.000437795, "_atendido": -0.000277085 },
+      { "nodo": 21, "carga_MW": 274, "potencia_deslastrada_MW": 274, "costo_dolar_por_MW": 27400, "potencia_atendida_MW": 5.02598E-09, "_atendido": 1.8343E-09 },
+      { "nodo": 23, "carga_MW": 247.5, "potencia_deslastrada_MW": 247.5, "costo_dolar_por_MW": 49500, "potencia_atendida_MW": 1.54749E-08, "_atendido": 6.25249E-09 },
+      { "nodo": 24, "carga_MW": 308.6, "potencia_deslastrada_MW": 308.6, "costo_dolar_por_MW": 30860, "potencia_atendida_MW": 5.02718E-09, "_atendido": 1.62903E-09 },
+      { "nodo": 25, "carga_MW": 224, "potencia_deslastrada_MW": 224, "costo_dolar_por_MW": 67199.99999, "potencia_atendida_MW": 1.9632E-08, "_atendido": 8.76427E-09 },
+      { "nodo": 26, "carga_MW": 139, "potencia_deslastrada_MW": 139.0006358, "costo_dolar_por_MW": 55600.25434, "potencia_atendida_MW": -0.00063585, "_atendido": -0.000457446 },
+      { "nodo": 27, "carga_MW": 281, "potencia_deslastrada_MW": 281, "costo_dolar_por_MW": 28100, "potencia_atendida_MW": 4.9908E-09, "_atendido": 1.77608E-09 },
+      { "nodo": 28, "carga_MW": 206, "potencia_deslastrada_MW": 206, "costo_dolar_por_MW": 61799.99999, "potencia_atendida_MW": 1.96321E-08, "_atendido": 9.53016E-09 },
+      { "nodo": 29, "carga_MW": 283.5, "potencia_deslastrada_MW": 283.5, "costo_dolar_por_MW": 56700, "potencia_atendida_MW": 1.54762E-08, "_atendido": 5.45899E-09 },
+      { "nodo": 31, "carga_MW": 9.2, "potencia_deslastrada_MW": 9.201988894, "costo_dolar_por_MW": 1840.397779, "potencia_atendida_MW": -0.001988894, "_atendido": -0.021618415 },
+      { "nodo": 39, "carga_MW": 1104, "potencia_deslastrada_MW": 1104, "costo_dolar_por_MW": 441600, "potencia_atendida_MW": 2.09857E-08, "_atendido": 1.90088E-09 },
+      { "nodo": 20, "carga_MW": 680, "potencia_deslastrada_MW": 680, "costo_dolar_por_MW": 136000, "potencia_atendida_MW": 0, "_atendido": 0 }
+    ];
+    
+  
+
+
+let escenario2ConRdSinGd = [
+  { "nodo": 1, "carga_MW": 97.6, "potencia_deslastrada_MW": 97.59999985, "costo_dolar_por_MW": 9759.999985, "potencia_atendida_MW": 1.54213E-07, "_atendido": 1.58005E-07 },
+  { "nodo": 3, "carga_MW": 322, "potencia_deslastrada_MW": 281.3734814, "costo_dolar_por_MW": 84412.04443, "potencia_atendida_MW": 40.62651855, "_atendido": 12.61693123 },
+  { "nodo": 4, "carga_MW": 500, "potencia_deslastrada_MW": 499.9999995, "costo_dolar_por_MW": 99999.99991, "potencia_atendida_MW": 4.5954E-07, "_atendido": 9.1908E-08 },
+  { "nodo": 7, "carga_MW": 233.8, "potencia_deslastrada_MW": 4.47688E-07, "costo_dolar_por_MW": 0.000134306, "potencia_atendida_MW": 233.7999996, "_atendido": 99.99999981 },
+  { "nodo": 8, "carga_MW": 522, "potencia_deslastrada_MW": 521.9999995, "costo_dolar_por_MW": 52199.99995, "potencia_atendida_MW": 4.6486E-07, "_atendido": 8.90536E-08 },
+  { "nodo": 9, "carga_MW": 6.5, "potencia_deslastrada_MW": 2.25572E-07, "costo_dolar_por_MW": 9.02288E-05, "potencia_atendida_MW": 6.499999774, "_atendido": 99.99999653 },
+  { "nodo": 12, "carga_MW": 8.53, "potencia_deslastrada_MW": 4.49082E-07, "costo_dolar_por_MW": 0.000134725, "potencia_atendida_MW": 8.529999551, "_atendido": 99.99999474 },
+  { "nodo": 15, "carga_MW": 320, "potencia_deslastrada_MW": 319.9999995, "costo_dolar_por_MW": 31999.99995, "potencia_atendida_MW": 4.59064E-07, "_atendido": 1.43457E-07 },
+  { "nodo": 16, "carga_MW": 329, "potencia_deslastrada_MW": 328.9999995, "costo_dolar_por_MW": 32899.99995, "potencia_atendida_MW": 4.55743E-07, "_atendido": 1.38524E-07 },
+  { "nodo": 18, "carga_MW": 158, "potencia_deslastrada_MW": 157.9999995, "costo_dolar_por_MW": 31599.99991, "potencia_atendida_MW": 4.69867E-07, "_atendido": 2.97384E-07 },
+  { "nodo": 21, "carga_MW": 274, "potencia_deslastrada_MW": 273.9999995, "costo_dolar_por_MW": 27399.99995, "potencia_atendida_MW": 4.56808E-07, "_atendido": 1.66718E-07 },
+  { "nodo": 23, "carga_MW": 247.5, "potencia_deslastrada_MW": 106.953032, "costo_dolar_por_MW": 21390.6064, "potencia_atendida_MW": 140.546968, "_atendido": 56.78665373 },
+  { "nodo": 24, "carga_MW": 308.6, "potencia_deslastrada_MW": 308.5999995, "costo_dolar_por_MW": 30859.99995, "potencia_atendida_MW": 4.56386E-07, "_atendido": 1.47889E-07 },
+  { "nodo": 25, "carga_MW": 224, "potencia_deslastrada_MW": 89.43412354, "costo_dolar_por_MW": 26830.23706, "potencia_atendida_MW": 134.5658765, "_atendido": 60.07405199 },
+  { "nodo": 26, "carga_MW": 139, "potencia_deslastrada_MW": 4.47131E-07, "costo_dolar_por_MW": 0.000178852, "potencia_atendida_MW": 138.9999996, "_atendido": 99.99999968 },
+  { "nodo": 27, "carga_MW": 281, "potencia_deslastrada_MW": 280.9999998, "costo_dolar_por_MW": 28099.99998, "potencia_atendida_MW": 2.32422E-07, "_atendido": 8.27126E-08 },
+  { "nodo": 28, "carga_MW": 206, "potencia_deslastrada_MW": 100.3043681, "costo_dolar_por_MW": 30091.31042, "potencia_atendida_MW": 105.6956319, "_atendido": 51.30855919 },
+  { "nodo": 29, "carga_MW": 283.5, "potencia_deslastrada_MW": 283.4999995, "costo_dolar_por_MW": 56699.99991, "potencia_atendida_MW": 4.59227E-07, "_atendido": 1.61985E-07 },
+  { "nodo": 31, "carga_MW": 9.2, "potencia_deslastrada_MW": 2.64246E-05, "costo_dolar_por_MW": 0.005284928, "potencia_atendida_MW": 9.199973575, "_atendido": 99.99971278 },
+  { "nodo": 39, "carga_MW": 1104, "potencia_deslastrada_MW": 470.425332, "costo_dolar_por_MW": 188170.1328, "potencia_atendida_MW": 633.574668, "_atendido": 57.38900978 },
+  { "nodo": 20, "carga_MW": 680, "potencia_deslastrada_MW": 510, "costo_dolar_por_MW": 102000, "potencia_atendida_MW": 170, "_atendido": 25 }
+];
+
+
+  let escenario3ConGdSinRd = [
+    { nodo: 2, carga_MW: 0.1, potencia_deslastrada_MW: 0.1, costo_dolar_por_MW: 29.99999992, potencia_atendida_MW: 2.53212E-10, _atendido: 2.53212E-07 },
+    { nodo: 3, carga_MW: 0.09, potencia_deslastrada_MW: 0.09, costo_dolar_por_MW: 18.00000002, potencia_atendida_MW: -8.50017E-11, _atendido: -9.44463E-08 },
+    { nodo: 4, carga_MW: 0.12, potencia_deslastrada_MW: 0.12, costo_dolar_por_MW: 11.99999998, potencia_atendida_MW: 2.3263E-10, _atendido: 1.93858E-07 },
+    { nodo: 5, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 11.99999996, potencia_atendida_MW: 2.00889E-10, _atendido: 3.34815E-07 },
+    { nodo: 19, carga_MW: 0.09, potencia_deslastrada_MW: 0.09, costo_dolar_por_MW: 18.00000002, potencia_atendida_MW: -8.48955E-11, _atendido: -9.43283E-08 },
+    { nodo: 23, carga_MW: 0.09, potencia_deslastrada_MW: 0.09, costo_dolar_por_MW: 18.00000002, potencia_atendida_MW: -8.50069E-11, _atendido: -9.44521E-08 },
+    { nodo: 11, carga_MW: 0.045, potencia_deslastrada_MW: 0.044999999, costo_dolar_por_MW: 4.499999895, potencia_atendida_MW: 1.05088E-09, _atendido: 2.33528E-06 },
+    { nodo: 12, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999999, costo_dolar_por_MW: 11.99999987, potencia_atendida_MW: 6.6745E-10, _atendido: 1.11242E-06 },
+    { nodo: 13, carga_MW: 0.06, potencia_deslastrada_MW: 0.060000001, costo_dolar_por_MW: 18.00000037, potencia_atendida_MW: -1.21992E-09, _atendido: -2.03321E-06 },
+    { nodo: 6, carga_MW: 0.06, potencia_deslastrada_MW: 0.060000001, costo_dolar_por_MW: 24.0000004, potencia_atendida_MW: -9.97089E-10, _atendido: -1.66182E-06 },
+    { nodo: 26, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 17.99999988, potencia_atendida_MW: 4.15877E-10, _atendido: 6.93129E-07 },
+    { nodo: 27, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999999, costo_dolar_por_MW: 5.999999919, potencia_atendida_MW: 8.06351E-10, _atendido: 1.34392E-06 },
+    { nodo: 9, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 5.999999962, potencia_atendida_MW: 3.76127E-10, _atendido: 6.26879E-07 },
+    { nodo: 10, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 12.00000007, potencia_atendida_MW: -3.53941E-10, _atendido: -5.89901E-07 },
+    { nodo: 20, carga_MW: 0.09, potencia_deslastrada_MW: 0.089999999, costo_dolar_por_MW: 8.999999885, potencia_atendida_MW: 1.14802E-09, _atendido: 1.27557E-06 },
+    { nodo: 21, carga_MW: 0.09, potencia_deslastrada_MW: 0.089999999, costo_dolar_por_MW: 8.999999885, potencia_atendida_MW: 1.14776E-09, _atendido: 1.27529E-06 },
+    { nodo: 22, carga_MW: 0.09, potencia_deslastrada_MW: 0.090000002, costo_dolar_por_MW: 36.0000008, potencia_atendida_MW: -2.0082E-09, _atendido: -2.23134E-06 },
+    { nodo: 7, carga_MW: 0.2, potencia_deslastrada_MW: 0.200000001, costo_dolar_por_MW: 60.00000018, potencia_atendida_MW: -6.03288E-10, _atendido: -3.01644E-07 },
+    { nodo: 8, carga_MW: 0.2, potencia_deslastrada_MW: 0.199999999, costo_dolar_por_MW: 19.99999993, potencia_atendida_MW: 7.37829E-10, _atendido: 3.68914E-07 },
+    { nodo: 16, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999999, costo_dolar_por_MW: 5.999999937, potencia_atendida_MW: 6.34086E-10, _atendido: 1.05681E-06 },
+    { nodo: 17, carga_MW: 0.06, potencia_deslastrada_MW: 0.060000001, costo_dolar_por_MW: 18.00000018, potencia_atendida_MW: -5.96006E-10, _atendido: -9.93343E-07 },
+    { nodo: 18, carga_MW: 0.09, potencia_deslastrada_MW: 0.09, costo_dolar_por_MW: 36, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 24, carga_MW: 0.42, potencia_deslastrada_MW: 2.29303E-07, costo_dolar_por_MW: 4.58605E-05, potencia_atendida_MW: 0.419999771, _atendido: 99.9999454 },
+    { nodo: 25, carga_MW: 0.42, potencia_deslastrada_MW: 1.274E-07, costo_dolar_por_MW: 3.82201E-05, potencia_atendida_MW: 0.419999873, _atendido: 99.99996967 },
+    { nodo: 14, carga_MW: 0.12, potencia_deslastrada_MW: 0.12, costo_dolar_por_MW: 12, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 15, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 12, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 28, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 12, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 29, carga_MW: 0.12, potencia_deslastrada_MW: 0.12, costo_dolar_por_MW: 36, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 30, carga_MW: 0.2, potencia_deslastrada_MW: 0.2, costo_dolar_por_MW: 20, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 31, carga_MW: 0.15, potencia_deslastrada_MW: 0.15, costo_dolar_por_MW: 30, potencia_atendida_MW: 0, _atendido: 0 },
+    { nodo: 33, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 12, potencia_atendida_MW: 0, _atendido: 0 }
+];
+
+  
+
+
+  let escenario4ConGdYRd = [
+    { nodo: 1, carga_MW: 97.6, potencia_deslastrada_MW: 97.59999985, costo_dolar_por_MW: 9759.999985, potencia_atendida_MW: 1.54213E-07, _atendido: 1.58005E-07 },
+    { nodo: 3, carga_MW: 322, potencia_deslastrada_MW: 281.3734814, costo_dolar_por_MW: 84412.04443, potencia_atendida_MW: 40.62651855, _atendido: 12.61693123 },
+    { nodo: 4, carga_MW: 500, potencia_deslastrada_MW: 499.9999995, costo_dolar_por_MW: 99999.99991, potencia_atendida_MW: 4.5954E-07, _atendido: 9.1908E-08 },
+    { nodo: 7, carga_MW: 233.8, potencia_deslastrada_MW: 4.47688E-07, costo_dolar_por_MW: 0.000134306, potencia_atendida_MW: 233.7999996, _atendido: 99.99999981 },
+    { nodo: 8, carga_MW: 522, potencia_deslastrada_MW: 521.9999995, costo_dolar_por_MW: 52199.99995, potencia_atendida_MW: 4.6486E-07, _atendido: 8.90536E-08 },
+    { nodo: 9, carga_MW: 6.5, potencia_deslastrada_MW: 2.25572E-07, costo_dolar_por_MW: 9.02288E-05, potencia_atendida_MW: 6.499999774, _atendido: 99.99999653 },
+    { nodo: 12, carga_MW: 8.53, potencia_deslastrada_MW: 4.49082E-07, costo_dolar_por_MW: 0.000134725, potencia_atendida_MW: 8.529999551, _atendido: 99.99999474 },
+    { nodo: 15, carga_MW: 320, potencia_deslastrada_MW: 319.9999995, costo_dolar_por_MW: 31999.99995, potencia_atendida_MW: 4.59064E-07, _atendido: 1.43457E-07 },
+    { nodo: 16, carga_MW: 329, potencia_deslastrada_MW: 328.9999995, costo_dolar_por_MW: 32899.99995, potencia_atendida_MW: 4.55743E-07, _atendido: 1.38524E-07 },
+    { nodo: 18, carga_MW: 158, potencia_deslastrada_MW: 157.9999995, costo_dolar_por_MW: 31599.99991, potencia_atendida_MW: 4.69867E-07, _atendido: 2.97384E-07 },
+    { nodo: 21, carga_MW: 274, potencia_deslastrada_MW: 273.9999995, costo_dolar_por_MW: 27399.99995, potencia_atendida_MW: 4.56808E-07, _atendido: 1.66718E-07 },
+    { nodo: 23, carga_MW: 247.5, potencia_deslastrada_MW: 106.953032, costo_dolar_por_MW: 21390.6064, potencia_atendida_MW: 140.546968, _atendido: 56.78665373 },
+    { nodo: 24, carga_MW: 308.6, potencia_deslastrada_MW: 308.5999995, costo_dolar_por_MW: 30859.99995, potencia_atendida_MW: 4.56386E-07, _atendido: 1.47889E-07 },
+    { nodo: 25, carga_MW: 224, potencia_deslastrada_MW: 89.43412354, costo_dolar_por_MW: 26830.23706, potencia_atendida_MW: 134.5658765, _atendido: 60.07405199 },
+    { nodo: 26, carga_MW: 139, potencia_deslastrada_MW: 4.47131E-07, costo_dolar_por_MW: 0.000178852, potencia_atendida_MW: 138.9999996, _atendido: 99.99999968 },
+    { nodo: 27, carga_MW: 281, potencia_deslastrada_MW: 280.9999998, costo_dolar_por_MW: 28099.99998, potencia_atendida_MW: 2.32422E-07, _atendido: 8.27126E-08 },
+    { nodo: 28, carga_MW: 206, potencia_deslastrada_MW: 100.3043681, costo_dolar_por_MW: 30091.31042, potencia_atendida_MW: 105.6956319, _atendido: 51.30855919 },
+    { nodo: 29, carga_MW: 283.5, potencia_deslastrada_MW: 283.4999995, costo_dolar_por_MW: 56699.99991, potencia_atendida_MW: 4.59227E-07, _atendido: 1.61985E-07 },
+    { nodo: 31, carga_MW: 9.2, potencia_deslastrada_MW: 2.64246E-05, costo_dolar_por_MW: 0.005284928, potencia_atendida_MW: 9.199973575, _atendido: 99.99971278 },
+    { nodo: 39, carga_MW: 1104, potencia_deslastrada_MW: 470.425332, costo_dolar_por_MW: 188170.1328, potencia_atendida_MW: 633.574668, _atendido: 57.38900978 },
+    { nodo: 20, carga_MW: 680, potencia_deslastrada_MW: 510, costo_dolar_por_MW: 102000, potencia_atendida_MW: 170, _atendido: 25 }
+];
+
+  
     
  
+    let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
+
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+   }
+
+   if(caso=="51"){
    
+    let generadores = {
+      "generators": [
+        { 
+          "nodo": 0, 
+          "PG_MW": 0, 
+          "QG_MW": 10, 
+          "Q_MAX_MVAR": -10, 
+          "Q_MIN_MVAR": 10, 
+          "P_MAX_MW": 20, 
+          "costo_marginal_dolar_per_MW": 0.51 
+        }
+      ]
+    };
     
-    let escenario4ConGdYRd = [
-      {nodo: 24, carga_MW: 0.42, potencia_deslastrada_MW: 0.131801755, costo_dolar_por_MW: 26.36035095, potencia_atendida_MW: 0.288198245, _atendido: 68.61862983},
-      {nodo: 25, carga_MW: 0.42, potencia_deslastrada_MW: 0.122981517, costo_dolar_por_MW: 24.59630343, potencia_atendida_MW: 0.297018483, _atendido: 70.7186864},
-      {nodo: 29, carga_MW: 0.12, potencia_deslastrada_MW: 0.067003799, costo_dolar_por_MW: 6.700379866, potencia_atendida_MW: 0.052996201, _atendido: 44.16350112},
-      {nodo: 30, carga_MW: 0.2, potencia_deslastrada_MW: 0.08357121, costo_dolar_por_MW: 16.71424205, potencia_atendida_MW: 0.11642879, _atendido: 58.21439488},
-      {nodo: 31, carga_MW: 0.15, potencia_deslastrada_MW: 0.068259718, costo_dolar_por_MW: 27.30388718, potencia_atendida_MW: 0.081740282, _atendido: 54.49352136},
-      {nodo: 32, carga_MW: 0.21, potencia_deslastrada_MW: 0.071542078, costo_dolar_por_MW: 14.30841557, potencia_atendida_MW: 0.138457922, _atendido: 65.93234389},
-      {nodo: 19, carga_MW: 0.09, potencia_deslastrada_MW: 0.089997665, costo_dolar_por_MW: 17.99953308, potencia_atendida_MW: 2.33458e-6, _atendido: 0.002593977},
-      {nodo: 20, carga_MW: 0.09, potencia_deslastrada_MW: 0.059035775, costo_dolar_por_MW: 17.71073242, potencia_atendida_MW: 0.030964225, _atendido: 34.40469474},
-      {nodo: 21, carga_MW: 0.09, potencia_deslastrada_MW: 0.053483326, costo_dolar_por_MW: 16.04499771, potencia_atendida_MW: 0.036516674, _atendido: 40.57408255},
-      {nodo: 22, carga_MW: 0.09, potencia_deslastrada_MW: 0.089998836, costo_dolar_por_MW: 8.999883584, potencia_atendida_MW: 1.16416e-6, _atendido: 0.001293509},
-      {nodo: 3, carga_MW: 0.09, potencia_deslastrada_MW: 9.09156e-7, costo_dolar_por_MW: 0.000272747, potencia_atendida_MW: 0.089999091, _atendido: 99.99898983},
-      {nodo: 4, carga_MW: 0.12, potencia_deslastrada_MW: 0.108701764, costo_dolar_por_MW: 10.87017637, potencia_atendida_MW: 0.011298236, _atendido: 9.415196943},
-      {nodo: 23, carga_MW: 0.09, potencia_deslastrada_MW: 0.086315188, costo_dolar_por_MW: 8.631518817, potencia_atendida_MW: 0.003684812, _atendido: 4.094235365},
-      {nodo: 10, carga_MW: 0.06, potencia_deslastrada_MW: 0.036632658, costo_dolar_por_MW: 7.326531653, potencia_atendida_MW: 0.023367342, _atendido: 38.94556956},
-      {nodo: 11, carga_MW: 0.045, potencia_deslastrada_MW: 0.027124804, costo_dolar_por_MW: 5.424960702, potencia_atendida_MW: 0.017875196, _atendido: 39.72265886},
-      {nodo: 12, carga_MW: 0.06, potencia_deslastrada_MW: 0.059997725, costo_dolar_por_MW: 5.999772483, potencia_atendida_MW: 2.27517e-6, _atendido: 0.003791956},
-      {nodo: 17, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999651, costo_dolar_por_MW: 5.9999651, potencia_atendida_MW: 3.48995e-7, _atendido: 0.000581658},
-      {nodo: 18, carga_MW: 0.09, potencia_deslastrada_MW: 0.022505171, costo_dolar_por_MW: 4.501034232, potencia_atendida_MW: 0.067494829, _atendido: 74.99425426},
-      {nodo: 33, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999651, costo_dolar_por_MW: 5.999965097, potencia_atendida_MW: 3.49025e-7, _atendido: 0.000581708},
-      {nodo: 6, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999754, costo_dolar_por_MW: 11.99995085, potencia_atendida_MW: 2.45744e-7, _atendido: 0.000409573},
-      {nodo: 7, carga_MW: 0.2, potencia_deslastrada_MW: 0.185000648, costo_dolar_por_MW: 74.00025933, potencia_atendida_MW: 0.014999352, _atendido: 7.499675842},
-      {nodo: 8, carga_MW: 0.2, potencia_deslastrada_MW: 0.170007233, costo_dolar_por_MW: 51.0021699, potencia_atendida_MW: 0.029992767, _atendido: 14.99638351},
-      {nodo: 9, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999158, costo_dolar_por_MW: 5.999915817, potencia_atendida_MW: 8.4183e-7, _atendido: 0.001403051},
-      {nodo: 13, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999433, costo_dolar_por_MW: 5.999943312, potencia_atendida_MW: 5.66879e-7, _atendido: 0.000944798},
-      {nodo: 14, carga_MW: 0.12, potencia_deslastrada_MW: 0.090004035, costo_dolar_por_MW: 27.00121038, potencia_atendida_MW: 0.029995965, _atendido: 24.99663784},
-      {nodo: 15, carga_MW: 0.06, potencia_deslastrada_MW: 0.030005493, costo_dolar_por_MW: 12.00219722, potencia_atendida_MW: 0.029994507, _atendido: 49.99084491},
-      {nodo: 16, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999279, costo_dolar_por_MW: 5.999927939, potencia_atendida_MW: 7.20606e-7, _atendido: 0.00120101},
-      {nodo: 27, carga_MW: 0.06, potencia_deslastrada_MW: 0.030007306, costo_dolar_por_MW: 12.00292242, potencia_atendida_MW: 0.029992694, _atendido: 49.98782323},
-      {nodo: 28, carga_MW: 0.06, potencia_deslastrada_MW: 0.059999231, costo_dolar_por_MW: 5.999923149, potencia_atendida_MW: 7.6851e-7, _atendido: 0.00128085},
-      {nodo: 2, carga_MW: 0.1, potencia_deslastrada_MW: 0.075, costo_dolar_por_MW: 15, potencia_atendida_MW: 0.025, _atendido: 25},
-      {nodo: 5, carga_MW: 0.06, potencia_deslastrada_MW: 0.03, costo_dolar_por_MW: 3, potencia_atendida_MW: 0.03, _atendido: 50},
-      {nodo: 26, carga_MW: 0.06, potencia_deslastrada_MW: 0.06, costo_dolar_por_MW: 18, potencia_atendida_MW: 0, _atendido: 0}
+    
+    
+  
+    let lineas = {
+      "lines": [
+        {"I": 1, "J": 2, "flujo_P_I_a_J_MW": 1.95834181, "flujo_Q_I_a_J_MW": 1.107862476, "flujo_P_J_a_I_MW": -1.953934121, "flujo_Q_J_a_I_MW": -1.100191381},
+        {"I": 2, "J": 3, "flujo_P_I_a_J_MW": 1.939354121, "flujo_Q_I_a_J_MW": 1.092121381, "flujo_P_J_a_I_MW": -1.935011699, "flujo_Q_J_a_I_MW": -1.084563877},
+        {"I": 3, "J": 4, "flujo_P_I_a_J_MW": 1.872075019, "flujo_Q_I_a_J_MW": 1.051196402, "flujo_P_J_a_I_MW": -1.87004098, "flujo_Q_J_a_I_MW": -1.047656383},
+        {"I": 4, "J": 5, "flujo_P_I_a_J_MW": 1.855460202, "flujo_Q_I_a_J_MW": 1.039585869, "flujo_P_J_a_I_MW": -1.851455135, "flujo_Q_J_a_I_MW": -1.032615494},
+        {"I": 5, "J": 6, "flujo_P_I_a_J_MW": 1.540819512, "flujo_Q_I_a_J_MW": 0.860586473, "flujo_P_J_a_I_MW": -1.539431638, "flujo_Q_J_a_I_MW": -0.858171031},
+        {"I": 6, "J": 7, "flujo_P_I_a_J_MW": 1.524851638, "flujo_Q_I_a_J_MW": 0.850101031, "flujo_P_J_a_I_MW": -1.523489884, "flujo_Q_J_a_I_MW": -0.84773105},
+        {"I": 7, "J": 8, "flujo_P_I_a_J_MW": 0.95963295, "flujo_Q_I_a_J_MW": 0.545697801, "flujo_P_J_a_I_MW": -0.958541026, "flujo_Q_J_a_I_MW": -0.543797429},
+        {"I": 8, "J": 9, "flujo_P_I_a_J_MW": 0.929368654, "flujo_Q_I_a_J_MW": 0.527655861, "flujo_P_J_a_I_MW": -0.928341795, "flujo_Q_J_a_I_MW": -0.525868726},
+        {"I": 9, "J": 10, "flujo_P_I_a_J_MW": 0.840838622, "flujo_Q_I_a_J_MW": 0.477456628, "flujo_P_J_a_I_MW": -0.840038855, "flujo_Q_J_a_I_MW": -0.476111375},
+        {"I": 10, "J": 11, "flujo_P_I_a_J_MW": 0.810859305, "flujo_Q_I_a_J_MW": 0.459965061, "flujo_P_J_a_I_MW": -0.809865333, "flujo_Q_J_a_I_MW": -0.458293142},
+        {"I": 11, "J": 12, "flujo_P_I_a_J_MW": 0.661032214, "flujo_Q_I_a_J_MW": 0.375938187, "flujo_P_J_a_I_MW": -0.660700306, "flujo_Q_J_a_I_MW": -0.375379899},
+        {"I": 12, "J": 13, "flujo_P_I_a_J_MW": 0.611519106, "flujo_Q_I_a_J_MW": 0.344232494, "flujo_P_J_a_I_MW": -0.610669927, "flujo_Q_J_a_I_MW": -0.342804127},
+        {"I": 13, "J": 14, "flujo_P_I_a_J_MW": 0.610669927, "flujo_Q_I_a_J_MW": 0.342804127, "flujo_P_J_a_I_MW": -0.610103808, "flujo_Q_J_a_I_MW": -0.341851882},
+        {"I": 14, "J": 15, "flujo_P_I_a_J_MW": 0.478757553, "flujo_Q_I_a_J_MW": 0.269168241, "flujo_P_J_a_I_MW": -0.477665248, "flujo_Q_J_a_I_MW": -0.268446045},
+        {"I": 15, "J": 16, "flujo_P_I_a_J_MW": 0.360813544, "flujo_Q_I_a_J_MW": 0.203775909, "flujo_P_J_a_I_MW": -0.360063869, "flujo_Q_J_a_I_MW": -0.203280248},
+        {"I": 16, "J": 17, "flujo_P_I_a_J_MW": 0.330893869, "flujo_Q_I_a_J_MW": 0.187140248, "flujo_P_J_a_I_MW": -0.330682646, "flujo_Q_J_a_I_MW": -0.187000595},
+        {"I": 17, "J": 18, "flujo_P_I_a_J_MW": 0.165818005, "flujo_Q_I_a_J_MW": 0.095787856, "flujo_P_J_a_I_MW": -0.165710664, "flujo_Q_J_a_I_MW": -0.095716886},
+        {"I": 18, "J": 19, "flujo_P_I_a_J_MW": 0.145710664, "flujo_Q_I_a_J_MW": 0.080716886, "flujo_P_J_a_I_MW": -0.14567, "flujo_Q_J_a_I_MW": -0.08069},
+        {"I": 3, "J": 20, "flujo_P_I_a_J_MW": 0.06293668, "flujo_Q_I_a_J_MW": 0.033367475, "flujo_P_J_a_I_MW": -0.06288, "flujo_Q_J_a_I_MW": -0.03333},
+        {"I": 4, "J": 21, "flujo_P_I_a_J_MW": 0.014580778, "flujo_Q_I_a_J_MW": 0.008070514, "flujo_P_J_a_I_MW": -0.01458, "flujo_Q_J_a_I_MW": -0.00807},
+        {"I": 5, "J": 22, "flujo_P_I_a_J_MW": 0.310635623, "flujo_Q_I_a_J_MW": 0.172029021, "flujo_P_J_a_I_MW": -0.309746748, "flujo_Q_J_a_I_MW": -0.171441327},
+        {"I": 22, "J": 23, "flujo_P_I_a_J_MW": 0.214956748, "flujo_Q_I_a_J_MW": 0.118991327, "flujo_P_J_a_I_MW": -0.21461426, "flujo_Q_J_a_I_MW": -0.118764885},
+        {"I": 23, "J": 24, "flujo_P_I_a_J_MW": 0.170851596, "flujo_Q_I_a_J_MW": 0.094546512, "flujo_P_J_a_I_MW": -0.170797332, "flujo_Q_J_a_I_MW": -0.094510635},
+        {"I": 24, "J": 25, "flujo_P_I_a_J_MW": 0.078885907, "flujo_Q_I_a_J_MW": 0.043659857, "flujo_P_J_a_I_MW": -0.078770141, "flujo_Q_J_a_I_MW": -0.043583317},
+        {"I": 25, "J": 26, "flujo_P_I_a_J_MW": 0.064190141, "flujo_Q_I_a_J_MW": 0.035513317, "flujo_P_J_a_I_MW": -0.064174767, "flujo_Q_J_a_I_MW": -0.035503152},
+      {"I": 26, "J": 27, "flujo_P_I_a_J_MW": 0.029174767, "flujo_Q_I_a_J_MW": 0.016143152, "flujo_P_J_a_I_MW": -0.02917, "flujo_Q_J_a_I_MW": -0.01614},
+      {"I": 23, "J": 28, "flujo_P_I_a_J_MW": 0.029182665, "flujo_Q_I_a_J_MW": 0.016148374, "flujo_P_J_a_I_MW": -0.02917, "flujo_Q_J_a_I_MW": -0.01614},
+      {"I": 24, "J": 29, "flujo_P_I_a_J_MW": 0.091911425, "flujo_Q_I_a_J_MW": 0.050850777, "flujo_P_J_a_I_MW": -0.09188, "flujo_Q_J_a_I_MW": -0.05083},
+      {"I": 7, "J": 30, "flujo_P_I_a_J_MW": 0.563856935, "flujo_Q_I_a_J_MW": 0.302033249, "flujo_P_J_a_I_MW": -0.559506915, "flujo_Q_J_a_I_MW": -0.29915716},
+      {"I": 30, "J": 31, "flujo_P_I_a_J_MW": 0.415257694, "flujo_Q_I_a_J_MW": 0.230044451, "flujo_P_J_a_I_MW": -0.414932986, "flujo_Q_J_a_I_MW": -0.229829765},
+      {"I": 31, "J": 32, "flujo_P_I_a_J_MW": 0.385762986, "flujo_Q_I_a_J_MW": 0.213689765, "flujo_P_J_a_I_MW": -0.385201647, "flujo_Q_J_a_I_MW": -0.213318626},
+      {"I": 32, "J": 33, "flujo_P_I_a_J_MW": 0.370621647, "flujo_Q_I_a_J_MW": 0.205248626, "flujo_P_J_a_I_MW": -0.370101993, "flujo_Q_J_a_I_MW": -0.204905048},
+      {"I": 33, "J": 34, "flujo_P_I_a_J_MW": 0.326351993, "flujo_Q_I_a_J_MW": 0.180695048, "flujo_P_J_a_I_MW": -0.32604894, "flujo_Q_J_a_I_MW": -0.180494679},
+      {"I": 34, "J": 35, "flujo_P_I_a_J_MW": 0.28229894, "flujo_Q_I_a_J_MW": 0.156284679, "flujo_P_J_a_I_MW": -0.281996024, "flujo_Q_J_a_I_MW": -0.156084401},
+      {"I": 35, "J": 36, "flujo_P_I_a_J_MW": 0.267415214, "flujo_Q_I_a_J_MW": 0.148013866, "flujo_P_J_a_I_MW": -0.266938512, "flujo_Q_J_a_I_MW": -0.147698687},
+      {"I": 36, "J": 37, "flujo_P_I_a_J_MW": 0.121108512, "flujo_Q_I_a_J_MW": 0.067008687, "flujo_P_J_a_I_MW": -0.121052442, "flujo_Q_J_a_I_MW": -0.066971615},
+      {"I": 37, "J": 38, "flujo_P_I_a_J_MW": 0.029172442, "flujo_Q_I_a_J_MW": 0.016141615, "flujo_P_J_a_I_MW": -0.02917, "flujo_Q_J_a_I_MW": -0.01614},
+      {"I": 30, "J": 39, "flujo_P_I_a_J_MW": 0.058349221, "flujo_Q_I_a_J_MW": 0.032282709, "flujo_P_J_a_I_MW": -0.05833, "flujo_Q_J_a_I_MW": -0.03227},
+      {"I": 35, "J": 40, "flujo_P_I_a_J_MW": 0.01458081, "flujo_Q_I_a_J_MW": 0.008070535, "flujo_P_J_a_I_MW": -0.01458, "flujo_Q_J_a_I_MW": -0.00807},
+      {"I": 8, "J": 41, "flujo_P_I_a_J_MW": 0.029172372, "flujo_Q_I_a_J_MW": 0.016141568, "flujo_P_J_a_I_MW": -0.02917, "flujo_Q_J_a_I_MW": -0.01614},
+      {"I": 9, "J": 42, "flujo_P_I_a_J_MW": 0.029173173, "flujo_Q_I_a_J_MW": 0.016142098, "flujo_P_J_a_I_MW": -0.02917, "flujo_Q_J_a_I_MW": -0.01614},
+      {"I": 10, "J": 43, "flujo_P_I_a_J_MW": 0.02917955, "flujo_Q_I_a_J_MW": 0.016146314, "flujo_P_J_a_I_MW": -0.02917, "flujo_Q_J_a_I_MW": -0.01614},
+      {"I": 11, "J": 44, "flujo_P_I_a_J_MW": 0.148833119, "flujo_Q_I_a_J_MW": 0.082354955, "flujo_P_J_a_I_MW": -0.14875, "flujo_Q_J_a_I_MW": -0.0823},
+      {"I": 12, "J": 45, "flujo_P_I_a_J_MW": 0.0291812, "flujo_Q_I_a_J_MW": 0.016147405, "flujo_P_J_a_I_MW": -0.02917, "flujo_Q_J_a_I_MW": -0.01614},
+      {"I": 14, "J": 46, "flujo_P_I_a_J_MW": 0.131346255, "flujo_Q_I_a_J_MW": 0.072683641, "flujo_P_J_a_I_MW": -0.131313616, "flujo_Q_J_a_I_MW": -0.072662061},
+      {"I": 46, "J": 47, "flujo_P_I_a_J_MW": 0.087562891, "flujo_Q_I_a_J_MW": 0.048451582, "flujo_P_J_a_I_MW": -0.087519352, "flujo_Q_J_a_I_MW": -0.048422795},
+      {"I": 47, "J": 48, "flujo_P_I_a_J_MW": 0.058349352, "flujo_Q_I_a_J_MW": 0.032282795, "flujo_P_J_a_I_MW": -0.05833, "flujo_Q_J_a_I_MW": -0.03227},
+      {"I": 46, "J": 49, "flujo_P_I_a_J_MW": 0.043750725, "flujo_Q_I_a_J_MW": 0.024210479, "flujo_P_J_a_I_MW": -0.04375, "flujo_Q_J_a_I_MW": -0.02421},
+      {"I": 15, "J": 50, "flujo_P_I_a_J_MW": 0.116851703, "flujo_Q_I_a_J_MW": 0.064670136, "flujo_P_J_a_I_MW": -0.11667, "flujo_Q_J_a_I_MW": -0.06455},
+      {"I": 17, "J": 51, "flujo_P_I_a_J_MW": 0.091944642, "flujo_Q_I_a_J_MW": 0.050872739, "flujo_P_J_a_I_MW": -0.09188, "flujo_Q_J_a_I_MW": -0.05083}
+  
+      ]
+    };
+    
+    
+  
+    
+    let nodos = {
+      "nodes": [
+        { "nodo": 1, "tipo_de_nodo": 3, "P_MW": 0, "Q_MVAR": 0, "V_max": 1, "V_min": 1 },
+        { "nodo": 2, "tipo_de_nodo": 1, "P_MW": 0.01458, "Q_MVAR": 0.00807, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 3, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 4, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 5, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 6, "tipo_de_nodo": 1, "P_MW": 0.01458, "Q_MVAR": 0.00807, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 7, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 8, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 9, "tipo_de_nodo": 1, "P_MW": 0.05833, "Q_MVAR": 0.03227, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 10, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 11, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 12, "tipo_de_nodo": 1, "P_MW": 0.02, "Q_MVAR": 0.015, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 13, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 14, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 15, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 16, "tipo_de_nodo": 1, "P_MW": 0.02917, "Q_MVAR": 0.01614, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 17, "tipo_de_nodo": 1, "P_MW": 0.07292, "Q_MVAR": 0.04034, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 18, "tipo_de_nodo": 1, "P_MW": 0.02, "Q_MVAR": 0.015, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 19, "tipo_de_nodo": 1, "P_MW": 0.14567, "Q_MVAR": 0.08069, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 20, "tipo_de_nodo": 1, "P_MW": 0.06288, "Q_MVAR": 0.03333, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 21, "tipo_de_nodo": 1, "P_MW": 0.01458, "Q_MVAR": 0.00807, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 22, "tipo_de_nodo": 1, "P_MW": 0.09479, "Q_MVAR": 0.05245, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 23, "tipo_de_nodo": 1, "P_MW": 0.01458, "Q_MVAR": 0.00807, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 24, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 25, "tipo_de_nodo": 1, "P_MW": 0.01458, "Q_MVAR": 0.00807, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 26, "tipo_de_nodo": 1, "P_MW": 0.035, "Q_MVAR": 0.01936, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 27, "tipo_de_nodo": 1, "P_MW": 0.02917, "Q_MVAR": 0.01614, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 28, "tipo_de_nodo": 1, "P_MW": 0.02917, "Q_MVAR": 0.01614, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 29, "tipo_de_nodo": 1, "P_MW": 0.09188, "Q_MVAR": 0.05083, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 30, "tipo_de_nodo": 1, "P_MW": 0.0859, "Q_MVAR": 0.03683, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 31, "tipo_de_nodo": 1, "P_MW": 0.02917, "Q_MVAR": 0.01614, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 32, "tipo_de_nodo": 1, "P_MW": 0.01458, "Q_MVAR": 0.00807, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 33, "tipo_de_nodo": 1, "P_MW": 0.04375, "Q_MVAR": 0.02421, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 34, "tipo_de_nodo": 1, "P_MW": 0.04375, "Q_MVAR": 0.02421, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 35, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 36, "tipo_de_nodo": 1, "P_MW": 0.14583, "Q_MVAR": 0.08069, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 37, "tipo_de_nodo": 1, "P_MW": 0.09188, "Q_MVAR": 0.05083, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 38, "tipo_de_nodo": 1, "P_MW": 0.02917, "Q_MVAR": 0.01614, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 39, "tipo_de_nodo": 1, "P_MW": 0.05833, "Q_MVAR": 0.03227, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 40, "tipo_de_nodo": 1, "P_MW": 0.01458, "Q_MVAR": 0.00807, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 41, "tipo_de_nodo": 1, "P_MW": 0.02917, "Q_MVAR": 0.01614, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 42, "tipo_de_nodo": 1, "P_MW": 0.02917, "Q_MVAR": 0.01614, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 43, "tipo_de_nodo": 1, "P_MW": 0.02917, "Q_MVAR": 0.01614, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 44, "tipo_de_nodo": 1, "P_MW": 0.14875, "Q_MVAR": 0.0823, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 45, "tipo_de_nodo": 1, "P_MW": 0.02917, "Q_MVAR": 0.01614, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 46, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 47, "tipo_de_nodo": 1, "P_MW": 0.02917, "Q_MVAR": 0.01614, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 48, "tipo_de_nodo": 1, "P_MW": 0.05833, "Q_MVAR": 0.03227, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 49, "tipo_de_nodo": 1, "P_MW": 0.04375, "Q_MVAR": 0.02421, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 50, "tipo_de_nodo": 1, "P_MW": 0.11667, "Q_MVAR": 0.06455, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 51, "tipo_de_nodo": 1, "P_MW": 0.09188, "Q_MVAR": 0.05083, "V_max": 1.1, "V_min": 0.9 }
+      ]
+    };
+    
+    
+    
+    
+  
+    
+    let escenarios = [
+      {
+        "escenario": "ESCENARIO 1 CON SIN RD NI GD",
+        "potencia_deslastrada_MW": 1.40779,
+        "potencia_atendida_MW": 0.51626,
+        "potencia_generada_adicional_MW": 1.40779 - 0.51626,
+        "costo_operacion_dolar_per_MWH": 392.423,
+        "costo_deslastre_dolar_per_MWH": 265.4,
+        "U1": 0.268319431,
+        "U2": 0.323688979,
+        "U": 0.296004205,
+        "resiliencia": "MALA"
+      },
+      {
+        "escenario": "ESCENARIO 2 CON RD SIN GD",
+        "potencia_deslastrada_MW": 0.98733,
+        "potencia_atendida_MW": 0.93672,
+        "potencia_generada_adicional_MW": 0.98733 - 0.93672,
+        "costo_operacion_dolar_per_MWH": 312.2302767,
+        "costo_deslastre_dolar_per_MWH": 174.5203715,
+        "U1": 0.486846483,
+        "U2": 0.441052375,
+        "U": 0.463949429,
+        "resiliencia": "POBRE"
+      },
+      {
+        "escenario": "ESCENARIO 3 CON GD SIN RD",
+        "potencia_deslastrada_MW": 0.69873,
+        "potencia_atendida_MW": 1.22532,
+        "potencia_generada_adicional_MW": 0.69873 - 1.22532,
+        "costo_operacion_dolar_per_MWH": 215.2410037,
+        "costo_deslastre_dolar_per_MWH": 122.8290279,
+        "U1": 0.636846427,
+        "U2": 0.429341873,
+        "U": 0.53309415,
+        "resiliencia": "BUENA"
+      },
+      {
+        "escenario": "ESCENARIO 4 CON GD Y RD",
+        "potencia_deslastrada_MW": 0.68014,
+        "potencia_atendida_MW": 1.24391,
+        "potencia_generada_adicional_MW": 0.68014 - 1.24391,
+        "costo_operacion_dolar_per_MWH": 207.5935145,
+        "costo_deslastre_dolar_per_MWH": 121.5172221,
+        "U1": 0.64650525,
+        "U2": 0.414638639,
+        "U": 0.530571945,
+        "resiliencia": "BUENA"
+      }
     ];
+    
+    
+  
+    
+    let escenario1ConSinRdNiGd = [
+      { "nodo": 6, "carga_MW": 0.01458, "potencia_deslastrada_MW": 0.01458, "costo_dolar_por_MW": 2.9159998, "potencia_atendida_MW": 1.00201E-09, "_atendido": 6.87253E-06 },
+      { "nodo": 9, "carga_MW": 0.05833, "potencia_deslastrada_MW": 0.05833, "costo_dolar_por_MW": 5.83299995, "potencia_atendida_MW": 4.99498E-10, "_atendido": 8.56331E-07 },
+      { "nodo": 12, "carga_MW": 0.02, "potencia_deslastrada_MW": 0.02, "costo_dolar_por_MW": 3.9999998, "potencia_atendida_MW": 1.0019E-09, "_atendido": 5.00951E-06 },
+      { "nodo": 23, "carga_MW": 0.01458, "potencia_deslastrada_MW": 1.06816E-07, "costo_dolar_por_MW": 3.20447E-05, "potencia_atendida_MW": 0.014579893, "_atendido": 99.99926738 },
+      { "nodo": 30, "carga_MW": 0.0859, "potencia_deslastrada_MW": 2.99703E-06, "costo_dolar_por_MW": 0.00089911, "potencia_atendida_MW": 0.085897003, "_atendido": 99.99651102 },
+      { "nodo": 31, "carga_MW": 0.02917, "potencia_deslastrada_MW": 2.78532E-06, "costo_dolar_por_MW": 0.000835595, "potencia_atendida_MW": 0.029167215, "_atendido": 99.99045143 },
+      { "nodo": 32, "carga_MW": 0.01458, "potencia_deslastrada_MW": 0.01458, "costo_dolar_por_MW": 1.45799995, "potencia_atendida_MW": 4.98152E-10, "_atendido": 3.41668E-06 },
+      { "nodo": 33, "carga_MW": 0.04375, "potencia_deslastrada_MW": 0.04375, "costo_dolar_por_MW": 4.37499995, "potencia_atendida_MW": 4.98181E-10, "_atendido": 1.1387E-06 },
+      { "nodo": 34, "carga_MW": 0.04375, "potencia_deslastrada_MW": 0.043749999, "costo_dolar_por_MW": 8.749999801, "potencia_atendida_MW": 9.96754E-10, "_atendido": 2.2783E-06 },
+      { "nodo": 38, "carga_MW": 0.02917, "potencia_deslastrada_MW": 0.02917, "costo_dolar_por_MW": 2.91699995, "potencia_atendida_MW": 4.97956E-10, "_atendido": 1.70708E-06 },
+      { "nodo": 41, "carga_MW": 0.02917, "potencia_deslastrada_MW": 0.02917, "costo_dolar_por_MW": 2.91699995, "potencia_atendida_MW": 4.99507E-10, "_atendido": 1.7124E-06 },
+      { "nodo": 42, "carga_MW": 0.02917, "potencia_deslastrada_MW": 0.02917, "costo_dolar_por_MW": 2.91699995, "potencia_atendida_MW": 4.99549E-10, "_atendido": 1.71254E-06 },
+      { "nodo": 43, "carga_MW": 0.02917, "potencia_deslastrada_MW": 0.029169999, "costo_dolar_por_MW": 5.8339998, "potencia_atendida_MW": 1.00241E-09, "_atendido": 3.43644E-06 },
+      { "nodo": 45, "carga_MW": 0.02917, "potencia_deslastrada_MW": 2.15888E-07, "costo_dolar_por_MW": 6.47663E-05, "potencia_atendida_MW": 0.029169784, "_atendido": 99.9992599 },
+      { "nodo": 2, "carga_MW": 0.01458, "potencia_deslastrada_MW": 0.014578877, "costo_dolar_por_MW": 1.457887731, "potencia_atendida_MW": 1.12269E-06, "_atendido": 0.007700217 },
+      { "nodo": 20, "carga_MW": 0.06288, "potencia_deslastrada_MW": 0.03987325, "costo_dolar_por_MW": 7.974649927, "potencia_atendida_MW": 0.02300675, "_atendido": 36.58834346 },
+      { "nodo": 17, "carga_MW": 0.07292, "potencia_deslastrada_MW": 0.028230435, "costo_dolar_por_MW": 8.469130482, "potencia_atendida_MW": 0.044689565, "_atendido": 61.28574473 },
+      { "nodo": 18, "carga_MW": 0.02, "potencia_deslastrada_MW": 0.019999998, "costo_dolar_por_MW": 1.999999802, "potencia_atendida_MW": 1.98113E-09, "_atendido": 9.90567E-06 },
+      { "nodo": 19, "carga_MW": 0.14567, "potencia_deslastrada_MW": 0.145669996, "costo_dolar_por_MW": 29.13399921, "potencia_atendida_MW": 3.96439E-09, "_atendido": 2.72149E-06 },
+      { "nodo": 50, "carga_MW": 0.11667, "potencia_deslastrada_MW": 0.08750941, "costo_dolar_por_MW": 17.50188192, "potencia_atendida_MW": 0.02916059, "_atendido": 24.99407765 },
+      { "nodo": 49, "carga_MW": 0.04375, "potencia_deslastrada_MW": 0.03281496, "costo_dolar_por_MW": 6.562992035, "potencia_atendida_MW": 0.01093504, "_atendido": 24.99437674 },
+      { "nodo": 16, "carga_MW": 0.02917, "potencia_deslastrada_MW": 0.02917, "costo_dolar_por_MW": 8.751, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 21, "carga_MW": 0.01458, "potencia_deslastrada_MW": 0.00729, "costo_dolar_por_MW": 0.729, "potencia_atendida_MW": 0.00729, "_atendido": 50 },
+      { "nodo": 25, "carga_MW": 0.01458, "potencia_deslastrada_MW": 0.010935, "costo_dolar_por_MW": 2.187, "potencia_atendida_MW": 0.003645, "_atendido": 25 },
+      { "nodo": 26, "carga_MW": 0.035, "potencia_deslastrada_MW": 0.0175, "costo_dolar_por_MW": 1.75, "potencia_atendida_MW": 0.0175, "_atendido": 50 },
+      { "nodo": 27, "carga_MW": 0.02917, "potencia_deslastrada_MW": 0.0218775, "costo_dolar_por_MW": 4.3755, "potencia_atendida_MW": 0.0072925, "_atendido": 25 },
+      { "nodo": 28, "carga_MW": 0.02917, "potencia_deslastrada_MW": 0.0218775, "costo_dolar_por_MW": 4.3755, "potencia_atendida_MW": 0.0072925, "_atendido": 25 },
+      { "nodo": 39, "carga_MW": 0.05833, "potencia_deslastrada_MW": 0.05833, "costo_dolar_por_MW": 17.499, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 40, "carga_MW": 0.01458, "potencia_deslastrada_MW": 0.00729, "costo_dolar_por_MW": 0.729, "potencia_atendida_MW": 0.00729, "_atendido": 50 },
+      { "nodo": 44, "carga_MW": 0.14875, "potencia_deslastrada_MW": 0.074375, "costo_dolar_por_MW": 7.4375, "potencia_atendida_MW": 0.074375, "_atendido": 50 },
+      { "nodo": 47, "carga_MW": 0.02917, "potencia_deslastrada_MW": 0.02917, "costo_dolar_por_MW": 8.751, "potencia_atendida_MW": 0, "_atendido": 0 },
+      { "nodo": 48, "carga_MW": 0.05833, "potencia_deslastrada_MW": 0.029165, "costo_dolar_por_MW": 2.9165, "potencia_atendida_MW": 0.029165, "_atendido": 50 }
+    ];
+    
+
+
+let escenario2ConRdSinGd = [
+  { "nodo": 6, "carga_MW": 0.01458, "potencia_deslastrada_MW": 6.08281E-08, "costo_dolar_por_MW": 1.21656E-05, "potencia_atendida_MW": 0.014579939, "_atendido": 99.9995828 },
+  { "nodo": 9, "carga_MW": 0.05833, "potencia_deslastrada_MW": 3.27155E-07, "costo_dolar_por_MW": 3.27155E-05, "potencia_atendida_MW": 0.058329673, "_atendido": 99.99943913 },
+  { "nodo": 12, "carga_MW": 0.02, "potencia_deslastrada_MW": 6.08556E-08, "costo_dolar_por_MW": 1.21711E-05, "potencia_atendida_MW": 0.019999939, "_atendido": 99.99969572 },
+  { "nodo": 23, "carga_MW": 0.01458, "potencia_deslastrada_MW": 3.35791E-08, "costo_dolar_por_MW": 1.00737E-05, "potencia_atendida_MW": 0.014579966, "_atendido": 99.99976969 },
+  { "nodo": 30, "carga_MW": 0.0859, "potencia_deslastrada_MW": 3.34292E-08, "costo_dolar_por_MW": 1.00288E-05, "potencia_atendida_MW": 0.085899967, "_atendido": 99.99996108 },
+  { "nodo": 31, "carga_MW": 0.02917, "potencia_deslastrada_MW": 3.34141E-08, "costo_dolar_por_MW": 1.00242E-05, "potencia_atendida_MW": 0.029169967, "_atendido": 99.99988545 },
+  { "nodo": 32, "carga_MW": 0.01458, "potencia_deslastrada_MW": 3.13316E-07, "costo_dolar_por_MW": 3.13316E-05, "potencia_atendida_MW": 0.014579687, "_atendido": 99.99785105 },
+  { "nodo": 33, "carga_MW": 0.04375, "potencia_deslastrada_MW": 3.10235E-07, "costo_dolar_por_MW": 3.10235E-05, "potencia_atendida_MW": 0.04374969, "_atendido": 99.99929089 },
+  { "nodo": 34, "carga_MW": 0.04375, "potencia_deslastrada_MW": 6.01311E-08, "costo_dolar_por_MW": 1.20262E-05, "potencia_atendida_MW": 0.04374994, "_atendido": 99.99986256 },
+  { "nodo": 38, "carga_MW": 0.02917, "potencia_deslastrada_MW": 2.99714E-07, "costo_dolar_por_MW": 2.99714E-05, "potencia_atendida_MW": 0.0291697, "_atendido": 99.99897253 },
+  { "nodo": 41, "carga_MW": 0.02917, "potencia_deslastrada_MW": 3.27024E-07, "costo_dolar_por_MW": 3.27024E-05, "potencia_atendida_MW": 0.029169673, "_atendido": 99.9988789 },
+  { "nodo": 42, "carga_MW": 0.02917, "potencia_deslastrada_MW": 3.27386E-07, "costo_dolar_por_MW": 3.27386E-05, "potencia_atendida_MW": 0.029169673, "_atendido": 99.99887766 },
+  { "nodo": 43, "carga_MW": 0.02917, "potencia_deslastrada_MW": 6.08659E-08, "costo_dolar_por_MW": 1.21732E-05, "potencia_atendida_MW": 0.029169939, "_atendido": 99.99979134 },
+  { "nodo": 45, "carga_MW": 0.02917, "potencia_deslastrada_MW": 3.35466E-08, "costo_dolar_por_MW": 1.0064E-05, "potencia_atendida_MW": 0.029169966, "_atendido": 99.999885 },
+  { "nodo": 2, "carga_MW": 0.01458, "potencia_deslastrada_MW": 0.01458, "costo_dolar_por_MW": 1.457999995, "potencia_atendida_MW": 4.53925E-11, "_atendido": 3.11334E-07 },
+  { "nodo": 20, "carga_MW": 0.06288, "potencia_deslastrada_MW": 0.06288, "costo_dolar_por_MW": 12.576, "potencia_atendida_MW": 2.83107E-14, "_atendido": 4.50234E-11 },
+  { "nodo": 17, "carga_MW": 0.07292, "potencia_deslastrada_MW": 1.08832E-06, "costo_dolar_por_MW": 0.000326495, "potencia_atendida_MW": 0.072918912, "_atendido": 99.99850752 },
+  { "nodo": 18, "carga_MW": 0.02, "potencia_deslastrada_MW": 1.03036E-05, "costo_dolar_por_MW": 0.001030362, "potencia_atendida_MW": 0.019989696, "_atendido": 99.94848189 },
+  { "nodo": 19, "carga_MW": 0.14567, "potencia_deslastrada_MW": 1.95921E-06, "costo_dolar_por_MW": 0.000391843, "potencia_atendida_MW": 0.145668041, "_atendido": 99.99865503 },
+  { "nodo": 50, "carga_MW": 0.11667, "potencia_deslastrada_MW": 0.11667, "costo_dolar_por_MW": 23.334, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 49, "carga_MW": 0.04375, "potencia_deslastrada_MW": 0.04375, "costo_dolar_por_MW": 8.75, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 16, "carga_MW": 0.02917, "potencia_deslastrada_MW": 0.02917, "costo_dolar_por_MW": 8.751, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 21, "carga_MW": 0.01458, "potencia_deslastrada_MW": 0.01458, "costo_dolar_por_MW": 1.458, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 25, "carga_MW": 0.01458, "potencia_deslastrada_MW": 0.01458, "costo_dolar_por_MW": 2.916, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 26, "carga_MW": 0.035, "potencia_deslastrada_MW": 0.035, "costo_dolar_por_MW": 3.5, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 27, "carga_MW": 0.02917, "potencia_deslastrada_MW": 0.02917, "costo_dolar_por_MW": 5.834, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 28, "carga_MW": 0.02917, "potencia_deslastrada_MW": 0.02917, "costo_dolar_por_MW": 5.834, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 39, "carga_MW": 0.05833, "potencia_deslastrada_MW": 0.05833, "costo_dolar_por_MW": 17.499, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 40, "carga_MW": 0.01458, "potencia_deslastrada_MW": 0.01458, "costo_dolar_por_MW": 1.458, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 44, "carga_MW": 0.14875, "potencia_deslastrada_MW": 0.14875, "costo_dolar_por_MW": 14.875, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 47, "carga_MW": 0.02917, "potencia_deslastrada_MW": 0.02917, "costo_dolar_por_MW": 8.751, "potencia_atendida_MW": 0, "_atendido": 0 },
+  { "nodo": 48, "carga_MW": 0.05833, "potencia_deslastrada_MW": 0.05833, "costo_dolar_por_MW": 5.833, "potencia_atendida_MW": 0, "_atendido": 0 }
+];
+
+
+ 
+let escenario3ConGdSinRd = [
+  { nodo: 6, carga_MW: 1.458E-02, potencia_deslastrada_MW: 7.642E-03, costo_dolar_por_MW: 1.5285, potencia_atendida_MW: 6.938E-03, _atendido: 47.58 },
+  { nodo: 9, carga_MW: 5.833E-02, potencia_deslastrada_MW: 3.078E-02, costo_dolar_por_MW: 3.078, potencia_atendida_MW: 2.755E-02, _atendido: 47.23 },
+  { nodo: 12, carga_MW: 2.000E-02, potencia_deslastrada_MW: 9.918E-03, costo_dolar_por_MW: 1.984, potencia_atendida_MW: 1.008E-02, _atendido: 50.41 },
+  { nodo: 23, carga_MW: 1.458E-02, potencia_deslastrada_MW: 5.249E-03, costo_dolar_por_MW: 1.575, potencia_atendida_MW: 9.331E-03, _atendido: 64.00 },
+  { nodo: 30, carga_MW: 8.590E-02, potencia_deslastrada_MW: 4.793E-03, costo_dolar_por_MW: 1.438, potencia_atendida_MW: 8.111E-02, _atendido: 94.42 },
+  { nodo: 31, carga_MW: 2.917E-02, potencia_deslastrada_MW: 6.319E-03, costo_dolar_por_MW: 1.896, potencia_atendida_MW: 2.285E-02, _atendido: 78.34 },
+  { nodo: 32, carga_MW: 1.458E-02, potencia_deslastrada_MW: 1.019E-02, costo_dolar_por_MW: 1.019, potencia_atendida_MW: 4.394E-03, _atendido: 30.14 },
+  { nodo: 33, carga_MW: 4.375E-02, potencia_deslastrada_MW: 2.860E-02, costo_dolar_por_MW: 2.860, potencia_atendida_MW: 1.515E-02, _atendido: 34.64 },
+  { nodo: 34, carga_MW: 4.375E-02, potencia_deslastrada_MW: 1.709E-02, costo_dolar_por_MW: 2.342, potencia_atendida_MW: 3.204E-02, _atendido: 73.24 },
+  { nodo: 38, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.169E-02, costo_dolar_por_MW: 2.169, potencia_atendida_MW: 7.479E-03, _atendido: 25.64 },
+  { nodo: 41, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.156E-02, costo_dolar_por_MW: 2.156, potencia_atendida_MW: 7.611E-03, _atendido: 26.09 },
+  { nodo: 42, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.174E-02, costo_dolar_por_MW: 2.174, potencia_atendida_MW: 7.429E-03, _atendido: 25.47 },
+  { nodo: 43, carga_MW: 2.917E-02, potencia_deslastrada_MW: 1.159E-02, costo_dolar_por_MW: 2.319, potencia_atendida_MW: 1.758E-02, _atendido: 60.26 },
+  { nodo: 45, carga_MW: 2.917E-02, potencia_deslastrada_MW: 6.610E-03, costo_dolar_por_MW: 1.983, potencia_atendida_MW: 2.256E-02, _atendido: 77.34 },
+  { nodo: 2, carga_MW: 1.458E-02, potencia_deslastrada_MW: 1.458E-02, costo_dolar_por_MW: 1.458, potencia_atendida_MW: 1.123E-06, _atendido: 0.008 },
+  { nodo: 20, carga_MW: 6.288E-02, potencia_deslastrada_MW: 3.988E-02, costo_dolar_por_MW: 7.975, potencia_atendida_MW: 2.300E-02, _atendido: 36.59 },
+  { nodo: 17, carga_MW: 7.292E-02, potencia_deslastrada_MW: 6.071E-09, costo_dolar_por_MW: 1.821E-06, potencia_atendida_MW: 7.292E-02, _atendido: 99.99 },
+  { nodo: 18, carga_MW: 2.000E-02, potencia_deslastrada_MW: 5.469E-08, costo_dolar_por_MW: 5.469E-06, potencia_atendida_MW: 1.999E-02, _atendido: 99.97 },
+  { nodo: 19, carga_MW: 1.457E-01, potencia_deslastrada_MW: 1.092E-08, costo_dolar_por_MW: 2.185E-06, potencia_atendida_MW: 1.457E-01, _atendido: 99.99 },
+  { nodo: 50, carga_MW: 1.167E-01, potencia_deslastrada_MW: 8.751E-02, costo_dolar_por_MW: 17.502, potencia_atendida_MW: 2.916E-02, _atendido: 24.99 },
+  { nodo: 49, carga_MW: 4.375E-02, potencia_deslastrada_MW: 3.281E-02, costo_dolar_por_MW: 6.563, potencia_atendida_MW: 1.094E-02, _atendido: 24.99 },
+  { nodo: 16, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.917E-02, costo_dolar_por_MW: 8.751, potencia_atendida_MW: 0, _atendido: 0 },
+  { nodo: 21, carga_MW: 1.458E-02, potencia_deslastrada_MW: 7.290E-03, costo_dolar_por_MW: 0.729, potencia_atendida_MW: 7.290E-03, _atendido: 50 },
+  { nodo: 25, carga_MW: 1.458E-02, potencia_deslastrada_MW: 1.094E-02, costo_dolar_por_MW: 2.187, potencia_atendida_MW: 3.645E-03, _atendido: 25 },
+  { nodo: 26, carga_MW: 3.500E-02, potencia_deslastrada_MW: 1.750E-02, costo_dolar_por_MW: 1.750, potencia_atendida_MW: 1.750E-02, _atendido: 50 },
+  { nodo: 27, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.188E-02, costo_dolar_por_MW: 4.376, potencia_atendida_MW: 7.293E-03, _atendido: 25 },
+  { nodo: 28, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.188E-02, costo_dolar_por_MW: 4.376, potencia_atendida_MW: 7.293E-03, _atendido: 25 },
+  { nodo: 39, carga_MW: 5.833E-02, potencia_deslastrada_MW: 5.833E-02, costo_dolar_por_MW: 17.499, potencia_atendida_MW: 0, _atendido: 0 },
+  { nodo: 40, carga_MW: 1.458E-02, potencia_deslastrada_MW: 7.290E-03, costo_dolar_por_MW: 0.729, potencia_atendida_MW: 7.290E-03, _atendido: 50 },
+  { nodo: 44, carga_MW: 1.488E-01, potencia_deslastrada_MW: 7.438E-02, costo_dolar_por_MW: 7.438, potencia_atendida_MW: 7.438E-02, _atendido: 50 },
+  { nodo: 47, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.917E-02, costo_dolar_por_MW: 8.751, potencia_atendida_MW: 0, _atendido: 0 },
+  { nodo: 48, carga_MW: 5.833E-02, potencia_deslastrada_MW: 2.917E-02, costo_dolar_por_MW: 2.917, potencia_atendida_MW: 2.917E-02, _atendido: 50 }
+];
+
+
+
+let escenario4ConGdYRd = [
+  { nodo: 6, carga_MW: 1.458E-02, potencia_deslastrada_MW: 7.642E-03, costo_dolar_por_MW: 1.528, potencia_atendida_MW: 6.938E-03, _atendido: 47.58 },
+  { nodo: 9, carga_MW: 5.833E-02, potencia_deslastrada_MW: 3.078E-02, costo_dolar_por_MW: 3.078, potencia_atendida_MW: 2.756E-02, _atendido: 47.23 },
+  { nodo: 12, carga_MW: 2.000E-02, potencia_deslastrada_MW: 9.918E-03, costo_dolar_por_MW: 1.984, potencia_atendida_MW: 1.008E-02, _atendido: 50.41 },
+  { nodo: 23, carga_MW: 1.458E-02, potencia_deslastrada_MW: 5.249E-03, costo_dolar_por_MW: 1.575, potencia_atendida_MW: 9.331E-03, _atendido: 64.00 },
+  { nodo: 30, carga_MW: 8.590E-02, potencia_deslastrada_MW: 4.793E-03, costo_dolar_por_MW: 1.438, potencia_atendida_MW: 8.111E-02, _atendido: 94.42 },
+  { nodo: 31, carga_MW: 2.917E-02, potencia_deslastrada_MW: 6.319E-03, costo_dolar_por_MW: 1.896, potencia_atendida_MW: 2.285E-02, _atendido: 78.34 },
+  { nodo: 32, carga_MW: 1.458E-02, potencia_deslastrada_MW: 1.019E-02, costo_dolar_por_MW: 1.019, potencia_atendida_MW: 4.394E-03, _atendido: 30.14 },
+  { nodo: 33, carga_MW: 4.375E-02, potencia_deslastrada_MW: 2.860E-02, costo_dolar_por_MW: 2.860, potencia_atendida_MW: 1.515E-02, _atendido: 34.64 },
+  { nodo: 34, carga_MW: 4.375E-02, potencia_deslastrada_MW: 1.709E-02, costo_dolar_por_MW: 2.342, potencia_atendida_MW: 3.204E-02, _atendido: 73.24 },
+  { nodo: 38, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.169E-02, costo_dolar_por_MW: 2.169, potencia_atendida_MW: 7.479E-03, _atendido: 25.64 },
+  { nodo: 41, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.156E-02, costo_dolar_por_MW: 2.156, potencia_atendida_MW: 7.611E-03, _atendido: 26.09 },
+  { nodo: 42, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.174E-02, costo_dolar_por_MW: 2.174, potencia_atendida_MW: 7.429E-03, _atendido: 25.47 },
+  { nodo: 43, carga_MW: 2.917E-02, potencia_deslastrada_MW: 1.159E-02, costo_dolar_por_MW: 2.319, potencia_atendida_MW: 1.758E-02, _atendido: 60.26 },
+  { nodo: 45, carga_MW: 2.917E-02, potencia_deslastrada_MW: 6.610E-03, costo_dolar_por_MW: 1.983, potencia_atendida_MW: 2.256E-02, _atendido: 77.34 },
+  { nodo: 2, carga_MW: 1.458E-02, potencia_deslastrada_MW: 1.458E-02, costo_dolar_por_MW: 1.458, potencia_atendida_MW: 1.123E-06, _atendido: 0.008 },
+  { nodo: 20, carga_MW: 6.288E-02, potencia_deslastrada_MW: 3.988E-02, costo_dolar_por_MW: 7.975, potencia_atendida_MW: 2.300E-02, _atendido: 36.59 },
+  { nodo: 17, carga_MW: 7.292E-02, potencia_deslastrada_MW: 6.071E-09, costo_dolar_por_MW: 1.821E-06, potencia_atendida_MW: 7.292E-02, _atendido: 99.99 },
+  { nodo: 18, carga_MW: 2.000E-02, potencia_deslastrada_MW: 5.469E-08, costo_dolar_por_MW: 5.469E-06, potencia_atendida_MW: 1.999E-02, _atendido: 99.97 },
+  { nodo: 19, carga_MW: 1.457E-01, potencia_deslastrada_MW: 1.092E-08, costo_dolar_por_MW: 2.185E-06, potencia_atendida_MW: 1.457E-01, _atendido: 99.99 },
+  { nodo: 50, carga_MW: 1.167E-01, potencia_deslastrada_MW: 8.751E-02, costo_dolar_por_MW: 17.502, potencia_atendida_MW: 2.916E-02, _atendido: 24.99 },
+  { nodo: 49, carga_MW: 4.375E-02, potencia_deslastrada_MW: 3.281E-02, costo_dolar_por_MW: 6.563, potencia_atendida_MW: 1.094E-02, _atendido: 24.99 },
+  { nodo: 16, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.917E-02, costo_dolar_por_MW: 8.751, potencia_atendida_MW: 0, _atendido: 0 },
+  { nodo: 21, carga_MW: 1.458E-02, potencia_deslastrada_MW: 7.290E-03, costo_dolar_por_MW: 0.729, potencia_atendida_MW: 7.290E-03, _atendido: 50 },
+  { nodo: 25, carga_MW: 1.458E-02, potencia_deslastrada_MW: 1.094E-02, costo_dolar_por_MW: 2.187, potencia_atendida_MW: 3.645E-03, _atendido: 25 },
+  { nodo: 26, carga_MW: 3.500E-02, potencia_deslastrada_MW: 1.750E-02, costo_dolar_por_MW: 1.750, potencia_atendida_MW: 1.750E-02, _atendido: 50 },
+  { nodo: 27, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.188E-02, costo_dolar_por_MW: 4.376, potencia_atendida_MW: 7.293E-03, _atendido: 25 },
+  { nodo: 28, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.188E-02, costo_dolar_por_MW: 4.376, potencia_atendida_MW: 7.293E-03, _atendido: 25 },
+  { nodo: 39, carga_MW: 5.833E-02, potencia_deslastrada_MW: 5.833E-02, costo_dolar_por_MW: 17.499, potencia_atendida_MW: 0, _atendido: 0 },
+  { nodo: 40, carga_MW: 1.458E-02, potencia_deslastrada_MW: 7.290E-03, costo_dolar_por_MW: 0.729, potencia_atendida_MW: 7.290E-03, _atendido: 50 },
+  { nodo: 44, carga_MW: 1.488E-01, potencia_deslastrada_MW: 7.438E-02, costo_dolar_por_MW: 7.438, potencia_atendida_MW: 7.438E-02, _atendido: 50 },
+  { nodo: 47, carga_MW: 2.917E-02, potencia_deslastrada_MW: 2.917E-02, costo_dolar_por_MW: 8.751, potencia_atendida_MW: 0, _atendido: 0 },
+  { nodo: 48, carga_MW: 5.833E-02, potencia_deslastrada_MW: 2.917E-02, costo_dolar_por_MW: 2.917, potencia_atendida_MW: 2.917E-02, _atendido: 50 }
+];
+
+    
+ 
+    let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
+
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+   }
+
+   if(caso=="57"){
+   
+    let generadores = {
+      "generators": [
+        { "nodo": 1, "PG_MW": 128.9, "QG_MW": -16.1, "Q_MAX_MVAR": 200, "Q_MIN_MVAR": -140, "P_MAX_MW": 575.88, "costo_marginal_dolar_per_MW": 20.07757952 },
+        { "nodo": 2, "PG_MW": 0, "QG_MW": -0.8, "Q_MAX_MVAR": 50, "Q_MIN_MVAR": -17, "P_MAX_MW": 100, "costo_marginal_dolar_per_MW": 40.01 },
+        { "nodo": 3, "PG_MW": 40, "QG_MW": -1, "Q_MAX_MVAR": 60, "Q_MIN_MVAR": -10, "P_MAX_MW": 140, "costo_marginal_dolar_per_MW": 20.25 },
+        { "nodo": 6, "PG_MW": 0, "QG_MW": 0.8, "Q_MAX_MVAR": 25, "Q_MIN_MVAR": -8, "P_MAX_MW": 100, "costo_marginal_dolar_per_MW": 40.01 },
+        { "nodo": 8, "PG_MW": 450, "QG_MW": 62.1, "Q_MAX_MVAR": 200, "Q_MIN_MVAR": -140, "P_MAX_MW": 550, "costo_marginal_dolar_per_MW": 20.02222222 },
+        { "nodo": 9, "PG_MW": 0, "QG_MW": 2.2, "Q_MAX_MVAR": 9, "Q_MIN_MVAR": -3, "P_MAX_MW": 100, "costo_marginal_dolar_per_MW": 40.01 },
+        { "nodo": 12, "PG_MW": 310, "QG_MW": 128.5, "Q_MAX_MVAR": 155, "Q_MIN_MVAR": -150, "P_MAX_MW": 410, "costo_marginal_dolar_per_MW": 20.03225806 }
+      ]
+    };
+    
+    
+    
+    let lineas = {
+      "lines": [
+        { "I": 1, "J": 2, "flujo_P_I_a_J_MW": -46.0176988, "flujo_Q_I_a_J_MW": 13.70406487, "flujo_P_J_a_I_MW": 46.22372908, "flujo_Q_J_a_I_MW": -26.12754073 },
+        { "I": 2, "J": 3, "flujo_P_I_a_J_MW": 38.59124135, "flujo_Q_I_a_J_MW": -11.87392576, "flujo_P_J_a_I_MW": -38.13657153, "flujo_Q_J_a_I_MW": 4.901885672 },
+        { "I": 3, "J": 4, "flujo_P_I_a_J_MW": -7.022774349, "flujo_Q_I_a_J_MW": -8.531038774, "flujo_P_J_a_I_MW": 7.033136463, "flujo_Q_J_a_I_MW": 4.727782072 },
+        { "I": 4, "J": 5, "flujo_P_I_a_J_MW": -14.08203759, "flujo_Q_I_a_J_MW": -1.626845504, "flujo_P_J_a_I_MW": 14.20445209, "flujo_Q_J_a_I_MW": -0.752449587 },
+        { "I": 4, "J": 6, "flujo_P_I_a_J_MW": -25.23399284, "flujo_Q_I_a_J_MW": -7.081119164, "flujo_P_J_a_I_MW": 25.51629517, "flujo_Q_J_a_I_MW": 4.459714732 },
+        { "I": 6, "J": 7, "flujo_P_I_a_J_MW": -13.338889, "flujo_Q_I_a_J_MW": 2.55164857, "flujo_P_J_a_I_MW": 13.37576266, "flujo_Q_J_a_I_MW": -5.263445426 },
+        { "I": 6, "J": 8, "flujo_P_I_a_J_MW": -41.71187374, "flujo_Q_I_a_J_MW": -3.663744086, "flujo_P_J_a_I_MW": 42.27300295, "flujo_Q_J_a_I_MW": 1.494746427 },
+        { "I": 8, "J": 9, "flujo_P_I_a_J_MW": 184.630316, "flujo_Q_I_a_J_MW": 50.29959464, "flujo_P_J_a_I_MW": -181.2749065, "flujo_Q_J_a_I_MW": -38.93123633 },
+        { "I": 9, "J": 10, "flujo_P_I_a_J_MW": 36.88036693, "flujo_Q_I_a_J_MW": 2.629327524, "flujo_P_J_a_I_MW": -36.37391803, "flujo_Q_J_a_I_MW": -4.673950421 },
+        { "I": 9, "J": 11, "flujo_P_I_a_J_MW": 46.95060902, "flujo_Q_I_a_J_MW": 9.373352494, "flujo_P_J_a_I_MW": -46.35840828, "flujo_Q_J_a_I_MW": -9.580830544 },
+        { "I": 9, "J": 12, "flujo_P_I_a_J_MW": 20.08135817, "flujo_Q_I_a_J_MW": -3.55331135, "flujo_P_J_a_I_MW": -19.82208053, "flujo_Q_J_a_I_MW": -2.955077782 },
+        { "I": 9, "J": 13, "flujo_P_I_a_J_MW": 35.33693287, "flujo_Q_I_a_J_MW": 4.873398856, "flujo_P_J_a_I_MW": -34.71830918, "flujo_Q_J_a_I_MW": -6.828085975 },
+        { "I": 13, "J": 14, "flujo_P_I_a_J_MW": 17.20902117, "flujo_Q_I_a_J_MW": 10.80354916, "flujo_P_J_a_I_MW": -17.15039466, "flujo_Q_J_a_I_MW": -11.65429692 },
+        { "I": 13, "J": 15, "flujo_P_I_a_J_MW": -14.14616504, "flujo_Q_I_a_J_MW": -8.467379363, "flujo_P_J_a_I_MW": 14.21776587, "flujo_Q_J_a_I_MW": 6.476650549 },
+        { "I": 1, "J": 15, "flujo_P_I_a_J_MW": 51.49964204, "flujo_Q_I_a_J_MW": 9.446933895, "flujo_P_J_a_I_MW": -50.99957722, "flujo_Q_J_a_I_MW": -16.7462719 },
+        { "I": 1, "J": 16, "flujo_P_I_a_J_MW": 34.02229564, "flujo_Q_I_a_J_MW": -0.131102217, "flujo_P_J_a_I_MW": -33.50329566, "flujo_Q_J_a_I_MW": -2.975762278 },
+        { "I": 1, "J": 17, "flujo_P_I_a_J_MW": 48.12599577, "flujo_Q_I_a_J_MW": 4.579428453, "flujo_P_J_a_I_MW": -47.57636282, "flujo_Q_J_a_I_MW": -4.951387911 },
+        { "I": 3, "J": 15, "flujo_P_I_a_J_MW": 49.23161108, "flujo_Q_I_a_J_MW": 11.39576486, "flujo_P_J_a_I_MW": -48.80936915, "flujo_Q_J_a_I_MW": -15.40804144 },
+        { "I": 4, "J": 18, "flujo_P_I_a_J_MW": 14.15829714, "flujo_Q_I_a_J_MW": 2.636454474, "flujo_P_J_a_I_MW": -14.15829714, "flujo_Q_J_a_I_MW": -1.567251824 },
+        { "I": 4, "J": 18, "flujo_P_I_a_J_MW": 18.12459995, "flujo_Q_I_a_J_MW": 1.343727956, "flujo_P_J_a_I_MW": -18.12459995, "flujo_Q_J_a_I_MW": -0.002628176 },
+        { "I": 5, "J": 6, "flujo_P_I_a_J_MW": -27.20445098, "flujo_Q_I_a_J_MW": -3.247550616, "flujo_P_J_a_I_MW": 27.42304746, "flujo_Q_J_a_I_MW": 2.419546678 },
+        { "I": 7, "J": 8, "flujo_P_I_a_J_MW": -82.01582889, "flujo_Q_I_a_J_MW": -10.81971773, "flujo_P_J_a_I_MW": 82.9195758, "flujo_Q_J_a_I_MW": 13.37425911 },
+        { "I": 10, "J": 12, "flujo_P_I_a_J_MW": -2.41697292, "flujo_Q_I_a_J_MW": -7.004257626, "flujo_P_J_a_I_MW": 2.427029934, "flujo_Q_J_a_I_MW": 3.848036802 },
+        { "I": 11, "J": 13, "flujo_P_I_a_J_MW": 21.53058389, "flujo_Q_I_a_J_MW": 1.036093128, "flujo_P_J_a_I_MW": -21.42291361, "flujo_Q_J_a_I_MW": -2.490975601 },
+        { "I": 12, "J": 13, "flujo_P_I_a_J_MW": -2.019543006, "flujo_Q_I_a_J_MW": 21.97384841, "flujo_P_J_a_I_MW": 2.076150457, "flujo_Q_J_a_I_MW": -22.39164244 },
+        { "I": 12, "J": 16, "flujo_P_I_a_J_MW": 9.513433997, "flujo_Q_I_a_J_MW": -2.023197774, "flujo_P_J_a_I_MW": -9.496705307, "flujo_Q_J_a_I_MW": -0.024236842 },
+      { "I": 12, "J": 17, "flujo_P_I_a_J_MW": -5.563637244, "flujo_Q_I_a_J_MW": -1.581032962, "flujo_P_J_a_I_MW": 5.576362087, "flujo_Q_J_a_I_MW": -3.048611251 },
+      { "I": 14, "J": 15, "flujo_P_I_a_J_MW": -36.03294433, "flujo_Q_I_a_J_MW": -20.81104216, "flujo_P_J_a_I_MW": 36.34224519, "flujo_Q_J_a_I_MW": 20.38118383 },
+      { "I": 18, "J": 19, "flujo_P_I_a_J_MW": 5.08289709, "flujo_Q_I_a_J_MW": 2.302689599, "flujo_P_J_a_I_MW": -4.946611322, "flujo_Q_J_a_I_MW": -2.100182546 },
+      { "I": 19, "J": 20, "flujo_P_I_a_J_MW": 1.646611284, "flujo_Q_I_a_J_MW": 1.500182613, "flujo_P_J_a_I_MW": -1.632236913, "flujo_Q_J_a_I_MW": -1.478138525 },
+      { "I": 21, "J": 20, "flujo_P_I_a_J_MW": 0.667763127, "flujo_Q_I_a_J_MW": -0.472650857, "flujo_P_J_a_I_MW": -0.667763127, "flujo_Q_J_a_I_MW": 0.478138589 },
+      { "I": 21, "J": 22, "flujo_P_I_a_J_MW": -0.667763138, "flujo_Q_I_a_J_MW": 0.472650917, "flujo_P_J_a_I_MW": 0.668241161, "flujo_Q_J_a_I_MW": -0.471891017 },
+      { "I": 22, "J": 23, "flujo_P_I_a_J_MW": 2.732322019, "flujo_Q_I_a_J_MW": 2.892129779, "flujo_P_J_a_I_MW": -2.730801074, "flujo_Q_J_a_I_MW": -2.889794591 },
+      { "I": 23, "J": 24, "flujo_P_I_a_J_MW": -3.569198832, "flujo_Q_I_a_J_MW": 0.789794545, "flujo_P_J_a_I_MW": 3.592159341, "flujo_Q_J_a_I_MW": -1.621126023 },
+      { "I": 24, "J": 25, "flujo_P_I_a_J_MW": 7.392102716, "flujo_Q_I_a_J_MW": 1.735136012, "flujo_P_J_a_I_MW": -7.392102716, "flujo_Q_J_a_I_MW": -1.076517849 },
+      { "I": 24, "J": 25, "flujo_P_I_a_J_MW": 7.103630415, "flujo_Q_I_a_J_MW": 1.667423387, "flujo_P_J_a_I_MW": -7.103630415, "flujo_Q_J_a_I_MW": -1.034507396 },
+      { "I": 24, "J": 26, "flujo_P_I_a_J_MW": -18.08789268, "flujo_Q_I_a_J_MW": -1.781433341, "flujo_P_J_a_I_MW": 18.08789268, "flujo_Q_J_a_I_MW": 1.945713709 },
+      { "I": 26, "J": 27, "flujo_P_I_a_J_MW": -18.08789223, "flujo_Q_I_a_J_MW": -1.945713913, "flujo_P_J_a_I_MW": 18.66096325, "flujo_Q_J_a_I_MW": 2.827895976 },
+      { "I": 27, "J": 28, "flujo_P_I_a_J_MW": -27.96096285, "flujo_Q_I_a_J_MW": -3.327896149, "flujo_P_J_a_I_MW": 28.43870921, "flujo_Q_J_a_I_MW": 4.065388107 },
+      { "I": 28, "J": 29, "flujo_P_I_a_J_MW": -33.038709, "flujo_Q_I_a_J_MW": -6.365388215, "flujo_P_J_a_I_MW": 33.48196527, "flujo_Q_J_a_I_MW": 6.987855753 },
+      { "I": 7, "J": 29, "flujo_P_I_a_J_MW": 68.64006295, "flujo_Q_I_a_J_MW": 16.08316493, "flujo_P_J_a_I_MW": -68.64006295, "flujo_Q_J_a_I_MW": -13.21322434 },
+      { "I": 25, "J": 30, "flujo_P_I_a_J_MW": 8.195733174, "flujo_Q_I_a_J_MW": 4.819646084, "flujo_P_J_a_I_MW": -8.07387254, "flujo_Q_J_a_I_MW": -4.637306468 },
+      { "I": 30, "J": 31, "flujo_P_I_a_J_MW": 4.473872558, "flujo_Q_I_a_J_MW": 2.837306467, "flujo_P_J_a_I_MW": -4.378604745, "flujo_Q_J_a_I_MW": -2.692066886 },
+      { "I": 31, "J": 32, "flujo_P_I_a_J_MW": -1.421395228, "flujo_Q_I_a_J_MW": -0.207933117, "flujo_P_J_a_I_MW": 1.432968048, "flujo_Q_J_a_I_MW": 0.225166803 },
+      { "I": 32, "J": 33, "flujo_P_I_a_J_MW": 3.8077123, "flujo_Q_I_a_J_MW": 1.90708273, "flujo_P_J_a_I_MW": -3.799999993, "flujo_Q_J_a_I_MW": -1.9 },
+      { "I": 34, "J": 32, "flujo_P_I_a_J_MW": 6.840680321, "flujo_Q_I_a_J_MW": 3.504930982, "flujo_P_J_a_I_MW": -6.840680321, "flujo_Q_J_a_I_MW": -2.932249539 },
+      { "I": 34, "J": 35, "flujo_P_I_a_J_MW": -6.840680345, "flujo_Q_I_a_J_MW": -3.504930977, "flujo_P_J_a_I_MW": 6.872980672, "flujo_Q_J_a_I_MW": 3.252325162 },
+      { "I": 35, "J": 36, "flujo_P_I_a_J_MW": -12.87298067, "flujo_Q_I_a_J_MW": -6.25232516, "flujo_P_J_a_I_MW": 12.96554783, "flujo_Q_J_a_I_MW": 6.214981552 },
+      { "I": 36, "J": 37, "flujo_P_I_a_J_MW": -15.33352003, "flujo_Q_I_a_J_MW": -10.35545367, "flujo_P_J_a_I_MW": 15.43642347, "flujo_Q_J_a_I_MW": 10.48532491 },
+      { "I": 37, "J": 38, "flujo_P_I_a_J_MW": -18.46337201, "flujo_Q_I_a_J_MW": -13.46085712, "flujo_P_J_a_I_MW": 18.80796264, "flujo_Q_J_a_I_MW": 13.79349731 },
+      { "I": 37, "J": 39, "flujo_P_I_a_J_MW": 3.026948527, "flujo_Q_I_a_J_MW": 2.975532229, "flujo_P_J_a_I_MW": -3.022560866, "flujo_Q_J_a_I_MW": -2.968574391 },
+      { "I": 36, "J": 40, "flujo_P_I_a_J_MW": 2.367972191, "flujo_Q_I_a_J_MW": 4.14047212, "flujo_P_J_a_I_MW": -2.360898002, "flujo_Q_J_a_I_MW": -4.129483546 },
+      { "I": 22, "J": 38, "flujo_P_I_a_J_MW": -3.400563164, "flujo_Q_I_a_J_MW": -2.420238762, "flujo_P_J_a_I_MW": 3.403809408, "flujo_Q_J_a_I_MW": 2.425226481 },
+      { "I": 11, "J": 41, "flujo_P_I_a_J_MW": 10.06903852, "flujo_Q_I_a_J_MW": 3.603405124, "flujo_P_J_a_I_MW": -10.06903852, "flujo_Q_J_a_I_MW": -2.796268536 },
+      { "I": 41, "J": 42, "flujo_P_I_a_J_MW": 9.877823328, "flujo_Q_I_a_J_MW": 3.363809877, "flujo_P_J_a_I_MW": -9.655405859, "flujo_Q_J_a_I_MW": -2.985592733 },
+      { "I": 41, "J": 43, "flujo_P_I_a_J_MW": -12.75878172, "flujo_Q_I_a_J_MW": -2.894056998, "flujo_P_J_a_I_MW": 12.75878172, "flujo_Q_J_a_I_MW": 3.589928148 },
+      { "I": 38, "J": 44, "flujo_P_I_a_J_MW": -14.75328239, "flujo_Q_I_a_J_MW": 2.585882051, "flujo_P_J_a_I_MW": 14.81619183, "flujo_Q_J_a_I_MW": -2.665712463 },
+      { "I": 15, "J": 45, "flujo_P_I_a_J_MW": 27.24893025, "flujo_Q_I_a_J_MW": 0.296483158, "flujo_P_J_a_I_MW": -27.24893025, "flujo_Q_J_a_I_MW": 0.426266707 },
+      { "I": 14, "J": 46, "flujo_P_I_a_J_MW": 42.6833377, "flujo_Q_I_a_J_MW": 27.16534023, "flujo_P_J_a_I_MW": -42.6833377, "flujo_Q_J_a_I_MW": -25.54665279 },
+      { "I": 46, "J": 47, "flujo_P_I_a_J_MW": 42.68333766, "flujo_Q_I_a_J_MW": 25.54665281, "flujo_P_J_a_I_MW": -42.17492277, "flujo_Q_J_a_I_MW": -24.39450771 },
+      { "I": 47, "J": 48, "flujo_P_I_a_J_MW": 12.47492277, "flujo_Q_I_a_J_MW": 12.79450771, "flujo_P_J_a_I_MW": -12.42061391, "flujo_Q_J_a_I_MW": -12.72498043 },
+      { "I": 48, "J": 49, "flujo_P_I_a_J_MW": -2.935566483, "flujo_Q_I_a_J_MW": -5.013601564, "flujo_P_J_a_I_MW": 2.960176576, "flujo_Q_J_a_I_MW": 4.538901796 },
+      { "I": 49, "J": 50, "flujo_P_I_a_J_MW": 5.603097391, "flujo_Q_I_a_J_MW": 7.533274845, "flujo_P_J_a_I_MW": -5.537534103, "flujo_Q_J_a_I_MW": -7.428504547 },
+      { "I": 50, "J": 51, "flujo_P_I_a_J_MW": -15.46246595, "flujo_Q_I_a_J_MW": -3.071495306, "flujo_P_J_a_I_MW": 15.79088719, "flujo_Q_J_a_I_MW": 3.59279885 },
+      { "I": 10, "J": 51, "flujo_P_I_a_J_MW": 33.79088729, "flujo_Q_I_a_J_MW": 9.678210993, "flujo_P_J_a_I_MW": -33.79088729, "flujo_Q_J_a_I_MW": -8.892798861 },
+      { "I": 13, "J": 49, "flujo_P_I_a_J_MW": 32.94548968, "flujo_Q_I_a_J_MW": 32.14492506, "flujo_P_J_a_I_MW": -32.94548968, "flujo_Q_J_a_I_MW": -28.75344122 },
+      { "I": 29, "J": 52, "flujo_P_I_a_J_MW": 18.15809842, "flujo_Q_I_a_J_MW": 3.625370429, "flujo_P_J_a_I_MW": -17.70994976, "flujo_Q_J_a_I_MW": -3.04420677 },
+      { "I": 52, "J": 53, "flujo_P_I_a_J_MW": 12.80994979, "flujo_Q_I_a_J_MW": 0.844207296, "flujo_P_J_a_I_MW": -12.68908273, "flujo_Q_J_a_I_MW": -0.688127004 },
+      { "I": 53, "J": 54, "flujo_P_I_a_J_MW": -7.31091658, "flujo_Q_I_a_J_MW": -2.897955088, "flujo_P_J_a_I_MW": 7.425003521, "flujo_Q_J_a_I_MW": 3.038893162 },
+      { "I": 54, "J": 55, "flujo_P_I_a_J_MW": -11.52500315, "flujo_Q_I_a_J_MW": -4.43889279, "flujo_P_J_a_I_MW": 11.77434117, "flujo_Q_J_a_I_MW": 4.764961277 },
+      { "I": 11, "J": 43, "flujo_P_I_a_J_MW": 14.7587817, "flujo_Q_I_a_J_MW": 4.941336109, "flujo_P_J_a_I_MW": -14.7587817, "flujo_Q_J_a_I_MW": -4.589928133 },
+      { "I": 44, "J": 45, "flujo_P_I_a_J_MW": -26.81619199, "flujo_Q_I_a_J_MW": 0.865712601, "flujo_P_J_a_I_MW": 27.24892989, "flujo_Q_J_a_I_MW": -0.426266595 },
+      { "I": 40, "J": 56, "flujo_P_I_a_J_MW": 2.360897913, "flujo_Q_I_a_J_MW": 4.129483577, "flujo_P_J_a_I_MW": -2.360897913, "flujo_Q_J_a_I_MW": -3.87086821 },
+      { "I": 56, "J": 41, "flujo_P_I_a_J_MW": -6.406202354, "flujo_Q_I_a_J_MW": 0.915515395, "flujo_P_J_a_I_MW": 6.64999683, "flujo_Q_J_a_I_MW": -0.673484351 },
+      { "I": 56, "J": 42, "flujo_P_I_a_J_MW": -2.536336313, "flujo_Q_I_a_J_MW": 1.446174919, "flujo_P_J_a_I_MW": 2.555405885, "flujo_Q_J_a_I_MW": -1.414407256 },
+      { "I": 39, "J": 57, "flujo_P_I_a_J_MW": 3.022560807, "flujo_Q_I_a_J_MW": 2.968574412, "flujo_P_J_a_I_MW": -3.022560807, "flujo_Q_J_a_I_MW": -2.729668688 },
+      { "I": 57, "J": 56, "flujo_P_I_a_J_MW": -3.677439175, "flujo_Q_I_a_J_MW": 0.729668751, "flujo_P_J_a_I_MW": 3.703436614, "flujo_Q_J_a_I_MW": -0.690822003 },
+      { "I": 38, "J": 49, "flujo_P_I_a_J_MW": -6.264389471, "flujo_Q_I_a_J_MW": -8.31641677, "flujo_P_J_a_I_MW": 6.382215648, "flujo_Q_J_a_I_MW": 8.181264688 },
+      { "I": 38, "J": 48, "flujo_P_I_a_J_MW": -15.19410023, "flujo_Q_I_a_J_MW": -17.48818899, "flujo_P_J_a_I_MW": 15.35618037, "flujo_Q_J_a_I_MW": 17.73858203 },
+      { "I": 9, "J": 55, "flujo_P_I_a_J_MW": 18.57434069, "flujo_Q_I_a_J_MW": 8.607588858, "flujo_P_J_a_I_MW": -18.57434069, "flujo_Q_J_a_I_MW": -8.164961949 }
+      ]
+    };
+    
+    
+    
+    let nodos = {
+      "nodes": [
+        { "nodo": 1, "tipo_de_nodo": 3, "P_MW": 55, "Q_MVAR": 17, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 2, "tipo_de_nodo": 2, "P_MW": 3, "Q_MVAR": 88, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 3, "tipo_de_nodo": 2, "P_MW": 41, "Q_MVAR": 21, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 4, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 5, "tipo_de_nodo": 1, "P_MW": 13, "Q_MVAR": 4, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 6, "tipo_de_nodo": 2, "P_MW": 75, "Q_MVAR": 2, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 7, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 8, "tipo_de_nodo": 2, "P_MW": 150, "Q_MVAR": 22, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 9, "tipo_de_nodo": 2, "P_MW": 121, "Q_MVAR": 26, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 10, "tipo_de_nodo": 1, "P_MW": 5, "Q_MVAR": 2, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 11, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 12, "tipo_de_nodo": 2, "P_MW": 377, "Q_MVAR": 24, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 13, "tipo_de_nodo": 1, "P_MW": 18, "Q_MVAR": 2.3, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 14, "tipo_de_nodo": 1, "P_MW": 10.5, "Q_MVAR": 5.3, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 15, "tipo_de_nodo": 1, "P_MW": 22, "Q_MVAR": 5, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 16, "tipo_de_nodo": 1, "P_MW": 43, "Q_MVAR": 3, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 17, "tipo_de_nodo": 1, "P_MW": 42, "Q_MVAR": 8, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 18, "tipo_de_nodo": 1, "P_MW": 27.2, "Q_MVAR": 9.8, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 19, "tipo_de_nodo": 1, "P_MW": 3.3, "Q_MVAR": 0.6, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 20, "tipo_de_nodo": 1, "P_MW": 2.3, "Q_MVAR": 1, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 21, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 22, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 23, "tipo_de_nodo": 1, "P_MW": 6.3, "Q_MVAR": 2.1, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 24, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 25, "tipo_de_nodo": 1, "P_MW": 6.3, "Q_MVAR": 3.2, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 26, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 27, "tipo_de_nodo": 1, "P_MW": 9.3, "Q_MVAR": 0.5, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 28, "tipo_de_nodo": 1, "P_MW": 4.6, "Q_MVAR": 2.3, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 29, "tipo_de_nodo": 1, "P_MW": 17, "Q_MVAR": 2.6, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 30, "tipo_de_nodo": 1, "P_MW": 3.6, "Q_MVAR": 1.8, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 31, "tipo_de_nodo": 1, "P_MW": 5.8, "Q_MVAR": 2.9, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 32, "tipo_de_nodo": 1, "P_MW": 1.6, "Q_MVAR": 0.8, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 33, "tipo_de_nodo": 1, "P_MW": 3.8, "Q_MVAR": 1.9, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 34, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 35, "tipo_de_nodo": 1, "P_MW": 6, "Q_MVAR": 3, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 36, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 37, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 38, "tipo_de_nodo": 1, "P_MW": 14, "Q_MVAR": 7, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 39, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 40, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 41, "tipo_de_nodo": 1, "P_MW": 6.3, "Q_MVAR": 3, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 42, "tipo_de_nodo": 1, "P_MW": 7.1, "Q_MVAR": 4.4, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 43, "tipo_de_nodo": 1, "P_MW": 2, "Q_MVAR": 1, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 44, "tipo_de_nodo": 1, "P_MW": 12, "Q_MVAR": 1.8, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 45, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 46, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 47, "tipo_de_nodo": 1, "P_MW": 29.7, "Q_MVAR": 11.6, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 48, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 49, "tipo_de_nodo": 1, "P_MW": 18, "Q_MVAR": 8.5, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 50, "tipo_de_nodo": 1, "P_MW": 21, "Q_MVAR": 10.5, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 51, "tipo_de_nodo": 1, "P_MW": 18, "Q_MVAR": 5.3, "V_max": 1.06, "V_min": 0.94 },
+        { "nodo": 52, "tipo_de_nodo": 1, "P_MW": 4.9, "Q_MVAR": 2.2, "V_max": 1.06, "V_min": 0.94 },
+      { "nodo": 53, "tipo_de_nodo": 1, "P_MW": 20, "Q_MVAR": 10, "V_max": 1.06, "V_min": 0.94 },
+      { "nodo": 54, "tipo_de_nodo": 1, "P_MW": 4.1, "Q_MVAR": 1.4, "V_max": 1.06, "V_min": 0.94 },
+      { "nodo": 55, "tipo_de_nodo": 1, "P_MW": 6.8, "Q_MVAR": 3.4, "V_max": 1.06, "V_min": 0.94 },
+      { "nodo": 56, "tipo_de_nodo": 1, "P_MW": 7.6, "Q_MVAR": 2.2, "V_max": 1.06, "V_min": 0.94 },
+      { "nodo": 57, "tipo_de_nodo": 1, "P_MW": 6.7, "Q_MVAR": 2, "V_max": 1.06, "V_min": 0.94 }
+      ]
+    };
+    
+    
+    
+    let escenarios = [
+      {
+        "escenario": "ESCENARIO 1 CON SIN RD NI GD",
+        "potencia_deslastrada_MW": 1206.802929,
+        "potencia_atendida_MW": 43.99707085,
+        "potencia_generada_adicional_MW": 1206.802929 - 43.99707085,
+        "costo_operacion_dolar_per_MWH": 272890.692,
+        "costo_deslastre_dolar_per_MWH": 271530.5303,
+        "U1": 0.035175145,
+        "U2": 0.004984273,
+        "U": 0.020079709,
+        "resiliencia": "MALA"
+      },
+      {
+        "escenario": "ESCENARIO 2 CON RD SIN GD",
+        "potencia_deslastrada_MW": 983.5586879,
+        "potencia_atendida_MW": 267.2413121,
+        "potencia_generada_adicional_MW": 983.5586879 - 267.2413121,
+        "costo_operacion_dolar_per_MWH": 217231.5179,
+        "costo_deslastre_dolar_per_MWH": 204557.6068,
+        "U1": 0.21365631,
+        "U2": 0.058342874,
+        "U": 0.135999592,
+        "resiliencia": "MALA"
+      },
+      {
+        "escenario": "ESCENARIO 3 CON GD SIN RD",
+        "potencia_deslastrada_MW": 1072.290213,
+        "potencia_atendida_MW": 178.5097873,
+        "potencia_generada_adicional_MW": 1072.290213 - 178.5097873,
+        "costo_operacion_dolar_per_MWH": 242662.2251,
+        "costo_deslastre_dolar_per_MWH": 231177.0634,
+        "U1": 0.142716491,
+        "U2": 0.047329829,
+        "U": 0.09502316,
+        "resiliencia": "MALA"
+      },
+      {
+        "escenario": "ESCENARIO 4 CON GD Y RD",
+        "potencia_deslastrada_MW": 851.6500362,
+        "potencia_atendida_MW": 399.1499638,
+        "potencia_generada_adicional_MW": 851.6500362 - 399.1499638,
+        "costo_operacion_dolar_per_MWH": 187783.9225,
+        "costo_deslastre_dolar_per_MWH": 164985.0115,
+        "U1": 0.319115737,
+        "U2": 0.121410346,
+        "U": 0.220263041,
+        "resiliencia": "POBRE"
+      }
+    ];
+    
+  
+    
+    
+    let escenario1ConSinRdNiGd = [
+      { "nodo": 1, "carga_MW": 55, "potencia_deslastrada_MW": 54.99999986, "costo_dolar_por_MW": 10999.99997, "potencia_atendida_MW": 1.41123E-07, "_atendido": 2.56587E-07 },
+      { "nodo": 5, "carga_MW": 13, "potencia_deslastrada_MW": 12.99999986, "costo_dolar_por_MW": 2599.999973, "potencia_atendida_MW": 1.36334E-07, "_atendido": 1.04873E-06 },
+      { "nodo": 6, "carga_MW": 75, "potencia_deslastrada_MW": 16.86787675, "costo_dolar_por_MW": 5060.363026, "potencia_atendida_MW": 58.13212325, "_atendido": 77.50949766 },
+      { "nodo": 8, "carga_MW": 150, "potencia_deslastrada_MW": 149.9999998, "costo_dolar_por_MW": 29999.99997, "potencia_atendida_MW": 1.50764E-07, "_atendido": 1.00509E-07 },
+      { "nodo": 9, "carga_MW": 121, "potencia_deslastrada_MW": 120.9999999, "costo_dolar_por_MW": 12099.99999, "potencia_atendida_MW": 7.10774E-08, "_atendido": 5.87417E-08 },
+      { "nodo": 10, "carga_MW": 5, "potencia_deslastrada_MW": 4.999999929, "costo_dolar_por_MW": 499.9999929, "potencia_atendida_MW": 7.11416E-08, "_atendido": 1.42283E-06 },
+      { "nodo": 12, "carga_MW": 377, "potencia_deslastrada_MW": 300.8032196, "costo_dolar_por_MW": 90240.96588, "potencia_atendida_MW": 76.19678041, "_atendido": 20.21134759 },
+      { "nodo": 13, "carga_MW": 18, "potencia_deslastrada_MW": 17.99999993, "costo_dolar_por_MW": 1799.999993, "potencia_atendida_MW": 6.91458E-08, "_atendido": 3.84144E-07 },
+      { "nodo": 14, "carga_MW": 10.5, "potencia_deslastrada_MW": 10.49999986, "costo_dolar_por_MW": 2099.999972, "potencia_atendida_MW": 1.41118E-07, "_atendido": 1.34398E-06 },
+      { "nodo": 15, "carga_MW": 22, "potencia_deslastrada_MW": 21.99999993, "costo_dolar_por_MW": 2199.999993, "potencia_atendida_MW": 6.92214E-08, "_atendido": 3.14643E-07 },
+      { "nodo": 16, "carga_MW": 43, "potencia_deslastrada_MW": 28.50977489, "costo_dolar_por_MW": 8552.932466, "potencia_atendida_MW": 14.49022511, "_atendido": 33.69819794 },
+      { "nodo": 17, "carga_MW": 42, "potencia_deslastrada_MW": 41.99999986, "costo_dolar_por_MW": 8399.999972, "potencia_atendida_MW": 1.40244E-07, "_atendido": 3.33914E-07 },
+      { "nodo": 18, "carga_MW": 27.2, "potencia_deslastrada_MW": 27.19999986, "costo_dolar_por_MW": 5439.999973, "potencia_atendida_MW": 1.37191E-07, "_atendido": 5.04378E-07 },
+      { "nodo": 19, "carga_MW": 3.3, "potencia_deslastrada_MW": 3.299999863, "costo_dolar_por_MW": 659.9999726, "potencia_atendida_MW": 1.37117E-07, "_atendido": 4.15507E-06 },
+      { "nodo": 20, "carga_MW": 2.3, "potencia_deslastrada_MW": 1.460674716, "costo_dolar_por_MW": 438.2024149, "potencia_atendida_MW": 0.839325284, "_atendido": 36.49240363 },
+      { "nodo": 23, "carga_MW": 6.3, "potencia_deslastrada_MW": 1.75505E-06, "costo_dolar_por_MW": 0.000526516, "potencia_atendida_MW": 6.299998245, "_atendido": 99.99997214 },
+      { "nodo": 25, "carga_MW": 6.3, "potencia_deslastrada_MW": 6.299999927, "costo_dolar_por_MW": 629.9999927, "potencia_atendida_MW": 7.29473E-08, "_atendido": 1.15789E-06 },
+      { "nodo": 27, "carga_MW": 9.3, "potencia_deslastrada_MW": 9.299999927, "costo_dolar_por_MW": 929.9999927, "potencia_atendida_MW": 7.30999E-08, "_atendido": 7.8602E-07 },
+      { "nodo": 28, "carga_MW": 4.6, "potencia_deslastrada_MW": 4.599999927, "costo_dolar_por_MW": 459.9999927, "potencia_atendida_MW": 7.26364E-08, "_atendido": 1.57905E-06 },
+      { "nodo": 29, "carga_MW": 17, "potencia_deslastrada_MW": 16.99999993, "costo_dolar_por_MW": 1699.999993, "potencia_atendida_MW": 7.21348E-08, "_atendido": 4.24322E-07 },
+      { "nodo": 30, "carga_MW": 3.6, "potencia_deslastrada_MW": 3.599999838, "costo_dolar_por_MW": 719.9999676, "potencia_atendida_MW": 1.61869E-07, "_atendido": 4.49635E-06 },
+      { "nodo": 31, "carga_MW": 5.8, "potencia_deslastrada_MW": 5.799999925, "costo_dolar_por_MW": 579.9999925, "potencia_atendida_MW": 7.46999E-08, "_atendido": 1.28793E-06 },
+      { "nodo": 32, "carga_MW": 1.6, "potencia_deslastrada_MW": 1.59999984, "costo_dolar_por_MW": 319.999968, "potencia_atendida_MW": 1.59832E-07, "_atendido": 9.98948E-06 },
+      { "nodo": 33, "carga_MW": 3.8, "potencia_deslastrada_MW": 3.799999927, "costo_dolar_por_MW": 379.9999927, "potencia_atendida_MW": 7.33558E-08, "_atendido": 1.93042E-06 },
+      { "nodo": 35, "carga_MW": 6, "potencia_deslastrada_MW": 5.999999927, "costo_dolar_por_MW": 599.9999927, "potencia_atendida_MW": 7.30274E-08, "_atendido": 1.21712E-06 },
+      { "nodo": 38, "carga_MW": 14, "potencia_deslastrada_MW": 13.99999993, "costo_dolar_por_MW": 1399.999993, "potencia_atendida_MW": 7.0153E-08, "_atendido": 5.01093E-07 },
+      { "nodo": 41, "carga_MW": 6.3, "potencia_deslastrada_MW": 6.299999931, "costo_dolar_por_MW": 629.9999931, "potencia_atendida_MW": 6.94777E-08, "_atendido": 1.10282E-06 },
+      { "nodo": 42, "carga_MW": 7.1, "potencia_deslastrada_MW": 2.217120987, "costo_dolar_por_MW": 665.1362962, "potencia_atendida_MW": 4.882879013, "_atendido": 68.77294384 },
+      { "nodo": 43, "carga_MW": 2, "potencia_deslastrada_MW": 1.999999854, "costo_dolar_por_MW": 399.9999709, "potencia_atendida_MW": 1.4552E-07, "_atendido": 7.27602E-06 },
+      { "nodo": 44, "carga_MW": 12, "potencia_deslastrada_MW": 11.99999985, "costo_dolar_por_MW": 2399.999971, "potencia_atendida_MW": 1.46689E-07, "_atendido": 1.22241E-06 },
+    { "nodo": 47, "carga_MW": 29.7, "potencia_deslastrada_MW": 6.1037E-06, "costo_dolar_por_MW": 0.00183111, "potencia_atendida_MW": 29.6999939, "_atendido": 99.99997945 },
+    { "nodo": 49, "carga_MW": 18, "potencia_deslastrada_MW": 17.99999986, "costo_dolar_por_MW": 3599.999972, "potencia_atendida_MW": 1.41688E-07, "_atendido": 7.87156E-07 },
+    { "nodo": 50, "carga_MW": 21, "potencia_deslastrada_MW": 1.37243E-05, "costo_dolar_por_MW": 0.004117296, "potencia_atendida_MW": 20.99998628, "_atendido": 99.99993465 },
+    { "nodo": 51, "carga_MW": 18, "potencia_deslastrada_MW": 17.99999993, "costo_dolar_por_MW": 1799.999993, "potencia_atendida_MW": 7.12459E-08, "_atendido": 3.95811E-07 },
+    { "nodo": 52, "carga_MW": 4.9, "potencia_deslastrada_MW": 1.15092E-06, "costo_dolar_por_MW": 0.000345276, "potencia_atendida_MW": 4.899998849, "_atendido": 99.99997651 },
+    { "nodo": 53, "carga_MW": 20, "potencia_deslastrada_MW": 19.99999984, "costo_dolar_por_MW": 3999.999969, "potencia_atendida_MW": 1.55773E-07, "_atendido": 7.78863E-07 },
+    { "nodo": 54, "carga_MW": 4.1, "potencia_deslastrada_MW": 4.099999847, "costo_dolar_por_MW": 819.9999694, "potencia_atendida_MW": 1.53224E-07, "_atendido": 3.73717E-06 },
+    { "nodo": 55, "carga_MW": 6.8, "potencia_deslastrada_MW": 1.41398E-06, "costo_dolar_por_MW": 0.000424194, "potencia_atendida_MW": 6.799998586, "_atendido": 99.99997921 },
+    { "nodo": 56, "carga_MW": 7.6, "potencia_deslastrada_MW": 7.599999927, "costo_dolar_por_MW": 759.9999927, "potencia_atendida_MW": 7.25324E-08, "_atendido": 9.54374E-07 },
+    { "nodo": 57, "carga_MW": 6.7, "potencia_deslastrada_MW": 6.699999927, "costo_dolar_por_MW": 669.9999927, "potencia_atendida_MW": 7.28729E-08, "_atendido": 1.08766E-06 },
+    { "nodo": 2, "carga_MW": 3, "potencia_deslastrada_MW": 8.70938E-09, "costo_dolar_por_MW": 1.74188E-06, "potencia_atendida_MW": 2.999999991, "_atendido": 99.99999971 },
+    { "nodo": 3, "carga_MW": 41, "potencia_deslastrada_MW": 8.71028E-09, "costo_dolar_por_MW": 1.74206E-06, "potencia_atendida_MW": 40.99999999, "_atendido": 99.99999998 }
+    ];
+
+
+let escenario2ConRdSinGd = [
+  { "nodo": 1, "carga_MW": 55, "potencia_deslastrada_MW": 54.99999994, "costo_dolar_por_MW": 10999.99999, "potencia_atendida_MW": 6.37841E-08, "_atendido": 1.15971E-07 },
+  { "nodo": 5, "carga_MW": 13, "potencia_deslastrada_MW": 12.99999994, "costo_dolar_por_MW": 2599.999987, "potencia_atendida_MW": 6.362E-08, "_atendido": 4.89384E-07 },
+  { "nodo": 6, "carga_MW": 75, "potencia_deslastrada_MW": 37.40867161, "costo_dolar_por_MW": 11222.60148, "potencia_atendida_MW": 37.59132839, "_atendido": 50.12177118 },
+  { "nodo": 8, "carga_MW": 150, "potencia_deslastrada_MW": 149.9999999, "costo_dolar_por_MW": 29999.99999, "potencia_atendida_MW": 6.69103E-08, "_atendido": 4.46068E-08 },
+  { "nodo": 9, "carga_MW": 121, "potencia_deslastrada_MW": 121, "costo_dolar_por_MW": 12100, "potencia_atendida_MW": 3.22646E-08, "_atendido": 2.6665E-08 },
+  { "nodo": 10, "carga_MW": 5, "potencia_deslastrada_MW": 4.999999968, "costo_dolar_por_MW": 499.9999968, "potencia_atendida_MW": 3.21647E-08, "_atendido": 6.43294E-07 },
+  { "nodo": 12, "carga_MW": 377, "potencia_deslastrada_MW": 304.1944763, "costo_dolar_por_MW": 91258.34288, "potencia_atendida_MW": 72.80552374, "_atendido": 19.31181001 },
+  { "nodo": 13, "carga_MW": 18, "potencia_deslastrada_MW": 17.99999997, "costo_dolar_por_MW": 1799.999997, "potencia_atendida_MW": 3.19193E-08, "_atendido": 1.77329E-07 },
+  { "nodo": 14, "carga_MW": 10.5, "potencia_deslastrada_MW": 10.49999994, "costo_dolar_por_MW": 2099.999987, "potencia_atendida_MW": 6.38992E-08, "_atendido": 6.08564E-07 },
+  { "nodo": 15, "carga_MW": 22, "potencia_deslastrada_MW": 21.99999997, "costo_dolar_por_MW": 2199.999997, "potencia_atendida_MW": 3.18784E-08, "_atendido": 1.44902E-07 },
+  { "nodo": 16, "carga_MW": 43, "potencia_deslastrada_MW": 42.12534923, "costo_dolar_por_MW": 12637.60477, "potencia_atendida_MW": 0.874650773, "_atendido": 2.034071564 },
+  { "nodo": 17, "carga_MW": 42, "potencia_deslastrada_MW": 41.99999994, "costo_dolar_por_MW": 8399.999987, "potencia_atendida_MW": 6.37216E-08, "_atendido": 1.51718E-07 },
+  { "nodo": 18, "carga_MW": 27.2, "potencia_deslastrada_MW": 27.19999994, "costo_dolar_por_MW": 5439.999987, "potencia_atendida_MW": 6.36248E-08, "_atendido": 2.33915E-07 },
+  { "nodo": 19, "carga_MW": 3.3, "potencia_deslastrada_MW": 3.299999936, "costo_dolar_por_MW": 659.9999873, "potencia_atendida_MW": 6.37314E-08, "_atendido": 1.93126E-06 },
+  { "nodo": 20, "carga_MW": 2.3, "potencia_deslastrada_MW": 2.292131987, "costo_dolar_por_MW": 687.639596, "potencia_atendida_MW": 0.007868013, "_atendido": 0.342087534 },
+  { "nodo": 23, "carga_MW": 6.3, "potencia_deslastrada_MW": 3.537244461, "costo_dolar_por_MW": 1061.173338, "potencia_atendida_MW": 2.762755539, "_atendido": 43.85326253 },
+  { "nodo": 25, "carga_MW": 6.3, "potencia_deslastrada_MW": 6.299999968, "costo_dolar_por_MW": 629.9999968, "potencia_atendida_MW": 3.20768E-08, "_atendido": 5.09155E-07 },
+  { "nodo": 27, "carga_MW": 9.3, "potencia_deslastrada_MW": 9.299999968, "costo_dolar_por_MW": 929.9999968, "potencia_atendida_MW": 3.23981E-08, "_atendido": 3.48367E-07 },
+  { "nodo": 28, "carga_MW": 4.6, "potencia_deslastrada_MW": 4.599999967, "costo_dolar_por_MW": 459.9999967, "potencia_atendida_MW": 3.25261E-08, "_atendido": 7.0709E-07 },
+  { "nodo": 29, "carga_MW": 17, "potencia_deslastrada_MW": 16.99999997, "costo_dolar_por_MW": 1699.999997, "potencia_atendida_MW": 3.26154E-08, "_atendido": 1.91855E-07 },
+  { "nodo": 30, "carga_MW": 3.6, "potencia_deslastrada_MW": 3.599999935, "costo_dolar_por_MW": 719.9999871, "potencia_atendida_MW": 6.45879E-08, "_atendido": 1.79411E-06 },
+  { "nodo": 31, "carga_MW": 5.8, "potencia_deslastrada_MW": 5.799999968, "costo_dolar_por_MW": 579.9999968, "potencia_atendida_MW": 3.19863E-08, "_atendido": 5.51489E-07 },
+  { "nodo": 32, "carga_MW": 1.6, "potencia_deslastrada_MW": 1.599999936, "costo_dolar_por_MW": 319.9999872, "potencia_atendida_MW": 6.39568E-08, "_atendido": 3.9973E-06 },
+  { "nodo": 33, "carga_MW": 3.8, "potencia_deslastrada_MW": 3.799999968, "costo_dolar_por_MW": 379.9999968, "potencia_atendida_MW": 3.18931E-08, "_atendido": 8.39293E-07 },
+  { "nodo": 35, "carga_MW": 6, "potencia_deslastrada_MW": 5.999999968, "costo_dolar_por_MW": 599.9999968, "potencia_atendida_MW": 3.18805E-08, "_atendido": 5.31342E-07 },
+  { "nodo": 38, "carga_MW": 14, "potencia_deslastrada_MW": 13.99999997, "costo_dolar_por_MW": 1399.999997, "potencia_atendida_MW": 3.183E-08, "_atendido": 2.27357E-07 },
+  { "nodo": 41, "carga_MW": 6.3, "potencia_deslastrada_MW": 6.299999968, "costo_dolar_por_MW": 629.9999968, "potencia_atendida_MW": 3.19935E-08, "_atendido": 5.07833E-07 },
+  { "nodo": 42, "carga_MW": 7.1, "potencia_deslastrada_MW": 6.056811873, "costo_dolar_por_MW": 1817.043562, "potencia_atendida_MW": 1.043188127, "_atendido": 14.69279052 },
+  { "nodo": 43, "carga_MW": 2, "potencia_deslastrada_MW": 1.999999935, "costo_dolar_por_MW": 399.9999871, "potencia_atendida_MW": 6.46396E-08, "_atendido": 3.23198E-06 },
+  { "nodo": 44, "carga_MW": 12, "potencia_deslastrada_MW": 11.99999994, "costo_dolar_por_MW": 2399.999987, "potencia_atendida_MW": 6.37024E-08, "_atendido": 5.30853E-07 },
+  { "nodo": 47, "carga_MW": 29.7, "potencia_deslastrada_MW": 26.02418462, "costo_dolar_por_MW": 7807.255385, "potencia_atendida_MW": 3.675815385, "_atendido": 12.37648278 },
+  { "nodo": 49, "carga_MW": 18, "potencia_deslastrada_MW": 17.99999994, "costo_dolar_por_MW": 3599.999987, "potencia_atendida_MW": 6.38904E-08, "_atendido": 3.54946E-07 },
+  { "nodo": 50, "carga_MW": 21, "potencia_deslastrada_MW": 16.95133014, "costo_dolar_por_MW": 5085.399041, "potencia_atendida_MW": 4.048669864, "_atendido": 19.2793803 },
+  { "nodo": 51, "carga_MW": 18, "potencia_deslastrada_MW": 17.99999997, "costo_dolar_por_MW": 1799.999997, "potencia_atendida_MW": 3.21752E-08, "_atendido": 1.78751E-07 },
+  { "nodo": 52, "carga_MW": 4.9, "potencia_deslastrada_MW": 5.21861E-06, "costo_dolar_por_MW": 0.001565582, "potencia_atendida_MW": 4.899994781, "_atendido": 99.9998935 },
+  { "nodo": 53, "carga_MW": 20, "potencia_deslastrada_MW": 19.99999994, "costo_dolar_por_MW": 3999.999987, "potencia_atendida_MW": 6.45515E-08, "_atendido": 3.22757E-07 },
+  { "nodo": 54, "carga_MW": 4.1, "potencia_deslastrada_MW": 4.099999935, "costo_dolar_por_MW": 819.999987, "potencia_atendida_MW": 6.49015E-08, "_atendido": 1.58296E-06 },
+  { "nodo": 55, "carga_MW": 6.8, "potencia_deslastrada_MW": 2.54306E-06, "costo_dolar_por_MW": 0.000762919, "potencia_atendida_MW": 6.799997457, "_atendido": 99.9999626 },
+  { "nodo": 56, "carga_MW": 7.6, "potencia_deslastrada_MW": 7.599999968, "costo_dolar_por_MW": 759.9999968, "potencia_atendida_MW": 3.19355E-08, "_atendido": 4.20204E-07 },
+  { "nodo": 57, "carga_MW": 6.7, "potencia_deslastrada_MW": 6.699999968, "costo_dolar_por_MW": 669.9999968, "potencia_atendida_MW": 3.19168E-08, "_atendido": 4.7637E-07 },
+  { "nodo": 2, "carga_MW": 3, "potencia_deslastrada_MW": 3.07233E-06, "costo_dolar_por_MW": 0.000614465, "potencia_atendida_MW": 2.999996928, "_atendido": 99.99989759 },
+  { "nodo": 3, "carga_MW": 41, "potencia_deslastrada_MW": 3.07247E-06, "costo_dolar_por_MW": 0.000614495, "potencia_atendida_MW": 40.99999693, "_atendido": 99.99999251 }
+];
+
+ 
+
+
+let escenario3ConGdSinRd = [
+  { nodo: 1, carga_MW: 55, potencia_deslastrada_MW: 54.9999998, costo_dolar_por_MW: 10999.99996, potencia_atendida_MW: 2.04335E-07, _atendido: 3.71519E-07 },
+  { nodo: 5, carga_MW: 13, potencia_deslastrada_MW: 12.99999978, costo_dolar_por_MW: 2599.999957, potencia_atendida_MW: 2.1725E-07, _atendido: 1.67115E-06 },
+  { nodo: 6, carga_MW: 75, potencia_deslastrada_MW: 1.84168E-06, costo_dolar_por_MW: 0.000552503, potencia_atendida_MW: 74.99999816, _atendido: 99.99999754 },
+  { nodo: 8, carga_MW: 150, potencia_deslastrada_MW: 149.9999998, costo_dolar_por_MW: 29999.99995, potencia_atendida_MW: 2.43279E-07, _atendido: 1.62186E-07 },
+  { nodo: 9, carga_MW: 121, potencia_deslastrada_MW: 120.9999999, costo_dolar_por_MW: 12099.99999, potencia_atendida_MW: 1.05453E-07, _atendido: 8.71516E-08 },
+  { nodo: 10, carga_MW: 5, potencia_deslastrada_MW: 4.999999895, costo_dolar_por_MW: 499.9999895, potencia_atendida_MW: 1.0525E-07, _atendido: 2.105E-06 },
+  { nodo: 12, carga_MW: 377, potencia_deslastrada_MW: 194.2416777, costo_dolar_por_MW: 58272.50331, potencia_atendida_MW: 182.7583223, _atendido: 48.47700857 },
+  { nodo: 13, carga_MW: 18, potencia_deslastrada_MW: 17.9999999, costo_dolar_por_MW: 1799.99999, potencia_atendida_MW: 1.00222E-07, _atendido: 5.5679E-07 },
+  { nodo: 14, carga_MW: 10.5, potencia_deslastrada_MW: 10.49999979, costo_dolar_por_MW: 2099.999959, potencia_atendida_MW: 2.07486E-07, _atendido: 1.97606E-06 },
+  { nodo: 15, carga_MW: 22, potencia_deslastrada_MW: 21.9999999, costo_dolar_por_MW: 2199.99999, potencia_atendida_MW: 9.99982E-08, _atendido: 4.54537E-07 },
+  { nodo: 16, carga_MW: 43, potencia_deslastrada_MW: 23.70832455, costo_dolar_por_MW: 7112.497364, potencia_atendida_MW: 19.29167545, _atendido: 44.86436152 },
+  { nodo: 17, carga_MW: 42, potencia_deslastrada_MW: 41.9999998, costo_dolar_por_MW: 8399.99996, potencia_atendida_MW: 2.01948E-07, _atendido: 4.80828E-07 },
+  { nodo: 18, carga_MW: 27.2, potencia_deslastrada_MW: 27.19999978, costo_dolar_por_MW: 5439.999956, potencia_atendida_MW: 2.18195E-07, _atendido: 8.02187E-07 },
+  { nodo: 19, carga_MW: 3.3, potencia_deslastrada_MW: 3.299999791, costo_dolar_por_MW: 659.9999583, potencia_atendida_MW: 2.08593E-07, _atendido: 6.321E-06 },
+  { nodo: 20, carga_MW: 2.3, potencia_deslastrada_MW: 5.30526E-06, costo_dolar_por_MW: 0.001591578, potencia_atendida_MW: 2.299994695, _atendido: 99.99976934 },
+  { nodo: 23, carga_MW: 6.3, potencia_deslastrada_MW: 1.64411E-06, costo_dolar_por_MW: 0.000493232, potencia_atendida_MW: 6.299998356, _atendido: 99.9999739 },
+  { nodo: 25, carga_MW: 6.3, potencia_deslastrada_MW: 6.299999892, costo_dolar_por_MW: 629.9999892, potencia_atendida_MW: 1.08255E-07, _atendido: 1.71833E-06 },
+  { nodo: 27, carga_MW: 9.3, potencia_deslastrada_MW: 9.29999989, costo_dolar_por_MW: 929.999989, potencia_atendida_MW: 1.09797E-07, _atendido: 1.18061E-06 },
+  { nodo: 28, carga_MW: 4.6, potencia_deslastrada_MW: 4.59999989, costo_dolar_por_MW: 459.999989, potencia_atendida_MW: 1.09612E-07, _atendido: 2.38287E-06 },
+  { nodo: 29, carga_MW: 17, potencia_deslastrada_MW: 16.99999989, costo_dolar_por_MW: 1699.999989, potencia_atendida_MW: 1.09215E-07, _atendido: 6.42444E-07 },
+  { nodo: 30, carga_MW: 3.6, potencia_deslastrada_MW: 3.599999749, costo_dolar_por_MW: 719.9999499, potencia_atendida_MW: 2.50607E-07, _atendido: 6.96131E-06 },
+  { nodo: 31, carga_MW: 5.8, potencia_deslastrada_MW: 5.79999989, costo_dolar_por_MW: 579.999989, potencia_atendida_MW: 1.09824E-07, _atendido: 1.89352E-06 },
+  { nodo: 32, carga_MW: 1.6, potencia_deslastrada_MW: 1.599999762, costo_dolar_por_MW: 319.9999523, potencia_atendida_MW: 2.3849E-07, _atendido: 1.49056E-05 },
+  { nodo: 33, carga_MW: 3.8, potencia_deslastrada_MW: 3.799999893, costo_dolar_por_MW: 379.9999893, potencia_atendida_MW: 1.06849E-07, _atendido: 2.81183E-06 },
+  { nodo: 35, carga_MW: 6, potencia_deslastrada_MW: 5.999999894, costo_dolar_por_MW: 599.9999894, potencia_atendida_MW: 1.06148E-07, _atendido: 1.76913E-06 },
+  { nodo: 38, carga_MW: 14, potencia_deslastrada_MW: 13.9999999, costo_dolar_por_MW: 1399.99999, potencia_atendida_MW: 1.0199E-07, _atendido: 7.28502E-07 },
+  { nodo: 41, carga_MW: 6.3, potencia_deslastrada_MW: 6.299999899, costo_dolar_por_MW: 629.9999899, potencia_atendida_MW: 1.01021E-07, _atendido: 1.60351E-06 },
+  { nodo: 42, carga_MW: 7.1, potencia_deslastrada_MW: 2.04662E-05, costo_dolar_por_MW: 0.006139859, potencia_atendida_MW: 7.099979534, _atendido: 99.99971174 },
+  { nodo: 43, carga_MW: 2, potencia_deslastrada_MW: 1.999999781, costo_dolar_por_MW: 399.9999562, potencia_atendida_MW: 2.18911E-07, _atendido: 1.09456E-05 },
+  { nodo: 44, carga_MW: 12, potencia_deslastrada_MW: 11.99999978, costo_dolar_por_MW: 2399.999956, potencia_atendida_MW: 2.17598E-07, _atendido: 1.81332E-06 },
+  { nodo: 47, carga_MW: 29.7, potencia_deslastrada_MW: 3.87899E-06, costo_dolar_por_MW: 0.001163696, potencia_atendida_MW: 29.69999612, _atendido: 99.99998694 },
+  { nodo: 49, carga_MW: 18, potencia_deslastrada_MW: 17.99999979, costo_dolar_por_MW: 3599.999958, potencia_atendida_MW: 2.08846E-07, _atendido: 1.16026E-06 },
+  { nodo: 50, carga_MW: 21, potencia_deslastrada_MW: 3.56919E-06, costo_dolar_por_MW: 0.001070756, potencia_atendida_MW: 20.99999643, _atendido: 99.999983 },
+  { nodo: 51, carga_MW: 18, potencia_deslastrada_MW: 17.99999989, costo_dolar_por_MW: 1799.999989, potencia_atendida_MW: 1.05433E-07, _atendido: 5.85736E-07 },
+  { nodo: 52, carga_MW: 4.9, potencia_deslastrada_MW: 8.96226E-07, costo_dolar_por_MW: 0.000268868, potencia_atendida_MW: 4.899999104, _atendido: 99.99998171 },
+  { nodo: 53, carga_MW: 20, potencia_deslastrada_MW: 19.99999975, costo_dolar_por_MW: 3999.99995, potencia_atendida_MW: 2.4876E-07, _atendido: 1.2438E-06 },
+  { nodo: 54, carga_MW: 4.1, potencia_deslastrada_MW: 4.099999759, costo_dolar_por_MW: 819.9999519, potencia_atendida_MW: 2.40518E-07, _atendido: 5.86629E-06 },
+  { nodo: 55, carga_MW: 6.8, potencia_deslastrada_MW: 1.17157E-06, costo_dolar_por_MW: 0.000351472, potencia_atendida_MW: 6.799998828, _atendido: 99.99998277 },
+  { nodo: 56, carga_MW: 7.6, potencia_deslastrada_MW: 7.599999894, costo_dolar_por_MW: 759.9999894, potencia_atendida_MW: 1.06013E-07, _atendido: 1.39491E-06 },
+  { nodo: 57, carga_MW: 6.7, potencia_deslastrada_MW: 6.699999893, costo_dolar_por_MW: 669.9999893, potencia_atendida_MW: 1.06513E-07, _atendido: 1.58975E-06 },
+  { nodo: 2, carga_MW: 3, potencia_deslastrada_MW: 8.70938E-09, costo_dolar_por_MW: 1.74188E-06, potencia_atendida_MW: 2.999999991, _atendido: 99.99999971 },
+  { nodo: 3, carga_MW: 41, potencia_deslastrada_MW: 8.71028E-09, costo_dolar_por_MW: 1.74206E-06, potencia_atendida_MW: 40.99999999, _atendido: 99.99999998 }
+];
+
+
+let escenario4ConGdYRd = [
+  { nodo: 1, carga_MW: 55, potencia_deslastrada_MW: 54.9999998, costo_dolar_por_MW: 10999.99996, potencia_atendida_MW: 2.04335E-07, _atendido: 3.71519E-07 },
+  { nodo: 5, carga_MW: 13, potencia_deslastrada_MW: 12.99999978, costo_dolar_por_MW: 2599.999957, potencia_atendida_MW: 2.1725E-07, _atendido: 1.67115E-06 },
+  { nodo: 6, carga_MW: 75, potencia_deslastrada_MW: 1.84168E-06, costo_dolar_por_MW: 0.000552503, potencia_atendida_MW: 74.99999816, _atendido: 99.99999754 },
+  { nodo: 8, carga_MW: 150, potencia_deslastrada_MW: 149.9999998, costo_dolar_por_MW: 29999.99995, potencia_atendida_MW: 2.43279E-07, _atendido: 1.62186E-07 },
+  { nodo: 9, carga_MW: 121, potencia_deslastrada_MW: 120.9999999, costo_dolar_por_MW: 12099.99999, potencia_atendida_MW: 1.05453E-07, _atendido: 8.71516E-08 },
+  { nodo: 10, carga_MW: 5, potencia_deslastrada_MW: 4.999999895, costo_dolar_por_MW: 499.9999895, potencia_atendida_MW: 1.0525E-07, _atendido: 2.105E-06 },
+  { nodo: 12, carga_MW: 377, potencia_deslastrada_MW: 194.2416777, costo_dolar_por_MW: 58272.50331, potencia_atendida_MW: 182.7583223, _atendido: 48.47700857 },
+  { nodo: 13, carga_MW: 18, potencia_deslastrada_MW: 17.9999999, costo_dolar_por_MW: 1799.99999, potencia_atendida_MW: 1.00222E-07, _atendido: 5.5679E-07 },
+  { nodo: 14, carga_MW: 10.5, potencia_deslastrada_MW: 10.49999979, costo_dolar_por_MW: 2099.999959, potencia_atendida_MW: 2.07486E-07, _atendido: 1.97606E-06 },
+  { nodo: 15, carga_MW: 22, potencia_deslastrada_MW: 21.9999999, costo_dolar_por_MW: 2199.99999, potencia_atendida_MW: 9.99982E-08, _atendido: 4.54537E-07 },
+  { nodo: 16, carga_MW: 43, potencia_deslastrada_MW: 23.70832455, costo_dolar_por_MW: 7112.497364, potencia_atendida_MW: 19.29167545, _atendido: 44.86436152 },
+  { nodo: 17, carga_MW: 42, potencia_deslastrada_MW: 41.9999998, costo_dolar_por_MW: 8399.99996, potencia_atendida_MW: 2.01948E-07, _atendido: 4.80828E-07 },
+  { nodo: 18, carga_MW: 27.2, potencia_deslastrada_MW: 27.19999978, costo_dolar_por_MW: 5439.999956, potencia_atendida_MW: 2.18195E-07, _atendido: 8.02187E-07 },
+  { nodo: 19, carga_MW: 3.3, potencia_deslastrada_MW: 3.299999791, costo_dolar_por_MW: 659.9999583, potencia_atendida_MW: 2.08593E-07, _atendido: 6.321E-06 },
+  { nodo: 20, carga_MW: 2.3, potencia_deslastrada_MW: 5.30526E-06, costo_dolar_por_MW: 0.001591578, potencia_atendida_MW: 2.299994695, _atendido: 99.99976934 },
+  { nodo: 23, carga_MW: 6.3, potencia_deslastrada_MW: 1.64411E-06, costo_dolar_por_MW: 0.000493232, potencia_atendida_MW: 6.299998356, _atendido: 99.9999739 },
+  { nodo: 25, carga_MW: 6.3, potencia_deslastrada_MW: 6.299999892, costo_dolar_por_MW: 629.9999892, potencia_atendida_MW: 1.08255E-07, _atendido: 1.71833E-06 },
+  { nodo: 27, carga_MW: 9.3, potencia_deslastrada_MW: 9.29999989, costo_dolar_por_MW: 929.999989, potencia_atendida_MW: 1.09797E-07, _atendido: 1.18061E-06 },
+  { nodo: 28, carga_MW: 4.6, potencia_deslastrada_MW: 4.59999989, costo_dolar_por_MW: 459.999989, potencia_atendida_MW: 1.09612E-07, _atendido: 2.38287E-06 },
+  { nodo: 29, carga_MW: 17, potencia_deslastrada_MW: 16.99999989, costo_dolar_por_MW: 1699.999989, potencia_atendida_MW: 1.09215E-07, _atendido: 6.42444E-07 },
+  { nodo: 30, carga_MW: 3.6, potencia_deslastrada_MW: 3.599999749, costo_dolar_por_MW: 719.9999499, potencia_atendida_MW: 2.50607E-07, _atendido: 6.96131E-06 },
+  { nodo: 31, carga_MW: 5.8, potencia_deslastrada_MW: 5.79999989, costo_dolar_por_MW: 579.999989, potencia_atendida_MW: 1.09824E-07, _atendido: 1.89352E-06 },
+  { nodo: 32, carga_MW: 1.6, potencia_deslastrada_MW: 1.599999762, costo_dolar_por_MW: 319.9999523, potencia_atendida_MW: 2.3849E-07, _atendido: 1.49056E-05 },
+  { nodo: 33, carga_MW: 3.8, potencia_deslastrada_MW: 3.799999893, costo_dolar_por_MW: 379.9999893, potencia_atendida_MW: 1.06849E-07, _atendido: 2.81183E-06 },
+  { nodo: 35, carga_MW: 6, potencia_deslastrada_MW: 5.999999894, costo_dolar_por_MW: 599.9999894, potencia_atendida_MW: 1.06148E-07, _atendido: 1.76913E-06 },
+  { nodo: 38, carga_MW: 14, potencia_deslastrada_MW: 13.9999999, costo_dolar_por_MW: 1399.99999, potencia_atendida_MW: 1.0199E-07, _atendido: 7.28502E-07 },
+  { nodo: 41, carga_MW: 6.3, potencia_deslastrada_MW: 6.299999899, costo_dolar_por_MW: 629.9999899, potencia_atendida_MW: 1.01021E-07, _atendido: 1.60351E-06 },
+  { nodo: 42, carga_MW: 7.1, potencia_deslastrada_MW: 2.04662E-05, costo_dolar_por_MW: 0.006139859, potencia_atendida_MW: 7.099979534, _atendido: 99.99971174 },
+  { nodo: 43, carga_MW: 2, potencia_deslastrada_MW: 1.999999781, costo_dolar_por_MW: 399.9999562, potencia_atendida_MW: 2.18911E-07, _atendido: 1.09456E-05 },
+  { nodo: 44, carga_MW: 12, potencia_deslastrada_MW: 11.99999978, costo_dolar_por_MW: 2399.999956, potencia_atendida_MW: 2.17598E-07, _atendido: 1.81332E-06 },
+  { nodo: 47, carga_MW: 29.7, potencia_deslastrada_MW: 3.87899E-06, costo_dolar_por_MW: 0.001163696, potencia_atendida_MW: 29.69999612, _atendido: 99.99998694 },
+  { nodo: 49, carga_MW: 18, potencia_deslastrada_MW: 17.99999979, costo_dolar_por_MW: 3599.999958, potencia_atendida_MW: 2.08846E-07, _atendido: 1.16026E-06 },
+  { nodo: 50, carga_MW: 21, potencia_deslastrada_MW: 3.56919E-06, costo_dolar_por_MW: 0.001070756, potencia_atendida_MW: 20.99999643, _atendido: 99.999983 },
+  { nodo: 51, carga_MW: 18, potencia_deslastrada_MW: 17.99999989, costo_dolar_por_MW: 1799.999989, potencia_atendida_MW: 1.05433E-07, _atendido: 5.85736E-07 },
+  { nodo: 52, carga_MW: 4.9, potencia_deslastrada_MW: 8.96226E-07, costo_dolar_por_MW: 0.000268868, potencia_atendida_MW: 4.899999104, _atendido: 99.99998171 },
+  { nodo: 53, carga_MW: 20, potencia_deslastrada_MW: 19.99999975, costo_dolar_por_MW: 3999.99995, potencia_atendida_MW: 2.4876E-07, _atendido: 1.2438E-06 },
+  { nodo: 54, carga_MW: 4.1, potencia_deslastrada_MW: 4.099999759, costo_dolar_por_MW: 819.9999519, potencia_atendida_MW: 2.40518E-07, _atendido: 5.86629E-06 },
+  { nodo: 55, carga_MW: 6.8, potencia_deslastrada_MW: 1.17157E-06, costo_dolar_por_MW: 0.000351472, potencia_atendida_MW: 6.799998828, _atendido: 99.99998277 },
+  { nodo: 56, carga_MW: 7.6, potencia_deslastrada_MW: 7.599999894, costo_dolar_por_MW: 759.9999894, potencia_atendida_MW: 1.06013E-07, _atendido: 1.39491E-06 },
+  { nodo: 57, carga_MW: 6.7, potencia_deslastrada_MW: 6.699999893, costo_dolar_por_MW: 669.9999893, potencia_atendida_MW: 1.06513E-07, _atendido: 1.58975E-06 },
+  { nodo: 2, carga_MW: 3, potencia_deslastrada_MW: 8.70938E-09, costo_dolar_por_MW: 1.74188E-06, potencia_atendida_MW: 2.999999991, _atendido: 99.99999971 },
+  { nodo: 3, carga_MW: 41, potencia_deslastrada_MW: 8.71028E-09, costo_dolar_por_MW: 1.74206E-06, potencia_atendida_MW: 40.99999999, _atendido: 99.99999998 }
+];
+
+    
+ 
+    let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
+
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+   }
+
+   if(caso=="69"){
+   
+    let generadores = {
+      "generators": [
+        { "nodo": 1, "PG_MW": 0, "QG_MW": 0, "Q_MAX_MVAR": 10, "Q_MIN_MVAR": -10, "P_MAX_MW": 10, "costo_marginal_dolar_per_MW": 20 }
+      ]
+    };
+    
+    
+    
+    let lineas = {
+      "lines": [
+        { "I": 1, "J": 2, "flujo_P_I_a_J_MW": 4.027091694, "flujo_Q_I_a_J_MW": 2.79685805, "flujo_P_J_a_I_MW": -4.027016699, "flujo_Q_J_a_I_MW": -2.796678061 },
+        { "I": 2, "J": 3, "flujo_P_I_a_J_MW": 4.027016699, "flujo_Q_I_a_J_MW": 2.796678061, "flujo_P_J_a_I_MW": -4.026941703, "flujo_Q_J_a_I_MW": -2.796498072 },
+        { "I": 3, "J": 4, "flujo_P_I_a_J_MW": 3.749686553, "flujo_Q_I_a_J_MW": 2.6020208, "flujo_P_J_a_I_MW": -3.749491576, "flujo_Q_J_a_I_MW": -2.601552853 },
+        { "I": 4, "J": 5, "flujo_P_I_a_J_MW": 2.898736073, "flujo_Q_I_a_J_MW": 1.990388266, "flujo_P_J_a_I_MW": -2.896799134, "flujo_Q_J_a_I_MW": -1.988119501 },
+        { "I": 5, "J": 6, "flujo_P_I_a_J_MW": 2.896799134, "flujo_Q_I_a_J_MW": 1.988119501, "flujo_P_J_a_I_MW": -2.868555327, "flujo_Q_J_a_I_MW": -1.973735223 },
+        { "I": 6, "J": 7, "flujo_P_I_a_J_MW": 2.865955327, "flujo_Q_I_a_J_MW": 1.971535223, "flujo_P_J_a_I_MW": -2.836611191, "flujo_Q_J_a_I_MW": -1.956585888 },
+        { "I": 7, "J": 8, "flujo_P_I_a_J_MW": 2.796211191, "flujo_Q_I_a_J_MW": 1.926585888, "flujo_P_J_a_I_MW": -2.789315816, "flujo_Q_J_a_I_MW": -1.923070892 },
+        { "I": 8, "J": 9, "flujo_P_I_a_J_MW": 2.670214015, "flujo_Q_I_a_J_MW": 1.838069981, "flujo_P_J_a_I_MW": -2.666838563, "flujo_Q_J_a_I_MW": -1.836351445 },
+        { "I": 9, "J": 10, "flujo_P_I_a_J_MW": 0.780404983, "flujo_Q_I_a_J_MW": 0.533259411, "flujo_P_J_a_I_MW": -0.775626636, "flujo_Q_J_a_I_MW": -0.531680048 },
+        { "I": 10, "J": 11, "flujo_P_I_a_J_MW": 0.747626636, "flujo_Q_I_a_J_MW": 0.512680048, "flujo_P_J_a_I_MW": -0.74661163, "flujo_Q_J_a_I_MW": -0.512344423 },
+        { "I": 11, "J": 12, "flujo_P_I_a_J_MW": 0.56560899, "flujo_Q_I_a_J_MW": 0.382343622, "flujo_P_J_a_I_MW": -0.563416279, "flujo_Q_J_a_I_MW": -0.381618985 },
+        { "I": 12, "J": 13, "flujo_P_I_a_J_MW": 0.362392918, "flujo_Q_I_a_J_MW": 0.237611263, "flujo_P_J_a_I_MW": -0.361105486, "flujo_Q_J_a_I_MW": -0.237186286 },
+        { "I": 13, "J": 14, "flujo_P_I_a_J_MW": 0.353105486, "flujo_Q_I_a_J_MW": 0.231686286, "flujo_P_J_a_I_MW": -0.351858528, "flujo_Q_J_a_I_MW": -0.231280188 },
+        { "I": 14, "J": 15, "flujo_P_I_a_J_MW": 0.343858528, "flujo_Q_I_a_J_MW": 0.225780188, "flujo_P_J_a_I_MW": -0.342652436, "flujo_Q_J_a_I_MW": -0.225381654 },
+        { "I": 15, "J": 16, "flujo_P_I_a_J_MW": 0.342652436, "flujo_Q_I_a_J_MW": 0.225381654, "flujo_P_J_a_I_MW": -0.342428318, "flujo_Q_J_a_I_MW": -0.225307555 },
+        { "I": 16, "J": 17, "flujo_P_I_a_J_MW": 0.296928318, "flujo_Q_I_a_J_MW": 0.195307555, "flujo_P_J_a_I_MW": -0.296607461, "flujo_Q_J_a_I_MW": -0.19520146 },
+        { "I": 17, "J": 18, "flujo_P_I_a_J_MW": 0.236607461, "flujo_Q_I_a_J_MW": 0.16020146, "flujo_P_J_a_I_MW": -0.236604853, "flujo_Q_J_a_I_MW": -0.160200572 },
+        { "I": 18, "J": 19, "flujo_P_I_a_J_MW": 0.176604853, "flujo_Q_I_a_J_MW": 0.125200572, "flujo_P_J_a_I_MW": -0.176500495, "flujo_Q_J_a_I_MW": -0.125166073 },
+        { "I": 19, "J": 20, "flujo_P_I_a_J_MW": 0.176500495, "flujo_Q_I_a_J_MW": 0.125166073, "flujo_P_J_a_I_MW": -0.176433408, "flujo_Q_J_a_I_MW": -0.125144093 },
+        { "I": 20, "J": 21, "flujo_P_I_a_J_MW": 0.175433408, "flujo_Q_I_a_J_MW": 0.124544093, "flujo_P_J_a_I_MW": -0.175325757, "flujo_Q_J_a_I_MW": -0.124508514 },
+        { "I": 21, "J": 22, "flujo_P_I_a_J_MW": 0.061325757, "flujo_Q_I_a_J_MW": 0.043508514, "flujo_P_J_a_I_MW": -0.061325218, "flujo_Q_J_a_I_MW": -0.043508337 },
+        { "I": 22, "J": 23, "flujo_P_I_a_J_MW": 0.056025218, "flujo_Q_I_a_J_MW": 0.040008337, "flujo_P_J_a_I_MW": -0.056020079, "flujo_Q_J_a_I_MW": -0.040006638 },
+        { "I": 23, "J": 24, "flujo_P_I_a_J_MW": 0.056020079, "flujo_Q_I_a_J_MW": 0.040006638, "flujo_P_J_a_I_MW": -0.056008893, "flujo_Q_J_a_I_MW": -0.040002939 },
+        { "I": 24, "J": 25, "flujo_P_I_a_J_MW": 0.028008893, "flujo_Q_I_a_J_MW": 0.020002939, "flujo_P_J_a_I_MW": -0.028002845, "flujo_Q_J_a_I_MW": -0.02000094 },
+        { "I": 25, "J": 26, "flujo_P_I_a_J_MW": 0.028002845, "flujo_Q_I_a_J_MW": 0.02000094, "flujo_P_J_a_I_MW": -0.02800035, "flujo_Q_J_a_I_MW": -0.020000116 },
+        { "I": 26, "J": 27, "flujo_P_I_a_J_MW": 0.01400035, "flujo_Q_I_a_J_MW": 0.010000116, "flujo_P_J_a_I_MW": -0.014, "flujo_Q_J_a_I_MW": -0.01 },
+      { "I": 3, "J": 28, "flujo_P_I_a_J_MW": 0.091538106, "flujo_Q_I_a_J_MW": 0.065218858, "flujo_P_J_a_I_MW": -0.091537759, "flujo_Q_J_a_I_MW": -0.065218007 },
+      { "I": 28, "J": 29, "flujo_P_I_a_J_MW": 0.065537759, "flujo_Q_I_a_J_MW": 0.046618007, "flujo_P_J_a_I_MW": -0.065535175, "flujo_Q_J_a_I_MW": -0.04661169 },
+      { "I": 29, "J": 30, "flujo_P_I_a_J_MW": 0.039535175, "flujo_Q_I_a_J_MW": 0.02801169, "flujo_P_J_a_I_MW": -0.039529347, "flujo_Q_J_a_I_MW": -0.028009763 },
+      { "I": 30, "J": 31, "flujo_P_I_a_J_MW": 0.039529347, "flujo_Q_I_a_J_MW": 0.028009763, "flujo_P_J_a_I_MW": -0.039528318, "flujo_Q_J_a_I_MW": -0.028009423 },
+      { "I": 31, "J": 32, "flujo_P_I_a_J_MW": 0.039528318, "flujo_Q_I_a_J_MW": 0.028009423, "flujo_P_J_a_I_MW": -0.039523175, "flujo_Q_J_a_I_MW": -0.028007723 },
+      { "I": 32, "J": 33, "flujo_P_I_a_J_MW": 0.039523175, "flujo_Q_I_a_J_MW": 0.028007723, "flujo_P_J_a_I_MW": -0.039510882, "flujo_Q_J_a_I_MW": -0.028003597 },
+      { "I": 33, "J": 34, "flujo_P_I_a_J_MW": 0.025510882, "flujo_Q_I_a_J_MW": 0.018003597, "flujo_P_J_a_I_MW": -0.025500479, "flujo_Q_J_a_I_MW": -0.018000158 },
+      { "I": 34, "J": 35, "flujo_P_I_a_J_MW": 0.006000479, "flujo_Q_I_a_J_MW": 0.004000158, "flujo_P_J_a_I_MW": -0.006, "flujo_Q_J_a_I_MW": -0.004 },
+      { "I": 3, "J": 36, "flujo_P_I_a_J_MW": 0.185717044, "flujo_Q_I_a_J_MW": 0.129258414, "flujo_P_J_a_I_MW": -0.185715639, "flujo_Q_J_a_I_MW": -0.129254964 },
+      { "I": 36, "J": 37, "flujo_P_I_a_J_MW": 0.159715639, "flujo_Q_I_a_J_MW": 0.110654964, "flujo_P_J_a_I_MW": -0.159700561, "flujo_Q_J_a_I_MW": -0.110618093 },
+      { "I": 37, "J": 38, "flujo_P_I_a_J_MW": 0.133700561, "flujo_Q_I_a_J_MW": 0.092018093, "flujo_P_J_a_I_MW": -0.133683245, "flujo_Q_J_a_I_MW": -0.091997867 },
+      { "I": 38, "J": 39, "flujo_P_I_a_J_MW": 0.133683245, "flujo_Q_I_a_J_MW": 0.091997867, "flujo_P_J_a_I_MW": -0.133678245, "flujo_Q_J_a_I_MW": -0.091992029 },
+      { "I": 39, "J": 40, "flujo_P_I_a_J_MW": 0.109678245, "flujo_Q_I_a_J_MW": 0.074992029, "flujo_P_J_a_I_MW": -0.109678047, "flujo_Q_J_a_I_MW": -0.074991797 },
+      { "I": 40, "J": 41, "flujo_P_I_a_J_MW": 0.085678047, "flujo_Q_I_a_J_MW": 0.057991797, "flujo_P_J_a_I_MW": -0.085629364, "flujo_Q_J_a_I_MW": -0.057934919 },
+      { "I": 41, "J": 42, "flujo_P_I_a_J_MW": 0.084429364, "flujo_Q_I_a_J_MW": 0.056934919, "flujo_P_J_a_I_MW": -0.08440926, "flujo_Q_J_a_I_MW": -0.056911424 },
+      { "I": 42, "J": 43, "flujo_P_I_a_J_MW": 0.08440926, "flujo_Q_I_a_J_MW": 0.056911424, "flujo_P_J_a_I_MW": -0.084406601, "flujo_Q_J_a_I_MW": -0.056908324 },
+      { "I": 43, "J": 44, "flujo_P_I_a_J_MW": 0.078406601, "flujo_Q_I_a_J_MW": 0.052608324, "flujo_P_J_a_I_MW": -0.078406088, "flujo_Q_J_a_I_MW": -0.052607677 },
+      { "I": 44, "J": 45, "flujo_P_I_a_J_MW": 0.078406088, "flujo_Q_I_a_J_MW": 0.052607677, "flujo_P_J_a_I_MW": -0.078400013, "flujo_Q_J_a_I_MW": -0.052600017 },
+      { "I": 45, "J": 46, "flujo_P_I_a_J_MW": 0.039200013, "flujo_Q_I_a_J_MW": 0.026300017, "flujo_P_J_a_I_MW": -0.0392, "flujo_Q_J_a_I_MW": -0.0263 },
+      { "I": 4, "J": 47, "flujo_P_I_a_J_MW": 0.850755503, "flujo_Q_I_a_J_MW": 0.611164587, "flujo_P_J_a_I_MW": -0.850732217, "flujo_Q_J_a_I_MW": -0.611107059 },
+      { "I": 47, "J": 48, "flujo_P_I_a_J_MW": 0.850732217, "flujo_Q_I_a_J_MW": 0.611107059, "flujo_P_J_a_I_MW": -0.850149404, "flujo_Q_J_a_I_MW": -0.609680501 },
+      { "I": 48, "J": 49, "flujo_P_I_a_J_MW": 0.771149404, "flujo_Q_I_a_J_MW": 0.553280501, "flujo_P_J_a_I_MW": -0.769515897, "flujo_Q_J_a_I_MW": -0.549283539 },
+      { "I": 49, "J": 50, "flujo_P_I_a_J_MW": 0.384815897, "flujo_Q_I_a_J_MW": 0.274783539, "flujo_P_J_a_I_MW": -0.3847, "flujo_Q_J_a_I_MW": -0.2745 },
+      { "I": 8, "J": 51, "flujo_P_I_a_J_MW": 0.044101801, "flujo_Q_I_a_J_MW": 0.031000911, "flujo_P_J_a_I_MW": -0.044100044, "flujo_Q_J_a_I_MW": -0.031000015 },
+      { "I": 51, "J": 52, "flujo_P_I_a_J_MW": 0.003600044, "flujo_Q_I_a_J_MW": 0.002700015, "flujo_P_J_a_I_MW": -0.0036, "flujo_Q_J_a_I_MW": -0.0027 },
+      { "I": 9, "J": 53, "flujo_P_I_a_J_MW": 1.85643358, "flujo_Q_I_a_J_MW": 1.281092034, "flujo_P_J_a_I_MW": -1.850652535, "flujo_Q_J_a_I_MW": -1.278148352 },
+      { "I": 53, "J": 54, "flujo_P_I_a_J_MW": 1.846352535, "flujo_Q_I_a_J_MW": 1.274648352, "flujo_P_J_a_I_MW": -1.839641091, "flujo_Q_J_a_I_MW": -1.271229814 },
+      { "I": 54, "J": 55, "flujo_P_I_a_J_MW": 1.813241091, "flujo_Q_I_a_J_MW": 1.252229814, "flujo_P_J_a_I_MW": -1.804116375, "flujo_Q_J_a_I_MW": -1.247583978 },
+      { "I": 55, "J": 56, "flujo_P_I_a_J_MW": 1.780116375, "flujo_Q_I_a_J_MW": 1.230383978, "flujo_P_J_a_I_MW": -1.771326252, "flujo_Q_J_a_I_MW": -1.225906109 },
+      { "I": 56, "J": 57, "flujo_P_I_a_J_MW": 1.771326252, "flujo_Q_I_a_J_MW": 1.225906109, "flujo_P_J_a_I_MW": -1.721641589, "flujo_Q_J_a_I_MW": -1.209228936 },
+      { "I": 57, "J": 58, "flujo_P_I_a_J_MW": 1.721641589, "flujo_Q_I_a_J_MW": 1.209228936, "flujo_P_J_a_I_MW": -1.697152362, "flujo_Q_J_a_I_MW": -1.201010656 },
+      { "I": 58, "J": 59, "flujo_P_I_a_J_MW": 1.697152362, "flujo_Q_I_a_J_MW": 1.201010656, "flujo_P_J_a_I_MW": -1.687646655, "flujo_Q_J_a_I_MW": -1.197867085 },
+      { "I": 59, "J": 60, "flujo_P_I_a_J_MW": 1.587646655, "flujo_Q_I_a_J_MW": 1.125867085, "flujo_P_J_a_I_MW": -1.576975635, "flujo_Q_J_a_I_MW": -1.122627915 },
+      { "I": 60, "J": 61, "flujo_P_I_a_J_MW": 1.576975635, "flujo_Q_I_a_J_MW": 1.122627915, "flujo_P_J_a_I_MW": -1.562949364, "flujo_Q_J_a_I_MW": -1.1154835 },
+      { "I": 61, "J": 62, "flujo_P_I_a_J_MW": 0.318949364, "flujo_Q_I_a_J_MW": 0.2274835, "flujo_P_J_a_I_MW": -0.318837312, "flujo_Q_J_a_I_MW": -0.227426438 },
+      { "I": 62, "J": 63, "flujo_P_I_a_J_MW": 0.286837312, "flujo_Q_I_a_J_MW": 0.204426438, "flujo_P_J_a_I_MW": -0.286702379, "flujo_Q_J_a_I_MW": -0.204357762 },
+      { "I": 63, "J": 64, "flujo_P_I_a_J_MW": 0.286702379, "flujo_Q_I_a_J_MW": 0.204357762, "flujo_P_J_a_I_MW": -0.286041212, "flujo_Q_J_a_I_MW": -0.20402099 },
+      { "I": 64, "J": 65, "flujo_P_I_a_J_MW": 0.059041212, "flujo_Q_I_a_J_MW": 0.04202099, "flujo_P_J_a_I_MW": -0.059, "flujo_Q_J_a_I_MW": -0.042 },
+      { "I": 11, "J": 66, "flujo_P_I_a_J_MW": 0.036002639, "flujo_Q_I_a_J_MW": 0.026000801, "flujo_P_J_a_I_MW": -0.036000015, "flujo_Q_J_a_I_MW": -0.026000005 },
+      { "I": 66, "J": 67, "flujo_P_I_a_J_MW": 0.018000015, "flujo_Q_I_a_J_MW": 0.013000005, "flujo_P_J_a_I_MW": -0.018, "flujo_Q_J_a_I_MW": -0.013 },
+      { "I": 12, "J": 68, "flujo_P_I_a_J_MW": 0.056023361, "flujo_Q_I_a_J_MW": 0.040007722, "flujo_P_J_a_I_MW": -0.056000037, "flujo_Q_J_a_I_MW": -0.040000013 },
+      { "I": 68, "J": 69, "flujo_P_I_a_J_MW": 0.028000037, "flujo_Q_I_a_J_MW": 0.020000013, "flujo_P_J_a_I_MW": -0.028, "flujo_Q_J_a_I_MW": -0.02 }
+      ]
+    };
+    
+    
+    
+    let nodos = {
+      "nodes": [
+        { "nodo": 1, "tipo_de_nodo": 3, "P_MW": 0, "Q_MVAR": 0, "V_max": 1, "V_min": 1 },
+        { "nodo": 2, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 3, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 4, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 5, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 6, "tipo_de_nodo": 1, "P_MW": 0.0026, "Q_MVAR": 0.0022, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 7, "tipo_de_nodo": 1, "P_MW": 0.0404, "Q_MVAR": 0.03, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 8, "tipo_de_nodo": 1, "P_MW": 0.075, "Q_MVAR": 0.054, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 9, "tipo_de_nodo": 1, "P_MW": 0.03, "Q_MVAR": 0.022, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 10, "tipo_de_nodo": 1, "P_MW": 0.028, "Q_MVAR": 0.019, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 11, "tipo_de_nodo": 1, "P_MW": 0.145, "Q_MVAR": 0.104, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 12, "tipo_de_nodo": 1, "P_MW": 0.145, "Q_MVAR": 0.104, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 13, "tipo_de_nodo": 1, "P_MW": 0.008, "Q_MVAR": 0.0055, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 14, "tipo_de_nodo": 1, "P_MW": 0.008, "Q_MVAR": 0.0055, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 15, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 16, "tipo_de_nodo": 1, "P_MW": 0.0455, "Q_MVAR": 0.03, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 17, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.035, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 18, "tipo_de_nodo": 1, "P_MW": 0.06, "Q_MVAR": 0.035, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 19, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 20, "tipo_de_nodo": 1, "P_MW": 0.001, "Q_MVAR": 0.0006, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 21, "tipo_de_nodo": 1, "P_MW": 0.114, "Q_MVAR": 0.081, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 22, "tipo_de_nodo": 1, "P_MW": 0.0053, "Q_MVAR": 0.0035, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 23, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 24, "tipo_de_nodo": 1, "P_MW": 0.028, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 25, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 26, "tipo_de_nodo": 1, "P_MW": 0.014, "Q_MVAR": 0.01, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 27, "tipo_de_nodo": 1, "P_MW": 0.014, "Q_MVAR": 0.01, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 28, "tipo_de_nodo": 1, "P_MW": 0.026, "Q_MVAR": 0.0186, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 29, "tipo_de_nodo": 1, "P_MW": 0.026, "Q_MVAR": 0.0186, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 30, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 31, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 32, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 33, "tipo_de_nodo": 1, "P_MW": 0.014, "Q_MVAR": 0.01, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 34, "tipo_de_nodo": 1, "P_MW": 0.0195, "Q_MVAR": 0.014, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 35, "tipo_de_nodo": 1, "P_MW": 0.006, "Q_MVAR": 0.004, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 36, "tipo_de_nodo": 1, "P_MW": 0.026, "Q_MVAR": 0.0186, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 37, "tipo_de_nodo": 1, "P_MW": 0.026, "Q_MVAR": 0.0186, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 38, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 39, "tipo_de_nodo": 1, "P_MW": 0.024, "Q_MVAR": 0.017, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 40, "tipo_de_nodo": 1, "P_MW": 0.024, "Q_MVAR": 0.017, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 41, "tipo_de_nodo": 1, "P_MW": 0.0012, "Q_MVAR": 0.001, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 42, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 43, "tipo_de_nodo": 1, "P_MW": 0.006, "Q_MVAR": 0.0043, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 44, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 45, "tipo_de_nodo": 1, "P_MW": 0.0392, "Q_MVAR": 0.0263, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 46, "tipo_de_nodo": 1, "P_MW": 0.0392, "Q_MVAR": 0.0263, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 47, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 48, "tipo_de_nodo": 1, "P_MW": 0.079, "Q_MVAR": 0.0564, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 49, "tipo_de_nodo": 1, "P_MW": 0.3847, "Q_MVAR": 0.2745, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 50, "tipo_de_nodo": 1, "P_MW": 0.3847, "Q_MVAR": 0.2745, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 51, "tipo_de_nodo": 1, "P_MW": 0.0405, "Q_MVAR": 0.0283, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 52, "tipo_de_nodo": 1, "P_MW": 0.0036, "Q_MVAR": 0.0027, "V_max": 1.1, "V_min": 0.9 },
+        { "nodo": 53, "tipo_de_nodo": 1, "P_MW": 0.0043, "Q_MVAR": 0.0035, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 54, "tipo_de_nodo": 1, "P_MW": 0.0264, "Q_MVAR": 0.019, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 55, "tipo_de_nodo": 1, "P_MW": 0.024, "Q_MVAR": 0.0172, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 56, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 57, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 58, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 59, "tipo_de_nodo": 1, "P_MW": 0.1, "Q_MVAR": 0.072, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 60, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 61, "tipo_de_nodo": 1, "P_MW": 1.244, "Q_MVAR": 0.888, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 62, "tipo_de_nodo": 1, "P_MW": 0.032, "Q_MVAR": 0.023, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 63, "tipo_de_nodo": 1, "P_MW": 0, "Q_MVAR": 0, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 64, "tipo_de_nodo": 1, "P_MW": 0.227, "Q_MVAR": 0.162, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 65, "tipo_de_nodo": 1, "P_MW": 0.059, "Q_MVAR": 0.042, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 66, "tipo_de_nodo": 1, "P_MW": 0.018, "Q_MVAR": 0.013, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 67, "tipo_de_nodo": 1, "P_MW": 0.018, "Q_MVAR": 0.013, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 68, "tipo_de_nodo": 1, "P_MW": 0.028, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 },
+      { "nodo": 69, "tipo_de_nodo": 1, "P_MW": 0.028, "Q_MVAR": 0.02, "V_max": 1.1, "V_min": 0.9 }
+      ]
+    };
+    
+    
+    
+    let escenarios = [
+      {
+        "escenario": "ESCENARIO 1 CON SIN RD NI GD",
+        "potencia_deslastrada_MW": 1206.802929,
+        "potencia_atendida_MW": 43.99707085,
+        "potencia_generada_adicional_MW": 1206.802929 - 43.99707085,
+        "costo_operacion_dolar_per_MWH": 272890.692,
+        "costo_deslastre_dolar_per_MWH": 271530.5303,
+        "U1": 0.035175145,
+        "U2": 0.004984273,
+        "U": 0.020079709,
+        "resiliencia": "MALA"
+      },
+      {
+        "escenario": "ESCENARIO 2 CON RD SIN GD",
+        "potencia_deslastrada_MW": 983.5586879,
+        "potencia_atendida_MW": 267.2413121,
+        "potencia_generada_adicional_MW": 983.5586879 - 267.2413121,
+        "costo_operacion_dolar_per_MWH": 217231.5179,
+        "costo_deslastre_dolar_per_MWH": 204557.6068,
+        "U1": 0.21365631,
+        "U2": 0.058342874,
+        "U": 0.135999592,
+        "resiliencia": "MALA"
+      },
+      {
+        "escenario": "ESCENARIO 3 CON GD SIN RD",
+        "potencia_deslastrada_MW": 1072.290213,
+        "potencia_atendida_MW": 178.5097873,
+        "potencia_generada_adicional_MW": 1072.290213 - 178.5097873,
+        "costo_operacion_dolar_per_MWH": 242662.2251,
+        "costo_deslastre_dolar_per_MWH": 231177.0634,
+        "U1": 0.142716491,
+        "U2": 0.047329829,
+        "U": 0.09502316,
+        "resiliencia": "MALA"
+      },
+      {
+        "escenario": "ESCENARIO 4 CON GD Y RD",
+        "potencia_deslastrada_MW": 851.6500362,
+        "potencia_atendida_MW": 399.1499638,
+        "potencia_generada_adicional_MW": 851.6500362 - 399.1499638,
+        "costo_operacion_dolar_per_MWH": 187783.9225,
+        "costo_deslastre_dolar_per_MWH": 164985.0115,
+        "U1": 0.319115737,
+        "U2": 0.121410346,
+        "U": 0.220263041,
+        "resiliencia": "POBRE"
+      }
+    ];
+    
+  
+    
+    
+    let escenario1ConSinRdNiGd = [
+      { "nodo": 1, "carga_MW": 55, "potencia_deslastrada_MW": 54.99999986, "costo_dolar_por_MW": 10999.99997, "potencia_atendida_MW": 1.41123E-07, "_atendido": 2.56587E-07 },
+      { "nodo": 5, "carga_MW": 13, "potencia_deslastrada_MW": 12.99999986, "costo_dolar_por_MW": 2599.999973, "potencia_atendida_MW": 1.36334E-07, "_atendido": 1.04873E-06 },
+      { "nodo": 6, "carga_MW": 75, "potencia_deslastrada_MW": 16.86787675, "costo_dolar_por_MW": 5060.363026, "potencia_atendida_MW": 58.13212325, "_atendido": 77.50949766 },
+      { "nodo": 8, "carga_MW": 150, "potencia_deslastrada_MW": 149.9999998, "costo_dolar_por_MW": 29999.99997, "potencia_atendida_MW": 1.50764E-07, "_atendido": 1.00509E-07 },
+      { "nodo": 9, "carga_MW": 121, "potencia_deslastrada_MW": 120.9999999, "costo_dolar_por_MW": 12099.99999, "potencia_atendida_MW": 7.10774E-08, "_atendido": 5.87417E-08 },
+      { "nodo": 10, "carga_MW": 5, "potencia_deslastrada_MW": 4.999999929, "costo_dolar_por_MW": 499.9999929, "potencia_atendida_MW": 7.11416E-08, "_atendido": 1.42283E-06 },
+      { "nodo": 12, "carga_MW": 377, "potencia_deslastrada_MW": 300.8032196, "costo_dolar_por_MW": 90240.96588, "potencia_atendida_MW": 76.19678041, "_atendido": 20.21134759 },
+      { "nodo": 13, "carga_MW": 18, "potencia_deslastrada_MW": 17.99999993, "costo_dolar_por_MW": 1799.999993, "potencia_atendida_MW": 6.91458E-08, "_atendido": 3.84144E-07 },
+      { "nodo": 14, "carga_MW": 10.5, "potencia_deslastrada_MW": 10.49999986, "costo_dolar_por_MW": 2099.999972, "potencia_atendida_MW": 1.41118E-07, "_atendido": 1.34398E-06 },
+      { "nodo": 15, "carga_MW": 22, "potencia_deslastrada_MW": 21.99999993, "costo_dolar_por_MW": 2199.999993, "potencia_atendida_MW": 6.92214E-08, "_atendido": 3.14643E-07 },
+      { "nodo": 16, "carga_MW": 43, "potencia_deslastrada_MW": 28.50977489, "costo_dolar_por_MW": 8552.932466, "potencia_atendida_MW": 14.49022511, "_atendido": 33.69819794 },
+      { "nodo": 17, "carga_MW": 42, "potencia_deslastrada_MW": 41.99999986, "costo_dolar_por_MW": 8399.999972, "potencia_atendida_MW": 1.40244E-07, "_atendido": 3.33914E-07 },
+      { "nodo": 18, "carga_MW": 27.2, "potencia_deslastrada_MW": 27.19999986, "costo_dolar_por_MW": 5439.999973, "potencia_atendida_MW": 1.37191E-07, "_atendido": 5.04378E-07 },
+      { "nodo": 19, "carga_MW": 3.3, "potencia_deslastrada_MW": 3.299999863, "costo_dolar_por_MW": 659.9999726, "potencia_atendida_MW": 1.37117E-07, "_atendido": 4.15507E-06 },
+      { "nodo": 20, "carga_MW": 2.3, "potencia_deslastrada_MW": 1.460674716, "costo_dolar_por_MW": 438.2024149, "potencia_atendida_MW": 0.839325284, "_atendido": 36.49240363 },
+      { "nodo": 23, "carga_MW": 6.3, "potencia_deslastrada_MW": 1.75505E-06, "costo_dolar_por_MW": 0.000526516, "potencia_atendida_MW": 6.299998245, "_atendido": 99.99997214 },
+      { "nodo": 25, "carga_MW": 6.3, "potencia_deslastrada_MW": 6.299999927, "costo_dolar_por_MW": 629.9999927, "potencia_atendida_MW": 7.29473E-08, "_atendido": 1.15789E-06 },
+      { "nodo": 27, "carga_MW": 9.3, "potencia_deslastrada_MW": 9.299999927, "costo_dolar_por_MW": 929.9999927, "potencia_atendida_MW": 7.30999E-08, "_atendido": 7.8602E-07 },
+      { "nodo": 28, "carga_MW": 4.6, "potencia_deslastrada_MW": 4.599999927, "costo_dolar_por_MW": 459.9999927, "potencia_atendida_MW": 7.26364E-08, "_atendido": 1.57905E-06 },
+      { "nodo": 29, "carga_MW": 17, "potencia_deslastrada_MW": 16.99999993, "costo_dolar_por_MW": 1699.999993, "potencia_atendida_MW": 7.21348E-08, "_atendido": 4.24322E-07 },
+      { "nodo": 30, "carga_MW": 3.6, "potencia_deslastrada_MW": 3.599999838, "costo_dolar_por_MW": 719.9999676, "potencia_atendida_MW": 1.61869E-07, "_atendido": 4.49635E-06 },
+      { "nodo": 31, "carga_MW": 5.8, "potencia_deslastrada_MW": 5.799999925, "costo_dolar_por_MW": 579.9999925, "potencia_atendida_MW": 7.46999E-08, "_atendido": 1.28793E-06 },
+      { "nodo": 32, "carga_MW": 1.6, "potencia_deslastrada_MW": 1.59999984, "costo_dolar_por_MW": 319.999968, "potencia_atendida_MW": 1.59832E-07, "_atendido": 9.98948E-06 },
+      { "nodo": 33, "carga_MW": 3.8, "potencia_deslastrada_MW": 3.799999927, "costo_dolar_por_MW": 379.9999927, "potencia_atendida_MW": 7.33558E-08, "_atendido": 1.93042E-06 },
+      { "nodo": 35, "carga_MW": 6, "potencia_deslastrada_MW": 5.999999927, "costo_dolar_por_MW": 599.9999927, "potencia_atendida_MW": 7.30274E-08, "_atendido": 1.21712E-06 },
+      { "nodo": 38, "carga_MW": 14, "potencia_deslastrada_MW": 13.99999993, "costo_dolar_por_MW": 1399.999993, "potencia_atendida_MW": 7.0153E-08, "_atendido": 5.01093E-07 },
+      { "nodo": 41, "carga_MW": 6.3, "potencia_deslastrada_MW": 6.299999931, "costo_dolar_por_MW": 629.9999931, "potencia_atendida_MW": 6.94777E-08, "_atendido": 1.10282E-06 },
+      { "nodo": 42, "carga_MW": 7.1, "potencia_deslastrada_MW": 2.217120987, "costo_dolar_por_MW": 665.1362962, "potencia_atendida_MW": 4.882879013, "_atendido": 68.77294384 },
+      { "nodo": 43, "carga_MW": 2, "potencia_deslastrada_MW": 1.999999854, "costo_dolar_por_MW": 399.9999709, "potencia_atendida_MW": 1.4552E-07, "_atendido": 7.27602E-06 },
+      { "nodo": 44, "carga_MW": 12, "potencia_deslastrada_MW": 11.99999985, "costo_dolar_por_MW": 2399.999971, "potencia_atendida_MW": 1.46689E-07, "_atendido": 1.22241E-06 },
+    { "nodo": 47, "carga_MW": 29.7, "potencia_deslastrada_MW": 6.1037E-06, "costo_dolar_por_MW": 0.00183111, "potencia_atendida_MW": 29.6999939, "_atendido": 99.99997945 },
+    { "nodo": 49, "carga_MW": 18, "potencia_deslastrada_MW": 17.99999986, "costo_dolar_por_MW": 3599.999972, "potencia_atendida_MW": 1.41688E-07, "_atendido": 7.87156E-07 },
+    { "nodo": 50, "carga_MW": 21, "potencia_deslastrada_MW": 1.37243E-05, "costo_dolar_por_MW": 0.004117296, "potencia_atendida_MW": 20.99998628, "_atendido": 99.99993465 },
+    { "nodo": 51, "carga_MW": 18, "potencia_deslastrada_MW": 17.99999993, "costo_dolar_por_MW": 1799.999993, "potencia_atendida_MW": 7.12459E-08, "_atendido": 3.95811E-07 },
+    { "nodo": 52, "carga_MW": 4.9, "potencia_deslastrada_MW": 1.15092E-06, "costo_dolar_por_MW": 0.000345276, "potencia_atendida_MW": 4.899998849, "_atendido": 99.99997651 },
+    { "nodo": 53, "carga_MW": 20, "potencia_deslastrada_MW": 19.99999984, "costo_dolar_por_MW": 3999.999969, "potencia_atendida_MW": 1.55773E-07, "_atendido": 7.78863E-07 },
+    { "nodo": 54, "carga_MW": 4.1, "potencia_deslastrada_MW": 4.099999847, "costo_dolar_por_MW": 819.9999694, "potencia_atendida_MW": 1.53224E-07, "_atendido": 3.73717E-06 },
+    { "nodo": 55, "carga_MW": 6.8, "potencia_deslastrada_MW": 1.41398E-06, "costo_dolar_por_MW": 0.000424194, "potencia_atendida_MW": 6.799998586, "_atendido": 99.99997921 },
+    { "nodo": 56, "carga_MW": 7.6, "potencia_deslastrada_MW": 7.599999927, "costo_dolar_por_MW": 759.9999927, "potencia_atendida_MW": 7.25324E-08, "_atendido": 9.54374E-07 },
+    { "nodo": 57, "carga_MW": 6.7, "potencia_deslastrada_MW": 6.699999927, "costo_dolar_por_MW": 669.9999927, "potencia_atendida_MW": 7.28729E-08, "_atendido": 1.08766E-06 },
+    { "nodo": 2, "carga_MW": 3, "potencia_deslastrada_MW": 8.70938E-09, "costo_dolar_por_MW": 1.74188E-06, "potencia_atendida_MW": 2.999999991, "_atendido": 99.99999971 },
+    { "nodo": 3, "carga_MW": 41, "potencia_deslastrada_MW": 8.71028E-09, "costo_dolar_por_MW": 1.74206E-06, "potencia_atendida_MW": 40.99999999, "_atendido": 99.99999998 }
+    ];
+
+
+let escenario2ConRdSinGd = [
+  { "nodo": 1, "carga_MW": 55, "potencia_deslastrada_MW": 54.99999994, "costo_dolar_por_MW": 10999.99999, "potencia_atendida_MW": 6.37841E-08, "_atendido": 1.15971E-07 },
+  { "nodo": 5, "carga_MW": 13, "potencia_deslastrada_MW": 12.99999994, "costo_dolar_por_MW": 2599.999987, "potencia_atendida_MW": 6.362E-08, "_atendido": 4.89384E-07 },
+  { "nodo": 6, "carga_MW": 75, "potencia_deslastrada_MW": 37.40867161, "costo_dolar_por_MW": 11222.60148, "potencia_atendida_MW": 37.59132839, "_atendido": 50.12177118 },
+  { "nodo": 8, "carga_MW": 150, "potencia_deslastrada_MW": 149.9999999, "costo_dolar_por_MW": 29999.99999, "potencia_atendida_MW": 6.69103E-08, "_atendido": 4.46068E-08 },
+  { "nodo": 9, "carga_MW": 121, "potencia_deslastrada_MW": 121, "costo_dolar_por_MW": 12100, "potencia_atendida_MW": 3.22646E-08, "_atendido": 2.6665E-08 },
+  { "nodo": 10, "carga_MW": 5, "potencia_deslastrada_MW": 4.999999968, "costo_dolar_por_MW": 499.9999968, "potencia_atendida_MW": 3.21647E-08, "_atendido": 6.43294E-07 },
+  { "nodo": 12, "carga_MW": 377, "potencia_deslastrada_MW": 304.1944763, "costo_dolar_por_MW": 91258.34288, "potencia_atendida_MW": 72.80552374, "_atendido": 19.31181001 },
+  { "nodo": 13, "carga_MW": 18, "potencia_deslastrada_MW": 17.99999997, "costo_dolar_por_MW": 1799.999997, "potencia_atendida_MW": 3.19193E-08, "_atendido": 1.77329E-07 },
+  { "nodo": 14, "carga_MW": 10.5, "potencia_deslastrada_MW": 10.49999994, "costo_dolar_por_MW": 2099.999987, "potencia_atendida_MW": 6.38992E-08, "_atendido": 6.08564E-07 },
+  { "nodo": 15, "carga_MW": 22, "potencia_deslastrada_MW": 21.99999997, "costo_dolar_por_MW": 2199.999997, "potencia_atendida_MW": 3.18784E-08, "_atendido": 1.44902E-07 },
+  { "nodo": 16, "carga_MW": 43, "potencia_deslastrada_MW": 42.12534923, "costo_dolar_por_MW": 12637.60477, "potencia_atendida_MW": 0.874650773, "_atendido": 2.034071564 },
+  { "nodo": 17, "carga_MW": 42, "potencia_deslastrada_MW": 41.99999994, "costo_dolar_por_MW": 8399.999987, "potencia_atendida_MW": 6.37216E-08, "_atendido": 1.51718E-07 },
+  { "nodo": 18, "carga_MW": 27.2, "potencia_deslastrada_MW": 27.19999994, "costo_dolar_por_MW": 5439.999987, "potencia_atendida_MW": 6.36248E-08, "_atendido": 2.33915E-07 },
+  { "nodo": 19, "carga_MW": 3.3, "potencia_deslastrada_MW": 3.299999936, "costo_dolar_por_MW": 659.9999873, "potencia_atendida_MW": 6.37314E-08, "_atendido": 1.93126E-06 },
+  { "nodo": 20, "carga_MW": 2.3, "potencia_deslastrada_MW": 2.292131987, "costo_dolar_por_MW": 687.639596, "potencia_atendida_MW": 0.007868013, "_atendido": 0.342087534 },
+  { "nodo": 23, "carga_MW": 6.3, "potencia_deslastrada_MW": 3.537244461, "costo_dolar_por_MW": 1061.173338, "potencia_atendida_MW": 2.762755539, "_atendido": 43.85326253 },
+  { "nodo": 25, "carga_MW": 6.3, "potencia_deslastrada_MW": 6.299999968, "costo_dolar_por_MW": 629.9999968, "potencia_atendida_MW": 3.20768E-08, "_atendido": 5.09155E-07 },
+  { "nodo": 27, "carga_MW": 9.3, "potencia_deslastrada_MW": 9.299999968, "costo_dolar_por_MW": 929.9999968, "potencia_atendida_MW": 3.23981E-08, "_atendido": 3.48367E-07 },
+  { "nodo": 28, "carga_MW": 4.6, "potencia_deslastrada_MW": 4.599999967, "costo_dolar_por_MW": 459.9999967, "potencia_atendida_MW": 3.25261E-08, "_atendido": 7.0709E-07 },
+  { "nodo": 29, "carga_MW": 17, "potencia_deslastrada_MW": 16.99999997, "costo_dolar_por_MW": 1699.999997, "potencia_atendida_MW": 3.26154E-08, "_atendido": 1.91855E-07 },
+  { "nodo": 30, "carga_MW": 3.6, "potencia_deslastrada_MW": 3.599999935, "costo_dolar_por_MW": 719.9999871, "potencia_atendida_MW": 6.45879E-08, "_atendido": 1.79411E-06 },
+  { "nodo": 31, "carga_MW": 5.8, "potencia_deslastrada_MW": 5.799999968, "costo_dolar_por_MW": 579.9999968, "potencia_atendida_MW": 3.19863E-08, "_atendido": 5.51489E-07 },
+  { "nodo": 32, "carga_MW": 1.6, "potencia_deslastrada_MW": 1.599999936, "costo_dolar_por_MW": 319.9999872, "potencia_atendida_MW": 6.39568E-08, "_atendido": 3.9973E-06 },
+  { "nodo": 33, "carga_MW": 3.8, "potencia_deslastrada_MW": 3.799999968, "costo_dolar_por_MW": 379.9999968, "potencia_atendida_MW": 3.18931E-08, "_atendido": 8.39293E-07 },
+  { "nodo": 35, "carga_MW": 6, "potencia_deslastrada_MW": 5.999999968, "costo_dolar_por_MW": 599.9999968, "potencia_atendida_MW": 3.18805E-08, "_atendido": 5.31342E-07 },
+  { "nodo": 38, "carga_MW": 14, "potencia_deslastrada_MW": 13.99999997, "costo_dolar_por_MW": 1399.999997, "potencia_atendida_MW": 3.183E-08, "_atendido": 2.27357E-07 },
+  { "nodo": 41, "carga_MW": 6.3, "potencia_deslastrada_MW": 6.299999968, "costo_dolar_por_MW": 629.9999968, "potencia_atendida_MW": 3.19935E-08, "_atendido": 5.07833E-07 },
+  { "nodo": 42, "carga_MW": 7.1, "potencia_deslastrada_MW": 6.056811873, "costo_dolar_por_MW": 1817.043562, "potencia_atendida_MW": 1.043188127, "_atendido": 14.69279052 },
+  { "nodo": 43, "carga_MW": 2, "potencia_deslastrada_MW": 1.999999935, "costo_dolar_por_MW": 399.9999871, "potencia_atendida_MW": 6.46396E-08, "_atendido": 3.23198E-06 },
+  { "nodo": 44, "carga_MW": 12, "potencia_deslastrada_MW": 11.99999994, "costo_dolar_por_MW": 2399.999987, "potencia_atendida_MW": 6.37024E-08, "_atendido": 5.30853E-07 },
+  { "nodo": 47, "carga_MW": 29.7, "potencia_deslastrada_MW": 26.02418462, "costo_dolar_por_MW": 7807.255385, "potencia_atendida_MW": 3.675815385, "_atendido": 12.37648278 },
+  { "nodo": 49, "carga_MW": 18, "potencia_deslastrada_MW": 17.99999994, "costo_dolar_por_MW": 3599.999987, "potencia_atendida_MW": 6.38904E-08, "_atendido": 3.54946E-07 },
+  { "nodo": 50, "carga_MW": 21, "potencia_deslastrada_MW": 16.95133014, "costo_dolar_por_MW": 5085.399041, "potencia_atendida_MW": 4.048669864, "_atendido": 19.2793803 },
+  { "nodo": 51, "carga_MW": 18, "potencia_deslastrada_MW": 17.99999997, "costo_dolar_por_MW": 1799.999997, "potencia_atendida_MW": 3.21752E-08, "_atendido": 1.78751E-07 },
+  { "nodo": 52, "carga_MW": 4.9, "potencia_deslastrada_MW": 5.21861E-06, "costo_dolar_por_MW": 0.001565582, "potencia_atendida_MW": 4.899994781, "_atendido": 99.9998935 },
+  { "nodo": 53, "carga_MW": 20, "potencia_deslastrada_MW": 19.99999994, "costo_dolar_por_MW": 3999.999987, "potencia_atendida_MW": 6.45515E-08, "_atendido": 3.22757E-07 },
+  { "nodo": 54, "carga_MW": 4.1, "potencia_deslastrada_MW": 4.099999935, "costo_dolar_por_MW": 819.999987, "potencia_atendida_MW": 6.49015E-08, "_atendido": 1.58296E-06 },
+  { "nodo": 55, "carga_MW": 6.8, "potencia_deslastrada_MW": 2.54306E-06, "costo_dolar_por_MW": 0.000762919, "potencia_atendida_MW": 6.799997457, "_atendido": 99.9999626 },
+  { "nodo": 56, "carga_MW": 7.6, "potencia_deslastrada_MW": 7.599999968, "costo_dolar_por_MW": 759.9999968, "potencia_atendida_MW": 3.19355E-08, "_atendido": 4.20204E-07 },
+  { "nodo": 57, "carga_MW": 6.7, "potencia_deslastrada_MW": 6.699999968, "costo_dolar_por_MW": 669.9999968, "potencia_atendida_MW": 3.19168E-08, "_atendido": 4.7637E-07 },
+  { "nodo": 2, "carga_MW": 3, "potencia_deslastrada_MW": 3.07233E-06, "costo_dolar_por_MW": 0.000614465, "potencia_atendida_MW": 2.999996928, "_atendido": 99.99989759 },
+  { "nodo": 3, "carga_MW": 41, "potencia_deslastrada_MW": 3.07247E-06, "costo_dolar_por_MW": 0.000614495, "potencia_atendida_MW": 40.99999693, "_atendido": 99.99999251 }
+];
+
+ 
+
+
+let escenario3ConGdSinRd = [
+  { nodo: 1, carga_MW: 55, potencia_deslastrada_MW: 54.9999998, costo_dolar_por_MW: 10999.99996, potencia_atendida_MW: 2.04335E-07, _atendido: 3.71519E-07 },
+  { nodo: 5, carga_MW: 13, potencia_deslastrada_MW: 12.99999978, costo_dolar_por_MW: 2599.999957, potencia_atendida_MW: 2.1725E-07, _atendido: 1.67115E-06 },
+  { nodo: 6, carga_MW: 75, potencia_deslastrada_MW: 1.84168E-06, costo_dolar_por_MW: 0.000552503, potencia_atendida_MW: 74.99999816, _atendido: 99.99999754 },
+  { nodo: 8, carga_MW: 150, potencia_deslastrada_MW: 149.9999998, costo_dolar_por_MW: 29999.99995, potencia_atendida_MW: 2.43279E-07, _atendido: 1.62186E-07 },
+  { nodo: 9, carga_MW: 121, potencia_deslastrada_MW: 120.9999999, costo_dolar_por_MW: 12099.99999, potencia_atendida_MW: 1.05453E-07, _atendido: 8.71516E-08 },
+  { nodo: 10, carga_MW: 5, potencia_deslastrada_MW: 4.999999895, costo_dolar_por_MW: 499.9999895, potencia_atendida_MW: 1.0525E-07, _atendido: 2.105E-06 },
+  { nodo: 12, carga_MW: 377, potencia_deslastrada_MW: 194.2416777, costo_dolar_por_MW: 58272.50331, potencia_atendida_MW: 182.7583223, _atendido: 48.47700857 },
+  { nodo: 13, carga_MW: 18, potencia_deslastrada_MW: 17.9999999, costo_dolar_por_MW: 1799.99999, potencia_atendida_MW: 1.00222E-07, _atendido: 5.5679E-07 },
+  { nodo: 14, carga_MW: 10.5, potencia_deslastrada_MW: 10.49999979, costo_dolar_por_MW: 2099.999959, potencia_atendida_MW: 2.07486E-07, _atendido: 1.97606E-06 },
+  { nodo: 15, carga_MW: 22, potencia_deslastrada_MW: 21.9999999, costo_dolar_por_MW: 2199.99999, potencia_atendida_MW: 9.99982E-08, _atendido: 4.54537E-07 },
+  { nodo: 16, carga_MW: 43, potencia_deslastrada_MW: 23.70832455, costo_dolar_por_MW: 7112.497364, potencia_atendida_MW: 19.29167545, _atendido: 44.86436152 },
+  { nodo: 17, carga_MW: 42, potencia_deslastrada_MW: 41.9999998, costo_dolar_por_MW: 8399.99996, potencia_atendida_MW: 2.01948E-07, _atendido: 4.80828E-07 },
+  { nodo: 18, carga_MW: 27.2, potencia_deslastrada_MW: 27.19999978, costo_dolar_por_MW: 5439.999956, potencia_atendida_MW: 2.18195E-07, _atendido: 8.02187E-07 },
+  { nodo: 19, carga_MW: 3.3, potencia_deslastrada_MW: 3.299999791, costo_dolar_por_MW: 659.9999583, potencia_atendida_MW: 2.08593E-07, _atendido: 6.321E-06 },
+  { nodo: 20, carga_MW: 2.3, potencia_deslastrada_MW: 5.30526E-06, costo_dolar_por_MW: 0.001591578, potencia_atendida_MW: 2.299994695, _atendido: 99.99976934 },
+  { nodo: 23, carga_MW: 6.3, potencia_deslastrada_MW: 1.64411E-06, costo_dolar_por_MW: 0.000493232, potencia_atendida_MW: 6.299998356, _atendido: 99.9999739 },
+  { nodo: 25, carga_MW: 6.3, potencia_deslastrada_MW: 6.299999892, costo_dolar_por_MW: 629.9999892, potencia_atendida_MW: 1.08255E-07, _atendido: 1.71833E-06 },
+  { nodo: 27, carga_MW: 9.3, potencia_deslastrada_MW: 9.29999989, costo_dolar_por_MW: 929.999989, potencia_atendida_MW: 1.09797E-07, _atendido: 1.18061E-06 },
+  { nodo: 28, carga_MW: 4.6, potencia_deslastrada_MW: 4.59999989, costo_dolar_por_MW: 459.999989, potencia_atendida_MW: 1.09612E-07, _atendido: 2.38287E-06 },
+  { nodo: 29, carga_MW: 17, potencia_deslastrada_MW: 16.99999989, costo_dolar_por_MW: 1699.999989, potencia_atendida_MW: 1.09215E-07, _atendido: 6.42444E-07 },
+  { nodo: 30, carga_MW: 3.6, potencia_deslastrada_MW: 3.599999749, costo_dolar_por_MW: 719.9999499, potencia_atendida_MW: 2.50607E-07, _atendido: 6.96131E-06 },
+  { nodo: 31, carga_MW: 5.8, potencia_deslastrada_MW: 5.79999989, costo_dolar_por_MW: 579.999989, potencia_atendida_MW: 1.09824E-07, _atendido: 1.89352E-06 },
+  { nodo: 32, carga_MW: 1.6, potencia_deslastrada_MW: 1.599999762, costo_dolar_por_MW: 319.9999523, potencia_atendida_MW: 2.3849E-07, _atendido: 1.49056E-05 },
+  { nodo: 33, carga_MW: 3.8, potencia_deslastrada_MW: 3.799999893, costo_dolar_por_MW: 379.9999893, potencia_atendida_MW: 1.06849E-07, _atendido: 2.81183E-06 },
+  { nodo: 35, carga_MW: 6, potencia_deslastrada_MW: 5.999999894, costo_dolar_por_MW: 599.9999894, potencia_atendida_MW: 1.06148E-07, _atendido: 1.76913E-06 },
+  { nodo: 38, carga_MW: 14, potencia_deslastrada_MW: 13.9999999, costo_dolar_por_MW: 1399.99999, potencia_atendida_MW: 1.0199E-07, _atendido: 7.28502E-07 },
+  { nodo: 41, carga_MW: 6.3, potencia_deslastrada_MW: 6.299999899, costo_dolar_por_MW: 629.9999899, potencia_atendida_MW: 1.01021E-07, _atendido: 1.60351E-06 },
+  { nodo: 42, carga_MW: 7.1, potencia_deslastrada_MW: 2.04662E-05, costo_dolar_por_MW: 0.006139859, potencia_atendida_MW: 7.099979534, _atendido: 99.99971174 },
+  { nodo: 43, carga_MW: 2, potencia_deslastrada_MW: 1.999999781, costo_dolar_por_MW: 399.9999562, potencia_atendida_MW: 2.18911E-07, _atendido: 1.09456E-05 },
+  { nodo: 44, carga_MW: 12, potencia_deslastrada_MW: 11.99999978, costo_dolar_por_MW: 2399.999956, potencia_atendida_MW: 2.17598E-07, _atendido: 1.81332E-06 },
+  { nodo: 47, carga_MW: 29.7, potencia_deslastrada_MW: 3.87899E-06, costo_dolar_por_MW: 0.001163696, potencia_atendida_MW: 29.69999612, _atendido: 99.99998694 },
+  { nodo: 49, carga_MW: 18, potencia_deslastrada_MW: 17.99999979, costo_dolar_por_MW: 3599.999958, potencia_atendida_MW: 2.08846E-07, _atendido: 1.16026E-06 },
+  { nodo: 50, carga_MW: 21, potencia_deslastrada_MW: 3.56919E-06, costo_dolar_por_MW: 0.001070756, potencia_atendida_MW: 20.99999643, _atendido: 99.999983 },
+  { nodo: 51, carga_MW: 18, potencia_deslastrada_MW: 17.99999989, costo_dolar_por_MW: 1799.999989, potencia_atendida_MW: 1.05433E-07, _atendido: 5.85736E-07 },
+  { nodo: 52, carga_MW: 4.9, potencia_deslastrada_MW: 8.96226E-07, costo_dolar_por_MW: 0.000268868, potencia_atendida_MW: 4.899999104, _atendido: 99.99998171 },
+  { nodo: 53, carga_MW: 20, potencia_deslastrada_MW: 19.99999975, costo_dolar_por_MW: 3999.99995, potencia_atendida_MW: 2.4876E-07, _atendido: 1.2438E-06 },
+  { nodo: 54, carga_MW: 4.1, potencia_deslastrada_MW: 4.099999759, costo_dolar_por_MW: 819.9999519, potencia_atendida_MW: 2.40518E-07, _atendido: 5.86629E-06 },
+  { nodo: 55, carga_MW: 6.8, potencia_deslastrada_MW: 1.17157E-06, costo_dolar_por_MW: 0.000351472, potencia_atendida_MW: 6.799998828, _atendido: 99.99998277 },
+  { nodo: 56, carga_MW: 7.6, potencia_deslastrada_MW: 7.599999894, costo_dolar_por_MW: 759.9999894, potencia_atendida_MW: 1.06013E-07, _atendido: 1.39491E-06 },
+  { nodo: 57, carga_MW: 6.7, potencia_deslastrada_MW: 6.699999893, costo_dolar_por_MW: 669.9999893, potencia_atendida_MW: 1.06513E-07, _atendido: 1.58975E-06 },
+  { nodo: 2, carga_MW: 3, potencia_deslastrada_MW: 8.70938E-09, costo_dolar_por_MW: 1.74188E-06, potencia_atendida_MW: 2.999999991, _atendido: 99.99999971 },
+  { nodo: 3, carga_MW: 41, potencia_deslastrada_MW: 8.71028E-09, costo_dolar_por_MW: 1.74206E-06, potencia_atendida_MW: 40.99999999, _atendido: 99.99999998 }
+];
+
+
+let escenario4ConGdYRd = [
+  { nodo: 1, carga_MW: 55, potencia_deslastrada_MW: 54.9999998, costo_dolar_por_MW: 10999.99996, potencia_atendida_MW: 2.04335E-07, _atendido: 3.71519E-07 },
+  { nodo: 5, carga_MW: 13, potencia_deslastrada_MW: 12.99999978, costo_dolar_por_MW: 2599.999957, potencia_atendida_MW: 2.1725E-07, _atendido: 1.67115E-06 },
+  { nodo: 6, carga_MW: 75, potencia_deslastrada_MW: 1.84168E-06, costo_dolar_por_MW: 0.000552503, potencia_atendida_MW: 74.99999816, _atendido: 99.99999754 },
+  { nodo: 8, carga_MW: 150, potencia_deslastrada_MW: 149.9999998, costo_dolar_por_MW: 29999.99995, potencia_atendida_MW: 2.43279E-07, _atendido: 1.62186E-07 },
+  { nodo: 9, carga_MW: 121, potencia_deslastrada_MW: 120.9999999, costo_dolar_por_MW: 12099.99999, potencia_atendida_MW: 1.05453E-07, _atendido: 8.71516E-08 },
+  { nodo: 10, carga_MW: 5, potencia_deslastrada_MW: 4.999999895, costo_dolar_por_MW: 499.9999895, potencia_atendida_MW: 1.0525E-07, _atendido: 2.105E-06 },
+  { nodo: 12, carga_MW: 377, potencia_deslastrada_MW: 194.2416777, costo_dolar_por_MW: 58272.50331, potencia_atendida_MW: 182.7583223, _atendido: 48.47700857 },
+  { nodo: 13, carga_MW: 18, potencia_deslastrada_MW: 17.9999999, costo_dolar_por_MW: 1799.99999, potencia_atendida_MW: 1.00222E-07, _atendido: 5.5679E-07 },
+  { nodo: 14, carga_MW: 10.5, potencia_deslastrada_MW: 10.49999979, costo_dolar_por_MW: 2099.999959, potencia_atendida_MW: 2.07486E-07, _atendido: 1.97606E-06 },
+  { nodo: 15, carga_MW: 22, potencia_deslastrada_MW: 21.9999999, costo_dolar_por_MW: 2199.99999, potencia_atendida_MW: 9.99982E-08, _atendido: 4.54537E-07 },
+  { nodo: 16, carga_MW: 43, potencia_deslastrada_MW: 23.70832455, costo_dolar_por_MW: 7112.497364, potencia_atendida_MW: 19.29167545, _atendido: 44.86436152 },
+  { nodo: 17, carga_MW: 42, potencia_deslastrada_MW: 41.9999998, costo_dolar_por_MW: 8399.99996, potencia_atendida_MW: 2.01948E-07, _atendido: 4.80828E-07 },
+  { nodo: 18, carga_MW: 27.2, potencia_deslastrada_MW: 27.19999978, costo_dolar_por_MW: 5439.999956, potencia_atendida_MW: 2.18195E-07, _atendido: 8.02187E-07 },
+  { nodo: 19, carga_MW: 3.3, potencia_deslastrada_MW: 3.299999791, costo_dolar_por_MW: 659.9999583, potencia_atendida_MW: 2.08593E-07, _atendido: 6.321E-06 },
+  { nodo: 20, carga_MW: 2.3, potencia_deslastrada_MW: 5.30526E-06, costo_dolar_por_MW: 0.001591578, potencia_atendida_MW: 2.299994695, _atendido: 99.99976934 },
+  { nodo: 23, carga_MW: 6.3, potencia_deslastrada_MW: 1.64411E-06, costo_dolar_por_MW: 0.000493232, potencia_atendida_MW: 6.299998356, _atendido: 99.9999739 },
+  { nodo: 25, carga_MW: 6.3, potencia_deslastrada_MW: 6.299999892, costo_dolar_por_MW: 629.9999892, potencia_atendida_MW: 1.08255E-07, _atendido: 1.71833E-06 },
+  { nodo: 27, carga_MW: 9.3, potencia_deslastrada_MW: 9.29999989, costo_dolar_por_MW: 929.999989, potencia_atendida_MW: 1.09797E-07, _atendido: 1.18061E-06 },
+  { nodo: 28, carga_MW: 4.6, potencia_deslastrada_MW: 4.59999989, costo_dolar_por_MW: 459.999989, potencia_atendida_MW: 1.09612E-07, _atendido: 2.38287E-06 },
+  { nodo: 29, carga_MW: 17, potencia_deslastrada_MW: 16.99999989, costo_dolar_por_MW: 1699.999989, potencia_atendida_MW: 1.09215E-07, _atendido: 6.42444E-07 },
+  { nodo: 30, carga_MW: 3.6, potencia_deslastrada_MW: 3.599999749, costo_dolar_por_MW: 719.9999499, potencia_atendida_MW: 2.50607E-07, _atendido: 6.96131E-06 },
+  { nodo: 31, carga_MW: 5.8, potencia_deslastrada_MW: 5.79999989, costo_dolar_por_MW: 579.999989, potencia_atendida_MW: 1.09824E-07, _atendido: 1.89352E-06 },
+  { nodo: 32, carga_MW: 1.6, potencia_deslastrada_MW: 1.599999762, costo_dolar_por_MW: 319.9999523, potencia_atendida_MW: 2.3849E-07, _atendido: 1.49056E-05 },
+  { nodo: 33, carga_MW: 3.8, potencia_deslastrada_MW: 3.799999893, costo_dolar_por_MW: 379.9999893, potencia_atendida_MW: 1.06849E-07, _atendido: 2.81183E-06 },
+  { nodo: 35, carga_MW: 6, potencia_deslastrada_MW: 5.999999894, costo_dolar_por_MW: 599.9999894, potencia_atendida_MW: 1.06148E-07, _atendido: 1.76913E-06 },
+  { nodo: 38, carga_MW: 14, potencia_deslastrada_MW: 13.9999999, costo_dolar_por_MW: 1399.99999, potencia_atendida_MW: 1.0199E-07, _atendido: 7.28502E-07 },
+  { nodo: 41, carga_MW: 6.3, potencia_deslastrada_MW: 6.299999899, costo_dolar_por_MW: 629.9999899, potencia_atendida_MW: 1.01021E-07, _atendido: 1.60351E-06 },
+  { nodo: 42, carga_MW: 7.1, potencia_deslastrada_MW: 2.04662E-05, costo_dolar_por_MW: 0.006139859, potencia_atendida_MW: 7.099979534, _atendido: 99.99971174 },
+  { nodo: 43, carga_MW: 2, potencia_deslastrada_MW: 1.999999781, costo_dolar_por_MW: 399.9999562, potencia_atendida_MW: 2.18911E-07, _atendido: 1.09456E-05 },
+  { nodo: 44, carga_MW: 12, potencia_deslastrada_MW: 11.99999978, costo_dolar_por_MW: 2399.999956, potencia_atendida_MW: 2.17598E-07, _atendido: 1.81332E-06 },
+  { nodo: 47, carga_MW: 29.7, potencia_deslastrada_MW: 3.87899E-06, costo_dolar_por_MW: 0.001163696, potencia_atendida_MW: 29.69999612, _atendido: 99.99998694 },
+  { nodo: 49, carga_MW: 18, potencia_deslastrada_MW: 17.99999979, costo_dolar_por_MW: 3599.999958, potencia_atendida_MW: 2.08846E-07, _atendido: 1.16026E-06 },
+  { nodo: 50, carga_MW: 21, potencia_deslastrada_MW: 3.56919E-06, costo_dolar_por_MW: 0.001070756, potencia_atendida_MW: 20.99999643, _atendido: 99.999983 },
+  { nodo: 51, carga_MW: 18, potencia_deslastrada_MW: 17.99999989, costo_dolar_por_MW: 1799.999989, potencia_atendida_MW: 1.05433E-07, _atendido: 5.85736E-07 },
+  { nodo: 52, carga_MW: 4.9, potencia_deslastrada_MW: 8.96226E-07, costo_dolar_por_MW: 0.000268868, potencia_atendida_MW: 4.899999104, _atendido: 99.99998171 },
+  { nodo: 53, carga_MW: 20, potencia_deslastrada_MW: 19.99999975, costo_dolar_por_MW: 3999.99995, potencia_atendida_MW: 2.4876E-07, _atendido: 1.2438E-06 },
+  { nodo: 54, carga_MW: 4.1, potencia_deslastrada_MW: 4.099999759, costo_dolar_por_MW: 819.9999519, potencia_atendida_MW: 2.40518E-07, _atendido: 5.86629E-06 },
+  { nodo: 55, carga_MW: 6.8, potencia_deslastrada_MW: 1.17157E-06, costo_dolar_por_MW: 0.000351472, potencia_atendida_MW: 6.799998828, _atendido: 99.99998277 },
+  { nodo: 56, carga_MW: 7.6, potencia_deslastrada_MW: 7.599999894, costo_dolar_por_MW: 759.9999894, potencia_atendida_MW: 1.06013E-07, _atendido: 1.39491E-06 },
+  { nodo: 57, carga_MW: 6.7, potencia_deslastrada_MW: 6.699999893, costo_dolar_por_MW: 669.9999893, potencia_atendida_MW: 1.06513E-07, _atendido: 1.58975E-06 },
+  { nodo: 2, carga_MW: 3, potencia_deslastrada_MW: 8.70938E-09, costo_dolar_por_MW: 1.74188E-06, potencia_atendida_MW: 2.999999991, _atendido: 99.99999971 },
+  { nodo: 3, carga_MW: 41, potencia_deslastrada_MW: 8.71028E-09, costo_dolar_por_MW: 1.74206E-06, potencia_atendida_MW: 40.99999999, _atendido: 99.99999998 }
+];
+
     
  
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}

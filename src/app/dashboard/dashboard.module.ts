@@ -24,7 +24,11 @@ import { CartModule } from '../cart/cart.module';
 import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav';
 import { CasoComponent } from './components/caso/caso.component';
 import { AgGridModule } from 'ag-grid-angular';
-import { NgOptimizedImage } from '@angular/common'
+import { NgOptimizedImage } from '@angular/common';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { LoginComponent } from './components/login/login.component'
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,13 +39,14 @@ import { NgOptimizedImage } from '@angular/common'
     ReportesComponent,
     WrapperComponent,
     CasoComponent,
+    DialogComponent,
+    LoginComponent,
     
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     MatToolbarModule,
-    MatButtonModule,
     CartModule,
     MatIconModule,
     MatListModule,
@@ -51,7 +56,6 @@ import { NgOptimizedImage } from '@angular/common'
     MatTableModule,
     MatDividerModule,
     MatProgressBarModule,
-    MatButtonModule,
     MatMenuModule,
     MatProgressSpinnerModule,
     MatTabsModule,
@@ -60,7 +64,10 @@ import { NgOptimizedImage } from '@angular/common'
     MatSidenavContainer,
     MatSidenav,
     AgGridModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }

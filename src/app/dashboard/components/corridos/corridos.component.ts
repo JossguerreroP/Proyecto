@@ -258,6 +258,17 @@ Test(event:any){
 }
 
 getEntradasIniciales(event: any) {
+  let aux : Object[]=[];
+
+  this.rowData=aux;
+  this.rowData1=aux;
+  this.rowData2=aux;
+  this.rowDataEscenarios=aux;
+  this.rowDataEscenario1=aux;
+  this.rowDataEscenario2=aux;
+  this.rowDataEscenario3=aux;
+  this.rowDataEscenario4=aux;
+
   console.log(event)
   this.one(event);
   this.two(event);

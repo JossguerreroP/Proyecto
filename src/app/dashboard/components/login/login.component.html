@@ -1,0 +1,19 @@
+<mat-dialog-content>
+    <div>
+      <div class="card-body">
+        <div class="google-icon-wrapper"></div>
+  
+        <mat-form-field>
+          <input matInput type="text" placeholder="Ingrese usuario" [(ngModel)]="username">
+        </mat-form-field>
+        <br>
+  
+        <mat-form-field>
+          <input matInput type="password" placeholder="Ingrese contraseña" [(ngModel)]="password">
+        </mat-form-field>
+        <br>
+  
+        <button mat-raised-button color="primary" (click)="login()">Iniciar sesión</button>
+      </div>
+    </div>
+  </mat-dialog-content>

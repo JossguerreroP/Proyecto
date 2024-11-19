@@ -85,3 +85,31 @@ mat-toolbar {
   background-color: rgb(235, 227, 227);
   z-index: 1000;
 }
+
+.NavTitle {
+  font-family: 'Arial', sans-serif; /* Usa una tipografía legible */
+  font-weight: 600; /* Peso de la fuente */
+  font-size: 15px; /* Tamaño adecuado para un título */
+  color: #055132; /* Color de texto oscuro, para una buena legibilidad */
+  text-transform: uppercase; /* Estilo en mayúsculas para darle énfasis */
+  letter-spacing: 1px; /* Espaciado entre letras para mayor claridad */
+  line-height: 1.4; /* Aumenta el espacio entre líneas para facilitar la lectura */
+  padding: 10px 20px; /* Añade espacio alrededor del texto */
+  background-color: #f2f2f2; /* Fondo claro para darle contraste */
+  border-radius: 8px; /* Bordes redondeados para suavizar el diseño */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+  display: block; /* Asegura que ocupe toda la línea */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  text-align: center; /* Centrado del texto */
+  margin: 10px 0; /* Margen superior e inferior para separar del resto de elementos */
+}
+
+.NavTitle:hover {
+  color: #055132; /* Cambio de color al pasar el mouse sobre el texto */
+  cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+}
+
+mat-toolbar-row {
+  background-color: #ffffff; /* Fondo blanco para la fila de la barra de herramientas */
+  padding: 10px 0; /* Añade espacio al entorno de la barra */
+}

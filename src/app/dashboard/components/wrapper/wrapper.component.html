@@ -1,6 +1,6 @@
 
 <mat-toolbar-row>
-  <span>Aplicación para la gestión de un sistema de energía electrica ante un evento disruptivo </span>
+  <span class="NavTitle">Aplicación para la gestión de un sistema de energía electrica ante un evento disruptivo </span>
 </mat-toolbar-row>
 
 <mat-sidenav-container autozise="true">
@@ -86,10 +86,13 @@
     </button>
     <mat-menu #stationMenu="matMenu" style="height:300px;">
       <div *ngIf="user">
-      <img src={{user.photoUrl}}  width="73px" height="73px" style="align-items:middle;margin:7px 100px">
-        <span style="padding-left:15px;padding-right: 5px;padding-top:10px;">{{user.name}}</span>
+        <span style="padding-left:15px;padding-right: 5px;padding-top:10px;">{{usuario.username}}</span>
         <h4 style="padding-left:10px;padding-right: 5px;padding-top:1px;">{{user.email}}</h4>
+        <button mat-button (click)="salir()">Salir</button>
       </div>
+      </mat-menu>
+      <mat-menu>
+
       </mat-menu>
   </mat-toolbar>
 

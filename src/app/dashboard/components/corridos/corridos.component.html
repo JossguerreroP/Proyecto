@@ -10,6 +10,8 @@
     <div class="column middle">
       <div style="width: 100%;overflow-x: auto;padding-bottom: 5%;padding-right:5%;">	
       <!-- Table 1: Generators -->
+
+
       <div style="flex-grow: 1; flex-shrink: 0; overflow: auto; padding: 10px;">
         <span><h4>Características iniciales :</h4></span>
         <span><h6>Tabla 1. Características de los generadores</h6></span>
@@ -108,6 +110,75 @@
           [domLayout]="'autoHeight'"
           [autoSizeStrategy]="autoSizeStrategy">
         </ag-grid-angular>
+      </div>
+
+      <div style="flex-grow: 1; flex-shrink: 0; overflow: auto; padding: 10px;" *ngIf="metricas">
+        <span><h4>Visualización de Métricas :</h4></span>
+  
+  <style>
+
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    td {
+      background-color: #f9f9f9;
+    }
+  </style>
+
+    <div class="section">
+     
+      <table>
+        <thead>
+          <tr>
+            <th>Línea</th>
+            <th>Porcentaje</th>
+          </tr>
+        </thead>
+        <tbody >
+          <!-- Itera sobre las líneas de generadores -->
+          <tr *ngFor="let linea of obj.metrica_lineas_generadores_atacados.lineas">
+            <td>{{ linea.linea }}</td>
+            <td>{{ linea.porcentaje }}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h6>Tabla 2. Características de los generadores atacados</h6>
+      <table>
+        <thead>
+          <tr>
+            <th>Generador</th>
+            <th>Porcentaje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Datos de generadores -->
+          <tr *ngFor="let generador of obj.metrica_lineas_generadores_atacados.generadores">
+            <td>{{ generador.generador }}</td>
+            <td>{{ generador.porcentaje }}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h6>Tiempo de Ejecución</h6>
+      <p>{{ obj.tiempo_ejecucion.toFixed(2) }} segundos</p>
+    </div>
+
       </div>
     </div>
   </div>
@@ -226,6 +297,76 @@
           [autoSizeStrategy]="autoSizeStrategy">
         </ag-grid-angular>
       </div>
+
+      <div style="flex-grow: 1; flex-shrink: 0; overflow: auto; padding: 10px;" *ngIf="metricas">
+        <span><h4>Visualización de Métricas :</h4></span>
+  
+  <style>
+
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    td {
+      background-color: #f9f9f9;
+    }
+  </style>
+
+    <div class="section">
+     
+      <table>
+        <thead>
+          <tr>
+            <th>Línea</th>
+            <th>Porcentaje</th>
+          </tr>
+        </thead>
+        <tbody >
+          <!-- Itera sobre las líneas de generadores -->
+          <tr *ngFor="let linea of obj.metrica_lineas_generadores_atacados.lineas">
+            <td>{{ linea.linea }}</td>
+            <td>{{ linea.porcentaje }}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h6>Tabla 2. Características de los generadores atacados</h6>
+      <table>
+        <thead>
+          <tr>
+            <th>Generador</th>
+            <th>Porcentaje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Datos de generadores -->
+          <tr *ngFor="let generador of obj.metrica_lineas_generadores_atacados.generadores">
+            <td>{{ generador.generador }}</td>
+            <td>{{ generador.porcentaje }}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h6>Tiempo de Ejecución</h6>
+      <p>{{ obj.tiempo_ejecucion.toFixed(2) }} segundos</p>
+    </div>
+
+      </div>
+      
     </div>
   </div>
 </div>

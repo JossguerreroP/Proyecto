@@ -3,8 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import {ColDef, SizeColumnsToFitGridStrategy } from 'ag-grid-community';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import * as htmlToImage from 'html-to-image';
-import { toPng } from 'html-to-image';
+import autotable, { autoTable } from 'jspdf-autotable'; 
+
+
+
+
 
 
 @Component({
@@ -119,6 +122,22 @@ export class ReportesComponent implements OnInit{
     { field: 'potencia_atendida_MW', headerName: 'Potencia Atendida (MW)' },
     { field: '_atendido', headerName: '% Atendido' }
   ];
+  
+  colDefsLineasAtacadas:ColDef[] = [
+    { headerName: 'Línea', field: 'linea' },
+    { headerName: 'Porcentaje', field: 'porcentaje' }
+  ];
+
+ rowdataLineasAtacadas:any;
+
+  colDefsGeneradores:ColDef[]= [
+    { headerName: 'Generador', field: 'generador' },
+    { headerName: 'Porcentaje', field: 'porcentaje' }
+  ];
+
+
+  metricas: boolean=false;
+  obj: any={};
 
 
   constructor(private route:ActivatedRoute) 
@@ -315,7 +334,7 @@ downloadPDF(ss:string){
     const data:any= document.getElementById('pdf-content');
     html2canvas(data ).then(canvas => {
       const pdf = new jsPDF();
-      pdf.addImage(canvas.toDataURL('image/png'),'PNG',0,0,211,298);
+      pdf.addImage(canvas.toDataURL('image/png'),'PNG',0,0,400,298);
       pdf.setProperties({
         title:'xd',
         subject:'xd'
@@ -328,7 +347,7 @@ downloadPDF(ss:string){
 
 down(){
   if (this.caso != null) {
-    let tableHTML = `<div id="pdf-content">`;
+    let tableHTML = `<div id="pdf-content" class="container">`;
     tableHTML += `<h2>Tabla de generadores</h2>`;
      // TABLA 1
     tableHTML += `<table border="1" style="border-collapse: collapse; width: 100%;">`;
@@ -499,11 +518,51 @@ down(){
        tableHTML += `</table>`;
 
 
+       tableHTML += `</table>`;
+       tableHTML += `<h2>Metricas</h2>`;
+       tableHTML += `<table border="1" style="border-collapse: collapse; width: 100%;">`;
+       tableHTML += `<thead><tr>`;
+       this.colDefsLineasAtacadas.forEach(col => {
+         tableHTML += `<th style="padding: 8px; text-align: left; background-color: #f2f2f2;">${col.headerName}</th>`;
+       });
+       tableHTML += `</tr></thead>`;
+       tableHTML += `<tbody>`;
+       this.obj.metrica_lineas_generadores_atacados.lineas.forEach((linea: any) => {
+        tableHTML += `<tr>`;
+        tableHTML += `<td style="padding: 8px; text-align: left;">${linea.linea}</td>`;
+        tableHTML += `<td style="padding: 8px; text-align: left;">${linea.porcentaje}%</td>`;
+        tableHTML += `</tr>`;
+      });
+       tableHTML += `</tbody>`;
+       tableHTML += `</table>`;
+
+       tableHTML += `</tbody>`;
+tableHTML += `</table>`;
+
+// Reporte de Generadores Atacados
+tableHTML += `<h3>Generadores Atacados</h3>`;
+tableHTML += `<table border="1" style="border-collapse: collapse; width: 100%;">`;
+tableHTML += `<thead><tr><th style="padding: 8px; text-align: left; background-color: #f2f2f2;">Generador</th><th style="padding: 8px; text-align: left; background-color: #f2f2f2;">Porcentaje</th></tr></thead>`;
+tableHTML += `<tbody>`;
+this.obj.metrica_lineas_generadores_atacados.generadores.forEach((generador: any) => {
+  tableHTML += `<tr>`;
+  tableHTML += `<td style="padding: 8px; text-align: left;">${generador.generador}</td>`;
+  tableHTML += `<td style="padding: 8px; text-align: left;">${generador.porcentaje}%</td>`;
+  tableHTML += `</tr>`;
+});
+
+tableHTML += `</tbody>`;
+tableHTML += `</table>`;
+
+tableHTML += `<h3>Tiempo de Ejecución</h3>`;
+tableHTML += `<p>${this.obj.tiempo_ejecucion.toFixed(2)} segundos</p>`;
+
        tableHTML += `<span><h6> Gráfica Nodo: </h6></span>`
        tableHTML += `<img src="/assets/images/Ncaso_${this.caso}.jpg"  width="%100" height="100%" alt=" ">`
        
        tableHTML += `<span><h6> Gráfica Resumen: </h6></span>`
        tableHTML += `<img src="/assets/images/caso_${this.caso}.jpg"  width="%100" height="100%" alt=" ">`
+
 
     tableHTML += `</div>`;
 
@@ -514,7 +573,10 @@ down(){
 
     // Paso 3: Usar html2canvas para generar una imagen del contenido
     const data: any = container.querySelector('#pdf-content');
-    html2canvas(data, { scale: 2 }).then(canvas => {  // Escalar para mejorar la resolución
+    html2canvas(data, { allowTaint: true,
+      width: 2480,
+        height: 3508
+       }).then(canvas => {  // Escalar para mejorar la resolución
       const pdf = new jsPDF();
       
       // Obtener el tamaño del canvas generado
@@ -547,50 +609,90 @@ down(){
 
 }
 
+ columns = ["Nombre", "Edad", "Ciudad"];
+ data = [
+  ["Juan", 25, "Madrid"],
+  ["Ana", 30, "Barcelona"],
+  ["Pedro", 35, "Valencia"]
+];
 
-captureScreen() {
+dd(){
+  const columnGeneratos:any = this.colDefs.map(col => col.headerName);
+  const rows:any =this.rowData.map((row:any)=> [
+  row.NODO,                    
+  row.PG_MW,                   
+  row.QG_MW,                   
+  row.Q_MAX_MVAR,               
+  row.Q_MIN_MVAR,               
+  row.P_MAX_MW,              
+  row.costo_marginal_dolar_per_MW
+  ])
+
+console.log('ROWS',rows)
   const pdf = new jsPDF();
-  const node:any = document.getElementById('pdf-content-1');
-  htmlToImage
-  .toPng(node)
-  .then(function (dataUrl) {
-    var img = new Image();
-    img.src = dataUrl;
-    pdf.addImage(img, 'PNG', 10, 10, 100, 100);
-    pdf.save('file');
-  })
-  .catch(function (error) {
-    console.error('oops, something went wrong!', error);
-  });
+  pdf.text(`Reporte caso ${this.caso}`,10,10);
+  pdf.text(`Tabla 1. Características de los generadores`,10,20);
+  
+  autotable(pdf, {
+    head: [columnGeneratos],
+    body:  rows,
+  startY: 25,       // Establecer la posición vertical donde comenzará la tabla
+  theme: 'grid',    // Estilo de la tabla (puedes usar 'striped', 'grid', 'plain')
+  margin: { top: 30, left: 10, right: 10 }, // Márgenes de la tabla
+  styles: { fontSize: 10 },
+    didDrawCell: (data) => { },
+});
+
+let finalY = (pdf as any).lastAutoTable.finalY;
+
+
+pdf.text(`Tabla 2. Características de los generadores`,10,finalY+7);
+
+autotable(pdf, {
+  head: [['columnGeneratos','j']],
+  body:  rows,
+startY: finalY+10,       
+theme: 'grid',    
+margin: { top: 30, left: 10, right: 10 }, // Márgenes de la tabla
+styles: { fontSize: 10 },
+  didDrawCell: (data) => { },
+});
+
+pdf.save('table.pdf');
+
+}
+
+oky(){
+
 }
 
 
-
-crearPdf(node:any){
-  htmlToImage
-  .toPng(node)
-  .then(function (dataUrl) {
-    var img = new Image();
-    const pdf = new jsPDF();
-    img.src = dataUrl;
-    pdf.addImage(img, 'PNG', 10, 10, 100, 100);
-    pdf.save('file');
-  })
-  .catch(function (error) {
-    console.error('oops, something went wrong!', error);
-  });
-}
 
 
 
 getEntradasIniciales(event: any) {
+  let aux : Object[]=[];
+  this.metricas=false;
+  this.obj=event.obj
+  this.rowdataLineasAtacadas=event.obj.metrica_lineas_generadores_atacados.lineas;
+
+
+  this.rowData=aux;
+  this.rowData1=aux;
+  this.rowData2=aux;
+  this.rowDataEscenarios=aux;
+  this.rowDataEscenario1=aux;
+  this.rowDataEscenario2=aux;
+  this.rowDataEscenario3=aux;
+  this.rowDataEscenario4=aux;
+  
 this.caso=event.caso
 this.one(event);
 this.two(event);
 this.three(event);
 this.getResuldatos(event);
 this.getResultadosEscenarios(event);
-
+this.metricas=true;
 const DesEscenario1: string[] = [
   `No existe acuerdo para la desconexión voluntaria de carga y bajo esta condición es ejecutado
    el plan de ataque más severo del análisis de vulnerabilidad, pero no se toman acciones de mitigación
@@ -634,6 +736,7 @@ this.descripcionEscenario2=this.getDescripcion(this.rowDataEscenario2,Descripcio
 this.descripcionEscenario3=this.getDescripcion(this.rowDataEscenario3,Descripciones.DesEscenario3);
 this.descripcionEscenario4=this.getDescripcion(this.rowDataEscenario4,Descripciones.DesEscenario4);
 this.descripcionResultados =this.getDescripcionResultados(this.rowDataEscenarios);
+
 }
  
 

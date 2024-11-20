@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { AutoScrollService, ColDef, SizeColumnsToFitGridStrategy } from 'ag-grid-community';
+import { ColDef, SizeColumnsToFitGridStrategy } from 'ag-grid-community';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -18,12 +18,14 @@ export class CorridosComponent implements OnInit{
   rowDataEscenario4: Object[]=[]
   Objects:Object[]=[]
 
+  obj:any={}
+
   generadores :any;
   lineas :any;
   nodos:any;
   escenarios:any;
   escenariosConNodos:Array<Object>=[];
-
+  metricas:boolean=false;
 
   sd:boolean = false;
   st:boolean = true;
@@ -140,7 +142,6 @@ export class CorridosComponent implements OnInit{
  one(event:any) {
   this.generadores=event.generadores
 
-  console.log(this.generadores.generators)
   const newRows: object[] = [];  
 
   for (let i = 0; i < this.generadores.generators.length; i++) {
@@ -156,12 +157,10 @@ export class CorridosComponent implements OnInit{
     newRows.push(generador);
 }
 this.rowData = newRows;
-console.log(this.rowData)
 }
 
 two(event:any){
 this.lineas = event.lineas;
-console.log(this.lineas.lines);
 const newRows: object[] = [];  
 for (let i = 0; i < this.lineas.lines.length; i++) {
   let linea: Object = {
@@ -179,7 +178,6 @@ this.rowData1 = newRows;
 
 three (event:any){
   this.nodos = event.nodos;  // Suponiendo que los nodos están en "event.nodos"
-  console.log(this.nodos.nodes);
   const newRows: object[] = [];  
   for (let i = 0; i < this.nodos.nodes.length; i++) {
     let nodo: Object = {
@@ -259,7 +257,8 @@ Test(event:any){
 
 getEntradasIniciales(event: any) {
   let aux : Object[]=[];
-
+  this.metricas=false;
+  this.obj=event.obj
   this.rowData=aux;
   this.rowData1=aux;
   this.rowData2=aux;
@@ -268,12 +267,13 @@ getEntradasIniciales(event: any) {
   this.rowDataEscenario2=aux;
   this.rowDataEscenario3=aux;
   this.rowDataEscenario4=aux;
-
-  console.log(event)
+  console.log(this.obj)
   this.one(event);
   this.two(event);
   this.three(event);
   this.getResuldatos(event);
   this.getResultadosEscenarios(event);
+  this.metricas=true;
+
 }
 }

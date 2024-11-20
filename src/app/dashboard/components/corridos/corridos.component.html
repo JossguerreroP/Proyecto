@@ -137,7 +137,8 @@
   </style>
 
     <div class="section">
-     
+      <span><h4> Lineas  atacados
+      </h4></span>
       <table>
         <thead>
           <tr>
@@ -156,7 +157,7 @@
     </div>
 
     <div class="section">
-      <h6>Tabla 2. Características de los generadores atacados</h6>
+      <h6> Generadores atacados</h6>
       <table>
         <thead>
           <tr>
@@ -173,7 +174,25 @@
         </tbody>
       </table>
     </div>
-
+    <div class="section">
+      <h6>Metrica lineas con sobrecarga
+      </h6>
+      <table>
+        <thead>
+          <tr>
+            <th>Linea</th>
+            <th>Porcentaje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Datos de generadores -->
+          <tr *ngFor="let generador of obj.metrica_lineas_con_sobrecarga">
+            <td>{{ generador.linea }}</td>
+            <td>{{ generador.porcentaje_sobrecarga }}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="section">
       <h6>Tiempo de Ejecución</h6>
       <p>{{ obj.tiempo_ejecucion.toFixed(2) }} segundos</p>
@@ -323,7 +342,8 @@
   </style>
 
     <div class="section">
-     
+      <span><h4> Lineas  atacados
+      </h4></span>
       <table>
         <thead>
           <tr>
@@ -342,7 +362,7 @@
     </div>
 
     <div class="section">
-      <h6>Tabla 2. Características de los generadores atacados</h6>
+      <h6> Generadores atacados</h6>
       <table>
         <thead>
           <tr>
@@ -359,7 +379,25 @@
         </tbody>
       </table>
     </div>
-
+    <div class="section">
+      <h6>Metrica lineas con sobrecarga
+      </h6>
+      <table>
+        <thead>
+          <tr>
+            <th>Linea</th>
+            <th>Porcentaje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Datos de generadores -->
+          <tr *ngFor="let generador of obj.metrica_lineas_con_sobrecarga">
+            <td>{{ generador.linea }}</td>
+            <td>{{ generador.porcentaje_sobrecarga }}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="section">
       <h6>Tiempo de Ejecución</h6>
       <p>{{ obj.tiempo_ejecucion.toFixed(2) }} segundos</p>

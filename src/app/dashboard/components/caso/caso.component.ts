@@ -2252,7 +2252,7 @@ export class CasoComponent implements OnInit {
 
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="6"){
@@ -3011,7 +3011,7 @@ export class CasoComponent implements OnInit {
 
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
    
    if(caso=="14"){
@@ -3823,7 +3823,7 @@ export class CasoComponent implements OnInit {
   
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="15"){
@@ -4668,7 +4668,7 @@ export class CasoComponent implements OnInit {
   
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="18"){
@@ -5631,7 +5631,7 @@ export class CasoComponent implements OnInit {
   
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="22"){
@@ -6717,7 +6717,7 @@ export class CasoComponent implements OnInit {
  
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="30"){
@@ -7569,7 +7569,7 @@ export class CasoComponent implements OnInit {
  
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="33"){
@@ -8060,7 +8060,7 @@ export class CasoComponent implements OnInit {
  
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="34"){
@@ -8434,7 +8434,7 @@ export class CasoComponent implements OnInit {
  
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="38"){
@@ -8832,7 +8832,7 @@ let escenario2ConRdSinGd = [
  
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="39"){
@@ -9193,7 +9193,7 @@ let escenario2ConRdSinGd = [
  
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="51"){
@@ -9668,7 +9668,7 @@ let escenario4ConGdYRd = [
  
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="57"){
@@ -10113,7 +10113,7 @@ let escenario4ConGdYRd = [
  
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="69"){
@@ -10658,7 +10658,7 @@ let escenario4ConGdYRd = [
  
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="74"){
@@ -11268,7 +11268,7 @@ let escenario4ConGdYRd = [
  
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
   }

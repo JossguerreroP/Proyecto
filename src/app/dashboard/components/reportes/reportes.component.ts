@@ -760,7 +760,8 @@ pdf.text(`Resultados`,10,finalY2+10);
 autotable(pdf, {
   head: [[`${this.descripcionResultados[0].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY2+15,       
+startY: finalY2+15,
+theme:'plain',      
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -772,7 +773,8 @@ let finalY3 = (pdf as any).lastAutoTable.finalY;
 autotable(pdf, {
   head: [[`${this.descripcionResultados[1].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY3,       
+startY: finalY3, 
+theme:'plain',     
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -796,7 +798,8 @@ pdf.text(`Escenario 1 : Sin RD ni GD`,10,finalY5+20);
 autotable(pdf, {
   head: [[`${this.descripcionEscenario1[0].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY5+25,       
+startY: finalY5+25,
+theme:'plain',       
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -807,7 +810,8 @@ let finalY6= (pdf as any).lastAutoTable.finalY;
 autotable(pdf, {
   head: [[`${this.descripcionEscenario1[1].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY6,       
+startY: finalY6, 
+theme:'plain', 
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -818,7 +822,8 @@ let finalY7= (pdf as any).lastAutoTable.finalY;
 autotable(pdf, {
   head: [[`${this.descripcionEscenario1[2].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY7,       
+startY: finalY7,     
+theme:'plain',  
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -840,7 +845,8 @@ pdf.text(`Escenario 2: RD sin GD`,10,finalY9+10);
 autotable(pdf, {
   head: [[`${this.descripcionEscenario2[0].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY9+15,       
+startY: finalY9+15,
+theme:'plain',     
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -851,7 +857,8 @@ let finalY10= (pdf as any).lastAutoTable.finalY;
 autotable(pdf, {
   head: [[`${this.descripcionEscenario2[1].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY10,       
+startY: finalY10,
+theme:'plain',
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -862,7 +869,8 @@ let finalY11= (pdf as any).lastAutoTable.finalY;
 autotable(pdf, {
   head: [[`${this.descripcionEscenario2[2].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY11,       
+startY: finalY11,
+theme:'plain',   
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -882,9 +890,10 @@ styles: { fontSize: 10},
 let finalY13= (pdf as any).lastAutoTable.finalY;
 pdf.text(`Escenario 3 : GD sin RD`,10,finalY13+10);
 autotable(pdf, {
-  head: [[`${this.descripcionEscenario3[0].replace(/[\r\n]+/g, ' ')}`]],
+  //head: [[`${this.descripcionEscenario3[0].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY13+15,       
+startY: finalY13+15,
+theme:'plain',    
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -895,7 +904,8 @@ let finalY14= (pdf as any).lastAutoTable.finalY;
 autotable(pdf, {
   head: [[`${this.descripcionEscenario3[0].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY14,       
+startY: finalY14,
+theme:'plain',      
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -906,7 +916,8 @@ let finalY15= (pdf as any).lastAutoTable.finalY;
 autotable(pdf, {
   head: [[`${this.descripcionEscenario3[1].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY15,       
+startY: finalY15,
+theme:'plain',
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -917,7 +928,8 @@ let finalY16= (pdf as any).lastAutoTable.finalY;
 autotable(pdf, {
   head: [[`${this.descripcionEscenario3[2].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY16,       
+startY: finalY16,
+theme:'plain',  
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -941,7 +953,8 @@ pdf.text(`Escenario 4 : GD y RD`,10,finalY18+10);
 autotable(pdf, {
   head: [[`${this.descripcionEscenario4[0].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY18+15,       
+startY: finalY18+15,
+theme:'plain',      
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -952,7 +965,8 @@ let finalY19= (pdf as any).lastAutoTable.finalY;
 autotable(pdf, {
   head: [[`${this.descripcionEscenario4[1].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY19,       
+startY: finalY19,
+theme:'plain',      
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -963,7 +977,8 @@ let finalY20= (pdf as any).lastAutoTable.finalY;
 autotable(pdf, {
   head: [[`${this.descripcionEscenario4[2].replace(/[\r\n]+/g, ' ')}`]],
   //body:  rowLineasNodos,
-startY: finalY20,       
+startY: finalY20,
+theme:'plain',
 margin: { top: 30, left: 10, right: 10 },
 styles: { 
   fontSize: 10,      
@@ -982,8 +997,8 @@ styles: { fontSize: 10},
   didDrawCell: (data) => { },
 });
 
-
-
+pdf.addImage(`/assets/images/caso_${this.caso}.jpg`, 'JPG', 15, finalY21+40, 100, 100);
+pdf.addImage(`/assets/images/Ncaso_${this.caso}.jpg`, 'JPG', 30, finalY21+150, 100, 100);
 //let tableHTML = ''
  //await new Promise<void>((resolve) => {
   //pdf.html(tableHTML, {

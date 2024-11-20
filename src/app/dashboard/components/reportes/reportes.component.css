@@ -75,3 +75,22 @@
   outline: none; /* Remove default outline */
   box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5); /* Greenish glow on focus */
 }
+
+.stuff {
+  display: inline-block;
+  margin-top: 6px;
+  margin-left:210px;
+  width: 75%;
+  height: 1000px;
+}
+
+@media only screen and (max-width: 430px) {
+  .left,
+  .right {
+    display: none;
+  }
+  .stuff {
+    width: 100%;
+    margin-left: 10px;
+  }
+}

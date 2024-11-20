@@ -2,7 +2,7 @@ import { Component, OnInit ,ViewChild,ElementRef} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {ColDef, SizeColumnsToFitGridStrategy } from 'ag-grid-community';
 import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+import {jsPDF} from 'jspdf';
 import autotable, { autoTable } from 'jspdf-autotable'; 
 
 
@@ -585,7 +585,7 @@ tableHTML += `<p>${this.obj.tiempo_ejecucion.toFixed(2)} segundos</p>`;
       
       // Calcular el tamaño en unidades de PDF (puntos)
       const pdfWidth = 210;  // Tamaño de una página A4 en mm
-      const pdfHeight = 297; // Tamaño de una página A4 en mm
+      const pdfHeight = 2910; // Tamaño de una página A4 en mm
 
       // Calcular escala para ajustarse a la página
       const scaleX = pdfWidth / canvasWidth;
@@ -609,14 +609,9 @@ tableHTML += `<p>${this.obj.tiempo_ejecucion.toFixed(2)} segundos</p>`;
 
 }
 
- columns = ["Nombre", "Edad", "Ciudad"];
- data = [
-  ["Juan", 25, "Madrid"],
-  ["Ana", 30, "Barcelona"],
-  ["Pedro", 35, "Valencia"]
-];
 
-dd(){
+
+  async dd(){
   const columnGeneratos:any = this.colDefs.map(col => col.headerName);
   const rows:any =this.rowData.map((row:any)=> [
   row.NODO,                    
@@ -626,13 +621,54 @@ dd(){
   row.Q_MIN_MVAR,               
   row.P_MAX_MW,              
   row.costo_marginal_dolar_per_MW
-  ])
+  ]);
 
-console.log('ROWS',rows)
-  const pdf = new jsPDF();
+  const columnLineas:any = this.colDefsLineas.map(col => col.headerName);
+ const rowLineas: any = this.rowData1.map((row:any)=>
+   [row.I,
+   row.J,
+   row.flujo_P_I_a_J_MW,
+   row.flujo_P_J_a_I_MW,
+   row.flujo_Q_I_a_J_MW,
+   row.flujo_Q_J_a_I_MW
+   ]
+  ); 
+
+  const columnNodosLineas:any = this.colDefsNodos.map(col => col.headerName);
+  const rowLineasNodos: any = this.rowData2.map((row:any)=>
+    [
+      row.nodo,
+      row.tipo_de_nodo,
+      row.P_MW,
+      row.Q_MVAR,
+      row.V_max,
+      row.V_min
+    ]
+   );
+
+   const columnsResultados:any = this.colDefsEscenarios.map(col => col.headerName);
+   const rowResultados: any = this.rowDataEscenarios.map((row:any)=>
+    [
+      row.escenario,
+      row.potencia_deslastrada_MW,
+      row.potencia_atendida_MW,
+      row.potencia_generada_adicional_MW,
+      row.costo_operacion_dolar_per_MWH,
+      row.costo_deslastre_dolar_per_MWH,
+      row.U1,
+      row.U2,
+      row.U,
+      row.resilencia
+    ]
+   );
+
+
+   console.log('RES',rowResultados)
+
+  let pdf = new jsPDF();
+  //
   pdf.text(`Reporte caso ${this.caso}`,10,10);
   pdf.text(`Tabla 1. Características de los generadores`,10,20);
-  
   autotable(pdf, {
     head: [columnGeneratos],
     body:  rows,
@@ -642,30 +678,130 @@ console.log('ROWS',rows)
   styles: { fontSize: 10 },
     didDrawCell: (data) => { },
 });
-
+//
 let finalY = (pdf as any).lastAutoTable.finalY;
-
-
-pdf.text(`Tabla 2. Características de los generadores`,10,finalY+7);
-
+pdf.text(`Tabla 2. Características de los generadores`,10,finalY+10);
 autotable(pdf, {
-  head: [['columnGeneratos','j']],
-  body:  rows,
-startY: finalY+10,       
+  head: [columnLineas],
+  body:  rowLineas,
+startY: finalY+15,       
 theme: 'grid',    
 margin: { top: 30, left: 10, right: 10 }, // Márgenes de la tabla
 styles: { fontSize: 10 },
   didDrawCell: (data) => { },
 });
+//
+let finalY1 = (pdf as any).lastAutoTable.finalY;
+pdf.text(`Tabla 3. Características de los nodos`,10,finalY1+10);
+autotable(pdf, {
+  head: [columnNodosLineas],
+  body:  rowLineasNodos,
+startY: finalY1+15,       
+theme: 'grid',    
+margin: { top: 30, left: 10, right: 10 }, // Márgenes de la tabla
+styles: { fontSize: 10},
+  didDrawCell: (data) => { },
+});
+//
+let finalY2 = (pdf as any).lastAutoTable.finalY;
+pdf.text(`Resultados`,10,finalY2+10);
+autotable(pdf, {
+  head: [[`${this.descripcionResultados[0].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY2+15,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+//
+let finalY3 = (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [[`${this.descripcionResultados[1].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY3,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+
+let finalY4 = (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [columnsResultados],
+  body:  rowResultados,
+startY: finalY4+15,       
+theme: 'grid',    
+margin: { top: 30, left: 10, right: 10 }, // Márgenes de la tabla
+styles: { fontSize: 10},
+  didDrawCell: (data) => { },
+});
+let finalY5= (pdf as any).lastAutoTable.finalY;
+pdf.text(`Escenarios`,10,finalY5+10);
+pdf.text(`Escenario 1 : Sin RD ni GD`,10,finalY5+20);
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario1[0].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY5+25,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+let finalY6= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario1[1].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY6,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+let finalY7= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario1[2].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY7,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+let finalY8= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [columnsResultados],
+  body:  rowResultados,
+startY: finalY4+15,       
+theme: 'grid',    
+margin: { top: 30, left: 10, right: 10 }, // Márgenes de la tabla
+styles: { fontSize: 10},
+  didDrawCell: (data) => { },
+});
+
+
+
+
+//let tableHTML = ''
+ //await new Promise<void>((resolve) => {
+  //pdf.html(tableHTML, {
+    //callback: function (pdf) {
+     // resolve(); // El callback se usa para indicar que el HTML ya se ha procesado
+    //},
+    //x: 10,
+    //y: finalY2 + 30,
+   // width: pdf.internal.pageSize.getWidth() - 20,
+ // });
+//});
 
 pdf.save('table.pdf');
 
 }
-
-oky(){
-
-}
-
 
 
 

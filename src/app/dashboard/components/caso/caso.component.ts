@@ -2613,7 +2613,7 @@ export class CasoComponent implements OnInit {
 
     let elements ={escenario1ConSinRdNiGd,escenario2ConRdSinGd,escenario3ConGdSinRd,escenario4ConGdYRd}
 
-    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso})
+    this.datos.emit({generadores,lineas,nodos,escenarios,elements,caso,obj})
    }
 
    if(caso=="9"){

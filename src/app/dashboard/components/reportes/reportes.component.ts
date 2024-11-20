@@ -662,6 +662,58 @@ tableHTML += `<p>${this.obj.tiempo_ejecucion.toFixed(2)} segundos</p>`;
     ]
    );
 
+   const columnsEscenariol:any = this.colDefsEscenariosNodos.map(col => col.headerName);
+   const rowResultadosEscenario1: any = this.rowDataEscenario1.map((row:any)=>
+    [
+      row.nodo,
+      row.carga_MW,
+      row.potencia_atendida_MW,
+      row.potencia_deslastrada_MW,
+      row.costo_dolar_por_MW,
+      row.potencia_atendida_MW,
+      row._atendido,
+    ]
+   );
+
+   const columnsEscenario2:any = this.colDefsEscenariosNodos.map(col => col.headerName);
+   const rowResultadosEscenario2: any = this.rowDataEscenario2.map((row:any)=>
+    [
+      row.nodo,
+      row.carga_MW,
+      row.potencia_atendida_MW,
+      row.potencia_deslastrada_MW,
+      row.costo_dolar_por_MW,
+      row.potencia_atendida_MW,
+      row._atendido,
+    ]
+   );
+
+   const columnsEscenario3:any = this.colDefsEscenariosNodos.map(col => col.headerName);
+   const rowResultadosEscenario3: any = this.rowDataEscenario3.map((row:any)=>
+    [
+      row.nodo,
+      row.carga_MW,
+      row.potencia_atendida_MW,
+      row.potencia_deslastrada_MW,
+      row.costo_dolar_por_MW,
+      row.potencia_atendida_MW,
+      row._atendido,
+    ]
+   );
+
+   const columnsEscenario4:any = this.colDefsEscenariosNodos.map(col => col.headerName);
+   const rowResultadosEscenario4: any = this.rowDataEscenario4.map((row:any)=>
+    [
+      row.nodo,
+      row.carga_MW,
+      row.potencia_atendida_MW,
+      row.potencia_deslastrada_MW,
+      row.costo_dolar_por_MW,
+      row.potencia_atendida_MW,
+      row._atendido,
+    ]
+   );
+
 
    console.log('RES',rowResultados)
 
@@ -775,15 +827,160 @@ styles: {
 });
 let finalY8= (pdf as any).lastAutoTable.finalY;
 autotable(pdf, {
-  head: [columnsResultados],
-  body:  rowResultados,
-startY: finalY4+15,       
+  head: [columnsEscenariol],
+  body:  rowResultadosEscenario1,
+startY: finalY8,       
 theme: 'grid',    
 margin: { top: 30, left: 10, right: 10 }, // Márgenes de la tabla
 styles: { fontSize: 10},
   didDrawCell: (data) => { },
 });
+let finalY9= (pdf as any).lastAutoTable.finalY;
+pdf.text(`Escenario 2: RD sin GD`,10,finalY9+10);
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario2[0].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY9+15,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+let finalY10= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario2[1].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY10,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+let finalY11= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario2[2].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY11,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+let finalY12= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [columnsEscenario2],
+  body:  rowResultadosEscenario2,
+startY: finalY12,       
+theme: 'grid',    
+margin: { top: 30, left: 10, right: 10 }, // Márgenes de la tabla
+styles: { fontSize: 10},
+  didDrawCell: (data) => { },
+});
+let finalY13= (pdf as any).lastAutoTable.finalY;
+pdf.text(`Escenario 3 : GD sin RD`,10,finalY13+10);
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario3[0].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY13+15,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+let finalY14= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario3[0].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY14,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+let finalY15= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario3[1].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY15,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+let finalY16= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario3[2].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY16,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+let finalY17= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [columnsEscenario3],
+  body:  rowResultadosEscenario3,
+startY: finalY17,       
+theme: 'grid',    
+margin: { top: 30, left: 10, right: 10 }, // Márgenes de la tabla
+styles: { fontSize: 10},
+  didDrawCell: (data) => { },
+});
+////pegados
 
+let finalY18= (pdf as any).lastAutoTable.finalY;
+pdf.text(`Escenario 4 : GD y RD`,10,finalY18+10);
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario4[0].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY18+15,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+let finalY19= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario4[1].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY19,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+let finalY20= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [[`${this.descripcionEscenario4[2].replace(/[\r\n]+/g, ' ')}`]],
+  //body:  rowLineasNodos,
+startY: finalY20,       
+margin: { top: 30, left: 10, right: 10 },
+styles: { 
+  fontSize: 10,      
+  cellWidth: 'auto',
+},
+});
+
+let finalY21= (pdf as any).lastAutoTable.finalY;
+autotable(pdf, {
+  head: [columnsEscenario4],
+  body:  rowResultadosEscenario4,
+startY: finalY21,       
+theme: 'grid',    
+margin: { top: 30, left: 10, right: 10 }, // Márgenes de la tabla
+styles: { fontSize: 10},
+  didDrawCell: (data) => { },
+});
 
 
 
